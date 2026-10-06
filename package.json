@@ -1,0 +1,14 @@
+{
+  "name": "english-focus",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "intake": "node scripts/intake.mjs",
+    "check:privacy": "node scripts/check-privacy.mjs",
+    "check:content": "node scripts/check-content.mjs"
+  }
+}
