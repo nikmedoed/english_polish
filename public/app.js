@@ -159,7 +159,7 @@ function renderPractice() {
     <div class="layout"><section class="practice-flow"><div class="card" id="exercise">
       <div class="meta"><span>${modeNames[ex.mode]} · ${['','С опорой','Самостоятельно','В контексте'][ex.level||2]}</span><span>Задание ${session.count+1}</span></div>
       <p class="practice-note">${escape(ex.task||instructions(ex.mode))}</p>
-      <div class="prompt">${escape(ex.mode==='order'?'':ex.mode==='speak'?ex.cue:ex.prompt)}</div>
+      ${ex.mode==='repair'&&ex.task&&ex.cue!==ex.prompt?'<p class="exercise-cue"><strong>Смысл фразы</strong><br>'+escape(ex.cue)+'</p>':''}<div class="prompt">${escape(ex.mode==='order'?'':ex.mode==='speak'?ex.cue:ex.prompt)}</div>
       <div id="input-area"></div><div id="feedback" aria-live="polite"></div>
       <div class="actions" id="exercise-actions"></div><div class="actions" id="support-actions"></div>
     </div>${previousReview()}</section><aside class="practice-summary"><div class="card"><h2>Этот подход</h2>

@@ -1,764 +1,7257 @@
 // Each task is authored independently; IDs never depend on array position.
 export const skills = [
- {id:'verbs-agreement',topic:'verbs',title:'Согласование в настоящем',rule:'Согласуй глагол с грамматическим подлежащим: he/she/it + -s; после does — начальная форма. Each/one of обычно требует единственного числа; a number of + plural, the number of + singular.'},
- {id:'verbs-past',topic:'verbs',title:'Прошлое: did + V',rule:'В утверждении Past Simple используй V2; после did/did not — начальную форму. В вопросе к подлежащему (Who called?) did не нужен.'},
- {id:'verbs-aspect',topic:'verbs',title:'Привычка или процесс',rule:'Привычки и обычные состояния: Present Simple; временный процесс сейчас или вокруг настоящего: be + -ing. Некоторые глаголы меняют значение в Continuous (think).'},
- {id:'verbs-modal',topic:'verbs',title:'Модальные и будущее',rule:'Can/should/might/must/will + начальная форма; будущий процесс: will be + -ing. Must not запрещает, do not have to означает отсутствие необходимости.'},
- {id:'verbs-be',topic:'verbs',title:'Формы be',rule:'I am; he/she/it is; we/you/they are. В прошлом was / were. В there is/are форма согласуется с существительным после be.'},
- {id:'verbs-time',topic:'verbs',title:'Контекст времени',rule:'Завершённый момент прошлого: Past Simple. Present Perfect связывает прошлое с настоящим; for задаёт длительность, since — начальную точку.'},
- ...[['structure-question','structure','Прямой и косвенный вопрос','В прямом вопросе вспомогательный глагол стоит перед подлежащим; внутри if/whether и вопросительных придаточных — прямой порядок. Вопрос к подлежащему обходится без do/did.'],['structure-links','structure','Причина и следствие','Because + clause, because of + noun phrase; so вводит следствие. Although + clause, despite + noun phrase/-ing передают уступку.'],['nouns-number','nouns','Число и определители','Another + singular или числительное + plural; other + plural. Every/each + singular. Most people — обобщение; most of the people — конкретная группа. Countable singular требует определитель, например a/an или the.'],['nouns-count','nouns','Исчисляемость','Advice/research/equipment/information обычно неисчисляемы; для счёта используй pieces of. Amount/less относятся к неисчисляемым, number/fewer — к исчисляемым.'],['patterns-modal','patterns','После модального','После can/should/might/must — начальная форма без to. Must not = запрет; do not have to = нет необходимости.' ],['patterns-inf','patterns','Инфинитив и -ing','Decide/need/want/promise + to V; enjoy/avoid/suggest/recommend + -ing; после предлога — -ing. Remember/stop/try могут менять смысл с to/-ing; be used to + -ing.' ],['chunks-object','chunks','Дополнение и направление','Discuss/enter/reach + прямое дополнение; explain something to someone; borrow from, lend to, remind someone about/of something.' ],['chunks-fixed','chunks','Устойчивые предлоги','Depend on, interested in, responsible for. Arrive in a city/at a point; by = крайний срок, until = длительность до момента.' ],['lexicon-form','lexicon','Часть речи','Fame/famous/famously и success/successful/succeed; -ed описывает чувство, -ing — его причину; сравнивай adjective/adverb и comparative/superlative.' ],['lexicon-word','lexicon','Сочетаемость','Учи слово с контекстом: make/do, tell/say, borrow/lend, rise/raise, fit/match/suit.' ],['reference-person','reference','Люди и местоимения','Для людей: who/that; singular they/their допустимо. Используй I как subject, me как object, whose для принадлежности; уточняй неясный референт.' ],['reference-object','reference','Предметы и принадлежность','Для предметов: which/that в defining clause; в добавочной части — which с запятыми. Its = принадлежность, it’s = it is/has; there/their/they’re различаются.' ]].map(([id,topic,title,rule])=>({id,topic,title,rule}))
+  {
+    id: "verbs-agreement",
+    topic: "verbs",
+    title: "Согласование в настоящем",
+    rule: "Согласуй глагол с грамматическим подлежащим: he/she/it + -s; после does — начальная форма. Each/one of обычно требует единственного числа; a number of + plural, the number of + singular.",
+  },
+  {
+    id: "verbs-past",
+    topic: "verbs",
+    title: "Прошлое: did + V",
+    rule: "В утверждении Past Simple используй V2; после did/did not — начальную форму. В вопросе к подлежащему (Who called?) did не нужен.",
+  },
+  {
+    id: "verbs-aspect",
+    topic: "verbs",
+    title: "Привычка или процесс",
+    rule: "Привычки и обычные состояния: Present Simple; временный процесс сейчас или вокруг настоящего: be + -ing. Некоторые глаголы меняют значение в Continuous (think).",
+  },
+  {
+    id: "verbs-modal",
+    topic: "verbs",
+    title: "Модальные и будущее",
+    rule: "Can/should/might/must/will + начальная форма; будущий процесс: will be + -ing. Must not запрещает, do not have to означает отсутствие необходимости.",
+  },
+  {
+    id: "verbs-be",
+    topic: "verbs",
+    title: "Формы be",
+    rule: "I am; he/she/it is; we/you/they are. В прошлом was / were. В there is/are форма согласуется с существительным после be.",
+  },
+  {
+    id: "verbs-time",
+    topic: "verbs",
+    title: "Контекст времени",
+    rule: "Завершённый момент прошлого: Past Simple. Present Perfect связывает прошлое с настоящим; for задаёт длительность, since — начальную точку.",
+  },
+  ...[
+    [
+      "structure-question",
+      "structure",
+      "Прямой и косвенный вопрос",
+      "В прямом вопросе вспомогательный глагол стоит перед подлежащим; внутри if/whether и вопросительных придаточных — прямой порядок. Вопрос к подлежащему обходится без do/did.",
+    ],
+    [
+      "structure-links",
+      "structure",
+      "Причина и следствие",
+      "Because + clause, because of + noun phrase; so вводит следствие. Although + clause, despite + noun phrase/-ing передают уступку.",
+    ],
+    [
+      "nouns-number",
+      "nouns",
+      "Число и определители",
+      "Another + singular или числительное + plural; other + plural. Every/each + singular. Most people — обобщение; most of the people — конкретная группа. Countable singular требует определитель, например a/an или the.",
+    ],
+    [
+      "nouns-count",
+      "nouns",
+      "Исчисляемость",
+      "Advice/research/equipment/information обычно неисчисляемы; для счёта используй pieces of. Amount/less относятся к неисчисляемым, number/fewer — к исчисляемым.",
+    ],
+    [
+      "patterns-modal",
+      "patterns",
+      "После модального",
+      "После can/should/might/must — начальная форма без to. Must not = запрет; do not have to = нет необходимости.",
+    ],
+    [
+      "patterns-inf",
+      "patterns",
+      "Инфинитив и -ing",
+      "Decide/need/want/promise + to V; enjoy/avoid/suggest/recommend + -ing; после предлога — -ing. Remember/stop/try могут менять смысл с to/-ing; be used to + -ing.",
+    ],
+    [
+      "chunks-object",
+      "chunks",
+      "Дополнение и направление",
+      "Discuss/enter/reach + прямое дополнение; explain something to someone; borrow from, lend to, remind someone about/of something.",
+    ],
+    [
+      "chunks-fixed",
+      "chunks",
+      "Устойчивые предлоги",
+      "Depend on, interested in, responsible for. Arrive in a city/at a point; by = крайний срок, until = длительность до момента.",
+    ],
+    [
+      "lexicon-form",
+      "lexicon",
+      "Часть речи",
+      "Fame/famous/famously и success/successful/succeed; -ed описывает чувство, -ing — его причину; сравнивай adjective/adverb и comparative/superlative.",
+    ],
+    [
+      "lexicon-word",
+      "lexicon",
+      "Сочетаемость",
+      "Учи слово с контекстом: make/do, tell/say, borrow/lend, rise/raise, fit/match/suit.",
+    ],
+    [
+      "reference-person",
+      "reference",
+      "Люди и местоимения",
+      "Для людей: who/that; singular they/their допустимо. Используй I как subject, me как object, whose для принадлежности; уточняй неясный референт.",
+    ],
+    [
+      "reference-object",
+      "reference",
+      "Предметы и принадлежность",
+      "Для предметов: which/that в defining clause; в добавочной части — which с запятыми. Its = принадлежность, it’s = it is/has; there/their/they’re различаются.",
+    ],
+  ].map(([id, topic, title, rule]) => ({ id, topic, title, rule })),
 ];
-const tasks=[];
-function add(skill,number,mode,level,prompt,answers,explanation,extra={}){
- const topic=skills.find(s=>s.id===skill).topic;
- tasks.push({id:`${skill}-${number}-${mode}`,family:`${skill}-${number}`,topic,skill,mode,level,prompt,answers:Array.isArray(answers)?answers:[answers],model:(Array.isArray(answers)?answers[0]:answers),explanation,cue:extra.cue||prompt,base:extra.base||'',...extra});
+const tasks = [];
+function add(
+  skill,
+  number,
+  mode,
+  level,
+  prompt,
+  answers,
+  explanation,
+  extra = {},
+) {
+  const topic = skills.find((s) => s.id === skill).topic;
+  tasks.push({
+    id: `${skill}-${number}-${mode}`,
+    family: `${skill}-${number}`,
+    topic,
+    skill,
+    mode,
+    level,
+    prompt,
+    answers: Array.isArray(answers) ? answers : [answers],
+    model: Array.isArray(answers) ? answers[0] : answers,
+    explanation,
+    cue: extra.cue || prompt,
+    base: extra.base || "",
+    ...extra,
+  });
 }
-function transform(skill,n,source,instruction,answer,why,alternatives=[]){add(skill,n,'transform',3,source,[answer,...alternatives],why,{task:instruction});}
-function repair(skill,n,wrong,answer,why){add(skill,n,'repair',2,wrong,answer,why);}
-function translate(skill,n,cue,words,answers,why){add(skill,n,'translate',3,cue,answers,why,{base:words,task:'Переведи, используя указанные слова. Сохрани смысл.'});}
-function contrast(skill,n,context,parts,why){add(skill,n,'contrast',3,context,parts.map(p=>p.answer).join(' | '),why,{parts,shuffleParts:skill==='verbs-aspect'&&[101,102,107,112,121].includes(n),model:parts.map(p=>p.prompt.replace('___',p.answer)).join(' ')});}
+function transform(
+  skill,
+  n,
+  source,
+  instruction,
+  answer,
+  why,
+  alternatives = [],
+) {
+  add(skill, n, "transform", 3, source, [answer, ...alternatives], why, {
+    task: instruction,
+  });
+}
+function repair(skill, n, wrong, answer, why, extra = {}) {
+  add(skill, n, "repair", 2, wrong, answer, why, extra);
+}
+function translate(skill, n, cue, words, answers, why) {
+  add(skill, n, "translate", 3, cue, answers, why, {
+    base: words,
+    task: "Переведи, используя указанные слова. Сохрани смысл.",
+  });
+}
+function contrast(skill, n, context, parts, why) {
+  add(
+    skill,
+    n,
+    "contrast",
+    3,
+    context,
+    parts.map((p) => p.answer).join(" | "),
+    why,
+    {
+      parts,
+      shuffleParts:
+        skill === "verbs-aspect" && [101, 102, 107, 112, 121].includes(n),
+      model: parts.map((p) => p.prompt.replace("___", p.answer)).join(" "),
+    },
+  );
+}
 
-transform('verbs-agreement',101,'The supplier delivers the parts on Fridays.','Сделай отрицание. Остальные слова сохрани.',"The supplier doesn't deliver the parts on Fridays.",'Does not уже выражает третье лицо: deliver без -s.');
-transform('verbs-agreement',102,'Your colleague handles urgent requests.','Сделай общий вопрос.','Does your colleague handle urgent requests?','Does + subject + base verb.');
-transform('verbs-agreement',103,'The contractor checks the invoice and sends a copy.','Замени The contractor на The contractors.','The contractors check the invoice and send a copy.','При смене числа меняются оба глагола.');
-repair('verbs-agreement',104,"Why does the backup process stops every night?",'Why does the backup process stop every night?','После does форма stop, не stops.');
-translate('verbs-agreement',105,'Она не согласна с предложением.','she / agree / with the proposal',"She doesn't agree with the proposal.",'Agree не требует be: does not agree.');
-contrast('verbs-agreement',106,'Каждая группа действует регулярно. Впиши формы глаголов.',[{prompt:'Each analyst ___ the figures before the call.',base:'check',answer:'checks'},{prompt:'The analysts ___ the figures before the call.',base:'check',answer:'check'}],'Each analyst: singular; the analysts: plural.');
+transform(
+  "verbs-agreement",
+  101,
+  "The supplier delivers the parts on Fridays.",
+  "Сделай отрицание. Остальные слова сохрани.",
+  "The supplier doesn't deliver the parts on Fridays.",
+  "Does not уже выражает третье лицо: deliver без -s.",
+);
+transform(
+  "verbs-agreement",
+  102,
+  "Your colleague handles urgent requests.",
+  "Сделай общий вопрос.",
+  "Does your colleague handle urgent requests?",
+  "Does + subject + base verb.",
+);
+transform(
+  "verbs-agreement",
+  103,
+  "The contractor checks the invoice and sends a copy.",
+  "Замени The contractor на The contractors.",
+  "The contractors check the invoice and send a copy.",
+  "При смене числа меняются оба глагола.",
+);
+repair(
+  "verbs-agreement",
+  104,
+  "Why does the backup process stops every night?",
+  "Why does the backup process stop every night?",
+  "После does форма stop, не stops.",
+);
+translate(
+  "verbs-agreement",
+  105,
+  "Она не согласна с предложением.",
+  "she / agree / with the proposal",
+  "She doesn't agree with the proposal.",
+  "Agree не требует be: does not agree.",
+);
+contrast(
+  "verbs-agreement",
+  106,
+  "Каждая группа действует регулярно. Впиши формы глаголов.",
+  [
+    {
+      prompt: "Each analyst ___ the figures before the call.",
+      base: "check",
+      answer: "checks",
+    },
+    {
+      prompt: "The analysts ___ the figures before the call.",
+      base: "check",
+      answer: "check",
+    },
+  ],
+  "Each analyst: singular; the analysts: plural.",
+);
 
-transform('verbs-past',101,'The client accepted the revised estimate yesterday.','Сделай вопрос.','Did the client accept the revised estimate yesterday?','Did + accept, не accepted.');
-transform('verbs-past',102,'They found the missing receipt last week.','Сделай отрицание.',"They didn't find the missing receipt last week.",'После did not: find, не found.');
-repair('verbs-past',103,'Where did you putted the signed contract?','Where did you put the signed contract?','Did требует base form; put одинаков во всех трёх формах.');
-translate('verbs-past',104,'Почему она не отправила приглашения вчера?','why / she / send / the invitations / yesterday',"Why didn't she send the invitations yesterday?",'Вопрос о прошлом: why + did not + she + send.');
-contrast('verbs-past',105,'Одно событие, два типа предложения.',[{prompt:'He ___ the old files yesterday.',base:'delete',answer:'deleted'},{prompt:'Did he ___ the old files yesterday?',base:'delete',answer:'delete'}],'Утверждение: deleted. После did: delete.');
-transform('verbs-past',106,'The technicians were available yesterday.','Сделай вопрос.','Were the technicians available yesterday?','С be вспомогательный did не нужен: were перед подлежащим.');
+transform(
+  "verbs-past",
+  101,
+  "The client accepted the revised estimate yesterday.",
+  "Сделай вопрос.",
+  "Did the client accept the revised estimate yesterday?",
+  "Did + accept, не accepted.",
+);
+transform(
+  "verbs-past",
+  102,
+  "They found the missing receipt last week.",
+  "Сделай отрицание.",
+  "They didn't find the missing receipt last week.",
+  "После did not: find, не found.",
+);
+repair(
+  "verbs-past",
+  103,
+  "Where did you putted the signed contract?",
+  "Where did you put the signed contract?",
+  "Did требует base form; put одинаков во всех трёх формах.",
+);
+translate(
+  "verbs-past",
+  104,
+  "Почему она не отправила приглашения вчера?",
+  "why / she / send / the invitations / yesterday",
+  "Why didn't she send the invitations yesterday?",
+  "Вопрос о прошлом: why + did not + she + send.",
+);
+contrast(
+  "verbs-past",
+  105,
+  "Одно событие, два типа предложения.",
+  [
+    {
+      prompt: "He ___ the old files yesterday.",
+      base: "delete",
+      answer: "deleted",
+    },
+    {
+      prompt: "Did he ___ the old files yesterday?",
+      base: "delete",
+      answer: "delete",
+    },
+  ],
+  "Утверждение: deleted. После did: delete.",
+);
+transform(
+  "verbs-past",
+  106,
+  "The technicians were available yesterday.",
+  "Сделай вопрос.",
+  "Were the technicians available yesterday?",
+  "С be вспомогательный did не нужен: were перед подлежащим.",
+);
 
-contrast('verbs-aspect',101,'Обычная работа и временная ситуация.',[{prompt:'She usually ___ from the office.',base:'work',answer:'works'},{prompt:'This week, she ___ from home.',base:'work',answer:'is working'},{"prompt":"She ___ from the office every Monday.","base":"work","answer":"works"},{"prompt":"Please call later; she ___ with a client right now.","base":"work","answer":"is working"}],'Обычная работа: works. Временное действие на этой неделе: is working. Дополнительные контексты: every/normally обозначают привычку; right now/for this week only — текущий или временный процесс.');
-contrast('verbs-aspect',102,'Регулярная проверка и процесс прямо сейчас.',[{prompt:'We ___ the figures every Friday.',base:'review',answer:'review'},{prompt:'At the moment, we ___ the latest figures.',base:'review',answer:'are reviewing'},{"prompt":"We ___ each report before it is published.","base":"review","answer":"review"},{"prompt":"Please wait; we ___ your application right now.","base":"review","answer":"are reviewing"}],'Every Friday — «каждую пятницу»: это регулярная проверка, поэтому we review (Present Simple). At the moment — «сейчас»: проверка идёт в момент речи, поэтому we are reviewing (Present Continuous). Each report before it is published — обычный порядок работы, review. Right now — процесс прямо сейчас, are reviewing.');
-repair('verbs-aspect',103,"I don't working on the report right now.","I'm not working on the report right now.",'Для процесса: am not + working.');
-translate('verbs-aspect',104,'Она сейчас проверяет договор.','she / check / the contract / right now','She is checking the contract right now.','Процесс в момент речи: is checking.');
-transform('verbs-aspect',105,'The manager is reviewing the applications.','Сделай вопрос.','Is the manager reviewing the applications?','В Continuous перемещается is, форма reviewing сохраняется.');
-repair('verbs-aspect',106,'Our system is stores all changes automatically.','Our system stores all changes automatically.','Регулярная функция системы: stores без is.');
+contrast(
+  "verbs-aspect",
+  101,
+  "Обычная работа и временная ситуация.",
+  [
+    {
+      prompt: "She usually ___ from the office.",
+      base: "work",
+      answer: "works",
+    },
+    {
+      prompt: "This week, she ___ from home.",
+      base: "work",
+      answer: "is working",
+    },
+    {
+      prompt: "She ___ from the office every Monday.",
+      base: "work",
+      answer: "works",
+    },
+    {
+      prompt: "Please call later; she ___ with a client right now.",
+      base: "work",
+      answer: "is working",
+    },
+  ],
+  "Обычная работа: works. Временное действие на этой неделе: is working. Дополнительные контексты: every/normally обозначают привычку; right now/for this week only — текущий или временный процесс.",
+);
+contrast(
+  "verbs-aspect",
+  102,
+  "Регулярная проверка и процесс прямо сейчас.",
+  [
+    {
+      prompt: "We ___ the figures every Friday.",
+      base: "review",
+      answer: "review",
+    },
+    {
+      prompt: "At the moment, we ___ the latest figures.",
+      base: "review",
+      answer: "are reviewing",
+    },
+    {
+      prompt: "We ___ each report before it is published.",
+      base: "review",
+      answer: "review",
+    },
+    {
+      prompt: "Please wait; we ___ your application right now.",
+      base: "review",
+      answer: "are reviewing",
+    },
+  ],
+  "Every Friday — «каждую пятницу»: это регулярная проверка, поэтому we review (Present Simple). At the moment — «сейчас»: проверка идёт в момент речи, поэтому we are reviewing (Present Continuous). Each report before it is published — обычный порядок работы, review. Right now — процесс прямо сейчас, are reviewing.",
+);
+repair(
+  "verbs-aspect",
+  103,
+  "I don't working on the report right now.",
+  "I'm not working on the report right now.",
+  "Для процесса: am not + working.",
+);
+translate(
+  "verbs-aspect",
+  104,
+  "Она сейчас проверяет договор.",
+  "she / check / the contract / right now",
+  "She is checking the contract right now.",
+  "Процесс в момент речи: is checking.",
+);
+transform(
+  "verbs-aspect",
+  105,
+  "The manager is reviewing the applications.",
+  "Сделай вопрос.",
+  "Is the manager reviewing the applications?",
+  "В Continuous перемещается is, форма reviewing сохраняется.",
+);
+repair(
+  "verbs-aspect",
+  106,
+  "Our system is stores all changes automatically.",
+  "Our system stores all changes automatically.",
+  "Регулярная функция системы: stores без is.",
+);
 
-transform('verbs-modal',101,'She explains the delay to the client.','Добавь might. Остальные слова сохрани.','She might explain the delay to the client.','Might + explain без -s и без to.');
-transform('verbs-modal',102,'He will send the updated schedule tonight.','Сделай отрицание.',"He won't send the updated schedule tonight.",'Will not + send, без дополнительного do.');
-repair('verbs-modal',103,'The replacement part might to arrive tomorrow.','The replacement part might arrive tomorrow.','После might инфинитив без to.');
-translate('verbs-modal',104,'Им следует проверить цифры перед встречей.','they / should / check / the figures / before the meeting','They should check the figures before the meeting.','Should + check.');
-contrast('verbs-modal',105,'Результат завтра и процесс в определённое время.',[{prompt:'She will ___ the summary tomorrow.',base:'prepare',answer:'prepare'},{prompt:'At ten tomorrow, she will be ___ the summary.',base:'prepare',answer:'preparing'}],'Will + V для действия. Will be + -ing для процесса в момент будущего.');
-transform('verbs-modal',106,'The team can solve the problem today.','Сделай вопрос.','Can the team solve the problem today?','Can перед подлежащим, solve сохраняется.');
+transform(
+  "verbs-modal",
+  101,
+  "She explains the delay to the client.",
+  "Добавь might. Остальные слова сохрани.",
+  "She might explain the delay to the client.",
+  "Might + explain без -s и без to.",
+);
+transform(
+  "verbs-modal",
+  102,
+  "He will send the updated schedule tonight.",
+  "Сделай отрицание.",
+  "He won't send the updated schedule tonight.",
+  "Will not + send, без дополнительного do.",
+);
+repair(
+  "verbs-modal",
+  103,
+  "The replacement part might to arrive tomorrow.",
+  "The replacement part might arrive tomorrow.",
+  "После might инфинитив без to.",
+);
+translate(
+  "verbs-modal",
+  104,
+  "Им следует проверить цифры перед встречей.",
+  "they / should / check / the figures / before the meeting",
+  "They should check the figures before the meeting.",
+  "Should + check.",
+);
+contrast(
+  "verbs-modal",
+  105,
+  "Результат завтра и процесс в определённое время.",
+  [
+    {
+      prompt: "She will ___ the summary tomorrow.",
+      base: "prepare",
+      answer: "prepare",
+    },
+    {
+      prompt: "At ten tomorrow, she will be ___ the summary.",
+      base: "prepare",
+      answer: "preparing",
+    },
+  ],
+  "Will + V для действия. Will be + -ing для процесса в момент будущего.",
+);
+transform(
+  "verbs-modal",
+  106,
+  "The team can solve the problem today.",
+  "Сделай вопрос.",
+  "Can the team solve the problem today?",
+  "Can перед подлежащим, solve сохраняется.",
+);
 
-contrast('verbs-be',101,'Подлежащее меняет форму be.',[{prompt:'The final version ___ ready now.',base:'be',answer:'is'},{prompt:'The earlier versions ___ ready yesterday.',base:'be',answer:'were'}],'Version: is; versions в прошлом: were.');
-repair('verbs-be',102,'The files was available, but the folder were locked.','The files were available, but the folder was locked.','Files: were; folder: was. Проверь оба подлежащих.');
-transform('verbs-be',103,'The documents were in the shared folder.','Сделай отрицание.',"The documents weren't in the shared folder.",'Be образует отрицание без did.');
-translate('verbs-be',104,'Почему эти документы не были готовы вчера?','why / these documents / ready / yesterday',"Why weren't these documents ready yesterday?",'Множественное число в прошлом: were not.');
-transform('verbs-be',105,'The new instructions are clear.','Замени The new instructions на The new instruction.','The new instruction is clear.','Единственное instruction требует is.');
-repair('verbs-be',106,'Does the equipment is ready for the demonstration?','Is the equipment ready for the demonstration?','Equipment неисчисляемо. Вопрос с is не требует does.');
+contrast(
+  "verbs-be",
+  101,
+  "Подлежащее меняет форму be.",
+  [
+    { prompt: "The final version ___ ready now.", base: "be", answer: "is" },
+    {
+      prompt: "The earlier versions ___ ready yesterday.",
+      base: "be",
+      answer: "were",
+    },
+  ],
+  "Version: is; versions в прошлом: were.",
+);
+repair(
+  "verbs-be",
+  102,
+  "The files was available, but the folder were locked.",
+  "The files were available, but the folder was locked.",
+  "Files: were; folder: was. Проверь оба подлежащих.",
+);
+transform(
+  "verbs-be",
+  103,
+  "The documents were in the shared folder.",
+  "Сделай отрицание.",
+  "The documents weren't in the shared folder.",
+  "Be образует отрицание без did.",
+);
+translate(
+  "verbs-be",
+  104,
+  "Почему эти документы не были готовы вчера?",
+  "why / these documents / ready / yesterday",
+  "Why weren't these documents ready yesterday?",
+  "Множественное число в прошлом: were not.",
+);
+transform(
+  "verbs-be",
+  105,
+  "The new instructions are clear.",
+  "Замени The new instructions на The new instruction.",
+  "The new instruction is clear.",
+  "Единственное instruction требует is.",
+);
+repair(
+  "verbs-be",
+  106,
+  "Does the equipment is ready for the demonstration?",
+  "Is the equipment ready for the demonstration?",
+  "Equipment неисчисляемо. Вопрос с is не требует does.",
+);
 
-contrast('verbs-time',101,'В первом случае Past Simple. Во втором передай результат через Present Perfect; впиши всю глагольную группу.',[{prompt:'We ___ the fix yesterday.',base:'release',answer:'released'},{prompt:'We ___ the fix already.',base:'release',answer:'have released'}],'Yesterday задаёт законченное прошлое. Have already требует past participle. Формы здесь совпадают, конструкции различаются.');
-translate('verbs-time',102,'Они ещё не отправили документы.','they / send / the documents / yet',"They haven't sent the documents yet.",'Yet в таком отрицании: have not + sent.');
-repair('verbs-time',103,'I have met the supplier last Tuesday.','I met the supplier last Tuesday.','Last Tuesday: законченное прошлое, met без have.');
-transform('verbs-time',104,'She has already approved the changes.','Сделай общий вопрос.','Has she already approved the changes?','В Present Perfect перемещается has.');
-contrast('verbs-time',105,'Различи завершённое прошлое и результат к настоящему.',[{prompt:'Yesterday, I ___ to the new supplier.',base:'speak',answer:'spoke'},{prompt:'I have already ___ to the new supplier.',base:'speak',answer:'spoken'}],'Past Simple: spoke. Present Perfect: have spoken.');
-translate('verbs-time',106,'Когда вы получили окончательное подтверждение?','when / you / receive / the final confirmation','When did you receive the final confirmation?','When спрашивает о завершённом событии: did + receive.');
+contrast(
+  "verbs-time",
+  101,
+  "В первом случае Past Simple. Во втором передай результат через Present Perfect; впиши всю глагольную группу.",
+  [
+    {
+      prompt: "We ___ the fix yesterday.",
+      base: "release",
+      answer: "released",
+    },
+    {
+      prompt: "We ___ the fix already.",
+      base: "release",
+      answer: "have released",
+    },
+  ],
+  "Yesterday задаёт законченное прошлое. Have already требует past participle. Формы здесь совпадают, конструкции различаются.",
+);
+translate(
+  "verbs-time",
+  102,
+  "Они ещё не отправили документы.",
+  "they / send / the documents / yet",
+  "They haven't sent the documents yet.",
+  "Yet в таком отрицании: have not + sent.",
+);
+repair(
+  "verbs-time",
+  103,
+  "I have met the supplier last Tuesday.",
+  "I met the supplier last Tuesday.",
+  "Last Tuesday задаёт конкретный, уже закончившийся момент: «в прошлый вторник». Поэтому I met, без have. Present Perfect оставил бы связь с настоящим, которой здесь нет.",
+  {
+    cue: "Я встретился с поставщиком в прошлый вторник.",
+    task: "Проверь, как глагол оформляет событие, закончившееся во вторник. Исправь только форму глагола.",
+  },
+);
+transform(
+  "verbs-time",
+  104,
+  "She has already approved the changes.",
+  "Сделай общий вопрос.",
+  "Has she already approved the changes?",
+  "В Present Perfect перемещается has.",
+);
+contrast(
+  "verbs-time",
+  105,
+  "Различи завершённое прошлое и результат к настоящему.",
+  [
+    {
+      prompt: "Yesterday, I ___ to the new supplier.",
+      base: "speak",
+      answer: "spoke",
+    },
+    {
+      prompt: "I have already ___ to the new supplier.",
+      base: "speak",
+      answer: "spoken",
+    },
+  ],
+  "Past Simple: spoke. Present Perfect: have spoken.",
+);
+translate(
+  "verbs-time",
+  106,
+  "Когда вы получили окончательное подтверждение?",
+  "when / you / receive / the final confirmation",
+  "When did you receive the final confirmation?",
+  "When спрашивает о завершённом событии: did + receive.",
+);
 
-repair('structure-question',101,'Can you tell me why did they reject the proposal?','Can you tell me why they rejected the proposal?','Внутри косвенного вопроса: they rejected без did.');
-transform('structure-question',102,'Where does the next meeting take place?','Начни с Do you know, сохрани остальную лексику.','Do you know where the next meeting takes place?','В косвенном вопросе исчезает does; takes согласуется с meeting.');
-translate('structure-links',101,'Я остался дома, потому что устал.','I / stay home / because / tired','I stayed home because I was tired.','Because связывает результат с причиной; обе части должны иметь глагол.');
-transform('structure-links',102,'I missed the bus because I left home late.','Передай причину первой, используя so.','I left home late, so I missed the bus.','После so идёт следствие.');
-repair('nouns-number',101,'Every employees have another tasks.','Every employee has other tasks.','Every + singular + has; tasks требует other.');
-transform('nouns-number',102,'We need another reviewer.','Замени reviewer на reviewers.','We need other reviewers.','Another с singular; other с plural.');
-repair('nouns-count',101,'She gave me three useful advices.','She gave me three useful pieces of advice.','Advice нельзя посчитать через -s: pieces of advice.');
-translate('nouns-count',102,'Мы провели два исследования.','we / conduct / two / studies','We conducted two studies.','Для отдельных исследований: studies; research обычно неисчисляемо.');
-repair('patterns-modal',101,'You should to ask before making a change.','You should ask before making a change.','После should: ask без to. После before: making.');
-transform('patterns-modal',102,'She wants to explain the difference.','Замени wants to на can.','She can explain the difference.','При смене модели убирается to.');
-repair('patterns-inf',101,'They decided postpone the launch instead of to rush it.','They decided to postpone the launch instead of rushing it.','Decide + to; instead of + -ing.');
-translate('patterns-inf',102,'Она хорошо объясняет сложные идеи.','she / good at / explain / complex ideas','She is good at explaining complex ideas.','После at: explaining. Good требует is.');
-repair('chunks-object',101,'We discussed about the proposal and applied to the vacancy.','We discussed the proposal and applied for the vacancy.','Discuss без about; apply for a vacancy.');
-translate('chunks-object',102,'Она подала заявку в эту компанию.','she / apply / to / this company','She applied to this company.','Apply to компанию; apply for должность.');
-repair('chunks-fixed',101,'It depends of the budget, so focus in the main issue.','It depends on the budget, so focus on the main issue.','Depend on и focus on: два устойчивых чанка.');
-translate('chunks-fixed',102,'Мы использовали звонок вместо письма.','we / use / a call / instead of / an email','We used a call instead of an email.','Instead of перед существительным.');
-repair('lexicon-form',101,'He wants to become fame and success.','He wants to become famous and successful.','После become нужны прилагательные famous и successful.');
-transform('lexicon-form',102,'The experiment was a success.','Начни с The experiment was, используй successful.','The experiment was successful.','Success: noun; successful: adjective, без a.');
-repair('lexicon-word',101,'We need to do a decision before the price will raise.','We need to make a decision before the price rises.','Make a decision; price rises без объекта; после before при будущем смысле Present Simple.');
-translate('lexicon-word',102,'Объясни, почему цена такая высокая.','explain / why / the price / so high','Explain why the price is so high.','Косвенный вопрос: the price is; high описывает цену.');
-repair('reference-person',101,'The people which asked for help received it.','The people who asked for help received it.','Для людей: who (также допустимо that).');
-transform('reference-person',102,'The client sent his comments. We replied to him.','Замени The client на The clients.','The clients sent their comments. We replied to them.','Меняются референты his → their, him → them.');
-repair('reference-object',101,"The system changed it's default settings.",'The system changed its default settings.','Its: принадлежность; it’s: it is/it has.');
-translate('reference-object',102,'Это устройство, которое мы заменили вчера.','this / the device / which / we / replace / yesterday','This is the device which we replaced yesterday.','Which относится к устройству; also that допустимо.');
+repair(
+  "structure-question",
+  101,
+  "Can you tell me why did they reject the proposal?",
+  "Can you tell me why they rejected the proposal?",
+  "Внутри косвенного вопроса: they rejected без did.",
+);
+transform(
+  "structure-question",
+  102,
+  "Where does the next meeting take place?",
+  "Начни с Do you know, сохрани остальную лексику.",
+  "Do you know where the next meeting takes place?",
+  "В косвенном вопросе исчезает does; takes согласуется с meeting.",
+);
+translate(
+  "structure-links",
+  101,
+  "Я остался дома, потому что устал.",
+  "I / stay home / because / tired",
+  "I stayed home because I was tired.",
+  "Because связывает результат с причиной; обе части должны иметь глагол.",
+);
+transform(
+  "structure-links",
+  102,
+  "I missed the bus because I left home late.",
+  "Передай причину первой, используя so.",
+  "I left home late, so I missed the bus.",
+  "После so идёт следствие.",
+);
+repair(
+  "nouns-number",
+  101,
+  "Every employees have another tasks.",
+  "Every employee has other tasks.",
+  "Every + singular + has; tasks требует other.",
+);
+transform(
+  "nouns-number",
+  102,
+  "We need another reviewer.",
+  "Замени reviewer на reviewers.",
+  "We need other reviewers.",
+  "Another с singular; other с plural.",
+);
+repair(
+  "nouns-count",
+  101,
+  "She gave me three useful advices.",
+  "She gave me three useful pieces of advice.",
+  "Advice нельзя посчитать через -s: pieces of advice.",
+);
+translate(
+  "nouns-count",
+  102,
+  "Мы провели два исследования.",
+  "we / conduct / two / studies",
+  "We conducted two studies.",
+  "Для отдельных исследований: studies; research обычно неисчисляемо.",
+);
+repair(
+  "patterns-modal",
+  101,
+  "You should to ask before making a change.",
+  "You should ask before making a change.",
+  "После should: ask без to. После before: making.",
+);
+transform(
+  "patterns-modal",
+  102,
+  "She wants to explain the difference.",
+  "Замени wants to на can.",
+  "She can explain the difference.",
+  "При смене модели убирается to.",
+);
+repair(
+  "patterns-inf",
+  101,
+  "They decided postpone the launch instead of to rush it.",
+  "They decided to postpone the launch instead of rushing it.",
+  "Decide + to; instead of + -ing.",
+);
+translate(
+  "patterns-inf",
+  102,
+  "Она хорошо объясняет сложные идеи.",
+  "she / good at / explain / complex ideas",
+  "She is good at explaining complex ideas.",
+  "После at: explaining. Good требует is.",
+);
+repair(
+  "chunks-object",
+  101,
+  "We discussed about the proposal and applied to the vacancy.",
+  "We discussed the proposal and applied for the vacancy.",
+  "Discuss без about; apply for a vacancy.",
+);
+translate(
+  "chunks-object",
+  102,
+  "Она подала заявку в эту компанию.",
+  "she / apply / to / this company",
+  "She applied to this company.",
+  "Apply to компанию; apply for должность.",
+);
+repair(
+  "chunks-fixed",
+  101,
+  "It depends of the budget, so focus in the main issue.",
+  "It depends on the budget, so focus on the main issue.",
+  "Depend on и focus on: два устойчивых чанка.",
+);
+translate(
+  "chunks-fixed",
+  102,
+  "Мы использовали звонок вместо письма.",
+  "we / use / a call / instead of / an email",
+  "We used a call instead of an email.",
+  "Instead of перед существительным.",
+);
+repair(
+  "lexicon-form",
+  101,
+  "He wants to become fame and success.",
+  "He wants to become famous and successful.",
+  "После become нужны прилагательные famous и successful.",
+);
+transform(
+  "lexicon-form",
+  102,
+  "The experiment was a success.",
+  "Начни с The experiment was, используй successful.",
+  "The experiment was successful.",
+  "Success: noun; successful: adjective, без a.",
+);
+repair(
+  "lexicon-word",
+  101,
+  "We need to do a decision before the price will raise.",
+  "We need to make a decision before the price rises.",
+  "Make a decision; price rises без объекта; после before при будущем смысле Present Simple.",
+);
+translate(
+  "lexicon-word",
+  102,
+  "Объясни, почему цена такая высокая.",
+  "explain / why / the price / so high",
+  "Explain why the price is so high.",
+  "Косвенный вопрос: the price is; high описывает цену.",
+);
+repair(
+  "reference-person",
+  101,
+  "The people which asked for help received it.",
+  "The people who asked for help received it.",
+  "Для людей: who (также допустимо that).",
+);
+transform(
+  "reference-person",
+  102,
+  "The client sent his comments. We replied to him.",
+  "Замени The client на The clients.",
+  "The clients sent their comments. We replied to them.",
+  "Меняются референты his → their, him → them.",
+);
+repair(
+  "reference-object",
+  101,
+  "The system changed it's default settings.",
+  "The system changed its default settings.",
+  "Its: принадлежность; it’s: it is/it has.",
+);
+translate(
+  "reference-object",
+  102,
+  "Это устройство, которое мы заменили вчера.",
+  "this / the device / which / we / replace / yesterday",
+  "This is the device which we replaced yesterday.",
+  "Which относится к устройству; also that допустимо.",
+);
 
 // Practice expansion 2026-10-06: new contexts across all 18 skills.
 // Each family checks one target skill; derived choice/match/oral cards stay in that family.
-repair('verbs-agreement',107,'How often does the service sends a status update?','How often does the service send a status update?','В вопросе does уже несёт форму третьего лица; после него send без -s.');
-transform('verbs-agreement',108,'The help desk answers urgent requests before noon.','Сделай отрицание, сохрани остальные слова.',"The help desk doesn't answer urgent requests before noon.",'В отрицании does not показывает третье лицо, поэтому answer без -s.');
-contrast('verbs-agreement',109,'Сравни одного специалиста и нескольких специалистов.',[{prompt:'Each technician ___ the safety check before work.',base:'complete',answer:'completes'},{prompt:'The technicians ___ the safety check before work.',base:'complete',answer:'complete'}],'Each technician — единственное число; technicians — множественное. Форма глагола меняется вместе с подлежащим.');
-translate('verbs-agreement',110,'Почему этот прибор останавливается после каждого цикла?','why / this device / stop / after each cycle','Why does this device stop after each cycle?','В вопросе с this device нужен does, а основной глагол остаётся в начальной форме.');
-add('verbs-agreement',111,'gap',2,'Each request ___ a confirmation email within one minute.','receives','После подлежащего в единственном числе в Present Simple нужен глагол с -s.',{cue:'Каждая заявка получает письмо-подтверждение в течение минуты.',base:'receive',choices:['receives','receive']});
-repair('verbs-agreement',112,'The supervisor reviews each request and approve the final changes.','The supervisor reviews each request and approves the final changes.','Оба глагола относятся к единственному числу supervisor: reviews и approves.');
+repair(
+  "verbs-agreement",
+  107,
+  "How often does the service sends a status update?",
+  "How often does the service send a status update?",
+  "В вопросе does уже несёт форму третьего лица; после него send без -s.",
+);
+transform(
+  "verbs-agreement",
+  108,
+  "The help desk answers urgent requests before noon.",
+  "Сделай отрицание, сохрани остальные слова.",
+  "The help desk doesn't answer urgent requests before noon.",
+  "В отрицании does not показывает третье лицо, поэтому answer без -s.",
+);
+contrast(
+  "verbs-agreement",
+  109,
+  "Сравни одного специалиста и нескольких специалистов.",
+  [
+    {
+      prompt: "Each technician ___ the safety check before work.",
+      base: "complete",
+      answer: "completes",
+    },
+    {
+      prompt: "The technicians ___ the safety check before work.",
+      base: "complete",
+      answer: "complete",
+    },
+  ],
+  "Each technician — единственное число; technicians — множественное. Форма глагола меняется вместе с подлежащим.",
+);
+translate(
+  "verbs-agreement",
+  110,
+  "Почему этот прибор останавливается после каждого цикла?",
+  "why / this device / stop / after each cycle",
+  "Why does this device stop after each cycle?",
+  "В вопросе с this device нужен does, а основной глагол остаётся в начальной форме.",
+);
+add(
+  "verbs-agreement",
+  111,
+  "gap",
+  2,
+  "Each request ___ a confirmation email within one minute.",
+  "receives",
+  "После подлежащего в единственном числе в Present Simple нужен глагол с -s.",
+  {
+    cue: "Каждая заявка получает письмо-подтверждение в течение минуты.",
+    base: "receive",
+    choices: ["receives", "receive"],
+  },
+);
+repair(
+  "verbs-agreement",
+  112,
+  "The supervisor reviews each request and approve the final changes.",
+  "The supervisor reviews each request and approves the final changes.",
+  "Оба глагола относятся к единственному числу supervisor: reviews и approves.",
+);
 
-transform('verbs-past',107,'The courier brought the replacement key yesterday.','Сделай отрицание, сохрани время и остальные слова.',"The courier didn't bring the replacement key yesterday.",'Did not показывает прошедшее время; после него bring, не brought.');
-repair('verbs-past',108,'Did the supplier sent the updated invoice on Monday?','Did the supplier send the updated invoice on Monday?','После did основной глагол стоит в начальной форме: send.');
-translate('verbs-past',109,'Они выбрали более короткий маршрут и прибыли до темноты.','they / choose / a shorter route / and / arrive / before dark','They chose a shorter route and arrived before dark.','Оба события завершились в прошлом: нужны формы chose и arrived.');
-contrast('verbs-past',110,'Сравни утверждение о прошлом и вопрос с did.',[{prompt:'Maya ___ a backup copy last night.',base:'make',answer:'made'},{prompt:'Did Maya ___ a backup copy last night?',base:'make',answer:'make'}],'В утверждении нужен Past Simple made; did уже задаёт прошедшее время, поэтому после него make.');
-add('verbs-past',111,'gap',2,'The team ___ the archived files before the audit began.','saved','Завершённое действие в прошлом требует формы Past Simple saved.',{cue:'Команда сохранила архивные файлы до начала проверки.',base:'save',choices:['saved','save']});
-transform('verbs-past',112,'The engineer did not find the source of the fault.','Переделай в утвердительное предложение, сохрани остальные слова.','The engineer found the source of the fault.','В утвердительном Past Simple did not исчезает, а find принимает форму found.');
+transform(
+  "verbs-past",
+  107,
+  "The courier brought the replacement key yesterday.",
+  "Сделай отрицание, сохрани время и остальные слова.",
+  "The courier didn't bring the replacement key yesterday.",
+  "Did not показывает прошедшее время; после него bring, не brought.",
+);
+repair(
+  "verbs-past",
+  108,
+  "Did the supplier sent the updated invoice on Monday?",
+  "Did the supplier send the updated invoice on Monday?",
+  "После did основной глагол стоит в начальной форме: send.",
+);
+translate(
+  "verbs-past",
+  109,
+  "Они выбрали более короткий маршрут и прибыли до темноты.",
+  "they / choose / a shorter route / and / arrive / before dark",
+  "They chose a shorter route and arrived before dark.",
+  "Оба события завершились в прошлом: нужны формы chose и arrived.",
+);
+contrast(
+  "verbs-past",
+  110,
+  "Сравни утверждение о прошлом и вопрос с did.",
+  [
+    {
+      prompt: "Maya ___ a backup copy last night.",
+      base: "make",
+      answer: "made",
+    },
+    {
+      prompt: "Did Maya ___ a backup copy last night?",
+      base: "make",
+      answer: "make",
+    },
+  ],
+  "В утверждении нужен Past Simple made; did уже задаёт прошедшее время, поэтому после него make.",
+);
+add(
+  "verbs-past",
+  111,
+  "gap",
+  2,
+  "The team ___ the archived files before the audit began.",
+  "saved",
+  "Завершённое действие в прошлом требует формы Past Simple saved.",
+  {
+    cue: "Команда сохранила архивные файлы до начала проверки.",
+    base: "save",
+    choices: ["saved", "save"],
+  },
+);
+transform(
+  "verbs-past",
+  112,
+  "The engineer did not find the source of the fault.",
+  "Переделай в утвердительное предложение, сохрани остальные слова.",
+  "The engineer found the source of the fault.",
+  "В утвердительном Past Simple did not исчезает, а find принимает форму found.",
+);
 
-contrast('verbs-aspect',107,'Отличи постоянную услугу от временного изменения на этой неделе.',[{prompt:'The clinic usually ___ evening appointments.',base:'offer',answer:'offers'},{prompt:'This week, the clinic ___ a temporary evening service.',base:'offer',answer:'is offering'},{"prompt":"The clinic ___ free checkups every spring.","base":"offer","answer":"offers"},{"prompt":"For this week only, the clinic ___ free evening checkups.","base":"offer","answer":"is offering"}],'Usually описывает постоянную услугу: offers. This week задаёт временный процесс: is offering. Дополнительные контексты: every/normally обозначают привычку; right now/for this week only — текущий или временный процесс.');
-repair('verbs-aspect',108,'Our editors are review the final copy every Friday.','Our editors review the final copy every Friday.','Повторяющееся действие с every Friday выражается Present Simple: review без are.');
-transform('verbs-aspect',109,'The assistant is checking incoming orders right now.','Опиши её обычную обязанность: она проверяет входящие заказы каждое утро.','The assistant checks incoming orders every morning.','Every morning задаёт привычку: Present Simple checks, без is.');
-translate('verbs-aspect',110,'Сейчас архитектор обсуждает изменения с командой.','the architect / discuss / the changes / with the team / right now','The architect is discussing the changes with the team right now.','Right now указывает на процесс в момент речи: is + discussing.');
-add('verbs-aspect',111,'gap',2,'For the next two weeks, our team ___ a new filing system.','is testing','Ограниченный период обозначает временный процесс: is + testing.',{cue:'В ближайшие две недели наша команда тестирует новую систему хранения.',base:'test',choices:['is testing','is test']});
-contrast('verbs-aspect',112,'Сопоставь повторяющуюся проверку и действие в момент речи.',[{prompt:'I ___ the inventory every Thursday.',base:'check',answer:'check'},{prompt:'I ___ the inventory at the moment.',base:'check',answer:'am checking'},{"prompt":"I ___ every delivery before signing for it.","base":"check","answer":"check"},{"prompt":"Please wait; I ___ the delivery right now.","base":"check","answer":"am checking"}],'Every Thursday — регулярность, поэтому check. At the moment — текущий процесс, поэтому am checking. Дополнительные контексты: every/normally обозначают привычку; right now/for this week only — текущий или временный процесс.');
+contrast(
+  "verbs-aspect",
+  107,
+  "Отличи постоянную услугу от временного изменения на этой неделе.",
+  [
+    {
+      prompt: "The clinic usually ___ evening appointments.",
+      base: "offer",
+      answer: "offers",
+    },
+    {
+      prompt: "This week, the clinic ___ a temporary evening service.",
+      base: "offer",
+      answer: "is offering",
+    },
+    {
+      prompt: "The clinic ___ free checkups every spring.",
+      base: "offer",
+      answer: "offers",
+    },
+    {
+      prompt: "For this week only, the clinic ___ free evening checkups.",
+      base: "offer",
+      answer: "is offering",
+    },
+  ],
+  "Usually описывает постоянную услугу: offers. This week задаёт временный процесс: is offering. Дополнительные контексты: every/normally обозначают привычку; right now/for this week only — текущий или временный процесс.",
+);
+repair(
+  "verbs-aspect",
+  108,
+  "Our editors are review the final copy every Friday.",
+  "Our editors review the final copy every Friday.",
+  "Повторяющееся действие с every Friday выражается Present Simple: review без are.",
+);
+transform(
+  "verbs-aspect",
+  109,
+  "The assistant is checking incoming orders right now.",
+  "Опиши её обычную обязанность: она проверяет входящие заказы каждое утро.",
+  "The assistant checks incoming orders every morning.",
+  "Every morning задаёт привычку: Present Simple checks, без is.",
+);
+translate(
+  "verbs-aspect",
+  110,
+  "Сейчас архитектор обсуждает изменения с командой.",
+  "the architect / discuss / the changes / with the team / right now",
+  "The architect is discussing the changes with the team right now.",
+  "Right now указывает на процесс в момент речи: is + discussing.",
+);
+add(
+  "verbs-aspect",
+  111,
+  "gap",
+  2,
+  "For the next two weeks, our team ___ a new filing system.",
+  "is testing",
+  "Ограниченный период обозначает временный процесс: is + testing.",
+  {
+    cue: "В ближайшие две недели наша команда тестирует новую систему хранения.",
+    base: "test",
+    choices: ["is testing", "is test"],
+  },
+);
+contrast(
+  "verbs-aspect",
+  112,
+  "Сопоставь повторяющуюся проверку и действие в момент речи.",
+  [
+    {
+      prompt: "I ___ the inventory every Thursday.",
+      base: "check",
+      answer: "check",
+    },
+    {
+      prompt: "I ___ the inventory at the moment.",
+      base: "check",
+      answer: "am checking",
+    },
+    {
+      prompt: "I ___ every delivery before signing for it.",
+      base: "check",
+      answer: "check",
+    },
+    {
+      prompt: "Please wait; I ___ the delivery right now.",
+      base: "check",
+      answer: "am checking",
+    },
+  ],
+  "Every Thursday — регулярность, поэтому check. At the moment — текущий процесс, поэтому am checking. Дополнительные контексты: every/normally обозначают привычку; right now/for this week only — текущий или временный процесс.",
+);
 
-repair('verbs-modal',107,'Each analyst should checks the figures before the call.','Each analyst should check the figures before the call.','После should используется начальная форма check, даже если подлежащее в единственном числе.');
-transform('verbs-modal',108,'The technician explains the delay to the client.','Добавь might перед основным глаголом. Остальные слова сохрани.','The technician might explain the delay to the client.','После might используется начальная форма explain без -s и без to.');
-translate('verbs-modal',109,'Завтра нам необходимо проверить цифры до встречи.','we / must / check / the figures / before the meeting tomorrow','We must check the figures before the meeting tomorrow.','Must выражает необходимость; после модального глагола используется начальная форма check.');
-contrast('verbs-modal',110,'Сравни действие завтра и процесс ровно в десять часов завтра.',[{prompt:'Nora will ___ the summary tomorrow.',base:'prepare',answer:'prepare'},{prompt:'At ten tomorrow, Nora will be ___ the summary.',base:'prepare',answer:'preparing'}],'Для действия подойдёт will prepare; для процесса в конкретный будущий момент — will be preparing.');
-add('verbs-modal',111,'gap',2,'The revised model may ___ less energy during the night.','use','После may используется начальная форма глагола без to.',{cue:'Обновлённая модель может потреблять меньше энергии ночью.',base:'use',choices:['use','to use']});
-transform('verbs-modal',112,'The driver will call the warehouse after lunch.','Сделай общий вопрос, сохрани остальные слова.','Will the driver call the warehouse after lunch?','В вопросе will ставится перед подлежащим; call остаётся в начальной форме.');
+repair(
+  "verbs-modal",
+  107,
+  "Each analyst should checks the figures before the call.",
+  "Each analyst should check the figures before the call.",
+  "После should используется начальная форма check, даже если подлежащее в единственном числе.",
+);
+transform(
+  "verbs-modal",
+  108,
+  "The technician explains the delay to the client.",
+  "Добавь might перед основным глаголом. Остальные слова сохрани.",
+  "The technician might explain the delay to the client.",
+  "После might используется начальная форма explain без -s и без to.",
+);
+translate(
+  "verbs-modal",
+  109,
+  "Завтра нам необходимо проверить цифры до встречи.",
+  "we / must / check / the figures / before the meeting tomorrow",
+  "We must check the figures before the meeting tomorrow.",
+  "Must выражает необходимость; после модального глагола используется начальная форма check.",
+);
+contrast(
+  "verbs-modal",
+  110,
+  "Сравни действие завтра и процесс ровно в десять часов завтра.",
+  [
+    {
+      prompt: "Nora will ___ the summary tomorrow.",
+      base: "prepare",
+      answer: "prepare",
+    },
+    {
+      prompt: "At ten tomorrow, Nora will be ___ the summary.",
+      base: "prepare",
+      answer: "preparing",
+    },
+  ],
+  "Для действия подойдёт will prepare; для процесса в конкретный будущий момент — will be preparing.",
+);
+add(
+  "verbs-modal",
+  111,
+  "gap",
+  2,
+  "The revised model may ___ less energy during the night.",
+  "use",
+  "После may используется начальная форма глагола без to.",
+  {
+    cue: "Обновлённая модель может потреблять меньше энергии ночью.",
+    base: "use",
+    choices: ["use", "to use"],
+  },
+);
+transform(
+  "verbs-modal",
+  112,
+  "The driver will call the warehouse after lunch.",
+  "Сделай общий вопрос, сохрани остальные слова.",
+  "Will the driver call the warehouse after lunch?",
+  "В вопросе will ставится перед подлежащим; call остаётся в начальной форме.",
+);
 
-repair('verbs-be',107,'The receipts is ready, but the invoice are still missing.','The receipts are ready, but the invoice is still missing.','Форму be согласуй с каждым подлежащим отдельно: receipts are, invoice is.');
-transform('verbs-be',108,'The reports were in the archive yesterday.','Сделай общий вопрос, сохрани остальные слова.','Were the reports in the archive yesterday?','С was/were вопрос образуется перестановкой be перед подлежащим, без did.');
-translate('verbs-be',109,'Почему новый специалист доступен только по понедельникам?','why / the new specialist / available / only on Mondays','Why is the new specialist available only on Mondays?','Единственное число и настоящее время требуют is; в вопросе is стоит перед подлежащим.');
-contrast('verbs-be',110,'Подбери be по числу подлежащего и времени.',[{prompt:'The final version ___ ready now.',base:'be',answer:'is'},{prompt:'The earlier versions ___ ready yesterday.',base:'be',answer:'were'}],'Version в настоящем — is; versions во вчерашней ситуации — were.');
-add('verbs-be',111,'gap',2,'All the equipment ___ inspected before each demonstration.','is','Equipment обычно неисчисляемое существительное в единственном числе, поэтому здесь is.',{cue:'Всё оборудование проверяют перед каждой демонстрацией.',base:'be',choices:['is','are']});
-repair('verbs-be',112,'Were the revised schedule available to all departments?','Was the revised schedule available to all departments?','Подлежащее schedule в единственном числе, поэтому в прошедшем времени нужно was.');
+repair(
+  "verbs-be",
+  107,
+  "The receipts is ready, but the invoice are still missing.",
+  "The receipts are ready, but the invoice is still missing.",
+  "Форму be согласуй с каждым подлежащим отдельно: receipts are, invoice is.",
+);
+transform(
+  "verbs-be",
+  108,
+  "The reports were in the archive yesterday.",
+  "Сделай общий вопрос, сохрани остальные слова.",
+  "Were the reports in the archive yesterday?",
+  "С was/were вопрос образуется перестановкой be перед подлежащим, без did.",
+);
+translate(
+  "verbs-be",
+  109,
+  "Почему новый специалист доступен только по понедельникам?",
+  "why / the new specialist / available / only on Mondays",
+  "Why is the new specialist available only on Mondays?",
+  "Единственное число и настоящее время требуют is; в вопросе is стоит перед подлежащим.",
+);
+contrast(
+  "verbs-be",
+  110,
+  "Подбери be по числу подлежащего и времени.",
+  [
+    { prompt: "The final version ___ ready now.", base: "be", answer: "is" },
+    {
+      prompt: "The earlier versions ___ ready yesterday.",
+      base: "be",
+      answer: "were",
+    },
+  ],
+  "Version в настоящем — is; versions во вчерашней ситуации — were.",
+);
+add(
+  "verbs-be",
+  111,
+  "gap",
+  2,
+  "All the equipment ___ inspected before each demonstration.",
+  "is",
+  "Equipment обычно неисчисляемое существительное в единственном числе, поэтому здесь is.",
+  {
+    cue: "Всё оборудование проверяют перед каждой демонстрацией.",
+    base: "be",
+    choices: ["is", "are"],
+  },
+);
+repair(
+  "verbs-be",
+  112,
+  "Were the revised schedule available to all departments?",
+  "Was the revised schedule available to all departments?",
+  "Подлежащее schedule в единственном числе, поэтому в прошедшем времени нужно was.",
+);
 
-contrast('verbs-time',107,'В первой части укажи законченное событие вчера; во второй обязательно используй Present Perfect, чтобы сообщить о результате сейчас.',[{prompt:'We ___ the security update yesterday.',base:'install',answer:'installed'},{prompt:'We ___ the security update already, so the system is protected now.',base:'install',answer:'have installed'}],'Yesterday задаёт Past Simple. Во второй части условие прямо требует Present Perfect для актуального результата: have installed.');
-repair('verbs-time',108,'They have submitted the signed form at 3 p.m. yesterday.','They submitted the signed form at 3 p.m. yesterday.','Точный законченный момент yesterday требует Past Simple без have.');
-translate('verbs-time',109,'Аудиторы уже закончили проверку; результаты доступны сейчас. Используй Present Perfect.','the auditors / already / finish / the inspection / and / the results / be available now','The auditors have already finished the inspection, and the results are available now.','Условие требует Present Perfect для проверки с актуальным результатом: have finished.');
-repair('verbs-time',110,'Have you received the access code last Tuesday?','Did you receive the access code last Tuesday?','Last Tuesday — законченный момент прошлого; вопрос строится с did + receive.');
-transform('verbs-time',111,'I have used this archive before.','Спроси собеседника, пользовался ли он этим архивом когда-либо.','Have you ever used this archive?','Опыт до настоящего момента без конкретной даты передаётся через Have you ever + причастие.');
-add('verbs-time',112,'gap',2,'We have not ___ the updated schedule yet.','received','В Present Perfect после have not используется past participle; yet связывает ситуацию с настоящим.',{cue:'Мы пока не получили обновлённое расписание.',base:'receive',choices:['received','receive']});
+contrast(
+  "verbs-time",
+  107,
+  "В первой части укажи законченное событие вчера; во второй обязательно используй Present Perfect, чтобы сообщить о результате сейчас.",
+  [
+    {
+      prompt: "We ___ the security update yesterday.",
+      base: "install",
+      answer: "installed",
+    },
+    {
+      prompt:
+        "We ___ the security update already, so the system is protected now.",
+      base: "install",
+      answer: "have installed",
+    },
+  ],
+  "Yesterday задаёт Past Simple. Во второй части условие прямо требует Present Perfect для актуального результата: have installed.",
+);
+repair(
+  "verbs-time",
+  108,
+  "They have submitted the signed form at 3 p.m. yesterday.",
+  "They submitted the signed form at 3 p.m. yesterday.",
+  "Фраза говорит о подаче формы вчера в 3 часа: событие завершено в точно указанное время. Поэтому They submitted, без have.",
+  {
+    cue: "Они подали подписанную форму вчера в три часа дня.",
+    task: "Проверь форму глагола для завершённого события в точно указанное время. Исправь только форму глагола.",
+  },
+);
+translate(
+  "verbs-time",
+  109,
+  "Аудиторы уже закончили проверку; результаты доступны сейчас. Используй Present Perfect.",
+  "the auditors / already / finish / the inspection / and / the results / be available now",
+  "The auditors have already finished the inspection, and the results are available now.",
+  "Условие требует Present Perfect для проверки с актуальным результатом: have finished.",
+);
+repair(
+  "verbs-time",
+  110,
+  "Have you received the access code last Tuesday?",
+  "Did you receive the access code last Tuesday?",
+  "Last Tuesday означает «в прошлый вторник» и задаёт законченное прошлое. Поэтому вопрос строится с did, а после did глагол receive остаётся в начальной форме.",
+  {
+    cue: "Ты получил код доступа в прошлый вторник?",
+    task: "Проверь форму вопроса о событии в прошлый вторник. Исправь только глагольную группу.",
+  },
+);
+transform(
+  "verbs-time",
+  111,
+  "I have used this archive before.",
+  "Спроси собеседника, пользовался ли он этим архивом когда-либо.",
+  "Have you ever used this archive?",
+  "Опыт до настоящего момента без конкретной даты передаётся через Have you ever + причастие.",
+);
+add(
+  "verbs-time",
+  112,
+  "gap",
+  2,
+  "We have not ___ the updated schedule yet.",
+  "received",
+  "В Present Perfect после have not используется past participle; yet связывает ситуацию с настоящим.",
+  {
+    cue: "Мы пока не получили обновлённое расписание.",
+    base: "receive",
+    choices: ["received", "receive"],
+  },
+);
 
-repair('structure-question',103,'Could you explain why does the scanner stop after page ten?','Could you explain why the scanner stops after page ten?','Внутри косвенного вопроса порядок слов прямой: the scanner stops, без does.');
-transform('structure-question',104,'Why is the printer unavailable today?','Начни с Do you know. Остальную лексику сохрани.','Do you know why the printer is unavailable today?','После Do you know используется порядок подлежащего и сказуемого: the printer is.');
-translate('structure-question',105,'Ты можешь сказать мне, когда заканчивается регистрация?','can / you / tell / me / when / registration / end','Can you tell me when registration ends?','Внутри косвенного вопроса нет инверсии: registration ends. Также нормативно: Can you tell me when the registration ends?');
-contrast('structure-question',106,'Сравни прямой вопрос и тот же вопрос внутри вежливой фразы.',[{prompt:'Where ___ the archive store older invoices?',base:'do',answer:'does'},{prompt:'Could you tell me where ___ older invoices?',base:'store',answer:'the archive stores'}],'Прямой вопрос использует does the archive store; внутри could you tell me нужен порядок the archive stores.');
-add('structure-question',107,'gap',2,'Could you tell me when the morning train ___?','leaves','Внутри косвенного вопроса используется прямой порядок слов; после the morning train глагол получает -s.',{cue:'Ты можешь сказать, когда отправляется утренний поезд?',base:'leave',choices:['leaves','does the morning train leave']});
+repair(
+  "structure-question",
+  103,
+  "Could you explain why does the scanner stop after page ten?",
+  "Could you explain why the scanner stops after page ten?",
+  "Внутри косвенного вопроса порядок слов прямой: the scanner stops, без does.",
+);
+transform(
+  "structure-question",
+  104,
+  "Why is the printer unavailable today?",
+  "Начни с Do you know. Остальную лексику сохрани.",
+  "Do you know why the printer is unavailable today?",
+  "После Do you know используется порядок подлежащего и сказуемого: the printer is.",
+);
+translate(
+  "structure-question",
+  105,
+  "Ты можешь сказать мне, когда заканчивается регистрация?",
+  "can / you / tell / me / when / registration / end",
+  "Can you tell me when registration ends?",
+  "Внутри косвенного вопроса нет инверсии: registration ends. Также нормативно: Can you tell me when the registration ends?",
+);
+contrast(
+  "structure-question",
+  106,
+  "Сравни прямой вопрос и тот же вопрос внутри вежливой фразы.",
+  [
+    {
+      prompt: "Where ___ the archive store older invoices?",
+      base: "do",
+      answer: "does",
+    },
+    {
+      prompt: "Could you tell me where ___ older invoices?",
+      base: "store",
+      answer: "the archive stores",
+    },
+  ],
+  "Прямой вопрос использует does the archive store; внутри could you tell me нужен порядок the archive stores.",
+);
+add(
+  "structure-question",
+  107,
+  "gap",
+  2,
+  "Could you tell me when the morning train ___?",
+  "leaves",
+  "Внутри косвенного вопроса используется прямой порядок слов; после the morning train глагол получает -s.",
+  {
+    cue: "Ты можешь сказать, когда отправляется утренний поезд?",
+    base: "leave",
+    choices: ["leaves", "does the morning train leave"],
+  },
+);
 
-repair('structure-links',103,'Because the northern route was closed, so the delivery arrived late.','Because the northern route was closed, the delivery arrived late.','Because уже вводит причину; so здесь лишнее. Сохраняем связь причины и результата одной конструкцией.');
-transform('structure-links',104,'We moved the meeting online because the main room was unavailable.','Поставь причину первой и соедини части через so.','The main room was unavailable, so we moved the meeting online.','Причина стоит перед so, после которого следует результат.');
-translate('structure-links',105,'Мы перенесли проверку, потому что один из файлов отсутствовал.','we / postpone / the review / because / one file / be missing','We postponed the review because one file was missing.','Because вводит причину; обе части содержат сказуемое в прошлом.');
-contrast('structure-links',106,'Выбери связку по роли части предложения.',[{prompt:'___ the printer was offline, we sent the form by email.',base:'because',answer:'Because'},{prompt:'The printer was offline, ___ we sent the form by email.',base:'so',answer:'so'}],'Because вводит причину; so вводит результат. Заглавная буква в начале и пунктуация нормализуются.');
-add('structure-links',107,'gap',2,'The road was blocked, ___ the bus took a different route.','so','So вводит результат того, что дорогу перекрыли.',{cue:'Дорогу перекрыли, поэтому автобус поехал другим маршрутом.',base:'связка результата',choices:['so','although']});
-add('structure-links',108,'choice',3,'Выбери краткий ответ в порядке тезис → причина → пример → вывод, по одной мысли в каждом предложении. Тема: приложение помогает новичкам освоить процедуру.','The app is useful for beginners. It presents one action at a time. For example, each stage ends with a short check. This helps new users complete the setup with fewer mistakes.','Сначала назван тезис, затем причина, конкретный пример и вывод. В коротких предложениях проще удержать одну основную мысль.',{task:'Выбери связный ответ.',choices:['The app is useful for beginners. It presents one action at a time. For example, each stage ends with a short check. This helps new users complete the setup with fewer mistakes.','For example, each stage ends with a short check. The app is useful for beginners. It presents one action at a time. This helps new users complete the setup with fewer mistakes.','The app is useful for beginners. The final section has a blue background. Each action appears step by step. This helps new users complete the setup with fewer mistakes.']});
+repair(
+  "structure-links",
+  103,
+  "Because the northern route was closed, so the delivery arrived late.",
+  "Because the northern route was closed, the delivery arrived late.",
+  "Because уже вводит причину; so здесь лишнее. Сохраняем связь причины и результата одной конструкцией.",
+);
+transform(
+  "structure-links",
+  104,
+  "We moved the meeting online because the main room was unavailable.",
+  "Поставь причину первой и соедини части через so.",
+  "The main room was unavailable, so we moved the meeting online.",
+  "Причина стоит перед so, после которого следует результат.",
+);
+translate(
+  "structure-links",
+  105,
+  "Мы перенесли проверку, потому что один из файлов отсутствовал.",
+  "we / postpone / the review / because / one file / be missing",
+  "We postponed the review because one file was missing.",
+  "Because вводит причину; обе части содержат сказуемое в прошлом.",
+);
+contrast(
+  "structure-links",
+  106,
+  "Выбери связку по роли части предложения.",
+  [
+    {
+      prompt: "___ the printer was offline, we sent the form by email.",
+      base: "because",
+      answer: "Because",
+    },
+    {
+      prompt: "The printer was offline, ___ we sent the form by email.",
+      base: "so",
+      answer: "so",
+    },
+  ],
+  "Because вводит причину; so вводит результат. Заглавная буква в начале и пунктуация нормализуются.",
+);
+add(
+  "structure-links",
+  107,
+  "gap",
+  2,
+  "The road was blocked, ___ the bus took a different route.",
+  "so",
+  "So вводит результат того, что дорогу перекрыли.",
+  {
+    cue: "Дорогу перекрыли, поэтому автобус поехал другим маршрутом.",
+    base: "связка результата",
+    choices: ["so", "although"],
+  },
+);
+add(
+  "structure-links",
+  108,
+  "choice",
+  3,
+  "Выбери краткий ответ в порядке тезис → причина → пример → вывод, по одной мысли в каждом предложении. Тема: приложение помогает новичкам освоить процедуру.",
+  "The app is useful for beginners. It presents one action at a time. For example, each stage ends with a short check. This helps new users complete the setup with fewer mistakes.",
+  "Сначала назван тезис, затем причина, конкретный пример и вывод. В коротких предложениях проще удержать одну основную мысль.",
+  {
+    task: "Выбери связный ответ.",
+    choices: [
+      "The app is useful for beginners. It presents one action at a time. For example, each stage ends with a short check. This helps new users complete the setup with fewer mistakes.",
+      "For example, each stage ends with a short check. The app is useful for beginners. It presents one action at a time. This helps new users complete the setup with fewer mistakes.",
+      "The app is useful for beginners. The final section has a blue background. Each action appears step by step. This helps new users complete the setup with fewer mistakes.",
+    ],
+  },
+);
 
-repair('nouns-number',103,'Every departments has a clear process for urgent requests.','Every department has a clear process for urgent requests.','Every требует существительное в единственном числе: department.');
-transform('nouns-number',104,'We need another reviewer before the final check.','Замени reviewer на reviewers и согласуй определитель.','We need other reviewers before the final check.','Another сочетается с единственным числом; перед reviewers во множественном числе нужно other.');
-translate('nouns-number',105,'Большинство людей предпочитает читать полный отчёт.','most / people / prefer to read / the full report','Most people prefer to read the full report.','Для обобщения используется Most people без of; после prefer здесь нужна форма to read.');
-contrast('nouns-number',106,'В первой строке обобщи; во второй заполни форму после уже данного most of.',[{prompt:'___ use the mobile version for quick checks.',base:'most people',answer:'Most people'},{prompt:'Most of ___ on our team use the mobile version.',base:'the people',answer:'the people'}],'Для обобщения используется most people. Перед конкретной ранее названной группой после most of нужен the: most of the people.');
-add('nouns-number',107,'gap',2,'___ files need clear names before they are archived.','These','Перед существительным во множественном числе можно использовать these.',{cue:'Этим файлам нужны понятные имена до архивации.',base:'this',choices:['These','This']});
+repair(
+  "nouns-number",
+  103,
+  "Every departments has a clear process for urgent requests.",
+  "Every department has a clear process for urgent requests.",
+  "Every требует существительное в единственном числе: department.",
+);
+transform(
+  "nouns-number",
+  104,
+  "We need another reviewer before the final check.",
+  "Замени reviewer на reviewers и согласуй определитель.",
+  "We need other reviewers before the final check.",
+  "Another сочетается с единственным числом; перед reviewers во множественном числе нужно other.",
+);
+translate(
+  "nouns-number",
+  105,
+  "Большинство людей предпочитает читать полный отчёт.",
+  "most / people / prefer to read / the full report",
+  "Most people prefer to read the full report.",
+  "Для обобщения используется Most people без of; после prefer здесь нужна форма to read.",
+);
+contrast(
+  "nouns-number",
+  106,
+  "В первой строке обобщи; во второй заполни форму после уже данного most of.",
+  [
+    {
+      prompt: "___ use the mobile version for quick checks.",
+      base: "most people",
+      answer: "Most people",
+    },
+    {
+      prompt: "Most of ___ on our team use the mobile version.",
+      base: "the people",
+      answer: "the people",
+    },
+  ],
+  "Для обобщения используется most people. Перед конкретной ранее названной группой после most of нужен the: most of the people.",
+);
+add(
+  "nouns-number",
+  107,
+  "gap",
+  2,
+  "___ files need clear names before they are archived.",
+  "These",
+  "Перед существительным во множественном числе можно использовать these.",
+  {
+    cue: "Этим файлам нужны понятные имена до архивации.",
+    base: "this",
+    choices: ["These", "This"],
+  },
+);
 
-repair('nouns-count',103,'We need to conduct a research before choosing the material.','We need to conduct research before choosing the material.','Research обычно неисчисляемо, поэтому перед ним здесь не нужен артикль a.');
-transform('nouns-count',104,'She gave me useful advice about the application.','Укажи, что она дала три отдельных совета.','She gave me three pieces of useful advice about the application.','Advice неисчисляемо; для счёта отдельных советов используется pieces of advice.');
-translate('nouns-count',105,'Команда провела масштабное исследование перед запуском.','the team / conduct / extensive / research / before the launch','The team conducted extensive research before the launch.','Research обычно неисчисляемо и не получает множественное окончание; прошедшая форма conduct — conducted.');
-contrast('nouns-count',106,'Отличи отдельные исследования от исследовательской работы в целом.',[{prompt:'The review compares three recent ___.',base:'research',answer:'studies'},{prompt:'The review is based on extensive ___.',base:'research',answer:'research'}],'Три отдельные работы — studies; исследовательская работа в целом — research.');
-translate('nouns-count',107,'Она дала мне два полезных совета перед собеседованием.','she / give / me / two / useful / pieces of advice / before the interview','She gave me two useful pieces of advice before the interview.','Для двух советов используется pieces of advice; give в прошлом — gave.');
+repair(
+  "nouns-count",
+  103,
+  "We need to conduct a research before choosing the material.",
+  "We need to conduct research before choosing the material.",
+  "Research обычно неисчисляемо, поэтому перед ним здесь не нужен артикль a.",
+);
+transform(
+  "nouns-count",
+  104,
+  "She gave me useful advice about the application.",
+  "Укажи, что она дала три отдельных совета.",
+  "She gave me three pieces of useful advice about the application.",
+  "Advice неисчисляемо; для счёта отдельных советов используется pieces of advice.",
+);
+translate(
+  "nouns-count",
+  105,
+  "Команда провела масштабное исследование перед запуском.",
+  "the team / conduct / extensive / research / before the launch",
+  "The team conducted extensive research before the launch.",
+  "Research обычно неисчисляемо и не получает множественное окончание; прошедшая форма conduct — conducted.",
+);
+contrast(
+  "nouns-count",
+  106,
+  "Отличи отдельные исследования от исследовательской работы в целом.",
+  [
+    {
+      prompt: "The review compares three recent ___.",
+      base: "research",
+      answer: "studies",
+    },
+    {
+      prompt: "The review is based on extensive ___.",
+      base: "research",
+      answer: "research",
+    },
+  ],
+  "Три отдельные работы — studies; исследовательская работа в целом — research.",
+);
+translate(
+  "nouns-count",
+  107,
+  "Она дала мне два полезных совета перед собеседованием.",
+  "she / give / me / two / useful / pieces of advice / before the interview",
+  "She gave me two useful pieces of advice before the interview.",
+  "Для двух советов используется pieces of advice; give в прошлом — gave.",
+);
 
-repair('patterns-modal',103,'The revised tool can to identify duplicate entries.','The revised tool can identify duplicate entries.','После can используется начальная форма identify без to.');
-transform('patterns-modal',104,'The service responds to urgent requests within one hour.','Добавь must перед основным глаголом, сохрани остальные слова.','The service must respond to urgent requests within one hour.','После must используется начальная форма respond; окончание -s убирается.');
-translate('patterns-modal',105,'Возможно, курьер прибудет до полудня.','the courier / might / arrive / before noon','The courier might arrive before noon.','После might используется начальная форма arrive без to.');
-contrast('patterns-modal',106,'В обоих случаях выбери начальную форму после модального глагола.',[{prompt:'The guide should ___ each safety step.',base:'explain',answer:'explain'},{prompt:'The guide can ___ questions afterward.',base:'answer',answer:'answer'}],'После should и can основной глагол остаётся в начальной форме, без to и без -s.');
+repair(
+  "patterns-modal",
+  103,
+  "The revised tool can to identify duplicate entries.",
+  "The revised tool can identify duplicate entries.",
+  "После can используется начальная форма identify без to.",
+);
+transform(
+  "patterns-modal",
+  104,
+  "The service responds to urgent requests within one hour.",
+  "Добавь must перед основным глаголом, сохрани остальные слова.",
+  "The service must respond to urgent requests within one hour.",
+  "После must используется начальная форма respond; окончание -s убирается.",
+);
+translate(
+  "patterns-modal",
+  105,
+  "Возможно, курьер прибудет до полудня.",
+  "the courier / might / arrive / before noon",
+  "The courier might arrive before noon.",
+  "После might используется начальная форма arrive без to.",
+);
+contrast(
+  "patterns-modal",
+  106,
+  "В обоих случаях выбери начальную форму после модального глагола.",
+  [
+    {
+      prompt: "The guide should ___ each safety step.",
+      base: "explain",
+      answer: "explain",
+    },
+    {
+      prompt: "The guide can ___ questions afterward.",
+      base: "answer",
+      answer: "answer",
+    },
+  ],
+  "После should и can основной глагол остаётся в начальной форме, без to и без -s.",
+);
 
-repair('patterns-inf',103,'The team decided postponing the launch instead of to wait for the review.','The team decided to postpone the launch instead of waiting for the review.','Decide требует to + глагол; после предлога instead of используется форма на -ing.');
-transform('patterns-inf',104,'They walk to the station together every morning.','Перефразируй, начни с They enjoy и сохрани смысл.','They enjoy walking to the station together every morning.','После enjoy используется -ing: enjoy walking.');
-translate('patterns-inf',105,'Он решил не менять порядок разделов.','he / decide / not / change / the order of the sections','He decided not to change the order of the sections.','После decide нужен инфинитив; отрицание ставится перед ним: not to change.');
-contrast('patterns-inf',106,'Сравни форму после предлога и после decide.',[{prompt:'She is interested in ___ a second language.',base:'learn',answer:'learning'},{prompt:'She decided ___ a second language.',base:'learn',answer:'to learn'}],'In — предлог, после него learning. Decide требует to learn.');
-translate('patterns-inf',107,'Нам нужно сократить время проверки.','we / need / reduce / the review time','We need to reduce the review time.','Need в значении необходимости требует to + начальная форма: need to reduce.');
+repair(
+  "patterns-inf",
+  103,
+  "The team decided postponing the launch instead of to wait for the review.",
+  "The team decided to postpone the launch instead of waiting for the review.",
+  "Decide требует to + глагол; после предлога instead of используется форма на -ing.",
+);
+transform(
+  "patterns-inf",
+  104,
+  "They walk to the station together every morning.",
+  "Перефразируй, начни с They enjoy и сохрани смысл.",
+  "They enjoy walking to the station together every morning.",
+  "После enjoy используется -ing: enjoy walking.",
+);
+translate(
+  "patterns-inf",
+  105,
+  "Он решил не менять порядок разделов.",
+  "he / decide / not / change / the order of the sections",
+  "He decided not to change the order of the sections.",
+  "После decide нужен инфинитив; отрицание ставится перед ним: not to change.",
+);
+contrast(
+  "patterns-inf",
+  106,
+  "Сравни форму после предлога и после decide.",
+  [
+    {
+      prompt: "She is interested in ___ a second language.",
+      base: "learn",
+      answer: "learning",
+    },
+    {
+      prompt: "She decided ___ a second language.",
+      base: "learn",
+      answer: "to learn",
+    },
+  ],
+  "In — предлог, после него learning. Decide требует to learn.",
+);
+translate(
+  "patterns-inf",
+  107,
+  "Нам нужно сократить время проверки.",
+  "we / need / reduce / the review time",
+  "We need to reduce the review time.",
+  "Need в значении необходимости требует to + начальная форма: need to reduce.",
+);
 
-repair('chunks-object',103,'The committee discussed about two possible launch dates.','The committee discussed two possible launch dates.','Discuss уже означает обсуждать что-либо и берёт прямое дополнение без about.');
-translate('chunks-object',104,'Она подала заявку в исследовательский институт на летнюю стажировку.','she / apply / to / the research institute / for / a summer internship','She applied to the research institute for a summer internship.','Apply to обозначает организацию; apply for — место или возможность, на которую подают заявку.');
-contrast('chunks-object',105,'Выбери предлог по тому, что следует за apply.',[{prompt:'Rina applied ___ a summer placement.',base:'apply',answer:'for'},{prompt:'Rina applied ___ the design studio.',base:'apply',answer:'to'}],'Apply for ставится перед местом или программой; apply to — перед организацией.');
-add('chunks-object',106,'gap',2,'After the renovation, the archive moved ___ a larger room.','to','Move to обозначает перемещение в новое место.',{cue:'После ремонта архив переехал в более просторную комнату.',base:'move',choices:['to','at']});
+repair(
+  "chunks-object",
+  103,
+  "The committee discussed about two possible launch dates.",
+  "The committee discussed two possible launch dates.",
+  "Discuss уже означает обсуждать что-либо и берёт прямое дополнение без about.",
+);
+translate(
+  "chunks-object",
+  104,
+  "Она подала заявку в исследовательский институт на летнюю стажировку.",
+  "she / apply / to / the research institute / for / a summer internship",
+  "She applied to the research institute for a summer internship.",
+  "Apply to обозначает организацию; apply for — место или возможность, на которую подают заявку.",
+);
+contrast(
+  "chunks-object",
+  105,
+  "Выбери предлог по тому, что следует за apply.",
+  [
+    {
+      prompt: "Rina applied ___ a summer placement.",
+      base: "apply",
+      answer: "for",
+    },
+    {
+      prompt: "Rina applied ___ the design studio.",
+      base: "apply",
+      answer: "to",
+    },
+  ],
+  "Apply for ставится перед местом или программой; apply to — перед организацией.",
+);
+add(
+  "chunks-object",
+  106,
+  "gap",
+  2,
+  "After the renovation, the archive moved ___ a larger room.",
+  "to",
+  "Move to обозначает перемещение в новое место.",
+  {
+    cue: "После ремонта архив переехал в более просторную комнату.",
+    base: "move",
+    choices: ["to", "at"],
+  },
+);
 
-repair('chunks-fixed',103,'The auditors focused at the largest risk in the report.','The auditors focused on the largest risk in the report.','Устойчивое сочетание — focus on.');
-translate('chunks-fixed',104,'Итоговый график зависит от поставки оборудования.','the final schedule / depend / on / the equipment delivery','The final schedule depends on the equipment delivery.','Правильное сочетание — depend on; с schedule в единственном числе используется depends.');
-contrast('chunks-fixed',105,'Подбери продолжение устойчивого сочетания instead of.',[{prompt:'We used the spare scanner instead of ___ a new one.',base:'buy',answer:'buying'},{prompt:'We used the spare scanner instead of ___ a phone.',base:'using',answer:'using'}],'После предлога instead of перед глагольным действием используется -ing: buying, using.');
-add('chunks-fixed',106,'gap',2,'The interns are interested ___ the results of the field study.','in','Устойчивое сочетание — be interested in.',{cue:'Стажёрам интересны результаты полевого исследования.',base:'interested',choices:['in','on']});
-add('chunks-fixed',107,'gap',2,'Before choosing a solution, let us think ___ the long-term effects.','about','Think about вводит тему или последствия, которые мы обдумываем.',{cue:'Прежде чем выбрать решение, давайте подумаем о долгосрочных последствиях.',base:'think',choices:['about','at']});
+repair(
+  "chunks-fixed",
+  103,
+  "The auditors focused at the largest risk in the report.",
+  "The auditors focused on the largest risk in the report.",
+  "Устойчивое сочетание — focus on.",
+);
+translate(
+  "chunks-fixed",
+  104,
+  "Итоговый график зависит от поставки оборудования.",
+  "the final schedule / depend / on / the equipment delivery",
+  "The final schedule depends on the equipment delivery.",
+  "Правильное сочетание — depend on; с schedule в единственном числе используется depends.",
+);
+contrast(
+  "chunks-fixed",
+  105,
+  "Подбери продолжение устойчивого сочетания instead of.",
+  [
+    {
+      prompt: "We used the spare scanner instead of ___ a new one.",
+      base: "buy",
+      answer: "buying",
+    },
+    {
+      prompt: "We used the spare scanner instead of ___ a phone.",
+      base: "using",
+      answer: "using",
+    },
+  ],
+  "После предлога instead of перед глагольным действием используется -ing: buying, using.",
+);
+add(
+  "chunks-fixed",
+  106,
+  "gap",
+  2,
+  "The interns are interested ___ the results of the field study.",
+  "in",
+  "Устойчивое сочетание — be interested in.",
+  {
+    cue: "Стажёрам интересны результаты полевого исследования.",
+    base: "interested",
+    choices: ["in", "on"],
+  },
+);
+add(
+  "chunks-fixed",
+  107,
+  "gap",
+  2,
+  "Before choosing a solution, let us think ___ the long-term effects.",
+  "about",
+  "Think about вводит тему или последствия, которые мы обдумываем.",
+  {
+    cue: "Прежде чем выбрать решение, давайте подумаем о долгосрочных последствиях.",
+    base: "think",
+    choices: ["about", "at"],
+  },
+);
 
-repair('lexicon-form',103,'The pianist became fame after the recording reached a wider audience.','The pianist became famous after the recording reached a wider audience.','После became требуется прилагательное famous; fame — существительное.');
-contrast('lexicon-form',104,'Выбери часть речи, подходящую к каждому контексту.',[{prompt:'Her ___ grew after the documentary aired.',base:'fame',answer:'fame'},{prompt:'She became ___ after the documentary aired.',base:'fame',answer:'famous'},{prompt:'The campaign was a major ___.',base:'succeed',answer:'success'},{prompt:'The campaign was ___ from the beginning.',base:'succeed',answer:'successful'},{prompt:'The composer was ___ private about the rehearsal process.',base:'fame',answer:'famously'}],'Fame и success — существительные; famous и successful — прилагательные; famously — наречие.');
-translate('lexicon-form',105,'Проект оказался успешным с самого начала.','the project / be / successful / from the beginning','The project was successful from the beginning.','После be нужно прилагательное successful; project в прошедшем времени требует was.');
-add('lexicon-form',106,'gap',2,'The team ___ in reducing delivery delays last year.','succeeded','В значении «удалось» succeed — глагол; в прошедшем времени succeeded.',{cue:'В прошлом году команде удалось сократить задержки доставки.',base:'succeed',choices:['succeeded','success']});
+repair(
+  "lexicon-form",
+  103,
+  "The pianist became fame after the recording reached a wider audience.",
+  "The pianist became famous after the recording reached a wider audience.",
+  "После became требуется прилагательное famous; fame — существительное.",
+);
+contrast(
+  "lexicon-form",
+  104,
+  "Выбери часть речи, подходящую к каждому контексту.",
+  [
+    {
+      prompt: "Her ___ grew after the documentary aired.",
+      base: "fame",
+      answer: "fame",
+    },
+    {
+      prompt: "She became ___ after the documentary aired.",
+      base: "fame",
+      answer: "famous",
+    },
+    {
+      prompt: "The campaign was a major ___.",
+      base: "succeed",
+      answer: "success",
+    },
+    {
+      prompt: "The campaign was ___ from the beginning.",
+      base: "succeed",
+      answer: "successful",
+    },
+    {
+      prompt: "The composer was ___ private about the rehearsal process.",
+      base: "fame",
+      answer: "famously",
+    },
+  ],
+  "Fame и success — существительные; famous и successful — прилагательные; famously — наречие.",
+);
+translate(
+  "lexicon-form",
+  105,
+  "Проект оказался успешным с самого начала.",
+  "the project / be / successful / from the beginning",
+  "The project was successful from the beginning.",
+  "После be нужно прилагательное successful; project в прошедшем времени требует was.",
+);
+add(
+  "lexicon-form",
+  106,
+  "gap",
+  2,
+  "The team ___ in reducing delivery delays last year.",
+  "succeeded",
+  "В значении «удалось» succeed — глагол; в прошедшем времени succeeded.",
+  {
+    cue: "В прошлом году команде удалось сократить задержки доставки.",
+    base: "succeed",
+    choices: ["succeeded", "success"],
+  },
+);
 
-repair('lexicon-word',103,'Could you borrow me your charger until this evening?','Could you lend me your charger until this evening?','Lend — дать кому-либо на время; borrow — взять у кого-либо.');
-contrast('lexicon-word',104,'Различи взять вещь у другого и дать её другому.',[{prompt:'Could I ___ your notebook for a day?',base:'borrow',answer:'borrow'},{prompt:'Could I ___ you my notebook for a day?',base:'lend',answer:'lend'}],'Borrow — получить вещь от другого; lend — дать вещь другому.');
-translate('lexicon-word',105,'Перед публикацией нам нужно принять решение.','we / need to make / a decision / before publication','We need to make a decision before publication.','Устойчивое сочетание — make a decision, не do a decision.');
-contrast('lexicon-word',106,'Различи изменение цены без указанного деятеля и действие компании.',[{prompt:'The wholesale price ___ every January.',base:'rise',answer:'rises'},{prompt:'The company ___ its prices every January.',base:'raise',answer:'raises'}],'Цена сама растёт: rise. Компания повышает её: raise + прямое дополнение.');
-contrast('lexicon-word',107,'Образуй сравнительную форму: к короткому high добавь -er, а с crowded используй more.',[{prompt:'The water level is ___ than it was yesterday.',base:'high',answer:'higher'},{prompt:'The station is ___ this morning than usual.',base:'crowded',answer:'more crowded'}],'High образует higher; с crowded используется more crowded.');
-translate('lexicon-word',108,'В конце экскурсии гид рассказал нам историю об острове.','the guide / tell / us / a story / about the island / at the end of the tour','The guide told us a story about the island at the end of the tour.','Устойчивое сочетание — tell a story; форма tell в прошлом — told.');
+repair(
+  "lexicon-word",
+  103,
+  "Could you borrow me your charger until this evening?",
+  "Could you lend me your charger until this evening?",
+  "Lend — дать кому-либо на время; borrow — взять у кого-либо.",
+);
+contrast(
+  "lexicon-word",
+  104,
+  "Различи взять вещь у другого и дать её другому.",
+  [
+    {
+      prompt: "Could I ___ your notebook for a day?",
+      base: "borrow",
+      answer: "borrow",
+    },
+    {
+      prompt: "Could I ___ you my notebook for a day?",
+      base: "lend",
+      answer: "lend",
+    },
+  ],
+  "Borrow — получить вещь от другого; lend — дать вещь другому.",
+);
+translate(
+  "lexicon-word",
+  105,
+  "Перед публикацией нам нужно принять решение.",
+  "we / need to make / a decision / before publication",
+  "We need to make a decision before publication.",
+  "Устойчивое сочетание — make a decision, не do a decision.",
+);
+contrast(
+  "lexicon-word",
+  106,
+  "Различи изменение цены без указанного деятеля и действие компании.",
+  [
+    {
+      prompt: "The wholesale price ___ every January.",
+      base: "rise",
+      answer: "rises",
+    },
+    {
+      prompt: "The company ___ its prices every January.",
+      base: "raise",
+      answer: "raises",
+    },
+  ],
+  "Цена сама растёт: rise. Компания повышает её: raise + прямое дополнение.",
+);
+contrast(
+  "lexicon-word",
+  107,
+  "Образуй сравнительную форму: к короткому high добавь -er, а с crowded используй more.",
+  [
+    {
+      prompt: "The water level is ___ than it was yesterday.",
+      base: "high",
+      answer: "higher",
+    },
+    {
+      prompt: "The station is ___ this morning than usual.",
+      base: "crowded",
+      answer: "more crowded",
+    },
+  ],
+  "High образует higher; с crowded используется more crowded.",
+);
+translate(
+  "lexicon-word",
+  108,
+  "В конце экскурсии гид рассказал нам историю об острове.",
+  "the guide / tell / us / a story / about the island / at the end of the tour",
+  "The guide told us a story about the island at the end of the tour.",
+  "Устойчивое сочетание — tell a story; форма tell в прошлом — told.",
+);
 
-repair('reference-person',103,'The coordinator spoke to the attendees who arrived early before the guide let they enter the archive.','The coordinator spoke to the attendees who arrived early before the guide let them enter the archive.','После let местоимение стоит в форме дополнения: let them enter. Who относится к attendees; also that допустимо.');
-contrast('reference-person',104,'Соотнеси форму с людьми и их ролью в предложении.',[{prompt:'The applicant ___ called this morning left a message.',base:'who',answer:'who'},{prompt:'We thanked the applicants because ___ stayed late.',base:'they',answer:'they'}],'Who относится к человеку в относительном предложении; they заменяет нескольких людей как подлежащее.');
-translate('reference-person',105,'Сотрудники, которые завершили проверку, отправили нам результаты.','the employees / who / finish / the review / send / us / the results',['The employees who finished the review sent us the results.','The employees that finished the review sent us the results.'],'Who относится к людям; сотрудники и два действия во множественном числе в прошлом: finished, sent. Также допустимо that.');
-transform('reference-person',106,'The reviewer said she would send her notes by noon.','Замени The reviewer на The reviewers и согласуй все местоимения.','The reviewers said they would send their notes by noon.','После смены референта на множественное число нужны they и their.');
+repair(
+  "reference-person",
+  103,
+  "The coordinator spoke to the attendees who arrived early before the guide let they enter the archive.",
+  "The coordinator spoke to the attendees who arrived early before the guide let them enter the archive.",
+  "После let местоимение стоит в форме дополнения: let them enter. Who относится к attendees; also that допустимо.",
+);
+contrast(
+  "reference-person",
+  104,
+  "Соотнеси форму с людьми и их ролью в предложении.",
+  [
+    {
+      prompt: "The applicant ___ called this morning left a message.",
+      base: "who",
+      answer: "who",
+    },
+    {
+      prompt: "We thanked the applicants because ___ stayed late.",
+      base: "they",
+      answer: "they",
+    },
+  ],
+  "Who относится к человеку в относительном предложении; they заменяет нескольких людей как подлежащее.",
+);
+translate(
+  "reference-person",
+  105,
+  "Сотрудники, которые завершили проверку, отправили нам результаты.",
+  "the employees / who / finish / the review / send / us / the results",
+  [
+    "The employees who finished the review sent us the results.",
+    "The employees that finished the review sent us the results.",
+  ],
+  "Who относится к людям; сотрудники и два действия во множественном числе в прошлом: finished, sent. Также допустимо that.",
+);
+transform(
+  "reference-person",
+  106,
+  "The reviewer said she would send her notes by noon.",
+  "Замени The reviewer на The reviewers и согласуй все местоимения.",
+  "The reviewers said they would send their notes by noon.",
+  "После смены референта на множественное число нужны they и their.",
+);
 
-repair('reference-object',103,"Each device stores it's own settings in a separate file.",'Each device stores its own settings in a separate file.','Its обозначает принадлежность; it’s означает it is или it has.');
-transform('reference-object',104,'The workstation has changed its default settings.','Замени The workstation на The workstations и согласуй притяжательное местоимение.','The workstations have changed their default settings.','Множественному workstations соответствует their; также меняется have.');
-translate('reference-object',105,'Это устройство, которое мы заменили перед испытанием.','this / the device / which / we / replace / before the test','This is the device which we replaced before the test.','Which относится к предмету; в относительной части сохраняется прямой порядок слов. Также допустимо that.');
-add('reference-object',106,'gap',2,'The workstation has ___ own dedicated screen.','its','Перед own нужно притяжательное its: оно относится к workstation.',{cue:'У этой рабочей станции есть собственный отдельный экран.',base:'it',choices:['its','their']});
+repair(
+  "reference-object",
+  103,
+  "Each device stores it's own settings in a separate file.",
+  "Each device stores its own settings in a separate file.",
+  "Its обозначает принадлежность; it’s означает it is или it has.",
+);
+transform(
+  "reference-object",
+  104,
+  "The workstation has changed its default settings.",
+  "Замени The workstation на The workstations и согласуй притяжательное местоимение.",
+  "The workstations have changed their default settings.",
+  "Множественному workstations соответствует their; также меняется have.",
+);
+translate(
+  "reference-object",
+  105,
+  "Это устройство, которое мы заменили перед испытанием.",
+  "this / the device / which / we / replace / before the test",
+  "This is the device which we replaced before the test.",
+  "Which относится к предмету; в относительной части сохраняется прямой порядок слов. Также допустимо that.",
+);
+add(
+  "reference-object",
+  106,
+  "gap",
+  2,
+  "The workstation has ___ own dedicated screen.",
+  "its",
+  "Перед own нужно притяжательное its: оно относится к workstation.",
+  {
+    cue: "У этой рабочей станции есть собственный отдельный экран.",
+    base: "it",
+    choices: ["its", "their"],
+  },
+);
 
 // Practice expansion 2: larger set of medium and challenging contexts.
-repair('verbs-agreement',113,'One of the labels show the wrong date.','One of the labels shows the wrong date.','Грамматическое подлежащее — one, поэтому нужен глагол shows.');
-transform('verbs-agreement',114,'The night clerk checks every entry.','Замени The night clerk на The night clerks и согласуй глагол.','The night clerks check every entry.','С множественным подлежащим clerk исчезает окончание -s: check.');
-translate('verbs-agreement',115,'Почему этот маршрут проходит через центр?','why / this route / pass / through the center','Why does this route pass through the center?','В вопросе с this route нужен does; после него используется pass без -s.');
-contrast('verbs-agreement',116,'Сравни одну ячейку и все ячейки.',[{prompt:'Each drawer ___ a number on the inside.',base:'have',answer:'has'},{prompt:'All the drawers ___ numbers on the inside.',base:'have',answer:'have'}],'Each drawer — единственное число: has. All the drawers — множественное: have.');
-add('verbs-agreement',117,'gap',2,'The booking system ___ each reservation automatically.','confirms','В Present Simple booking system — единственное число, поэтому глагол получает -s.',{cue:'Система автоматически подтверждает каждое бронирование.',base:'confirm',choices:['confirms','confirm']});
-repair('verbs-agreement',118,'The printer, together with the scanners, need regular maintenance.','The printer, together with the scanners, needs regular maintenance.','Фраза together with не меняет подлежащее: printer в единственном числе, поэтому needs.');
-transform('verbs-agreement',119,'The museum keeps the original records.','Сделай общий вопрос, сохрани остальные слова.','Does the museum keep the original records?','Does согласуется с museum; после does используется keep без -s.');
-translate('verbs-agreement',120,'Каждый кандидат заполняет анкету и прикладывает два документа.','each candidate / complete / the form / and / attach / two documents','Each candidate completes the form and attaches two documents.','Each candidate — единственное число; оба глагола получают -s.');
-contrast('verbs-agreement',121,'Сопоставь один маршрут и несколько маршрутов.',[{prompt:'One of the routes ___ through the tunnel.',base:'run',answer:'runs'},{prompt:'Both routes ___ through the tunnel.',base:'run',answer:'run'}],'One of the routes — единственное число: runs. Both routes — множественное: run.');
-contrast('verbs-agreement',122,'Сравни действие одной страницы после сканирования и работу нескольких страниц.',[{prompt:'The tracking page ___ the parcel status after each scan.',base:'update',answer:'updates'},{prompt:'The tracking pages ___ the parcel status after each scan.',base:'update',answer:'update'}],'Page в единственном числе требует updates; pages во множественном — update.');
+repair(
+  "verbs-agreement",
+  113,
+  "One of the labels show the wrong date.",
+  "One of the labels shows the wrong date.",
+  "Грамматическое подлежащее — one, поэтому нужен глагол shows.",
+);
+transform(
+  "verbs-agreement",
+  114,
+  "The night clerk checks every entry.",
+  "Замени The night clerk на The night clerks и согласуй глагол.",
+  "The night clerks check every entry.",
+  "С множественным подлежащим clerk исчезает окончание -s: check.",
+);
+translate(
+  "verbs-agreement",
+  115,
+  "Почему этот маршрут проходит через центр?",
+  "why / this route / pass / through the center",
+  "Why does this route pass through the center?",
+  "В вопросе с this route нужен does; после него используется pass без -s.",
+);
+contrast(
+  "verbs-agreement",
+  116,
+  "Сравни одну ячейку и все ячейки.",
+  [
+    {
+      prompt: "Each drawer ___ a number on the inside.",
+      base: "have",
+      answer: "has",
+    },
+    {
+      prompt: "All the drawers ___ numbers on the inside.",
+      base: "have",
+      answer: "have",
+    },
+  ],
+  "Each drawer — единственное число: has. All the drawers — множественное: have.",
+);
+add(
+  "verbs-agreement",
+  117,
+  "gap",
+  2,
+  "The booking system ___ each reservation automatically.",
+  "confirms",
+  "В Present Simple booking system — единственное число, поэтому глагол получает -s.",
+  {
+    cue: "Система автоматически подтверждает каждое бронирование.",
+    base: "confirm",
+    choices: ["confirms", "confirm"],
+  },
+);
+repair(
+  "verbs-agreement",
+  118,
+  "The printer, together with the scanners, need regular maintenance.",
+  "The printer, together with the scanners, needs regular maintenance.",
+  "Фраза together with не меняет подлежащее: printer в единственном числе, поэтому needs.",
+);
+transform(
+  "verbs-agreement",
+  119,
+  "The museum keeps the original records.",
+  "Сделай общий вопрос, сохрани остальные слова.",
+  "Does the museum keep the original records?",
+  "Does согласуется с museum; после does используется keep без -s.",
+);
+translate(
+  "verbs-agreement",
+  120,
+  "Каждый кандидат заполняет анкету и прикладывает два документа.",
+  "each candidate / complete / the form / and / attach / two documents",
+  "Each candidate completes the form and attaches two documents.",
+  "Each candidate — единственное число; оба глагола получают -s.",
+);
+contrast(
+  "verbs-agreement",
+  121,
+  "Сопоставь один маршрут и несколько маршрутов.",
+  [
+    {
+      prompt: "One of the routes ___ through the tunnel.",
+      base: "run",
+      answer: "runs",
+    },
+    {
+      prompt: "Both routes ___ through the tunnel.",
+      base: "run",
+      answer: "run",
+    },
+  ],
+  "One of the routes — единственное число: runs. Both routes — множественное: run.",
+);
+contrast(
+  "verbs-agreement",
+  122,
+  "Сравни действие одной страницы после сканирования и работу нескольких страниц.",
+  [
+    {
+      prompt: "The tracking page ___ the parcel status after each scan.",
+      base: "update",
+      answer: "updates",
+    },
+    {
+      prompt: "The tracking pages ___ the parcel status after each scan.",
+      base: "update",
+      answer: "update",
+    },
+  ],
+  "Page в единственном числе требует updates; pages во множественном — update.",
+);
 
-repair('verbs-past',113,'The auditors did not found any missing pages.','The auditors did not find any missing pages.','После did not используется начальная форма find, а не found.');
-transform('verbs-past',114,'They chose a different entrance.','Сделай общий вопрос.','Did they choose a different entrance?','В вопросе прошедшее время выражает did, поэтому после него choose.');
-translate('verbs-past',115,'Сервис отключился, но команда быстро перезапустила его.','the service / shut down / but / the team / restart / it / quickly','The service shut down, but the team restarted it quickly.','Оба события завершились в прошлом: shut down и restarted.');
-contrast('verbs-past',116,'Сравни утверждение о вчерашнем решении и вопрос с did.',[{prompt:'Leila ___ the revised plan yesterday.',base:'choose',answer:'chose'},{prompt:'Did Leila ___ the revised plan yesterday?',base:'choose',answer:'choose'}],'В утверждении нужна форма chose; в вопросе did уже выражает прошедшее время.');
-add('verbs-past',117,'gap',2,'At noon yesterday, the courier ___ the documents at reception.','left','Точный завершённый момент в прошлом требует Past Simple: leave → left.',{cue:'Вчера в полдень курьер оставил документы у стойки.',base:'leave',choices:['left','leave']});
-repair('verbs-past',118,'Who did prepare the room before the workshop?','Who prepared the room before the workshop?','Who — подлежащее вопроса; в таком вопросе did не ставится, глагол остаётся в Past Simple.');
-transform('verbs-past',119,'The supplier did not replace the damaged cable.','Переделай в утвердительное предложение.','The supplier replaced the damaged cable.','В утверждении did not убирается, а replace принимает форму replaced.');
-translate('verbs-past',120,'Где вы нашли инструкцию вчера?','where / you / find / the instructions / yesterday','Where did you find the instructions yesterday?','Yesterday задаёт прошлое; вопрос строится как did + подлежащее + find.');
-contrast('verbs-past',121,'Сравни утвердительную и отрицательную формы одного прошедшего события.',[{prompt:'The storm ___ several power lines overnight.',base:'damage',answer:'damaged'},{prompt:'The storm did not ___ the control room overnight.',base:'damage',answer:'damage'}],'В утверждении используется damaged; после did not — начальная форма damage.');
-contrast('verbs-past',122,'Сравни утверждение о прошлом месяце и вопрос с did.',[{prompt:'The gallery ___ its west entrance last month.',base:'open',answer:'opened'},{prompt:'When did the gallery ___ its west entrance?',base:'open',answer:'open'}],'В утверждении используется opened; после did — начальная форма open.');
+repair(
+  "verbs-past",
+  113,
+  "The auditors did not found any missing pages.",
+  "The auditors did not find any missing pages.",
+  "После did not используется начальная форма find, а не found.",
+);
+transform(
+  "verbs-past",
+  114,
+  "They chose a different entrance.",
+  "Сделай общий вопрос.",
+  "Did they choose a different entrance?",
+  "В вопросе прошедшее время выражает did, поэтому после него choose.",
+);
+translate(
+  "verbs-past",
+  115,
+  "Сервис отключился, но команда быстро перезапустила его.",
+  "the service / shut down / but / the team / restart / it / quickly",
+  "The service shut down, but the team restarted it quickly.",
+  "Оба события завершились в прошлом: shut down и restarted.",
+);
+contrast(
+  "verbs-past",
+  116,
+  "Сравни утверждение о вчерашнем решении и вопрос с did.",
+  [
+    {
+      prompt: "Leila ___ the revised plan yesterday.",
+      base: "choose",
+      answer: "chose",
+    },
+    {
+      prompt: "Did Leila ___ the revised plan yesterday?",
+      base: "choose",
+      answer: "choose",
+    },
+  ],
+  "В утверждении нужна форма chose; в вопросе did уже выражает прошедшее время.",
+);
+add(
+  "verbs-past",
+  117,
+  "gap",
+  2,
+  "At noon yesterday, the courier ___ the documents at reception.",
+  "left",
+  "Точный завершённый момент в прошлом требует Past Simple: leave → left.",
+  {
+    cue: "Вчера в полдень курьер оставил документы у стойки.",
+    base: "leave",
+    choices: ["left", "leave"],
+  },
+);
+repair(
+  "verbs-past",
+  118,
+  "Who did prepare the room before the workshop?",
+  "Who prepared the room before the workshop?",
+  "Who — подлежащее вопроса; в таком вопросе did не ставится, глагол остаётся в Past Simple.",
+);
+transform(
+  "verbs-past",
+  119,
+  "The supplier did not replace the damaged cable.",
+  "Переделай в утвердительное предложение.",
+  "The supplier replaced the damaged cable.",
+  "В утверждении did not убирается, а replace принимает форму replaced.",
+);
+translate(
+  "verbs-past",
+  120,
+  "Где вы нашли инструкцию вчера?",
+  "where / you / find / the instructions / yesterday",
+  "Where did you find the instructions yesterday?",
+  "Yesterday задаёт прошлое; вопрос строится как did + подлежащее + find.",
+);
+contrast(
+  "verbs-past",
+  121,
+  "Сравни утвердительную и отрицательную формы одного прошедшего события.",
+  [
+    {
+      prompt: "The storm ___ several power lines overnight.",
+      base: "damage",
+      answer: "damaged",
+    },
+    {
+      prompt: "The storm did not ___ the control room overnight.",
+      base: "damage",
+      answer: "damage",
+    },
+  ],
+  "В утверждении используется damaged; после did not — начальная форма damage.",
+);
+contrast(
+  "verbs-past",
+  122,
+  "Сравни утверждение о прошлом месяце и вопрос с did.",
+  [
+    {
+      prompt: "The gallery ___ its west entrance last month.",
+      base: "open",
+      answer: "opened",
+    },
+    {
+      prompt: "When did the gallery ___ its west entrance?",
+      base: "open",
+      answer: "open",
+    },
+  ],
+  "В утверждении используется opened; после did — начальная форма open.",
+);
 
-repair('verbs-aspect',113,'Right now, the mechanic checks the brakes before the test.','Right now, the mechanic is checking the brakes before the test.','Right now показывает процесс в момент речи: is checking.');
-transform('verbs-aspect',114,'The designer is testing a new layout at the moment.','Опиши её обычную задачу по понедельникам.','The designer tests a new layout every Monday.','Every Monday задаёт привычку: Present Simple tests, без is.');
-translate('verbs-aspect',115,'Я обычно печатаю отчёты дома, но сегодня работаю в офисе.','I / usually / print reports / at home / but / work / in the office / today','I usually print reports at home, but I am working in the office today.','Usually описывает привычку: print. Today обозначает временную ситуацию: am working.');
-contrast('verbs-aspect',116,'Сравни обычное течение реки и временное изменение после дождя.',[{prompt:'The river usually ___ slowly below this bridge.',base:'flow',answer:'flows'},{prompt:'After the heavy rain, it ___ much faster today.',base:'flow',answer:'is flowing'}],'Usually задаёт обычную характеристику: flows. Today после сильного дождя описывает текущую ситуацию: is flowing.');
-add('verbs-aspect',117,'gap',2,'At the moment, several customers ___ the updated portal.','are trying','At the moment обозначает текущий процесс; customers во множественном числе: are trying.',{cue:'Сейчас несколько клиентов пробуют обновлённый портал.',base:'try',choices:['are trying','try']});
-repair('verbs-aspect',118,'She is usually drives to the studio before nine.','She usually drives to the studio before nine.','Обычный маршрут с usually выражается Present Simple: drives без вспомогательного is.');
-transform('verbs-aspect',119,'The instructor works in the downtown branch.','Опиши временное место работы сегодня: используй Today и замени downtown branch на coastal branch.','Today, the instructor is working in the coastal branch.','Today задаёт временную ситуацию; для процесса используем is working.');
-translate('verbs-aspect',120,'На этой неделе мы изучаем новый порядок обработки заявок.','we / learn / a new procedure / for handling applications / this week','We are learning a new procedure for handling applications this week.','This week обозначает ограниченный временный период: are learning.');
-contrast('verbs-aspect',121,'Сопоставь обычную работу устройства и его поведение во время испытания.',[{prompt:'This device ___ less heat during normal use.',base:'produce',answer:'produces'},{prompt:'During the stress test, it ___ more heat than usual.',base:'produce',answer:'is producing'},{"prompt":"This device normally ___ very little noise.","base":"produce","answer":"produces"},{"prompt":"Please switch it off; it ___ smoke right now.","base":"produce","answer":"is producing"}],'Normal use описывает обычную работу: produces. During the test обозначает временный процесс: is producing. Дополнительные контексты: every/normally обозначают привычку; right now/for this week only — текущий или временный процесс.');
-contrast('verbs-aspect',122,'Сравни еженедельную проверку и действие, которое идёт сегодня.',[{prompt:'The technicians ___ the wiring every Friday.',base:'check',answer:'check'},{prompt:'Today, they ___ the new control panel.',base:'test',answer:'are testing'}],'Every Friday обозначает привычку: check. Today здесь указывает на временный процесс: are testing.');
+repair(
+  "verbs-aspect",
+  113,
+  "Right now, the mechanic checks the brakes before the test.",
+  "Right now, the mechanic is checking the brakes before the test.",
+  "Right now показывает процесс в момент речи: is checking.",
+);
+transform(
+  "verbs-aspect",
+  114,
+  "The designer is testing a new layout at the moment.",
+  "Опиши её обычную задачу по понедельникам.",
+  "The designer tests a new layout every Monday.",
+  "Every Monday задаёт привычку: Present Simple tests, без is.",
+);
+translate(
+  "verbs-aspect",
+  115,
+  "Я обычно печатаю отчёты дома, но сегодня работаю в офисе.",
+  "I / usually / print reports / at home / but / work / in the office / today",
+  "I usually print reports at home, but I am working in the office today.",
+  "Usually описывает привычку: print. Today обозначает временную ситуацию: am working.",
+);
+contrast(
+  "verbs-aspect",
+  116,
+  "Сравни обычное течение реки и временное изменение после дождя.",
+  [
+    {
+      prompt: "The river usually ___ slowly below this bridge.",
+      base: "flow",
+      answer: "flows",
+    },
+    {
+      prompt: "After the heavy rain, it ___ much faster today.",
+      base: "flow",
+      answer: "is flowing",
+    },
+  ],
+  "Usually задаёт обычную характеристику: flows. Today после сильного дождя описывает текущую ситуацию: is flowing.",
+);
+add(
+  "verbs-aspect",
+  117,
+  "gap",
+  2,
+  "At the moment, several customers ___ the updated portal.",
+  "are trying",
+  "At the moment обозначает текущий процесс; customers во множественном числе: are trying.",
+  {
+    cue: "Сейчас несколько клиентов пробуют обновлённый портал.",
+    base: "try",
+    choices: ["are trying", "try"],
+  },
+);
+repair(
+  "verbs-aspect",
+  118,
+  "She is usually drives to the studio before nine.",
+  "She usually drives to the studio before nine.",
+  "Обычный маршрут с usually выражается Present Simple: drives без вспомогательного is.",
+);
+transform(
+  "verbs-aspect",
+  119,
+  "The instructor works in the downtown branch.",
+  "Опиши временное место работы сегодня: используй Today и замени downtown branch на coastal branch.",
+  "Today, the instructor is working in the coastal branch.",
+  "Today задаёт временную ситуацию; для процесса используем is working.",
+);
+translate(
+  "verbs-aspect",
+  120,
+  "На этой неделе мы изучаем новый порядок обработки заявок.",
+  "we / learn / a new procedure / for handling applications / this week",
+  "We are learning a new procedure for handling applications this week.",
+  "This week обозначает ограниченный временный период: are learning.",
+);
+contrast(
+  "verbs-aspect",
+  121,
+  "Сопоставь обычную работу устройства и его поведение во время испытания.",
+  [
+    {
+      prompt: "This device ___ less heat during normal use.",
+      base: "produce",
+      answer: "produces",
+    },
+    {
+      prompt: "During the stress test, it ___ more heat than usual.",
+      base: "produce",
+      answer: "is producing",
+    },
+    {
+      prompt: "This device normally ___ very little noise.",
+      base: "produce",
+      answer: "produces",
+    },
+    {
+      prompt: "Please switch it off; it ___ smoke right now.",
+      base: "produce",
+      answer: "is producing",
+    },
+  ],
+  "Normal use описывает обычную работу: produces. During the test обозначает временный процесс: is producing. Дополнительные контексты: every/normally обозначают привычку; right now/for this week only — текущий или временный процесс.",
+);
+contrast(
+  "verbs-aspect",
+  122,
+  "Сравни еженедельную проверку и действие, которое идёт сегодня.",
+  [
+    {
+      prompt: "The technicians ___ the wiring every Friday.",
+      base: "check",
+      answer: "check",
+    },
+    {
+      prompt: "Today, they ___ the new control panel.",
+      base: "test",
+      answer: "are testing",
+    },
+  ],
+  "Every Friday обозначает привычку: check. Today здесь указывает на временный процесс: are testing.",
+);
 
-repair('verbs-modal',113,'The revised schedule may includes a short maintenance window.','The revised schedule may include a short maintenance window.','После may используется начальная форма include без -s.');
-transform('verbs-modal',114,'The safety guide explains each step.','Добавь can перед основным глаголом.','The safety guide can explain each step.','После can основной глагол используется в начальной форме: explain.');
-translate('verbs-modal',115,'Вероятно, курьер доставит коробку до конца дня.','the courier / may / deliver / the box / by the end of the day','The courier may deliver the box by the end of the day.','После may используется начальная форма deliver без to.');
-contrast('verbs-modal',116,'Выбери начальную форму после разных модальных глаголов.',[{prompt:'The assistant must ___ a receipt for every payment.',base:'issue',answer:'issue'},{prompt:'The system might ___ the total automatically.',base:'calculate',answer:'calculate'}],'После must и might используется начальная форма глагола без to и без окончания -s.');
-add('verbs-modal',117,'gap',2,'Visitors should ___ their badges at the main desk.','show','После should нужен глагол в начальной форме без to.',{cue:'Посетителям следует показать пропуска у главной стойки.',base:'show',choices:['show','to show']});
-repair('verbs-modal',118,'Will the technician checks each valve tomorrow?','Will the technician check each valve tomorrow?','В вопросе will ставится перед подлежащим, а после него нужен check без -s.');
-transform('verbs-modal',119,'The warehouse can store the extra boxes.','Сделай общий вопрос.','Can the warehouse store the extra boxes?','Вопрос с can образуется перестановкой can перед подлежащим; store не меняется.');
-translate('verbs-modal',120,'Завтра в это время специалисты будут следить за системой.','at this time tomorrow / the specialists / monitor / the system','At this time tomorrow, the specialists will be monitoring the system.','Задан будущий момент наблюдения за процессом: will be monitoring.');
-contrast('verbs-modal',121,'Отличи будущее действие от процесса в конкретный момент.',[{prompt:'I will ___ the first draft tonight.',base:'revise',answer:'revise'},{prompt:'At nine tonight, I will be ___ the second draft.',base:'revise',answer:'revising'}],'Will + revise сообщает о действии; will be + revising показывает процесс ровно в девять.');
-contrast('verbs-modal',122,'Сравни возможность оставить дверь открытой и вопрос о строгом правиле.',[{prompt:'The cook may ___ the service door open briefly.',base:'leave',answer:'leave'},{prompt:'Must the cook ___ the service door locked overnight?',base:'leave',answer:'leave'}],'После may и must используется начальная форма leave.');
+repair(
+  "verbs-modal",
+  113,
+  "The revised schedule may includes a short maintenance window.",
+  "The revised schedule may include a short maintenance window.",
+  "После may используется начальная форма include без -s.",
+);
+transform(
+  "verbs-modal",
+  114,
+  "The safety guide explains each step.",
+  "Добавь can перед основным глаголом.",
+  "The safety guide can explain each step.",
+  "После can основной глагол используется в начальной форме: explain.",
+);
+translate(
+  "verbs-modal",
+  115,
+  "Вероятно, курьер доставит коробку до конца дня.",
+  "the courier / may / deliver / the box / by the end of the day",
+  "The courier may deliver the box by the end of the day.",
+  "После may используется начальная форма deliver без to.",
+);
+contrast(
+  "verbs-modal",
+  116,
+  "Выбери начальную форму после разных модальных глаголов.",
+  [
+    {
+      prompt: "The assistant must ___ a receipt for every payment.",
+      base: "issue",
+      answer: "issue",
+    },
+    {
+      prompt: "The system might ___ the total automatically.",
+      base: "calculate",
+      answer: "calculate",
+    },
+  ],
+  "После must и might используется начальная форма глагола без to и без окончания -s.",
+);
+add(
+  "verbs-modal",
+  117,
+  "gap",
+  2,
+  "Visitors should ___ their badges at the main desk.",
+  "show",
+  "После should нужен глагол в начальной форме без to.",
+  {
+    cue: "Посетителям следует показать пропуска у главной стойки.",
+    base: "show",
+    choices: ["show", "to show"],
+  },
+);
+repair(
+  "verbs-modal",
+  118,
+  "Will the technician checks each valve tomorrow?",
+  "Will the technician check each valve tomorrow?",
+  "В вопросе will ставится перед подлежащим, а после него нужен check без -s.",
+);
+transform(
+  "verbs-modal",
+  119,
+  "The warehouse can store the extra boxes.",
+  "Сделай общий вопрос.",
+  "Can the warehouse store the extra boxes?",
+  "Вопрос с can образуется перестановкой can перед подлежащим; store не меняется.",
+);
+translate(
+  "verbs-modal",
+  120,
+  "Завтра в это время специалисты будут следить за системой.",
+  "at this time tomorrow / the specialists / monitor / the system",
+  "At this time tomorrow, the specialists will be monitoring the system.",
+  "Задан будущий момент наблюдения за процессом: will be monitoring.",
+);
+contrast(
+  "verbs-modal",
+  121,
+  "Отличи будущее действие от процесса в конкретный момент.",
+  [
+    {
+      prompt: "I will ___ the first draft tonight.",
+      base: "revise",
+      answer: "revise",
+    },
+    {
+      prompt: "At nine tonight, I will be ___ the second draft.",
+      base: "revise",
+      answer: "revising",
+    },
+  ],
+  "Will + revise сообщает о действии; will be + revising показывает процесс ровно в девять.",
+);
+contrast(
+  "verbs-modal",
+  122,
+  "Сравни возможность оставить дверь открытой и вопрос о строгом правиле.",
+  [
+    {
+      prompt: "The cook may ___ the service door open briefly.",
+      base: "leave",
+      answer: "leave",
+    },
+    {
+      prompt: "Must the cook ___ the service door locked overnight?",
+      base: "leave",
+      answer: "leave",
+    },
+  ],
+  "После may и must используется начальная форма leave.",
+);
 
-repair('verbs-be',113,'The printouts from each branch was on the table.','The printouts from each branch were on the table.','Подлежащее printouts во множественном числе, поэтому в прошедшем времени нужно were.');
-transform('verbs-be',114,'The storage room was locked overnight.','Сделай общий вопрос.','Was the storage room locked overnight?','В вопросе вспомогательный глагол be ставится перед подлежащим.');
-translate('verbs-be',115,'Где были запасные ключи до ремонта?','where / the spare keys / be / before the renovation','Where were the spare keys before the renovation?','Spare keys — множественное число; в прошедшем времени используется were.');
-contrast('verbs-be',116,'Подбери be к разным подлежащим и временам.',[{prompt:'The demonstration ___ ready now.',base:'be',answer:'is'},{prompt:'The demonstrations ___ cancelled yesterday.',base:'be',answer:'were'}],'Единственное число сейчас — is; множественное число в прошлом — were.');
-add('verbs-be',117,'gap',2,'The public entrance ___ closed on Sundays.','is','Entrance — единственное число; в настоящем времени нужна форма is.',{cue:'Главный вход закрыт по воскресеньям.',base:'be',choices:['is','are']});
-repair('verbs-be',118,'Are the request form complete and ready to submit?','Is the request form complete and ready to submit?','Подлежащее form в единственном числе, поэтому вопрос начинается с is.');
-transform('verbs-be',119,'The instruction cards were in the top drawer.','Замени cards на card и согласуй be.','The instruction card was in the top drawer.','С единственным числом card в прошедшем времени используется was.');
-translate('verbs-be',120,'Старое здание было закрыто, но главный вход был открыт.','the old building / closed / but / the main entrance / open','The old building was closed, but the main entrance was open.','Оба подлежащих в единственном числе; состояние в прошлом выражается was.');
-contrast('verbs-be',121,'Сравни неисчисляемое equipment и существительное во множественном числе.',[{prompt:'The new equipment ___ available now.',base:'be',answer:'is'},{prompt:'The spare batteries ___ available now.',base:'be',answer:'are'}],'Equipment обычно неисчисляемое и требует is; batteries во множественном числе требуют are.');
-contrast('verbs-be',122,'Сопоставь неисчисляемое equipment и существительное во множественном числе.',[{prompt:'The equipment ___ ready for inspection.',base:'be',answer:'is'},{prompt:'The spare cables ___ ready for inspection.',base:'be',answer:'are'}],'Equipment употребляется как неисчисляемое существительное в единственном числе: is. Cables требует are.');
+repair(
+  "verbs-be",
+  113,
+  "The printouts from each branch was on the table.",
+  "The printouts from each branch were on the table.",
+  "Подлежащее printouts во множественном числе, поэтому в прошедшем времени нужно were.",
+);
+transform(
+  "verbs-be",
+  114,
+  "The storage room was locked overnight.",
+  "Сделай общий вопрос.",
+  "Was the storage room locked overnight?",
+  "В вопросе вспомогательный глагол be ставится перед подлежащим.",
+);
+translate(
+  "verbs-be",
+  115,
+  "Где были запасные ключи до ремонта?",
+  "where / the spare keys / be / before the renovation",
+  "Where were the spare keys before the renovation?",
+  "Spare keys — множественное число; в прошедшем времени используется were.",
+);
+contrast(
+  "verbs-be",
+  116,
+  "Подбери be к разным подлежащим и временам.",
+  [
+    { prompt: "The demonstration ___ ready now.", base: "be", answer: "is" },
+    {
+      prompt: "The demonstrations ___ cancelled yesterday.",
+      base: "be",
+      answer: "were",
+    },
+  ],
+  "Единственное число сейчас — is; множественное число в прошлом — were.",
+);
+add(
+  "verbs-be",
+  117,
+  "gap",
+  2,
+  "The public entrance ___ closed on Sundays.",
+  "is",
+  "Entrance — единственное число; в настоящем времени нужна форма is.",
+  {
+    cue: "Главный вход закрыт по воскресеньям.",
+    base: "be",
+    choices: ["is", "are"],
+  },
+);
+repair(
+  "verbs-be",
+  118,
+  "Are the request form complete and ready to submit?",
+  "Is the request form complete and ready to submit?",
+  "Подлежащее form в единственном числе, поэтому вопрос начинается с is.",
+);
+transform(
+  "verbs-be",
+  119,
+  "The instruction cards were in the top drawer.",
+  "Замени cards на card и согласуй be.",
+  "The instruction card was in the top drawer.",
+  "С единственным числом card в прошедшем времени используется was.",
+);
+translate(
+  "verbs-be",
+  120,
+  "Старое здание было закрыто, но главный вход был открыт.",
+  "the old building / closed / but / the main entrance / open",
+  "The old building was closed, but the main entrance was open.",
+  "Оба подлежащих в единственном числе; состояние в прошлом выражается was.",
+);
+contrast(
+  "verbs-be",
+  121,
+  "Сравни неисчисляемое equipment и существительное во множественном числе.",
+  [
+    {
+      prompt: "The new equipment ___ available now.",
+      base: "be",
+      answer: "is",
+    },
+    {
+      prompt: "The spare batteries ___ available now.",
+      base: "be",
+      answer: "are",
+    },
+  ],
+  "Equipment обычно неисчисляемое и требует is; batteries во множественном числе требуют are.",
+);
+contrast(
+  "verbs-be",
+  122,
+  "Сопоставь неисчисляемое equipment и существительное во множественном числе.",
+  [
+    {
+      prompt: "The equipment ___ ready for inspection.",
+      base: "be",
+      answer: "is",
+    },
+    {
+      prompt: "The spare cables ___ ready for inspection.",
+      base: "be",
+      answer: "are",
+    },
+  ],
+  "Equipment употребляется как неисчисляемое существительное в единственном числе: is. Cables требует are.",
+);
 
-repair('verbs-time',113,'I have sent the final invoice at eight yesterday morning.','I sent the final invoice at eight yesterday morning.','Указано завершённое время yesterday morning, поэтому нужен Past Simple без have.');
-transform('verbs-time',114,'The lab has already tested the new material.','Спроси, что именно лаборатория уже проверила.','What has the lab already tested?','Для результата к настоящему моменту используется Present Perfect; в вопросе has стоит перед подлежащим.');
-translate('verbs-time',115,'Мы никогда не пользовались этим терминалом.','we / never / use / this terminal','We have never used this terminal.','Опыт за период до настоящего момента без конкретной даты передаётся через have never + причастие.');
-contrast('verbs-time',116,'Отличи действие с указанным временем от результата, важного сейчас.',[{prompt:'The receptionist ___ a duplicate key an hour ago.',base:'make',answer:'made'},{prompt:'The receptionist ___ a replacement key, so the office is accessible now.',base:'make',answer:'has made'}],'An hour ago задаёт Past Simple: made. Текущий результат задаёт Present Perfect: has made.');
-add('verbs-time',117,'gap',2,'The contractors have not ___ the final measurements yet.','taken','После have not нужен past participle; take → taken.',{cue:'Подрядчики пока не сняли окончательные размеры.',base:'take',choices:['taken','took']});
-repair('verbs-time',118,"I haven't spoke to the coordinator yet.", "I haven't spoken to the coordinator yet.",'После have not нужен past participle: spoken, не spoke.');
-transform('verbs-time',119,'The lab ran this experiment in March.','Спроси, запускала ли лаборатория этот эксперимент когда-либо раньше.','Has the lab ever run this experiment before?','Ever before спрашивает об опыте до настоящего момента: has + past participle run.');
-translate('verbs-time',120,'Кто-нибудь уже подтвердил бронирование?','anyone / confirm / the booking / already','Has anyone confirmed the booking already?','Для результата, актуального сейчас, нужен Present Perfect; anyone требует has.');
-contrast('verbs-time',121,'Сравни точный день в прошлом и результат без указанной даты.',[{prompt:'I ___ the reminder yesterday.',base:'read',answer:'read'},{prompt:'I ___ the reminder already, so I can respond now.',base:'read',answer:'have read'}],'Yesterday — Past Simple. Во второй части выбран Present Perfect, чтобы связать прочтение с возможностью ответить сейчас.');
-contrast('verbs-time',122,'Сравни завершённый момент вчера и результат к настоящему времени.',[{prompt:'She ___ a copy of the form yesterday.',base:'take',answer:'took'},{prompt:'She has already ___ a copy of the form.',base:'take',answer:'taken'}],'Yesterday требует Past Simple took; после has нужен past participle taken.');
+repair(
+  "verbs-time",
+  113,
+  "I have sent the final invoice at eight yesterday morning.",
+  "I sent the final invoice at eight yesterday morning.",
+  "Указано точное законченное время: вчера в восемь утра. Поэтому I sent, без have.",
+  {
+    cue: "Я отправил итоговый счёт вчера в восемь утра.",
+    task: "Проверь форму глагола для события в точно указанное время вчера. Исправь только форму глагола.",
+  },
+);
+transform(
+  "verbs-time",
+  114,
+  "The lab has already tested the new material.",
+  "Спроси, что именно лаборатория уже проверила.",
+  "What has the lab already tested?",
+  "Для результата к настоящему моменту используется Present Perfect; в вопросе has стоит перед подлежащим.",
+);
+translate(
+  "verbs-time",
+  115,
+  "Мы никогда не пользовались этим терминалом.",
+  "we / never / use / this terminal",
+  "We have never used this terminal.",
+  "Опыт за период до настоящего момента без конкретной даты передаётся через have never + причастие.",
+);
+contrast(
+  "verbs-time",
+  116,
+  "Отличи действие с указанным временем от результата, важного сейчас.",
+  [
+    {
+      prompt: "The receptionist ___ a duplicate key an hour ago.",
+      base: "make",
+      answer: "made",
+    },
+    {
+      prompt:
+        "The receptionist ___ a replacement key, so the office is accessible now.",
+      base: "make",
+      answer: "has made",
+    },
+  ],
+  "An hour ago задаёт Past Simple: made. Текущий результат задаёт Present Perfect: has made.",
+);
+add(
+  "verbs-time",
+  117,
+  "gap",
+  2,
+  "The contractors have not ___ the final measurements yet.",
+  "taken",
+  "После have not нужен past participle; take → taken.",
+  {
+    cue: "Подрядчики пока не сняли окончательные размеры.",
+    base: "take",
+    choices: ["taken", "took"],
+  },
+);
+repair(
+  "verbs-time",
+  118,
+  "I haven't spoke to the coordinator yet.",
+  "I haven't spoken to the coordinator yet.",
+  "Yet показывает, что речь о результате к настоящему: «я ещё не поговорил». После have not нужна форма spoken; spoke употребляется в обычном прошедшем времени без have.",
+  {
+    cue: "Я ещё не поговорил с координатором.",
+    task: "Проверь форму основного глагола после have not.",
+  },
+);
+transform(
+  "verbs-time",
+  119,
+  "The lab ran this experiment in March.",
+  "Спроси, запускала ли лаборатория этот эксперимент когда-либо раньше.",
+  "Has the lab ever run this experiment before?",
+  "Ever before спрашивает об опыте до настоящего момента: has + past participle run.",
+);
+translate(
+  "verbs-time",
+  120,
+  "Кто-нибудь уже подтвердил бронирование?",
+  "anyone / confirm / the booking / already",
+  "Has anyone confirmed the booking already?",
+  "Для результата, актуального сейчас, нужен Present Perfect; anyone требует has.",
+);
+contrast(
+  "verbs-time",
+  121,
+  "Сравни точный день в прошлом и результат без указанной даты.",
+  [
+    { prompt: "I ___ the reminder yesterday.", base: "read", answer: "read" },
+    {
+      prompt: "I ___ the reminder already, so I can respond now.",
+      base: "read",
+      answer: "have read",
+    },
+  ],
+  "Yesterday — Past Simple. Во второй части выбран Present Perfect, чтобы связать прочтение с возможностью ответить сейчас.",
+);
+contrast(
+  "verbs-time",
+  122,
+  "Сравни завершённый момент вчера и результат к настоящему времени.",
+  [
+    {
+      prompt: "She ___ a copy of the form yesterday.",
+      base: "take",
+      answer: "took",
+    },
+    {
+      prompt: "She has already ___ a copy of the form.",
+      base: "take",
+      answer: "taken",
+    },
+  ],
+  "Yesterday требует Past Simple took; после has нужен past participle taken.",
+);
 
 // Practice expansion 2026-10-06, batch 2: ten new independent families per skill.
 // Keep contexts varied and each prompt focused on one target rule.
 
-repair('structure-question',108,'Do you know where is the nearest print shop?','Do you know where the nearest print shop is?','Внутри Do you know используется порядок слов утверждения: подлежащее перед is.');
-transform('structure-question',109,'When does the evening class begin?','Встрой прямой вопрос после Could you tell me.','Could you tell me when the evening class begins?','В косвенном вопросе нет инверсии; begin согласуется с class: begins.');
-translate('structure-question',110,'Я не знаю, принял ли банк перевод.','I / not know / whether / the bank / receive / the transfer','I do not know whether the bank received the transfer.','После whether порядок слов прямой; выбрана форма received.');
-contrast('structure-question',111,'Сравни прямой вопрос и тот же вопрос внутри Do you remember.',[{prompt:'Where ___ the spare batteries?',base:'be',answer:'are'},{prompt:'Do you remember where the spare batteries ___?',base:'be',answer:'are'}],'В прямом вопросе are стоит перед подлежащим; внутри косвенного вопроса порядок подлежащее + are.');
-add('structure-question',112,'gap',2,'Could you explain why the printer ___ making this noise?','is','Это косвенный вопрос: после why идёт прямой порядок слов, the printer is.',{cue:'Можете объяснить, почему принтер издаёт этот шум?',base:'be',choices:['is','does']});
-repair('structure-question',113,'The guide asked us what did we need for the hike.','The guide asked us what we needed for the hike.','В косвенном вопросе what we needed сохраняет прямой порядок слов; прошедшее время согласуется с asked.');
-transform('structure-question',114,'Who manages the evening shift?','Начни с Do you know, сохрани вопрос косвенным.','Do you know who manages the evening shift?','Who здесь подлежащее придаточной части; порядок слов остаётся who manages.');
-translate('structure-question',115,'Спросите, когда начинается регистрация.','ask / when / registration / begin','Ask when registration begins.','После ask используется косвенный порядок слов: registration begins.');
-contrast('structure-question',116,'Один вопрос сначала задаётся напрямую, затем включается в предложение.',[{prompt:'How long ___ the trip take?',base:'do',answer:'does'},{prompt:'We need to find out how long the trip ___ .',base:'take',answer:'takes'}],'Прямой вопрос требует does перед подлежащим; в косвенной части: the trip takes.');
-add('structure-question',117,'choice',3,'Выбери грамматически верную просьбу узнать номер платформы.','Could you tell me which platform the train leaves from?','Внутри косвенного вопроса используется прямой порядок слов: the train leaves.',{task:'Выбери корректный косвенный вопрос.',choices:['Could you tell me which platform the train leaves from?','Could you tell me which platform does the train leave from?','Could you tell me which platform the train leaves from does?']});
+repair(
+  "structure-question",
+  108,
+  "Do you know where is the nearest print shop?",
+  "Do you know where the nearest print shop is?",
+  "Внутри Do you know используется порядок слов утверждения: подлежащее перед is.",
+);
+transform(
+  "structure-question",
+  109,
+  "When does the evening class begin?",
+  "Встрой прямой вопрос после Could you tell me.",
+  "Could you tell me when the evening class begins?",
+  "В косвенном вопросе нет инверсии; begin согласуется с class: begins.",
+);
+translate(
+  "structure-question",
+  110,
+  "Я не знаю, принял ли банк перевод.",
+  "I / not know / whether / the bank / receive / the transfer",
+  "I do not know whether the bank received the transfer.",
+  "После whether порядок слов прямой; выбрана форма received.",
+);
+contrast(
+  "structure-question",
+  111,
+  "Сравни прямой вопрос и тот же вопрос внутри Do you remember.",
+  [
+    { prompt: "Where ___ the spare batteries?", base: "be", answer: "are" },
+    {
+      prompt: "Do you remember where the spare batteries ___?",
+      base: "be",
+      answer: "are",
+    },
+  ],
+  "В прямом вопросе are стоит перед подлежащим; внутри косвенного вопроса порядок подлежащее + are.",
+);
+add(
+  "structure-question",
+  112,
+  "gap",
+  2,
+  "Could you explain why the printer ___ making this noise?",
+  "is",
+  "Это косвенный вопрос: после why идёт прямой порядок слов, the printer is.",
+  {
+    cue: "Можете объяснить, почему принтер издаёт этот шум?",
+    base: "be",
+    choices: ["is", "does"],
+  },
+);
+repair(
+  "structure-question",
+  113,
+  "The guide asked us what did we need for the hike.",
+  "The guide asked us what we needed for the hike.",
+  "В косвенном вопросе what we needed сохраняет прямой порядок слов; прошедшее время согласуется с asked.",
+);
+transform(
+  "structure-question",
+  114,
+  "Who manages the evening shift?",
+  "Начни с Do you know, сохрани вопрос косвенным.",
+  "Do you know who manages the evening shift?",
+  "Who здесь подлежащее придаточной части; порядок слов остаётся who manages.",
+);
+translate(
+  "structure-question",
+  115,
+  "Спросите, когда начинается регистрация.",
+  "ask / when / registration / begin",
+  "Ask when registration begins.",
+  "После ask используется косвенный порядок слов: registration begins.",
+);
+contrast(
+  "structure-question",
+  116,
+  "Один вопрос сначала задаётся напрямую, затем включается в предложение.",
+  [
+    { prompt: "How long ___ the trip take?", base: "do", answer: "does" },
+    {
+      prompt: "We need to find out how long the trip ___ .",
+      base: "take",
+      answer: "takes",
+    },
+  ],
+  "Прямой вопрос требует does перед подлежащим; в косвенной части: the trip takes.",
+);
+add(
+  "structure-question",
+  117,
+  "choice",
+  3,
+  "Выбери грамматически верную просьбу узнать номер платформы.",
+  "Could you tell me which platform the train leaves from?",
+  "Внутри косвенного вопроса используется прямой порядок слов: the train leaves.",
+  {
+    task: "Выбери корректный косвенный вопрос.",
+    choices: [
+      "Could you tell me which platform the train leaves from?",
+      "Could you tell me which platform does the train leave from?",
+      "Could you tell me which platform the train leaves from does?",
+    ],
+  },
+);
 
-repair('structure-links',109,'Because the road was icy, so the bus drove slowly.','Because the road was icy, the bus drove slowly.','В этой конструкции достаточно because; перед следствием so не добавляется.');
-transform('structure-links',110,'The clinic was short-staffed, so appointments took longer.','Поставь следствие первым и используй because.','Appointments took longer because the clinic was short-staffed.','Because вводит причину; предложение сохраняет исходную причинно-следственную связь.');
-translate('structure-links',111,'Автобус опоздал, поэтому мы пропустили начало экскурсии.','the bus / arrive late / so / we / miss / the start of the tour','The bus arrived late, so we missed the start of the tour.','So связывает причину с результатом; оба завершённых действия стоят в Past Simple.');
-contrast('structure-links',112,'Впиши союз, который связывает причину и результат.',[{prompt:'The museum was closed, ___ we visited the nearby gallery instead.',base:'so',answer:'so'},{prompt:'We visited the nearby gallery instead ___ the museum was closed.',base:'because',answer:'because'}],'В первом предложении после so следует результат; во втором because вводит причину.');
-add('structure-links',113,'gap',2,'Maya took a taxi ___ she had missed the last bus.','because','Часть после пропуска объясняет причину поездки на такси, поэтому нужен because.',{cue:'Майя взяла такси, потому что пропустила последний автобус.',base:'союз причины или следствия',choices:['because','so']});
-repair('structure-links',114,'The battery was empty, so the camera did not turn on because.','The battery was empty, so the camera did not turn on.','So уже соединяет причину и результат; лишнее because в конце неуместно.');
-transform('structure-links',115,'We started earlier because the forecast predicted heavy snow.','Передай следствие через so, поставив причину первой.','The forecast predicted heavy snow, so we started earlier.','После so ставится результат; исходная причинно-следственная связь сохраняется.');
-translate('structure-links',116,'Из-за ремонта мост закрыт, поэтому машины едут в объезд.','the bridge / be closed / because of / repairs / so / cars / take a detour','The bridge is closed because of repairs, so cars are taking a detour.','Because of ставится перед существительной группой repairs; so вводит следствие.');
-contrast('structure-links',117,'Сопоставь причину и следствие, используя указанный союз.',[{prompt:'The team postponed the match ___ the field was flooded.',base:'because',answer:'because'},{prompt:'The field was flooded, ___ the team postponed the match.',base:'so',answer:'so'}],'Because вводит причину, so вводит результат; смысловая связь в обоих случаях одинакова.');
-add('structure-links',118,'choice',3,'Выбери предложение, где because вводит причину опоздания.','Nora arrived late because the subway was delayed.','Subway was delayed — причина; because вводит именно её.',{task:'Выбери вариант с правильной причинно-следственной связью.',choices:['Nora arrived late because the subway was delayed.','The subway was delayed, because Nora arrived late.','Nora arrived late so the subway was delayed.']});
+repair(
+  "structure-links",
+  109,
+  "Because the road was icy, so the bus drove slowly.",
+  "Because the road was icy, the bus drove slowly.",
+  "В этой конструкции достаточно because; перед следствием so не добавляется.",
+);
+transform(
+  "structure-links",
+  110,
+  "The clinic was short-staffed, so appointments took longer.",
+  "Поставь следствие первым и используй because.",
+  "Appointments took longer because the clinic was short-staffed.",
+  "Because вводит причину; предложение сохраняет исходную причинно-следственную связь.",
+);
+translate(
+  "structure-links",
+  111,
+  "Автобус опоздал, поэтому мы пропустили начало экскурсии.",
+  "the bus / arrive late / so / we / miss / the start of the tour",
+  "The bus arrived late, so we missed the start of the tour.",
+  "So связывает причину с результатом; оба завершённых действия стоят в Past Simple.",
+);
+contrast(
+  "structure-links",
+  112,
+  "Впиши союз, который связывает причину и результат.",
+  [
+    {
+      prompt:
+        "The museum was closed, ___ we visited the nearby gallery instead.",
+      base: "so",
+      answer: "so",
+    },
+    {
+      prompt:
+        "We visited the nearby gallery instead ___ the museum was closed.",
+      base: "because",
+      answer: "because",
+    },
+  ],
+  "В первом предложении после so следует результат; во втором because вводит причину.",
+);
+add(
+  "structure-links",
+  113,
+  "gap",
+  2,
+  "Maya took a taxi ___ she had missed the last bus.",
+  "because",
+  "Часть после пропуска объясняет причину поездки на такси, поэтому нужен because.",
+  {
+    cue: "Майя взяла такси, потому что пропустила последний автобус.",
+    base: "союз причины или следствия",
+    choices: ["because", "so"],
+  },
+);
+repair(
+  "structure-links",
+  114,
+  "The battery was empty, so the camera did not turn on because.",
+  "The battery was empty, so the camera did not turn on.",
+  "So уже соединяет причину и результат; лишнее because в конце неуместно.",
+);
+transform(
+  "structure-links",
+  115,
+  "We started earlier because the forecast predicted heavy snow.",
+  "Передай следствие через so, поставив причину первой.",
+  "The forecast predicted heavy snow, so we started earlier.",
+  "После so ставится результат; исходная причинно-следственная связь сохраняется.",
+);
+translate(
+  "structure-links",
+  116,
+  "Из-за ремонта мост закрыт, поэтому машины едут в объезд.",
+  "the bridge / be closed / because of / repairs / so / cars / take a detour",
+  "The bridge is closed because of repairs, so cars are taking a detour.",
+  "Because of ставится перед существительной группой repairs; so вводит следствие.",
+);
+contrast(
+  "structure-links",
+  117,
+  "Сопоставь причину и следствие, используя указанный союз.",
+  [
+    {
+      prompt: "The team postponed the match ___ the field was flooded.",
+      base: "because",
+      answer: "because",
+    },
+    {
+      prompt: "The field was flooded, ___ the team postponed the match.",
+      base: "so",
+      answer: "so",
+    },
+  ],
+  "Because вводит причину, so вводит результат; смысловая связь в обоих случаях одинакова.",
+);
+add(
+  "structure-links",
+  118,
+  "choice",
+  3,
+  "Выбери предложение, где because вводит причину опоздания.",
+  "Nora arrived late because the subway was delayed.",
+  "Subway was delayed — причина; because вводит именно её.",
+  {
+    task: "Выбери вариант с правильной причинно-следственной связью.",
+    choices: [
+      "Nora arrived late because the subway was delayed.",
+      "The subway was delayed, because Nora arrived late.",
+      "Nora arrived late so the subway was delayed.",
+    ],
+  },
+);
 
-repair('nouns-number',108,'Each passengers must show their ticket before boarding.','Each passenger must show their ticket before boarding.','Each требует существительное в единственном числе: passenger. Singular they допустимо для неизвестного пассажира.');
-transform('nouns-number',109,'We need one more folder.','Замени one more на another, остальные слова сохрани.','We need another folder.','Another употребляется перед исчисляемым существительным в единственном числе.');
-translate('nouns-number',110,'Оба сотрудника проверили другие документы.','both / employee / check / other / document','Both employees checked other documents.','Both требует множественного числа; other перед исчисляемым существительным во множественном числе.');
-contrast('nouns-number',111,'Выбери форму существительного после каждого определителя.',[{prompt:'Every ___ has a numbered label.',base:'box',answer:'box'},{prompt:'All the ___ have numbered labels.',base:'box',answer:'boxes'}],'Every + единственное число; all the + множественное число.');
-add('nouns-number',112,'gap',2,'Neither ___ was available during the inventory.','shelf','Neither в этом значении относится к одному из двух предметов; после него единственное число.',{cue:'Ни одна полка не была доступна во время инвентаризации.',base:'shelf',choices:['shelf','shelves']});
-repair('nouns-number',113,'There are much chairs in the waiting area.','There are many chairs in the waiting area.','Many употребляется с исчисляемым существительным во множественном числе: chairs.');
-transform('nouns-number',114,'This key opens the storage cabinet.','Замени This key на These keys, согласуй глагол и дополнение.','These keys open the storage cabinets.','These требует множественное число; opens меняется на open, cabinet — на cabinets.');
-translate('nouns-number',115,'Каждая коробка содержит две запасные лампы.','each / box / contain / two / spare lamp','Each box contains two spare lamps.','Each box — единственное число, поэтому contains; после two нужно lamps.');
-contrast('nouns-number',116,'Сравни выбор одного дополнительного предмета и нескольких других предметов.',[{prompt:'Please bring ___ copy for the new visitor.',base:'another',answer:'another'},{prompt:'Please bring ___ copies for the new visitors.',base:'other',answer:'other'}],'Another + исчисляемое существительное в единственном числе; other + множественное число.');
-add('nouns-number',117,'choice',3,'Выбери правильную просьбу о нескольких дополнительных стульях.','Could we get some other chairs for the back row?','Перед chairs во множественном числе подходит other; another потребовал бы единственное число.',{task:'Выбери предложение с верным определителем.',choices:['Could we get some other chairs for the back row?','Could we get another chairs for the back row?','Could we get some others chair for the back row?']});
+repair(
+  "nouns-number",
+  108,
+  "Each passengers must show their ticket before boarding.",
+  "Each passenger must show their ticket before boarding.",
+  "Each требует существительное в единственном числе: passenger. Singular they допустимо для неизвестного пассажира.",
+);
+transform(
+  "nouns-number",
+  109,
+  "We need one more folder.",
+  "Замени one more на another, остальные слова сохрани.",
+  "We need another folder.",
+  "Another употребляется перед исчисляемым существительным в единственном числе.",
+);
+translate(
+  "nouns-number",
+  110,
+  "Оба сотрудника проверили другие документы.",
+  "both / employee / check / other / document",
+  "Both employees checked other documents.",
+  "Both требует множественного числа; other перед исчисляемым существительным во множественном числе.",
+);
+contrast(
+  "nouns-number",
+  111,
+  "Выбери форму существительного после каждого определителя.",
+  [
+    { prompt: "Every ___ has a numbered label.", base: "box", answer: "box" },
+    {
+      prompt: "All the ___ have numbered labels.",
+      base: "box",
+      answer: "boxes",
+    },
+  ],
+  "Every + единственное число; all the + множественное число.",
+);
+add(
+  "nouns-number",
+  112,
+  "gap",
+  2,
+  "Neither ___ was available during the inventory.",
+  "shelf",
+  "Neither в этом значении относится к одному из двух предметов; после него единственное число.",
+  {
+    cue: "Ни одна полка не была доступна во время инвентаризации.",
+    base: "shelf",
+    choices: ["shelf", "shelves"],
+  },
+);
+repair(
+  "nouns-number",
+  113,
+  "There are much chairs in the waiting area.",
+  "There are many chairs in the waiting area.",
+  "Many употребляется с исчисляемым существительным во множественном числе: chairs.",
+);
+transform(
+  "nouns-number",
+  114,
+  "This key opens the storage cabinet.",
+  "Замени This key на These keys, согласуй глагол и дополнение.",
+  "These keys open the storage cabinets.",
+  "These требует множественное число; opens меняется на open, cabinet — на cabinets.",
+);
+translate(
+  "nouns-number",
+  115,
+  "Каждая коробка содержит две запасные лампы.",
+  "each / box / contain / two / spare lamp",
+  "Each box contains two spare lamps.",
+  "Each box — единственное число, поэтому contains; после two нужно lamps.",
+);
+contrast(
+  "nouns-number",
+  116,
+  "Сравни выбор одного дополнительного предмета и нескольких других предметов.",
+  [
+    {
+      prompt: "Please bring ___ copy for the new visitor.",
+      base: "another",
+      answer: "another",
+    },
+    {
+      prompt: "Please bring ___ copies for the new visitors.",
+      base: "other",
+      answer: "other",
+    },
+  ],
+  "Another + исчисляемое существительное в единственном числе; other + множественное число.",
+);
+add(
+  "nouns-number",
+  117,
+  "choice",
+  3,
+  "Выбери правильную просьбу о нескольких дополнительных стульях.",
+  "Could we get some other chairs for the back row?",
+  "Перед chairs во множественном числе подходит other; another потребовал бы единственное число.",
+  {
+    task: "Выбери предложение с верным определителем.",
+    choices: [
+      "Could we get some other chairs for the back row?",
+      "Could we get another chairs for the back row?",
+      "Could we get some others chair for the back row?",
+    ],
+  },
+);
 
-repair('nouns-count',108,'The instructor gave us a lot of helpful feedbacks after the rehearsal.','The instructor gave us a lot of helpful feedback after the rehearsal.','Feedback обычно неисчисляемое; после a lot of оно не получает окончание -s.');
-transform('nouns-count',109,'We received useful advice from the architect.','Посчитай три отдельных рекомендации, используя piece.','We received three useful pieces of advice from the architect.','Advice остаётся неисчисляемым; отдельные рекомендации считаются через pieces of advice.');
-translate('nouns-count',110,'В заявке не хватает информации.','the application / not contain / enough / information','The application does not contain enough information.','Information неисчисляемо и не получает -s; enough может стоять перед ним.');
-contrast('nouns-count',111,'Различи неисчисляемое research и отдельные исследования.',[{prompt:'The ___ is still in its early stages.',base:'research',answer:'research'},{prompt:'The team published two ___ last year.',base:'study',answer:'studies'}],'Research обычно неисчисляемо; отдельные исследования — studies.');
-add('nouns-count',112,'gap',2,'We need a little more ___ before making a final decision.','information','Information неисчисляемое; после a little more не ставится форма informations.',{cue:'Нам нужно немного больше информации перед окончательным решением.',base:'information',choices:['information','informations']});
-repair('nouns-count',113,'The equipment in both rooms are new.','The equipment in both rooms is new.','Equipment — неисчисляемое существительное в единственном числе; требуется is.');
-transform('nouns-count',114,'The report contains three pieces of evidence.','Передай это через three examples of evidence.','The report contains three examples of evidence.','Evidence остаётся неисчисляемым; countable examples обозначает отдельные подтверждения.');
-translate('nouns-count',115,'В комнате есть немного мебели.','there / be / a little / furniture / in the room','There is a little furniture in the room.','Furniture неисчисляемое: a little и форма is.');
-contrast('nouns-count',116,'Выбери подходящее количество перед неисчисляемым и исчисляемым существительным.',[{prompt:'There is very ___ traffic near the station today.',base:'much',answer:'much'},{prompt:'There are very ___ buses after midnight.',base:'few',answer:'few'}],'Traffic неисчисляемое: much; buses исчисляемое во множественном числе: few.');
-add('nouns-count',117,'choice',3,'Выбери грамматически правильный отчёт о прогрессе.','We made a lot of progress during the first week.','Progress неисчисляемое и не получает -s; a lot of подходит с неисчисляемыми существительными.',{task:'Выбери верное употребление progress.',choices:['We made a lot of progress during the first week.','We made many progresses during the first week.','We made a progress during the first week.']});
+repair(
+  "nouns-count",
+  108,
+  "The instructor gave us a lot of helpful feedbacks after the rehearsal.",
+  "The instructor gave us a lot of helpful feedback after the rehearsal.",
+  "Feedback обычно неисчисляемое; после a lot of оно не получает окончание -s.",
+);
+transform(
+  "nouns-count",
+  109,
+  "We received useful advice from the architect.",
+  "Посчитай три отдельных рекомендации, используя piece.",
+  "We received three useful pieces of advice from the architect.",
+  "Advice остаётся неисчисляемым; отдельные рекомендации считаются через pieces of advice.",
+);
+translate(
+  "nouns-count",
+  110,
+  "В заявке не хватает информации.",
+  "the application / not contain / enough / information",
+  "The application does not contain enough information.",
+  "Information неисчисляемо и не получает -s; enough может стоять перед ним.",
+);
+contrast(
+  "nouns-count",
+  111,
+  "Различи неисчисляемое research и отдельные исследования.",
+  [
+    {
+      prompt: "The ___ is still in its early stages.",
+      base: "research",
+      answer: "research",
+    },
+    {
+      prompt: "The team published two ___ last year.",
+      base: "study",
+      answer: "studies",
+    },
+  ],
+  "Research обычно неисчисляемо; отдельные исследования — studies.",
+);
+add(
+  "nouns-count",
+  112,
+  "gap",
+  2,
+  "We need a little more ___ before making a final decision.",
+  "information",
+  "Information неисчисляемое; после a little more не ставится форма informations.",
+  {
+    cue: "Нам нужно немного больше информации перед окончательным решением.",
+    base: "information",
+    choices: ["information", "informations"],
+  },
+);
+repair(
+  "nouns-count",
+  113,
+  "The equipment in both rooms are new.",
+  "The equipment in both rooms is new.",
+  "Equipment — неисчисляемое существительное в единственном числе; требуется is.",
+);
+transform(
+  "nouns-count",
+  114,
+  "The report contains three pieces of evidence.",
+  "Передай это через three examples of evidence.",
+  "The report contains three examples of evidence.",
+  "Evidence остаётся неисчисляемым; countable examples обозначает отдельные подтверждения.",
+);
+translate(
+  "nouns-count",
+  115,
+  "В комнате есть немного мебели.",
+  "there / be / a little / furniture / in the room",
+  "There is a little furniture in the room.",
+  "Furniture неисчисляемое: a little и форма is.",
+);
+contrast(
+  "nouns-count",
+  116,
+  "Выбери подходящее количество перед неисчисляемым и исчисляемым существительным.",
+  [
+    {
+      prompt: "There is very ___ traffic near the station today.",
+      base: "much",
+      answer: "much",
+    },
+    {
+      prompt: "There are very ___ buses after midnight.",
+      base: "few",
+      answer: "few",
+    },
+  ],
+  "Traffic неисчисляемое: much; buses исчисляемое во множественном числе: few.",
+);
+add(
+  "nouns-count",
+  117,
+  "choice",
+  3,
+  "Выбери грамматически правильный отчёт о прогрессе.",
+  "We made a lot of progress during the first week.",
+  "Progress неисчисляемое и не получает -s; a lot of подходит с неисчисляемыми существительными.",
+  {
+    task: "Выбери верное употребление progress.",
+    choices: [
+      "We made a lot of progress during the first week.",
+      "We made many progresses during the first week.",
+      "We made a progress during the first week.",
+    ],
+  },
+);
 
-repair('patterns-modal',107,'Passengers must to remain behind the yellow line.','Passengers must remain behind the yellow line.','После must используется начальная форма remain без to.');
-transform('patterns-modal',108,'The staff can open the side entrance.','Замени can на should, сохрани глагол и остальную часть.','The staff should open the side entrance.','После should нужен глагол в начальной форме без to.');
-translate('patterns-modal',109,'Вам нельзя оставлять велосипед у аварийного выхода.','you / must not / leave / a bicycle / by the emergency exit','You must not leave a bicycle by the emergency exit.','После must not используется начальная форма leave.');
-contrast('patterns-modal',110,'Сравни формы после модальных глаголов и после want.',[{prompt:'The crew should ___ the ropes before departure.',base:'inspect',answer:'inspect'},{prompt:'The crew wants ___ the ropes before departure.',base:'inspect',answer:'to inspect'}],'После should — начальная форма без to; want требует to + глагол.');
-add('patterns-modal',111,'gap',2,'You ___ not feed the animals in this area. (запрет)','must','Для запрета используется must not + начальная форма feed.',{cue:'В этой зоне нельзя кормить животных. Используй сильный запрет.',base:'modal prohibition',choices:['must','should']});
-repair('patterns-modal',112,'Could you to lower the screen before the presentation?','Could you lower the screen before the presentation?','После could в вежливой просьбе используется начальная форма lower без to.');
-transform('patterns-modal',113,'The supervisor will approve the updated checklist.','Сделай вопрос, сохрани will и остальную лексику.','Will the supervisor approve the updated checklist?','Вопрос образуется перестановкой will перед подлежащим; approve остаётся в начальной форме.');
-translate('patterns-modal',114,'Сотрудникам следует носить защитные очки в мастерской.','employees / should / wear / safety glasses / in the workshop','Employees should wear safety glasses in the workshop.','После should — начальная форма wear; glasses употребляется во множественном числе.');
-contrast('patterns-modal',115,'Выбери форму глагола после might в утверждении и отрицании.',[{prompt:'The delivery might ___ before noon.',base:'arrive',answer:'arrive'},{prompt:'The delivery might not ___ before noon.',base:'arrive',answer:'arrive'}],'И после might, и после might not употребляется начальная форма arrive.');
-add('patterns-modal',116,'choice',3,'Выбери грамматически правильное предупреждение о хрупкой посылке.','The courier must handle this package carefully.','После must используется начальная форма handle.',{task:'Выбери верную форму после модального глагола.',choices:['The courier must handle this package carefully.','The courier must handles this package carefully.','The courier must to handle this package carefully.']});
+repair(
+  "patterns-modal",
+  107,
+  "Passengers must to remain behind the yellow line.",
+  "Passengers must remain behind the yellow line.",
+  "После must используется начальная форма remain без to.",
+);
+transform(
+  "patterns-modal",
+  108,
+  "The staff can open the side entrance.",
+  "Замени can на should, сохрани глагол и остальную часть.",
+  "The staff should open the side entrance.",
+  "После should нужен глагол в начальной форме без to.",
+);
+translate(
+  "patterns-modal",
+  109,
+  "Вам нельзя оставлять велосипед у аварийного выхода.",
+  "you / must not / leave / a bicycle / by the emergency exit",
+  "You must not leave a bicycle by the emergency exit.",
+  "После must not используется начальная форма leave.",
+);
+contrast(
+  "patterns-modal",
+  110,
+  "Сравни формы после модальных глаголов и после want.",
+  [
+    {
+      prompt: "The crew should ___ the ropes before departure.",
+      base: "inspect",
+      answer: "inspect",
+    },
+    {
+      prompt: "The crew wants ___ the ropes before departure.",
+      base: "inspect",
+      answer: "to inspect",
+    },
+  ],
+  "После should — начальная форма без to; want требует to + глагол.",
+);
+add(
+  "patterns-modal",
+  111,
+  "gap",
+  2,
+  "You ___ not feed the animals in this area. (запрет)",
+  "must",
+  "Для запрета используется must not + начальная форма feed.",
+  {
+    cue: "В этой зоне нельзя кормить животных. Используй сильный запрет.",
+    base: "modal prohibition",
+    choices: ["must", "should"],
+  },
+);
+repair(
+  "patterns-modal",
+  112,
+  "Could you to lower the screen before the presentation?",
+  "Could you lower the screen before the presentation?",
+  "После could в вежливой просьбе используется начальная форма lower без to.",
+);
+transform(
+  "patterns-modal",
+  113,
+  "The supervisor will approve the updated checklist.",
+  "Сделай вопрос, сохрани will и остальную лексику.",
+  "Will the supervisor approve the updated checklist?",
+  "Вопрос образуется перестановкой will перед подлежащим; approve остаётся в начальной форме.",
+);
+translate(
+  "patterns-modal",
+  114,
+  "Сотрудникам следует носить защитные очки в мастерской.",
+  "employees / should / wear / safety glasses / in the workshop",
+  "Employees should wear safety glasses in the workshop.",
+  "После should — начальная форма wear; glasses употребляется во множественном числе.",
+);
+contrast(
+  "patterns-modal",
+  115,
+  "Выбери форму глагола после might в утверждении и отрицании.",
+  [
+    {
+      prompt: "The delivery might ___ before noon.",
+      base: "arrive",
+      answer: "arrive",
+    },
+    {
+      prompt: "The delivery might not ___ before noon.",
+      base: "arrive",
+      answer: "arrive",
+    },
+  ],
+  "И после might, и после might not употребляется начальная форма arrive.",
+);
+add(
+  "patterns-modal",
+  116,
+  "choice",
+  3,
+  "Выбери грамматически правильное предупреждение о хрупкой посылке.",
+  "The courier must handle this package carefully.",
+  "После must используется начальная форма handle.",
+  {
+    task: "Выбери верную форму после модального глагола.",
+    choices: [
+      "The courier must handle this package carefully.",
+      "The courier must handles this package carefully.",
+      "The courier must to handle this package carefully.",
+    ],
+  },
+);
 
-repair('patterns-inf',108,'I promised calling the venue before lunch.','I promised to call the venue before lunch.','Promise + to-infinitive: promised to call.');
-transform('patterns-inf',109,'They plan not to use disposable cups.','Передай ту же цель с глаголом avoid.','They avoid using disposable cups.','Plan + to-infinitive; avoid + -ing.');
-translate('patterns-inf',110,'Он предложил встретиться у входа после лекции.','he / suggest / meet / at the entrance / after the lecture','He suggested meeting at the entrance after the lecture.','Suggest требует -ing после себя: suggested meeting.');
-contrast('patterns-inf',111,'Подбери форму после каждого управляющего слова.',[{prompt:'She hopes ___ the final draft today.',base:'finish',answer:'to finish'},{prompt:'She avoids ___ unfinished drafts.',base:'send',answer:'sending'}],'Hope + to-infinitive; avoid + -ing.');
-add('patterns-inf',112,'gap',2,'Before ___ the form, read the instructions carefully.','signing','После предлога before перед действием используется -ing: signing.',{cue:'Перед подписанием формы внимательно прочитайте инструкции.',base:'sign',choices:['signing','to sign']});
-repair('patterns-inf',113,'We are interested in to learn how the filter works.','We are interested in learning how the filter works.','В выражении interested in слово in — предлог, после него learning.');
-transform('patterns-inf',114,'The driver stopped to check the tire pressure.','Используй stopped + -ing, чтобы сказать, что проверка прекратилась.','The driver stopped checking the tire pressure.','Stop + -ing означает прекратить действие; stop + to-infinitive означает остановиться ради другого действия.');
-translate('patterns-inf',115,'Они решили не менять поставщика до конца года.','they / decide / not / change / the supplier / until the end of the year','They decided not to change the supplier until the end of the year.','Decide + to-infinitive; not ставится перед to change.');
-contrast('patterns-inf',116,'Различи действие с целью и прекращение самого действия.',[{prompt:'He stopped ___ a message to answer the door.',base:'write',answer:'to write'},{prompt:'He stopped ___ messages during the meeting.',base:'write',answer:'writing'}],'Stop to write: остановился, чтобы написать; stop writing: перестал писать.');
-add('patterns-inf',117,'choice',3,'Выбери правильный совет по улучшению произношения.','She practices reading aloud every morning.','После practice используется герундий reading.',{task:'Выбери верное сочетание глаголов.',choices:['She practices reading aloud every morning.','She practices to read aloud every morning.','She practices read aloud every morning.']});
+repair(
+  "patterns-inf",
+  108,
+  "I promised calling the venue before lunch.",
+  "I promised to call the venue before lunch.",
+  "Promise + to-infinitive: promised to call.",
+);
+transform(
+  "patterns-inf",
+  109,
+  "They plan not to use disposable cups.",
+  "Передай ту же цель с глаголом avoid.",
+  "They avoid using disposable cups.",
+  "Plan + to-infinitive; avoid + -ing.",
+);
+translate(
+  "patterns-inf",
+  110,
+  "Он предложил встретиться у входа после лекции.",
+  "he / suggest / meet / at the entrance / after the lecture",
+  "He suggested meeting at the entrance after the lecture.",
+  "Suggest требует -ing после себя: suggested meeting.",
+);
+contrast(
+  "patterns-inf",
+  111,
+  "Подбери форму после каждого управляющего слова.",
+  [
+    {
+      prompt: "She hopes ___ the final draft today.",
+      base: "finish",
+      answer: "to finish",
+    },
+    {
+      prompt: "She avoids ___ unfinished drafts.",
+      base: "send",
+      answer: "sending",
+    },
+  ],
+  "Hope + to-infinitive; avoid + -ing.",
+);
+add(
+  "patterns-inf",
+  112,
+  "gap",
+  2,
+  "Before ___ the form, read the instructions carefully.",
+  "signing",
+  "После предлога before перед действием используется -ing: signing.",
+  {
+    cue: "Перед подписанием формы внимательно прочитайте инструкции.",
+    base: "sign",
+    choices: ["signing", "to sign"],
+  },
+);
+repair(
+  "patterns-inf",
+  113,
+  "We are interested in to learn how the filter works.",
+  "We are interested in learning how the filter works.",
+  "В выражении interested in слово in — предлог, после него learning.",
+);
+transform(
+  "patterns-inf",
+  114,
+  "The driver stopped to check the tire pressure.",
+  "Используй stopped + -ing, чтобы сказать, что проверка прекратилась.",
+  "The driver stopped checking the tire pressure.",
+  "Stop + -ing означает прекратить действие; stop + to-infinitive означает остановиться ради другого действия.",
+);
+translate(
+  "patterns-inf",
+  115,
+  "Они решили не менять поставщика до конца года.",
+  "they / decide / not / change / the supplier / until the end of the year",
+  "They decided not to change the supplier until the end of the year.",
+  "Decide + to-infinitive; not ставится перед to change.",
+);
+contrast(
+  "patterns-inf",
+  116,
+  "Различи действие с целью и прекращение самого действия.",
+  [
+    {
+      prompt: "He stopped ___ a message to answer the door.",
+      base: "write",
+      answer: "to write",
+    },
+    {
+      prompt: "He stopped ___ messages during the meeting.",
+      base: "write",
+      answer: "writing",
+    },
+  ],
+  "Stop to write: остановился, чтобы написать; stop writing: перестал писать.",
+);
+add(
+  "patterns-inf",
+  117,
+  "choice",
+  3,
+  "Выбери правильный совет по улучшению произношения.",
+  "She practices reading aloud every morning.",
+  "После practice используется герундий reading.",
+  {
+    task: "Выбери верное сочетание глаголов.",
+    choices: [
+      "She practices reading aloud every morning.",
+      "She practices to read aloud every morning.",
+      "She practices read aloud every morning.",
+    ],
+  },
+);
 
-repair('chunks-object',107,'Please explain me the new booking procedure.','Please explain the new booking procedure to me.','Explain принимает предмет объяснения напрямую; адресат вводится через to.');
-transform('chunks-object',108,'I will contact with the regional office tomorrow.','Убери лишний предлог, сохрани остальную фразу.','I will contact the regional office tomorrow.','Contact употребляется с прямым дополнением без with.');
-translate('chunks-object',109,'Попроси координатора повторить номер рейса.','ask / the coordinator / repeat / the flight number','Ask the coordinator to repeat the flight number.','Модель ask + person + to-infinitive; после coordinator нужно to repeat.');
-contrast('chunks-object',110,'Выбери предлог после apply в двух разных контекстах.',[{prompt:'Rina applied ___ a position at the museum.',base:'for',answer:'for'},{prompt:'Rina applied ___ the museum directly.',base:'to',answer:'to'}],'Apply for — просить о должности; apply to — подавать заявление в организацию.');
-add('chunks-object',111,'gap',2,'The intern borrowed a reference book ___ the campus library.','from','Borrow something from a source; нужен предлог from.',{cue:'Стажёр взял справочник в библиотеке кампуса.',base:'borrow',choices:['from','to']});
-repair('chunks-object',112,'The guide described us the safest route to the waterfall.','The guide described the safest route to us.','Describe принимает описываемый предмет напрямую; получатель вводится через to.');
-transform('chunks-object',113,'Could you send the schedule to the volunteers?','Перестрой с косвенным дополнением сразу после send.','Could you send the volunteers the schedule?','Send допускает конструкцию send + recipient + object без to.');
-translate('chunks-object',114,'Положите ключи в маленький ящик у стойки.','put / the keys / in / the small box / by the desk','Put the keys in the small box by the desk.','Put требует объект keys; место выражается in the small box.');
-contrast('chunks-object',115,'Сопоставь направление движения и просьбу занять место.',[{prompt:'The hikers moved ___ the shelter before sunset.',base:'to',answer:'to'},{prompt:'The host asked the guests to move ___ and make room.',base:'over',answer:'over'}],'Move to + место обозначает направление; move over значит подвинуться в сторону.');
-add('chunks-object',116,'choice',3,'Выбери фразу со стандартным управлением глагола discuss.','They discussed the safety plan before the trip.','Discuss принимает тему напрямую, без предлога about.',{task:'Выбери правильную конструкцию с discuss.',choices:['They discussed the safety plan before the trip.','They discussed about the safety plan before the trip.','They discussed on the safety plan before the trip.']});
+repair(
+  "chunks-object",
+  107,
+  "Please explain me the new booking procedure.",
+  "Please explain the new booking procedure to me.",
+  "Explain принимает предмет объяснения напрямую; адресат вводится через to.",
+);
+transform(
+  "chunks-object",
+  108,
+  "I will contact with the regional office tomorrow.",
+  "Убери лишний предлог, сохрани остальную фразу.",
+  "I will contact the regional office tomorrow.",
+  "Contact употребляется с прямым дополнением без with.",
+);
+translate(
+  "chunks-object",
+  109,
+  "Попроси координатора повторить номер рейса.",
+  "ask / the coordinator / repeat / the flight number",
+  "Ask the coordinator to repeat the flight number.",
+  "Модель ask + person + to-infinitive; после coordinator нужно to repeat.",
+);
+contrast(
+  "chunks-object",
+  110,
+  "Выбери предлог после apply в двух разных контекстах.",
+  [
+    {
+      prompt: "Rina applied ___ a position at the museum.",
+      base: "for",
+      answer: "for",
+    },
+    {
+      prompt: "Rina applied ___ the museum directly.",
+      base: "to",
+      answer: "to",
+    },
+  ],
+  "Apply for — просить о должности; apply to — подавать заявление в организацию.",
+);
+add(
+  "chunks-object",
+  111,
+  "gap",
+  2,
+  "The intern borrowed a reference book ___ the campus library.",
+  "from",
+  "Borrow something from a source; нужен предлог from.",
+  {
+    cue: "Стажёр взял справочник в библиотеке кампуса.",
+    base: "borrow",
+    choices: ["from", "to"],
+  },
+);
+repair(
+  "chunks-object",
+  112,
+  "The guide described us the safest route to the waterfall.",
+  "The guide described the safest route to us.",
+  "Describe принимает описываемый предмет напрямую; получатель вводится через to.",
+);
+transform(
+  "chunks-object",
+  113,
+  "Could you send the schedule to the volunteers?",
+  "Перестрой с косвенным дополнением сразу после send.",
+  "Could you send the volunteers the schedule?",
+  "Send допускает конструкцию send + recipient + object без to.",
+);
+translate(
+  "chunks-object",
+  114,
+  "Положите ключи в маленький ящик у стойки.",
+  "put / the keys / in / the small box / by the desk",
+  "Put the keys in the small box by the desk.",
+  "Put требует объект keys; место выражается in the small box.",
+);
+contrast(
+  "chunks-object",
+  115,
+  "Сопоставь направление движения и просьбу занять место.",
+  [
+    {
+      prompt: "The hikers moved ___ the shelter before sunset.",
+      base: "to",
+      answer: "to",
+    },
+    {
+      prompt: "The host asked the guests to move ___ and make room.",
+      base: "over",
+      answer: "over",
+    },
+  ],
+  "Move to + место обозначает направление; move over значит подвинуться в сторону.",
+);
+add(
+  "chunks-object",
+  116,
+  "choice",
+  3,
+  "Выбери фразу со стандартным управлением глагола discuss.",
+  "They discussed the safety plan before the trip.",
+  "Discuss принимает тему напрямую, без предлога about.",
+  {
+    task: "Выбери правильную конструкцию с discuss.",
+    choices: [
+      "They discussed the safety plan before the trip.",
+      "They discussed about the safety plan before the trip.",
+      "They discussed on the safety plan before the trip.",
+    ],
+  },
+);
 
-repair('chunks-fixed',108,'Our new assistant is responsible of the supply cabinet.','Our new assistant is responsible for the supply cabinet.','Устойчивое сочетание: responsible for.');
-transform('chunks-fixed',109,'The final schedule depends on the weather.','Замени depends на relies, сохрани смысл.','The final schedule relies on the weather.','Устойчивое сочетание: rely on.');
-translate('chunks-fixed',110,'Команда сосредоточилась на снижении расхода воды.','the team / focus / on / reduce / water consumption','The team focused on reducing water consumption.','После focus on предлог on требует герундий reducing.');
-contrast('chunks-fixed',111,'Впиши предлоги в двух устойчивых сочетаниях.',[{prompt:'He apologized ___ the delay.',base:'for',answer:'for'},{prompt:'He apologized ___ the passengers.',base:'to',answer:'to'}],'Apologize for + действие/проблема; apologize to + человек.');
-add('chunks-fixed',112,'gap',2,'Several volunteers took part ___ the river clean-up.','in','Устойчивое сочетание take part in.',{cue:'Несколько добровольцев приняли участие в уборке реки.',base:'take part',choices:['in','on']});
-repair('chunks-fixed',113,'The audience was satisfied from the sound and the view from the balcony.','The audience was satisfied with the sound and the view from the balcony.','Устойчивое сочетание: satisfied with.');
-transform('chunks-fixed',114,'The trainees are familiar with the new safety symbols.','Передай противоположное значение, замени familiar на unfamiliar.','The trainees are unfamiliar with the new safety symbols.','Unfamiliar также сочетается с with.');
-translate('chunks-fixed',115,'Местные жители жаловались на шум после полуночи.','local residents / complain / about / noise / after midnight','Local residents complained about the noise after midnight.','Complain about + предмет жалобы; событие в прошлом: complained.');
-contrast('chunks-fixed',116,'Различи цель интереса и человека, вызвавшего интерес.',[{prompt:'The children are excited ___ the science fair.',base:'about',answer:'about'},{prompt:'The children are excited ___ their visiting cousins.',base:'to see',answer:'to see'}],'Excited about + событие/тема; excited to see + действие, которого ждут.');
-add('chunks-fixed',117,'choice',3,'Выбери предложение с правильным устойчивым сочетанием.','The committee agreed on a date for the public meeting.','Agree on употребляется при выборе или согласовании конкретного пункта.',{task:'Выбери нормативное сочетание agree.',choices:['The committee agreed on a date for the public meeting.','The committee agreed a date on for the public meeting.','The committee agreed with a date on the public meeting.']});
+repair(
+  "chunks-fixed",
+  108,
+  "Our new assistant is responsible of the supply cabinet.",
+  "Our new assistant is responsible for the supply cabinet.",
+  "Устойчивое сочетание: responsible for.",
+);
+transform(
+  "chunks-fixed",
+  109,
+  "The final schedule depends on the weather.",
+  "Замени depends на relies, сохрани смысл.",
+  "The final schedule relies on the weather.",
+  "Устойчивое сочетание: rely on.",
+);
+translate(
+  "chunks-fixed",
+  110,
+  "Команда сосредоточилась на снижении расхода воды.",
+  "the team / focus / on / reduce / water consumption",
+  "The team focused on reducing water consumption.",
+  "После focus on предлог on требует герундий reducing.",
+);
+contrast(
+  "chunks-fixed",
+  111,
+  "Впиши предлоги в двух устойчивых сочетаниях.",
+  [
+    { prompt: "He apologized ___ the delay.", base: "for", answer: "for" },
+    { prompt: "He apologized ___ the passengers.", base: "to", answer: "to" },
+  ],
+  "Apologize for + действие/проблема; apologize to + человек.",
+);
+add(
+  "chunks-fixed",
+  112,
+  "gap",
+  2,
+  "Several volunteers took part ___ the river clean-up.",
+  "in",
+  "Устойчивое сочетание take part in.",
+  {
+    cue: "Несколько добровольцев приняли участие в уборке реки.",
+    base: "take part",
+    choices: ["in", "on"],
+  },
+);
+repair(
+  "chunks-fixed",
+  113,
+  "The audience was satisfied from the sound and the view from the balcony.",
+  "The audience was satisfied with the sound and the view from the balcony.",
+  "Устойчивое сочетание: satisfied with.",
+);
+transform(
+  "chunks-fixed",
+  114,
+  "The trainees are familiar with the new safety symbols.",
+  "Передай противоположное значение, замени familiar на unfamiliar.",
+  "The trainees are unfamiliar with the new safety symbols.",
+  "Unfamiliar также сочетается с with.",
+);
+translate(
+  "chunks-fixed",
+  115,
+  "Местные жители жаловались на шум после полуночи.",
+  "local residents / complain / about / noise / after midnight",
+  "Local residents complained about the noise after midnight.",
+  "Complain about + предмет жалобы; событие в прошлом: complained.",
+);
+contrast(
+  "chunks-fixed",
+  116,
+  "Различи цель интереса и человека, вызвавшего интерес.",
+  [
+    {
+      prompt: "The children are excited ___ the science fair.",
+      base: "about",
+      answer: "about",
+    },
+    {
+      prompt: "The children are excited ___ their visiting cousins.",
+      base: "to see",
+      answer: "to see",
+    },
+  ],
+  "Excited about + событие/тема; excited to see + действие, которого ждут.",
+);
+add(
+  "chunks-fixed",
+  117,
+  "choice",
+  3,
+  "Выбери предложение с правильным устойчивым сочетанием.",
+  "The committee agreed on a date for the public meeting.",
+  "Agree on употребляется при выборе или согласовании конкретного пункта.",
+  {
+    task: "Выбери нормативное сочетание agree.",
+    choices: [
+      "The committee agreed on a date for the public meeting.",
+      "The committee agreed a date on for the public meeting.",
+      "The committee agreed with a date on the public meeting.",
+    ],
+  },
+);
 
-repair('lexicon-form',107,'The instructions were so clearly that nobody asked a question.','The instructions were so clear that nobody asked a question.','После were нужен предикативный прилагательный clear, а не наречие clearly.');
-transform('lexicon-form',108,'The editor responded in a careful manner.','Замени выделяемую конструкцию наречием carefully.','The editor responded carefully.','Carefully — наречие, описывает действие responded.');
-translate('lexicon-form',109,'Их решение было неожиданным.','their / decide / be / unexpected','Their decision was unexpected.','После притяжательного their нужна форма существительного decision.');
-contrast('lexicon-form',110,'Выбери часть речи, которая требуется в позиции.',[{prompt:'The guide gave a ___ explanation of the route.',base:'clear',answer:'clear'},{prompt:'The guide explained the route ___.',base:'clear',answer:'clearly'}],'Перед существительным explanation нужно прилагательное clear; глагол explained модифицирует наречие clearly.');
-add('lexicon-form',111,'gap',2,'The technician measured the cable ___ before cutting it.','carefully','Нужно наречие, описывающее measured: carefully.',{cue:'Техник внимательно измерил кабель перед тем, как разрезать его.',base:'careful',choices:['carefully','careful']});
-repair('lexicon-form',112,'The proposal offers a practical solve to the storage problem.','The proposal offers a practical solution to the storage problem.','После прилагательного practical нужна форма существительного solution.');
-transform('lexicon-form',113,'They were successful in reducing food waste.','Перестрой предложение, используй существительное success после had.','They had success in reducing food waste.','Success — существительное; successful — прилагательное.');
-translate('lexicon-form',114,'Новый фильтр эффективно удаляет пыльцу.','the new filter / effective / remove / pollen','The new filter effectively removes pollen.','Effective меняется на наречие effectively; глагол removes согласуется с filter.');
-contrast('lexicon-form',115,'Различи прилагательное и наречие от одного корня.',[{prompt:'The nurse spoke in a ___ voice.',base:'calm',answer:'calm'},{prompt:'The nurse spoke ___ to the worried child.',base:'calm',answer:'calmly'}],'Перед voice нужен прилагательный calm; глагол spoke описывается наречием calmly.');
-add('lexicon-form',116,'choice',3,'Выбери нормативное предложение о результате проверки.','The inspection was thorough and the report was accurate.','После was нужны прилагательные thorough и accurate, описывающие результаты/предметы.',{task:'Выбери вариант с правильными частями речи.',choices:['The inspection was thorough and the report was accurate.','The inspection was thoroughly and the report was accurately.','The inspection was thorough and the report was accurately.']});
+repair(
+  "lexicon-form",
+  107,
+  "The instructions were so clearly that nobody asked a question.",
+  "The instructions were so clear that nobody asked a question.",
+  "После were нужен предикативный прилагательный clear, а не наречие clearly.",
+);
+transform(
+  "lexicon-form",
+  108,
+  "The editor responded in a careful manner.",
+  "Замени выделяемую конструкцию наречием carefully.",
+  "The editor responded carefully.",
+  "Carefully — наречие, описывает действие responded.",
+);
+translate(
+  "lexicon-form",
+  109,
+  "Их решение было неожиданным.",
+  "their / decide / be / unexpected",
+  "Their decision was unexpected.",
+  "После притяжательного their нужна форма существительного decision.",
+);
+contrast(
+  "lexicon-form",
+  110,
+  "Выбери часть речи, которая требуется в позиции.",
+  [
+    {
+      prompt: "The guide gave a ___ explanation of the route.",
+      base: "clear",
+      answer: "clear",
+    },
+    {
+      prompt: "The guide explained the route ___.",
+      base: "clear",
+      answer: "clearly",
+    },
+  ],
+  "Перед существительным explanation нужно прилагательное clear; глагол explained модифицирует наречие clearly.",
+);
+add(
+  "lexicon-form",
+  111,
+  "gap",
+  2,
+  "The technician measured the cable ___ before cutting it.",
+  "carefully",
+  "Нужно наречие, описывающее measured: carefully.",
+  {
+    cue: "Техник внимательно измерил кабель перед тем, как разрезать его.",
+    base: "careful",
+    choices: ["carefully", "careful"],
+  },
+);
+repair(
+  "lexicon-form",
+  112,
+  "The proposal offers a practical solve to the storage problem.",
+  "The proposal offers a practical solution to the storage problem.",
+  "После прилагательного practical нужна форма существительного solution.",
+);
+transform(
+  "lexicon-form",
+  113,
+  "They were successful in reducing food waste.",
+  "Перестрой предложение, используй существительное success после had.",
+  "They had success in reducing food waste.",
+  "Success — существительное; successful — прилагательное.",
+);
+translate(
+  "lexicon-form",
+  114,
+  "Новый фильтр эффективно удаляет пыльцу.",
+  "the new filter / effective / remove / pollen",
+  "The new filter effectively removes pollen.",
+  "Effective меняется на наречие effectively; глагол removes согласуется с filter.",
+);
+contrast(
+  "lexicon-form",
+  115,
+  "Различи прилагательное и наречие от одного корня.",
+  [
+    { prompt: "The nurse spoke in a ___ voice.", base: "calm", answer: "calm" },
+    {
+      prompt: "The nurse spoke ___ to the worried child.",
+      base: "calm",
+      answer: "calmly",
+    },
+  ],
+  "Перед voice нужен прилагательный calm; глагол spoke описывается наречием calmly.",
+);
+add(
+  "lexicon-form",
+  116,
+  "choice",
+  3,
+  "Выбери нормативное предложение о результате проверки.",
+  "The inspection was thorough and the report was accurate.",
+  "После was нужны прилагательные thorough и accurate, описывающие результаты/предметы.",
+  {
+    task: "Выбери вариант с правильными частями речи.",
+    choices: [
+      "The inspection was thorough and the report was accurate.",
+      "The inspection was thoroughly and the report was accurately.",
+      "The inspection was thorough and the report was accurately.",
+    ],
+  },
+);
 
-repair('lexicon-word',109,'Please say me if the northern gate is open.','Please tell me if the northern gate is open.','Tell принимает адресата напрямую: tell me; say обычно не ставится перед косвенным дополнением без to.');
-transform('lexicon-word',110,'The temperature went up by five degrees overnight.','Замени went up на однословный глагол rise в Past Simple.','The temperature rose by five degrees overnight.','Температура повышается сама: rise, Past Simple — rose; raise требует дополнение.');
-translate('lexicon-word',111,'Ведущая рассказала смешную историю о поездке.','the host / tell / a funny story / about the trip','The host told a funny story about the trip.','Стандартное сочетание tell a story; Past Simple от tell — told.');
-contrast('lexicon-word',112,'Сопоставь стандартные сочетания с make и do.',[{prompt:'We need to ___ a reservation before Friday.',base:'make',answer:'make'},{prompt:'We need to ___ the laundry before Friday.',base:'do',answer:'do'}],'Make a reservation, но do the laundry.');
-add('lexicon-word',113,'gap',2,'Please ___ after you review both estimates.','make a decision','Устойчивое сочетание — make a decision.',{cue:'Примите решение после того, как изучите обе сметы.',base:'decision',choices:['make a decision','do a decision']});
-repair('lexicon-word',114,'Could you borrow me your charger until the end of class?','Could you lend me your charger until the end of class?','Попросить дать вещь — lend; borrow означает взять вещь у другого.');
-transform('lexicon-word',115,'The red sign is easy to notice from the road.','Замени easy to notice на conspicuous, сохрани смысл и грамматику.','The red sign is conspicuous from the road.','Conspicuous — прилагательное со значением «заметный»; после is используется прилагательное.');
-translate('lexicon-word',116,'Пожалуйста, принеси карту, когда вернёшься в офис.','please / bring / the map / when / you / return / to the office','Please bring the map when you return to the office.','Bring обозначает движение к месту говорящего/ориентиру; return to + место.');
-contrast('lexicon-word',117,'Выбери глагол для естественного сочетания в каждом контексте.',[{prompt:'She ___ a promise to call after the interview.',base:'made',answer:'made'},{prompt:'She ___ her promise and called that evening.',base:'kept',answer:'kept'}],'Естественные сочетания: make a promise и keep a promise.');
-add('lexicon-word',118,'choice',3,'Выбери верное предложение о влиянии новой процедуры.','The new procedure had a positive effect on delivery times.','Effect — существительное после a; сочетание have an effect on.',{task:'Выбери предложение с правильной формой и сочетаемостью.',choices:['The new procedure had a positive effect on delivery times.','The new procedure had a positive affect on delivery times.','The new procedure made a positive effect to delivery times.']});
+repair(
+  "lexicon-word",
+  109,
+  "Please say me if the northern gate is open.",
+  "Please tell me if the northern gate is open.",
+  "Tell принимает адресата напрямую: tell me; say обычно не ставится перед косвенным дополнением без to.",
+);
+transform(
+  "lexicon-word",
+  110,
+  "The temperature went up by five degrees overnight.",
+  "Замени went up на однословный глагол rise в Past Simple.",
+  "The temperature rose by five degrees overnight.",
+  "Температура повышается сама: rise, Past Simple — rose; raise требует дополнение.",
+);
+translate(
+  "lexicon-word",
+  111,
+  "Ведущая рассказала смешную историю о поездке.",
+  "the host / tell / a funny story / about the trip",
+  "The host told a funny story about the trip.",
+  "Стандартное сочетание tell a story; Past Simple от tell — told.",
+);
+contrast(
+  "lexicon-word",
+  112,
+  "Сопоставь стандартные сочетания с make и do.",
+  [
+    {
+      prompt: "We need to ___ a reservation before Friday.",
+      base: "make",
+      answer: "make",
+    },
+    {
+      prompt: "We need to ___ the laundry before Friday.",
+      base: "do",
+      answer: "do",
+    },
+  ],
+  "Make a reservation, но do the laundry.",
+);
+add(
+  "lexicon-word",
+  113,
+  "gap",
+  2,
+  "Please ___ after you review both estimates.",
+  "make a decision",
+  "Устойчивое сочетание — make a decision.",
+  {
+    cue: "Примите решение после того, как изучите обе сметы.",
+    base: "decision",
+    choices: ["make a decision", "do a decision"],
+  },
+);
+repair(
+  "lexicon-word",
+  114,
+  "Could you borrow me your charger until the end of class?",
+  "Could you lend me your charger until the end of class?",
+  "Попросить дать вещь — lend; borrow означает взять вещь у другого.",
+);
+transform(
+  "lexicon-word",
+  115,
+  "The red sign is easy to notice from the road.",
+  "Замени easy to notice на conspicuous, сохрани смысл и грамматику.",
+  "The red sign is conspicuous from the road.",
+  "Conspicuous — прилагательное со значением «заметный»; после is используется прилагательное.",
+);
+translate(
+  "lexicon-word",
+  116,
+  "Пожалуйста, принеси карту, когда вернёшься в офис.",
+  "please / bring / the map / when / you / return / to the office",
+  "Please bring the map when you return to the office.",
+  "Bring обозначает движение к месту говорящего/ориентиру; return to + место.",
+);
+contrast(
+  "lexicon-word",
+  117,
+  "Выбери глагол для естественного сочетания в каждом контексте.",
+  [
+    {
+      prompt: "She ___ a promise to call after the interview.",
+      base: "made",
+      answer: "made",
+    },
+    {
+      prompt: "She ___ her promise and called that evening.",
+      base: "kept",
+      answer: "kept",
+    },
+  ],
+  "Естественные сочетания: make a promise и keep a promise.",
+);
+add(
+  "lexicon-word",
+  118,
+  "choice",
+  3,
+  "Выбери верное предложение о влиянии новой процедуры.",
+  "The new procedure had a positive effect on delivery times.",
+  "Effect — существительное после a; сочетание have an effect on.",
+  {
+    task: "Выбери предложение с правильной формой и сочетаемостью.",
+    choices: [
+      "The new procedure had a positive effect on delivery times.",
+      "The new procedure had a positive affect on delivery times.",
+      "The new procedure made a positive effect to delivery times.",
+    ],
+  },
+);
 
-repair('reference-person',107,'The volunteers which live nearby will meet us at the gate.','The volunteers who live nearby will meet us at the gate.','Для людей в определительном придаточном используется who (возможен также that).');
-transform('reference-person',108,'Mina called the electrician. The electrician repaired the hallway light.','Объедини в одно предложение с who.','Mina called the electrician who repaired the hallway light.','Who вводит придаточное о человеке electrician.');
-translate('reference-person',109,'Врач, который принял меня утром, работает в этой клинике.','the doctor / who / see / me / this morning / work / at this clinic','The doctor who saw me this morning works at this clinic.','Who относится к человеку; see в завершённом прошлом — saw, work согласуется с doctor.');
-contrast('reference-person',110,'Подбери форму, которая подходит по роли: относительное местоимение или объектное личное местоимение.',[{prompt:'The chef ___ prepared our meal came to the table.',base:'who',answer:'who'},{prompt:'We thanked ___ after the meal.',base:'they',answer:'them'}],'Who вводит придаточное о человеке; после глагола thanked нужен объектный падеж them.');
-add('reference-person',111,'gap',2,'The applicant ___ called this morning left a second message.','who','Who относится к человеку applicant и является подлежащим called.',{cue:'Кандидат, который звонил сегодня утром, оставил второе сообщение.',base:'applicant',choices:['who','which']});
-repair('reference-person',112,'The children brought their coats, and the teacher helped they carry the bags.','The children brought their coats, and the teacher helped them carry the bags.','После helped нужен объектный падеж them, а не subject form they.');
-transform('reference-person',113,'I spoke with the musicians. The musicians performed after the show.','Объедини в одно предложение с who.','I spoke with the musicians who performed after the show.','Who относится к людям musicians и заменяет повторённое подлежащее второго предложения.');
-translate('reference-person',114,'Те, кто дежурят сегодня вечером, могут взять дополнительный перерыв.','those / who / work / tonight / can / take / an extra break','Those who work tonight can take an extra break.','Those обозначает группу людей; who вводит придаточное о них.');
-contrast('reference-person',115,'Выбери форму для человека: относительное местоимение и личное местоимение-подлежащее.',[{prompt:'The consultant ___ designed the survey will present the results.',base:'who',answer:'who'},{prompt:'I thanked the consultant after ___ presented the results.',base:'she',answer:'she'}],'Who — относительное местоимение, подлежащее в придаточном; she — личное местоимение в роли подлежащего после after.');
-add('reference-person',116,'choice',3,'Выбери предложение с ясной ссылкой на двух женщин и одного мужчину.','Rosa and Mei met Dan, and they gave him the keys.','They относится к Rosa и Mei, him — к Dan.',{task:'Выбери вариант с корректными местоименными референтами.',choices:['Rosa and Mei met Dan, and they gave him the keys.','Rosa and Mei met Dan, and he gave them the keys.','Rosa and Mei met Dan, and it gave him the keys.']});
+repair(
+  "reference-person",
+  107,
+  "The volunteers which live nearby will meet us at the gate.",
+  "The volunteers who live nearby will meet us at the gate.",
+  "Для людей в определительном придаточном используется who (возможен также that).",
+);
+transform(
+  "reference-person",
+  108,
+  "Mina called the electrician. The electrician repaired the hallway light.",
+  "Объедини в одно предложение с who.",
+  "Mina called the electrician who repaired the hallway light.",
+  "Who вводит придаточное о человеке electrician.",
+);
+translate(
+  "reference-person",
+  109,
+  "Врач, который принял меня утром, работает в этой клинике.",
+  "the doctor / who / see / me / this morning / work / at this clinic",
+  "The doctor who saw me this morning works at this clinic.",
+  "Who относится к человеку; see в завершённом прошлом — saw, work согласуется с doctor.",
+);
+contrast(
+  "reference-person",
+  110,
+  "Подбери форму, которая подходит по роли: относительное местоимение или объектное личное местоимение.",
+  [
+    {
+      prompt: "The chef ___ prepared our meal came to the table.",
+      base: "who",
+      answer: "who",
+    },
+    { prompt: "We thanked ___ after the meal.", base: "they", answer: "them" },
+  ],
+  "Who вводит придаточное о человеке; после глагола thanked нужен объектный падеж them.",
+);
+add(
+  "reference-person",
+  111,
+  "gap",
+  2,
+  "The applicant ___ called this morning left a second message.",
+  "who",
+  "Who относится к человеку applicant и является подлежащим called.",
+  {
+    cue: "Кандидат, который звонил сегодня утром, оставил второе сообщение.",
+    base: "applicant",
+    choices: ["who", "which"],
+  },
+);
+repair(
+  "reference-person",
+  112,
+  "The children brought their coats, and the teacher helped they carry the bags.",
+  "The children brought their coats, and the teacher helped them carry the bags.",
+  "После helped нужен объектный падеж them, а не subject form they.",
+);
+transform(
+  "reference-person",
+  113,
+  "I spoke with the musicians. The musicians performed after the show.",
+  "Объедини в одно предложение с who.",
+  "I spoke with the musicians who performed after the show.",
+  "Who относится к людям musicians и заменяет повторённое подлежащее второго предложения.",
+);
+translate(
+  "reference-person",
+  114,
+  "Те, кто дежурят сегодня вечером, могут взять дополнительный перерыв.",
+  "those / who / work / tonight / can / take / an extra break",
+  "Those who work tonight can take an extra break.",
+  "Those обозначает группу людей; who вводит придаточное о них.",
+);
+contrast(
+  "reference-person",
+  115,
+  "Выбери форму для человека: относительное местоимение и личное местоимение-подлежащее.",
+  [
+    {
+      prompt:
+        "The consultant ___ designed the survey will present the results.",
+      base: "who",
+      answer: "who",
+    },
+    {
+      prompt: "I thanked the consultant after ___ presented the results.",
+      base: "she",
+      answer: "she",
+    },
+  ],
+  "Who — относительное местоимение, подлежащее в придаточном; she — личное местоимение в роли подлежащего после after.",
+);
+add(
+  "reference-person",
+  116,
+  "choice",
+  3,
+  "Выбери предложение с ясной ссылкой на двух женщин и одного мужчину.",
+  "Rosa and Mei met Dan, and they gave him the keys.",
+  "They относится к Rosa и Mei, him — к Dan.",
+  {
+    task: "Выбери вариант с корректными местоименными референтами.",
+    choices: [
+      "Rosa and Mei met Dan, and they gave him the keys.",
+      "Rosa and Mei met Dan, and he gave them the keys.",
+      "Rosa and Mei met Dan, and it gave him the keys.",
+    ],
+  },
+);
 
-repair('reference-object',107,"The device lost it's cover during the move.",'The device lost its cover during the move.','Its показывает принадлежность; it’s — сокращение it is или it has.');
-transform('reference-object',108,'The folders belong to the archive team. The folders are on the lower shelf.','Объедини с which, не повторяй folders.','The folders, which belong to the archive team, are on the lower shelf.','Which относится к предметам; придаточное здесь добавляет пояснение.');
-translate('reference-object',109,'Это кабель, который соединяет камеру с монитором.','this / be / the cable / which / connect / the camera / to the monitor','This is the cable which connects the camera to the monitor.','Which относится к предмету cable; глагол connects согласуется с единственным числом.');
-contrast('reference-object',110,'Подбери притяжательное слово к владельцу.',[{prompt:'The robot returned to ___ charging station.',base:'its',answer:'its'},{prompt:'The workers returned to ___ lockers.',base:'their',answer:'their'}],'Its относится к robot; their — к workers.');
-add('reference-object',111,'gap',2,'The company updated ___ privacy policy last month.','its','Its — притяжательное слово для организации company; it’s означало бы it is/has.',{cue:'В прошлом месяце компания обновила свою политику конфиденциальности.',base:'company',choices:['its','it’s']});
-repair('reference-object',112,'The photographs which we took them at the coast are in this album.','The photographs which we took at the coast are in this album.','Which уже представляет photographs в придаточном; лишнее them повторяет то же дополнение.');
-transform('reference-object',113,'The alarm has a sensor. The sensor detects smoke.','Объедини с which.','The alarm has a sensor which detects smoke.','Which заменяет sensor как подлежащее придаточной части.');
-translate('reference-object',114,'Я не могу найти адаптер, который ты оставил на столе.','I / cannot find / the adapter / which / you / leave / on the desk','I cannot find the adapter which you left on the desk.','Which относится к adapter; leave в завершённом прошлом — left.');
-contrast('reference-object',115,'Различи принадлежность устройства и предмет во множественном числе.',[{prompt:'Each tablet stores ___ settings locally.',base:'its',answer:'its'},{prompt:'The tablets store ___ settings locally.',base:'their',answer:'their'}],'Its относится к each tablet в единственном числе; their — к tablets во множественном.');
-add('reference-object',116,'choice',3,'Выбери предложение, где it’s означает it is.','It’s ready, but its cable is missing.','В первой части можно развернуть it’s как it is; во второй its обозначает принадлежность кабеля.',{task:'Выбери вариант, где формы it’s и its употреблены верно.',choices:['It’s ready, but its cable is missing.','Its ready, but it’s cable is missing.','It’s ready, but it’s cable is missing.']});
+repair(
+  "reference-object",
+  107,
+  "The device lost it's cover during the move.",
+  "The device lost its cover during the move.",
+  "Its показывает принадлежность; it’s — сокращение it is или it has.",
+);
+transform(
+  "reference-object",
+  108,
+  "The folders belong to the archive team. The folders are on the lower shelf.",
+  "Объедини с which, не повторяй folders.",
+  "The folders, which belong to the archive team, are on the lower shelf.",
+  "Which относится к предметам; придаточное здесь добавляет пояснение.",
+);
+translate(
+  "reference-object",
+  109,
+  "Это кабель, который соединяет камеру с монитором.",
+  "this / be / the cable / which / connect / the camera / to the monitor",
+  "This is the cable which connects the camera to the monitor.",
+  "Which относится к предмету cable; глагол connects согласуется с единственным числом.",
+);
+contrast(
+  "reference-object",
+  110,
+  "Подбери притяжательное слово к владельцу.",
+  [
+    {
+      prompt: "The robot returned to ___ charging station.",
+      base: "its",
+      answer: "its",
+    },
+    {
+      prompt: "The workers returned to ___ lockers.",
+      base: "their",
+      answer: "their",
+    },
+  ],
+  "Its относится к robot; their — к workers.",
+);
+add(
+  "reference-object",
+  111,
+  "gap",
+  2,
+  "The company updated ___ privacy policy last month.",
+  "its",
+  "Its — притяжательное слово для организации company; it’s означало бы it is/has.",
+  {
+    cue: "В прошлом месяце компания обновила свою политику конфиденциальности.",
+    base: "company",
+    choices: ["its", "it’s"],
+  },
+);
+repair(
+  "reference-object",
+  112,
+  "The photographs which we took them at the coast are in this album.",
+  "The photographs which we took at the coast are in this album.",
+  "Which уже представляет photographs в придаточном; лишнее them повторяет то же дополнение.",
+);
+transform(
+  "reference-object",
+  113,
+  "The alarm has a sensor. The sensor detects smoke.",
+  "Объедини с which.",
+  "The alarm has a sensor which detects smoke.",
+  "Which заменяет sensor как подлежащее придаточной части.",
+);
+translate(
+  "reference-object",
+  114,
+  "Я не могу найти адаптер, который ты оставил на столе.",
+  "I / cannot find / the adapter / which / you / leave / on the desk",
+  "I cannot find the adapter which you left on the desk.",
+  "Which относится к adapter; leave в завершённом прошлом — left.",
+);
+contrast(
+  "reference-object",
+  115,
+  "Различи принадлежность устройства и предмет во множественном числе.",
+  [
+    {
+      prompt: "Each tablet stores ___ settings locally.",
+      base: "its",
+      answer: "its",
+    },
+    {
+      prompt: "The tablets store ___ settings locally.",
+      base: "their",
+      answer: "their",
+    },
+  ],
+  "Its относится к each tablet в единственном числе; their — к tablets во множественном.",
+);
+add(
+  "reference-object",
+  116,
+  "choice",
+  3,
+  "Выбери предложение, где it’s означает it is.",
+  "It’s ready, but its cable is missing.",
+  "В первой части можно развернуть it’s как it is; во второй its обозначает принадлежность кабеля.",
+  {
+    task: "Выбери вариант, где формы it’s и its употреблены верно.",
+    choices: [
+      "It’s ready, but its cable is missing.",
+      "Its ready, but it’s cable is missing.",
+      "It’s ready, but it’s cable is missing.",
+    ],
+  },
+);
 
 // Practice expansion 2026-10-06, batch 3: broader contexts and finer contrasts.
-repair('verbs-agreement',123,'Each of the two entry rows point to a different file.','Each of the two entry rows points to a different file.','Each задаёт единственное число, даже если после of стоит существительное во множественном числе.');
-transform('verbs-agreement',124,'The maintenance team records every temperature reading.','Сделай общий вопрос.','Does the maintenance team record every temperature reading?','В вопросе с подлежащим team используется does, а после него — record без -s.');
-translate('verbs-agreement',125,'Большинство пассажиров носит бумажные билеты.','most / passenger / carry / paper tickets','Most passengers carry paper tickets.','Most passengers — множественное число, поэтому carry без -s.');
-contrast('verbs-agreement',126,'Сравни количество людей и само количество людей.',[{prompt:'A number of applicants ___ for the evening course.',base:'apply',answer:'apply'},{prompt:'The number of applicants ___ each year.',base:'grow',answer:'grows'}],'A number of + plural noun требует plural verb; the number of — singular subject.');
-add('verbs-agreement',127,'gap',2,'A pair of insulated gloves ___ in the top compartment.','is','Главное подлежащее — pair в единственном числе, поэтому нужна форма is.',{cue:'Пара утеплённых перчаток находится в верхнем отделении.',base:'be',choices:['is','are']});
-repair('verbs-agreement',128,'Why does either route leads to the service entrance?','Why does either route lead to the service entrance?','После does используется начальная форма lead без -s.');
-transform('verbs-agreement',129,'The final shuttle leaves at 9:15.','Спроси, во сколько отправляется последний шаттл.','What time does the final shuttle leave?','В вопросе Present Simple: does + subject + leave.');
-translate('verbs-agreement',130,'Ни один ключ не подходит к этому замку.','neither key / fit / this lock','Neither key fits this lock.','Neither key трактуется как единственное число; в Present Simple нужен fits.');
-contrast('verbs-agreement',131,'Сравни неисчисляемое news и исчисляемые headlines.',[{prompt:'The news from the island ___ encouraging.',base:'be',answer:'is'},{prompt:'The headlines ___ encouraging.',base:'be',answer:'are'}],'News имеет форму на -s, но употребляется как singular; headlines — plural.');
-add('verbs-agreement',132,'gap',2,'The set of spare keys ___ inside the blue cabinet.','is','Грамматическое подлежащее — set в единственном числе; keys входит в предложную группу.',{cue:'Комплект запасных ключей находится в синем шкафу.',base:'be',choices:['is','are']});
+repair(
+  "verbs-agreement",
+  123,
+  "Each of the two entry rows point to a different file.",
+  "Each of the two entry rows points to a different file.",
+  "Each задаёт единственное число, даже если после of стоит существительное во множественном числе.",
+);
+transform(
+  "verbs-agreement",
+  124,
+  "The maintenance team records every temperature reading.",
+  "Сделай общий вопрос.",
+  "Does the maintenance team record every temperature reading?",
+  "В вопросе с подлежащим team используется does, а после него — record без -s.",
+);
+translate(
+  "verbs-agreement",
+  125,
+  "Большинство пассажиров носит бумажные билеты.",
+  "most / passenger / carry / paper tickets",
+  "Most passengers carry paper tickets.",
+  "Most passengers — множественное число, поэтому carry без -s.",
+);
+contrast(
+  "verbs-agreement",
+  126,
+  "Сравни количество людей и само количество людей.",
+  [
+    {
+      prompt: "A number of applicants ___ for the evening course.",
+      base: "apply",
+      answer: "apply",
+    },
+    {
+      prompt: "The number of applicants ___ each year.",
+      base: "grow",
+      answer: "grows",
+    },
+  ],
+  "A number of + plural noun требует plural verb; the number of — singular subject.",
+);
+add(
+  "verbs-agreement",
+  127,
+  "gap",
+  2,
+  "A pair of insulated gloves ___ in the top compartment.",
+  "is",
+  "Главное подлежащее — pair в единственном числе, поэтому нужна форма is.",
+  {
+    cue: "Пара утеплённых перчаток находится в верхнем отделении.",
+    base: "be",
+    choices: ["is", "are"],
+  },
+);
+repair(
+  "verbs-agreement",
+  128,
+  "Why does either route leads to the service entrance?",
+  "Why does either route lead to the service entrance?",
+  "После does используется начальная форма lead без -s.",
+);
+transform(
+  "verbs-agreement",
+  129,
+  "The final shuttle leaves at 9:15.",
+  "Спроси, во сколько отправляется последний шаттл.",
+  "What time does the final shuttle leave?",
+  "В вопросе Present Simple: does + subject + leave.",
+);
+translate(
+  "verbs-agreement",
+  130,
+  "Ни один ключ не подходит к этому замку.",
+  "neither key / fit / this lock",
+  "Neither key fits this lock.",
+  "Neither key трактуется как единственное число; в Present Simple нужен fits.",
+);
+contrast(
+  "verbs-agreement",
+  131,
+  "Сравни неисчисляемое news и исчисляемые headlines.",
+  [
+    {
+      prompt: "The news from the island ___ encouraging.",
+      base: "be",
+      answer: "is",
+    },
+    { prompt: "The headlines ___ encouraging.", base: "be", answer: "are" },
+  ],
+  "News имеет форму на -s, но употребляется как singular; headlines — plural.",
+);
+add(
+  "verbs-agreement",
+  132,
+  "gap",
+  2,
+  "The set of spare keys ___ inside the blue cabinet.",
+  "is",
+  "Грамматическое подлежащее — set в единственном числе; keys входит в предложную группу.",
+  {
+    cue: "Комплект запасных ключей находится в синем шкафу.",
+    base: "be",
+    choices: ["is", "are"],
+  },
+);
 
-repair('verbs-past',123,"We didn't chose the shorter connection.","We didn't choose the shorter connection.",'После did not используется начальная форма choose, а не chose.');
-transform('verbs-past',124,'Nora took the coastal train yesterday.','Сделай общий вопрос.','Did Nora take the coastal train yesterday?','Did уже выражает Past Simple; после него нужна начальная форма take.');
-translate('verbs-past',125,'Совет не одобрил пересмотренный бюджет на прошлой неделе.','the board / not approve / the revised budget / last week','The board did not approve the revised budget last week.','Last week задаёт завершённое прошлое; отрицание строится как did not + approve.');
-contrast('verbs-past',126,'Сравни утверждение и вопрос с did.',[{prompt:'The instructor ___ the safety rules clearly.',base:'teach',answer:'taught'},{prompt:'Did the instructor ___ the safety rules clearly?',base:'teach',answer:'teach'}],'В утверждении Past Simple: taught; после did — начальная форма teach.');
-add('verbs-past',127,'gap',2,'At 9:15 last night, the guard ___ the side gate.','locked','At 9:15 last night указывает на завершённое прошлое: locked.',{cue:'Вчера в 9:15 охранник запер боковые ворота.',base:'lock',choices:['locked','locks']});
-repair('verbs-past',128,'Who did bring the printed map to the briefing?','Who brought the printed map to the briefing?','Who — подлежащее вопроса; вспомогательный did не нужен, используется brought.');
-transform('verbs-past',129,'The editor found a typo in the caption.','Сделай отрицание, сохрани остальные слова.','The editor did not find a typo in the caption.','В отрицании Past Simple используется did not + find.');
-translate('verbs-past',130,'Где вы оставили пропуск вчера вечером?','where / you / leave / the pass / yesterday evening','Where did you leave the pass yesterday evening?','Вопрос о завершённом прошлом: did + subject + leave.');
-contrast('verbs-past',131,'Сравни утверждение и вопрос о завершённых событиях.',[{prompt:'The flood ___ the lower path last spring.',base:'close',answer:'closed'},{prompt:'Did the council ___ the path again two days ago?',base:'close',answer:'close'}],'В утверждении Past Simple: closed; после did используется начальная форма close.');
-add('verbs-past',132,'gap',2,'Nobody ___ the warning bell during the rehearsal.','heard','Завершённое событие в прошлом; hear → heard.',{cue:'Во время репетиции никто не услышал предупредительный звонок.',base:'hear',choices:['heard','hears']});
+repair(
+  "verbs-past",
+  123,
+  "We didn't chose the shorter connection.",
+  "We didn't choose the shorter connection.",
+  "После did not используется начальная форма choose, а не chose.",
+);
+transform(
+  "verbs-past",
+  124,
+  "Nora took the coastal train yesterday.",
+  "Сделай общий вопрос.",
+  "Did Nora take the coastal train yesterday?",
+  "Did уже выражает Past Simple; после него нужна начальная форма take.",
+);
+translate(
+  "verbs-past",
+  125,
+  "Совет не одобрил пересмотренный бюджет на прошлой неделе.",
+  "the board / not approve / the revised budget / last week",
+  "The board did not approve the revised budget last week.",
+  "Last week задаёт завершённое прошлое; отрицание строится как did not + approve.",
+);
+contrast(
+  "verbs-past",
+  126,
+  "Сравни утверждение и вопрос с did.",
+  [
+    {
+      prompt: "The instructor ___ the safety rules clearly.",
+      base: "teach",
+      answer: "taught",
+    },
+    {
+      prompt: "Did the instructor ___ the safety rules clearly?",
+      base: "teach",
+      answer: "teach",
+    },
+  ],
+  "В утверждении Past Simple: taught; после did — начальная форма teach.",
+);
+add(
+  "verbs-past",
+  127,
+  "gap",
+  2,
+  "At 9:15 last night, the guard ___ the side gate.",
+  "locked",
+  "At 9:15 last night указывает на завершённое прошлое: locked.",
+  {
+    cue: "Вчера в 9:15 охранник запер боковые ворота.",
+    base: "lock",
+    choices: ["locked", "locks"],
+  },
+);
+repair(
+  "verbs-past",
+  128,
+  "Who did bring the printed map to the briefing?",
+  "Who brought the printed map to the briefing?",
+  "Who — подлежащее вопроса; вспомогательный did не нужен, используется brought.",
+);
+transform(
+  "verbs-past",
+  129,
+  "The editor found a typo in the caption.",
+  "Сделай отрицание, сохрани остальные слова.",
+  "The editor did not find a typo in the caption.",
+  "В отрицании Past Simple используется did not + find.",
+);
+translate(
+  "verbs-past",
+  130,
+  "Где вы оставили пропуск вчера вечером?",
+  "where / you / leave / the pass / yesterday evening",
+  "Where did you leave the pass yesterday evening?",
+  "Вопрос о завершённом прошлом: did + subject + leave.",
+);
+contrast(
+  "verbs-past",
+  131,
+  "Сравни утверждение и вопрос о завершённых событиях.",
+  [
+    {
+      prompt: "The flood ___ the lower path last spring.",
+      base: "close",
+      answer: "closed",
+    },
+    {
+      prompt: "Did the council ___ the path again two days ago?",
+      base: "close",
+      answer: "close",
+    },
+  ],
+  "В утверждении Past Simple: closed; после did используется начальная форма close.",
+);
+add(
+  "verbs-past",
+  132,
+  "gap",
+  2,
+  "Nobody ___ the warning bell during the rehearsal.",
+  "heard",
+  "Завершённое событие в прошлом; hear → heard.",
+  {
+    cue: "Во время репетиции никто не услышал предупредительный звонок.",
+    base: "hear",
+    choices: ["heard", "hears"],
+  },
+);
 
-repair('verbs-aspect',123,'I am understanding why the scanner rejects this code.','I understand why the scanner rejects this code.','Understand обычно описывает состояние или мнение и не требует Continuous в этом значении.');
-transform('verbs-aspect',124,'The consultant works at the northern branch.','Уточни, что это временная работа только в этом месяце.','The consultant is working at the northern branch only this month.','Ограниченный временный период подчёркивает временную ситуацию: is working.');
-translate('verbs-aspect',125,'Мы сейчас не ищем новый склад, а сравниваем районы доставки.','we / not look for / a new warehouse / right now / compare / delivery zones','We are not looking for a new warehouse right now; we are comparing delivery zones.','Right now задаёт текущий процесс; обе глагольные группы используют Present Continuous.');
-contrast('verbs-aspect',126,'Различи мнение о плане и обдумывание следующего шага.',[{prompt:'I ___ the plan is too expensive.',base:'think',answer:'think'},{prompt:'I ___ about moving the event outdoors.',base:'think',answer:'am thinking'}],'Think со значением мнения обычно стоит в Simple; think about со значением обдумывания может быть Continuous.');
-add('verbs-aspect',127,'gap',2,'This fabric ___ softer after the first wash.','feels','Feel описывает свойство ткани, поэтому здесь используется Present Simple: feels.',{cue:'Эта ткань становится мягче после первой стирки.',base:'feel',choices:['feels','is feeling']});
-repair('verbs-aspect',128,'They are usually storing the bicycles in this covered area.','They usually store the bicycles in this covered area.','Usually обозначает повторяющуюся привычку; Continuous здесь не нужен.');
-transform('verbs-aspect',129,'The shipping company uses rail in winter.','Опиши временную проверку авиадоставки в этом месяце.','This month, the shipping company is testing air freight.','This month задаёт временный процесс; для новой проверки используется is testing.');
-translate('verbs-aspect',130,'Тише: ребёнок пытается заснуть.','be quiet / the child / try / to fall asleep','Be quiet; the child is trying to fall asleep.','Действие происходит сейчас: is trying.');
-contrast('verbs-aspect',131,'Выбери форму think по значению в каждом контексте.',[{prompt:'What do you ___ of the new logo?',base:'think',answer:'think'},{prompt:'What are you ___ about right now?',base:'think',answer:'thinking'}],'Просьба высказать мнение: do you think. Текущий процесс обдумывания: are you thinking.');
-add('verbs-aspect',132,'gap',2,'This sauce ___ too salty to me.','tastes','Taste описывает свойство соуса, поэтому здесь естественна простая форма tastes.',{cue:'Этот соус кажется мне слишком солёным.',base:'taste',choices:['tastes','is tasting']});
+repair(
+  "verbs-aspect",
+  123,
+  "I am understanding why the scanner rejects this code.",
+  "I understand why the scanner rejects this code.",
+  "Understand обычно описывает состояние или мнение и не требует Continuous в этом значении.",
+);
+transform(
+  "verbs-aspect",
+  124,
+  "The consultant works at the northern branch.",
+  "Уточни, что это временная работа только в этом месяце.",
+  "The consultant is working at the northern branch only this month.",
+  "Ограниченный временный период подчёркивает временную ситуацию: is working.",
+);
+translate(
+  "verbs-aspect",
+  125,
+  "Мы сейчас не ищем новый склад, а сравниваем районы доставки.",
+  "we / not look for / a new warehouse / right now / compare / delivery zones",
+  "We are not looking for a new warehouse right now; we are comparing delivery zones.",
+  "Right now задаёт текущий процесс; обе глагольные группы используют Present Continuous.",
+);
+contrast(
+  "verbs-aspect",
+  126,
+  "Различи мнение о плане и обдумывание следующего шага.",
+  [
+    {
+      prompt: "I ___ the plan is too expensive.",
+      base: "think",
+      answer: "think",
+    },
+    {
+      prompt: "I ___ about moving the event outdoors.",
+      base: "think",
+      answer: "am thinking",
+    },
+  ],
+  "Think со значением мнения обычно стоит в Simple; think about со значением обдумывания может быть Continuous.",
+);
+add(
+  "verbs-aspect",
+  127,
+  "gap",
+  2,
+  "This fabric ___ softer after the first wash.",
+  "feels",
+  "Feel описывает свойство ткани, поэтому здесь используется Present Simple: feels.",
+  {
+    cue: "Эта ткань становится мягче после первой стирки.",
+    base: "feel",
+    choices: ["feels", "is feeling"],
+  },
+);
+repair(
+  "verbs-aspect",
+  128,
+  "They are usually storing the bicycles in this covered area.",
+  "They usually store the bicycles in this covered area.",
+  "Usually обозначает повторяющуюся привычку; Continuous здесь не нужен.",
+);
+transform(
+  "verbs-aspect",
+  129,
+  "The shipping company uses rail in winter.",
+  "Опиши временную проверку авиадоставки в этом месяце.",
+  "This month, the shipping company is testing air freight.",
+  "This month задаёт временный процесс; для новой проверки используется is testing.",
+);
+translate(
+  "verbs-aspect",
+  130,
+  "Тише: ребёнок пытается заснуть.",
+  "be quiet / the child / try / to fall asleep",
+  "Be quiet; the child is trying to fall asleep.",
+  "Действие происходит сейчас: is trying.",
+);
+contrast(
+  "verbs-aspect",
+  131,
+  "Выбери форму think по значению в каждом контексте.",
+  [
+    {
+      prompt: "What do you ___ of the new logo?",
+      base: "think",
+      answer: "think",
+    },
+    {
+      prompt: "What are you ___ about right now?",
+      base: "think",
+      answer: "thinking",
+    },
+  ],
+  "Просьба высказать мнение: do you think. Текущий процесс обдумывания: are you thinking.",
+);
+add(
+  "verbs-aspect",
+  132,
+  "gap",
+  2,
+  "This sauce ___ too salty to me.",
+  "tastes",
+  "Taste описывает свойство соуса, поэтому здесь естественна простая форма tastes.",
+  {
+    cue: "Этот соус кажется мне слишком солёным.",
+    base: "taste",
+    choices: ["tastes", "is tasting"],
+  },
+);
 
-repair('verbs-modal',123,"You mustn't to connect the device to a wet outlet.","You mustn't connect the device to a wet outlet.",'После mustn\'t глагол стоит в начальной форме без to.');
-transform('verbs-modal',124,'Every passenger is required to keep the receipt.','Передай это правило с помощью must.','Every passenger must keep the receipt.','Must выражает обязательное требование; после него используется начальная форма keep.');
-translate('verbs-modal',125,'Тебе не нужно печатать билет: покажи QR-код.','you / not have to / print / the ticket / show / the QR code','You do not have to print the ticket; show the QR code.','Отсутствие необходимости выражается do not have to; это не запрет.');
-contrast('verbs-modal',126,'Сравни прямой запрет и отсутствие необходимости.',[{prompt:'Flash photography is forbidden here. You ___ use it in this archive room.',base:'must not',answer:'must not'},{prompt:'The lecture uses unreserved seating, so you ___ reserve a seat.',base:'not have to',answer:'do not have to'}],'Must not запрещает действие; do not have to сообщает, что действие необязательно.');
-add('verbs-modal',127,'gap',2,'You ___ bring any food; catering is included in the ticket.','do not have to','Здесь указано отсутствие необходимости, а не запрет: do not have to.',{cue:'Вам не нужно приносить еду: питание включено в билет.',base:'not be required to',choices:['do not have to','must not']});
-repair('verbs-modal',128,'Might the crew to move the equipment after closing?','Might the crew move the equipment after closing?','В вопросе после might используется начальная форма move без to.');
-transform('verbs-modal',129,'The engineer may be using the backup system now.','Сделай утверждение отрицательным, сохрани возможность.','The engineer may not be using the backup system now.','May not отрицает возможность; конструкция Continuous остаётся be using.');
-translate('verbs-modal',130,'Завтра в полдень мы будем осматривать северное крыло.','at noon tomorrow / we / inspect / the north wing','At noon tomorrow, we will be inspecting the north wing.','At noon tomorrow задаёт момент будущего процесса: will be + -ing.');
-contrast('verbs-modal',131,'Различи обязательное действие и действие, которое не требуется.',[{prompt:'Applicants ___ submit the signed form by Friday.',base:'must',answer:'must'},{prompt:'Applicants ___ send a paper copy; a digital upload is sufficient.',base:'not have to',answer:'do not have to'}],'Must означает обязательность; do not have to — отсутствие дополнительной необходимости.');
-add('verbs-modal',132,'gap',2,'You ___ ask the desk for a spare key; it is only a recommendation.','should','Здесь выражается совет, а не обязательное требование.',{cue:'Вам следует попросить запасной ключ у стойки; это только рекомендация.',base:'should',choices:['should','must']});
+repair(
+  "verbs-modal",
+  123,
+  "You mustn't to connect the device to a wet outlet.",
+  "You mustn't connect the device to a wet outlet.",
+  "После mustn't глагол стоит в начальной форме без to.",
+);
+transform(
+  "verbs-modal",
+  124,
+  "Every passenger is required to keep the receipt.",
+  "Передай это правило с помощью must.",
+  "Every passenger must keep the receipt.",
+  "Must выражает обязательное требование; после него используется начальная форма keep.",
+);
+translate(
+  "verbs-modal",
+  125,
+  "Тебе не нужно печатать билет: покажи QR-код.",
+  "you / not have to / print / the ticket / show / the QR code",
+  "You do not have to print the ticket; show the QR code.",
+  "Отсутствие необходимости выражается do not have to; это не запрет.",
+);
+contrast(
+  "verbs-modal",
+  126,
+  "Сравни прямой запрет и отсутствие необходимости.",
+  [
+    {
+      prompt:
+        "Flash photography is forbidden here. You ___ use it in this archive room.",
+      base: "must not",
+      answer: "must not",
+    },
+    {
+      prompt: "The lecture uses unreserved seating, so you ___ reserve a seat.",
+      base: "not have to",
+      answer: "do not have to",
+    },
+  ],
+  "Must not запрещает действие; do not have to сообщает, что действие необязательно.",
+);
+add(
+  "verbs-modal",
+  127,
+  "gap",
+  2,
+  "You ___ bring any food; catering is included in the ticket.",
+  "do not have to",
+  "Здесь указано отсутствие необходимости, а не запрет: do not have to.",
+  {
+    cue: "Вам не нужно приносить еду: питание включено в билет.",
+    base: "not be required to",
+    choices: ["do not have to", "must not"],
+  },
+);
+repair(
+  "verbs-modal",
+  128,
+  "Might the crew to move the equipment after closing?",
+  "Might the crew move the equipment after closing?",
+  "В вопросе после might используется начальная форма move без to.",
+);
+transform(
+  "verbs-modal",
+  129,
+  "The engineer may be using the backup system now.",
+  "Сделай утверждение отрицательным, сохрани возможность.",
+  "The engineer may not be using the backup system now.",
+  "May not отрицает возможность; конструкция Continuous остаётся be using.",
+);
+translate(
+  "verbs-modal",
+  130,
+  "Завтра в полдень мы будем осматривать северное крыло.",
+  "at noon tomorrow / we / inspect / the north wing",
+  "At noon tomorrow, we will be inspecting the north wing.",
+  "At noon tomorrow задаёт момент будущего процесса: will be + -ing.",
+);
+contrast(
+  "verbs-modal",
+  131,
+  "Различи обязательное действие и действие, которое не требуется.",
+  [
+    {
+      prompt: "Applicants ___ submit the signed form by Friday.",
+      base: "must",
+      answer: "must",
+    },
+    {
+      prompt:
+        "Applicants ___ send a paper copy; a digital upload is sufficient.",
+      base: "not have to",
+      answer: "do not have to",
+    },
+  ],
+  "Must означает обязательность; do not have to — отсутствие дополнительной необходимости.",
+);
+add(
+  "verbs-modal",
+  132,
+  "gap",
+  2,
+  "You ___ ask the desk for a spare key; it is only a recommendation.",
+  "should",
+  "Здесь выражается совет, а не обязательное требование.",
+  {
+    cue: "Вам следует попросить запасной ключ у стойки; это только рекомендация.",
+    base: "should",
+    choices: ["should", "must"],
+  },
+);
 
-repair('verbs-be',123,'The news from the island were unexpectedly good.','The news from the island was unexpectedly good.','News имеет форму на -s, но обычно согласуется как существительное в единственном числе.');
-transform('verbs-be',124,'The entrance was locked after six.','Сделай общий вопрос.','Was the entrance locked after six?','В вопросе с be вспомогательный was ставится перед подлежащим.');
-translate('verbs-be',125,'Почему сотрудники были недовольны новым расписанием?','why / the employees / unhappy / with the new schedule','Why were the employees unhappy with the new schedule?','Employees — множественное число; в вопросе требуется were перед подлежащим.');
-contrast('verbs-be',126,'Сравни количество воды и количество бутылок.',[{prompt:'There ___ enough water for the trip.',base:'be',answer:'is'},{prompt:'There ___ enough bottles for the trip.',base:'be',answer:'are'}],'В конструкции there be форма согласуется с последующим существительным: water — singular, bottles — plural.');
-add('verbs-be',127,'gap',2,'There ___ enough chairs for everyone in the studio.','are','После there стоит plural noun chairs, поэтому нужна форма are.',{cue:'В студии достаточно стульев для всех.',base:'be',choices:['are','is']});
-repair('verbs-be',128,'There is two security guards by the loading entrance.','There are two security guards by the loading entrance.','Форма there be согласуется с plural noun guards: are.');
-transform('verbs-be',129,'A single copy of the certificate is in the folder.','Спроси, находится ли копия в папке.','Is a single copy of the certificate in the folder?','Общий вопрос с be образуется перестановкой is перед подлежащим.');
-translate('verbs-be',130,'Музей был открыт для посетителей, но кафе было закрыто.','the museum / open to visitors / but / the café / closed','The museum was open to visitors, but the café was closed.','Оба подлежащих в единственном числе; для прошлого используется was.');
-contrast('verbs-be',131,'Сравни scissors и пару ножниц.',[{prompt:'The scissors ___ in the top drawer.',base:'be',answer:'are'},{prompt:'The pair of scissors ___ in the top drawer.',base:'be',answer:'is'}],'Scissors употребляется во множественном числе; в паре грамматическое подлежащее pair — единственное.');
-add('verbs-be',132,'gap',2,'One of the side doors ___ locked after 8 p.m.','is','Подлежащее предложения — one, поэтому используется is.',{cue:'Одна из боковых дверей запирается после восьми вечера.',base:'be',choices:['is','are']});
+repair(
+  "verbs-be",
+  123,
+  "The news from the island were unexpectedly good.",
+  "The news from the island was unexpectedly good.",
+  "News имеет форму на -s, но обычно согласуется как существительное в единственном числе.",
+);
+transform(
+  "verbs-be",
+  124,
+  "The entrance was locked after six.",
+  "Сделай общий вопрос.",
+  "Was the entrance locked after six?",
+  "В вопросе с be вспомогательный was ставится перед подлежащим.",
+);
+translate(
+  "verbs-be",
+  125,
+  "Почему сотрудники были недовольны новым расписанием?",
+  "why / the employees / unhappy / with the new schedule",
+  "Why were the employees unhappy with the new schedule?",
+  "Employees — множественное число; в вопросе требуется were перед подлежащим.",
+);
+contrast(
+  "verbs-be",
+  126,
+  "Сравни количество воды и количество бутылок.",
+  [
+    {
+      prompt: "There ___ enough water for the trip.",
+      base: "be",
+      answer: "is",
+    },
+    {
+      prompt: "There ___ enough bottles for the trip.",
+      base: "be",
+      answer: "are",
+    },
+  ],
+  "В конструкции there be форма согласуется с последующим существительным: water — singular, bottles — plural.",
+);
+add(
+  "verbs-be",
+  127,
+  "gap",
+  2,
+  "There ___ enough chairs for everyone in the studio.",
+  "are",
+  "После there стоит plural noun chairs, поэтому нужна форма are.",
+  {
+    cue: "В студии достаточно стульев для всех.",
+    base: "be",
+    choices: ["are", "is"],
+  },
+);
+repair(
+  "verbs-be",
+  128,
+  "There is two security guards by the loading entrance.",
+  "There are two security guards by the loading entrance.",
+  "Форма there be согласуется с plural noun guards: are.",
+);
+transform(
+  "verbs-be",
+  129,
+  "A single copy of the certificate is in the folder.",
+  "Спроси, находится ли копия в папке.",
+  "Is a single copy of the certificate in the folder?",
+  "Общий вопрос с be образуется перестановкой is перед подлежащим.",
+);
+translate(
+  "verbs-be",
+  130,
+  "Музей был открыт для посетителей, но кафе было закрыто.",
+  "the museum / open to visitors / but / the café / closed",
+  "The museum was open to visitors, but the café was closed.",
+  "Оба подлежащих в единственном числе; для прошлого используется was.",
+);
+contrast(
+  "verbs-be",
+  131,
+  "Сравни scissors и пару ножниц.",
+  [
+    {
+      prompt: "The scissors ___ in the top drawer.",
+      base: "be",
+      answer: "are",
+    },
+    {
+      prompt: "The pair of scissors ___ in the top drawer.",
+      base: "be",
+      answer: "is",
+    },
+  ],
+  "Scissors употребляется во множественном числе; в паре грамматическое подлежащее pair — единственное.",
+);
+add(
+  "verbs-be",
+  132,
+  "gap",
+  2,
+  "One of the side doors ___ locked after 8 p.m.",
+  "is",
+  "Подлежащее предложения — one, поэтому используется is.",
+  {
+    cue: "Одна из боковых дверей запирается после восьми вечера.",
+    base: "be",
+    choices: ["is", "are"],
+  },
+);
 
-repair('verbs-time',123,'We have just saw the updated seating plan.','We have just seen the updated seating plan.','После have используется past participle: see → seen.');
-transform('verbs-time',124,'The technician has repaired this model before.','Сделай общий вопрос об опыте до настоящего момента.','Has the technician repaired this model before?','Present Perfect спрашивает об опыте до настоящего момента; has переносится перед подлежащим.');
-translate('verbs-time',125,'С момента переезда мы ещё не познакомились с соседями.','we / not meet / the neighbors / since moving','We have not met the neighbors since moving.','Since moving связывает ситуацию с настоящим; после have not используется met.');
-contrast('verbs-time',126,'Сравни опыт до настоящего и период, который закончился в прошлом.',[{prompt:'I ___ at the city clinic for six years, and I still work there.',base:'work',answer:'have worked'},{prompt:'I ___ at the city clinic for six years before moving abroad.',base:'work',answer:'worked'}],'Первый период продолжается сейчас: have worked. Во втором он завершился до переезда: worked.');
-add('verbs-time',127,'gap',2,'The order ___ at the warehouse already.','has arrived','Уже полученный результат актуален сейчас; order требует has + past participle arrived.',{cue:'Заказ уже прибыл на склад.',base:'arrive',choices:['has arrived','arrived']});
-repair('verbs-time',128,'Have you ever went to the northern observatory?','Have you ever gone to the northern observatory?','После have в вопросе об опыте нужен past participle gone.');
-transform('verbs-time',129,'I moved to Bristol in 2022.','Передай, что я живу там с того времени и до сих пор, используя since.','I have lived in Bristol since 2022.','Действие началось в прошлом и продолжается сейчас: have lived since 2022.');
-translate('verbs-time',130,'Он пока не ответил на моё письмо.','he / not reply / to my email / yet','He has not replied to my email yet.','Yet в отрицании о результате к настоящему требует has not + past participle.');
-contrast('verbs-time',131,'Сопоставь длительность до настоящего и отдельный завершённый период.',[{prompt:'The studio ___ at this address since 2018.',base:'operate',answer:'has operated'},{prompt:'The studio ___ at its former address until 2018.',base:'operate',answer:'operated'}],'Since 2018 связывает работу с настоящим; until 2018 обозначает законченный период.');
-add('verbs-time',132,'gap',2,'Since the exhibition opened, attendance ___ steadily.','has grown','Since задаёт период до настоящего; attendance — singular, grow → has grown.',{cue:'С открытия выставки посещаемость постепенно растёт.',base:'grow',choices:['has grown','grew']});
+repair(
+  "verbs-time",
+  123,
+  "We have just saw the updated seating plan.",
+  "We have just seen the updated seating plan.",
+  "Just здесь означает «только что», результат актуален сейчас. После have нужна форма seen; saw — форма для самостоятельного прошедшего события без have.",
+  {
+    cue: "Мы только что увидели обновлённый план рассадки.",
+    task: "Проверь форму основного глагола после have.",
+  },
+);
+transform(
+  "verbs-time",
+  124,
+  "The technician has repaired this model before.",
+  "Сделай общий вопрос об опыте до настоящего момента.",
+  "Has the technician repaired this model before?",
+  "Present Perfect спрашивает об опыте до настоящего момента; has переносится перед подлежащим.",
+);
+translate(
+  "verbs-time",
+  125,
+  "С момента переезда мы ещё не познакомились с соседями.",
+  "we / not meet / the neighbors / since moving",
+  "We have not met the neighbors since moving.",
+  "Since moving связывает ситуацию с настоящим; после have not используется met.",
+);
+contrast(
+  "verbs-time",
+  126,
+  "Сравни опыт до настоящего и период, который закончился в прошлом.",
+  [
+    {
+      prompt: "I ___ at the city clinic for six years, and I still work there.",
+      base: "work",
+      answer: "have worked",
+    },
+    {
+      prompt: "I ___ at the city clinic for six years before moving abroad.",
+      base: "work",
+      answer: "worked",
+    },
+  ],
+  "Первый период продолжается сейчас: have worked. Во втором он завершился до переезда: worked.",
+);
+add(
+  "verbs-time",
+  127,
+  "gap",
+  2,
+  "The order ___ at the warehouse already.",
+  "has arrived",
+  "Уже полученный результат актуален сейчас; order требует has + past participle arrived.",
+  {
+    cue: "Заказ уже прибыл на склад.",
+    base: "arrive",
+    choices: ["has arrived", "arrived"],
+  },
+);
+repair(
+  "verbs-time",
+  128,
+  "Have you ever went to the northern observatory?",
+  "Have you ever gone to the northern observatory?",
+  "Ever спрашивает об опыте к настоящему: «Ты когда-нибудь бывал…?» После have нужна форма gone, а не went.",
+  {
+    cue: "Ты когда-нибудь бывал в северной обсерватории?",
+    task: "Проверь форму основного глагола после have в вопросе об опыте.",
+  },
+);
+transform(
+  "verbs-time",
+  129,
+  "I moved to Bristol in 2022.",
+  "Передай, что я живу там с того времени и до сих пор, используя since.",
+  "I have lived in Bristol since 2022.",
+  "Действие началось в прошлом и продолжается сейчас: have lived since 2022.",
+);
+translate(
+  "verbs-time",
+  130,
+  "Он пока не ответил на моё письмо.",
+  "he / not reply / to my email / yet",
+  "He has not replied to my email yet.",
+  "Yet в отрицании о результате к настоящему требует has not + past participle.",
+);
+contrast(
+  "verbs-time",
+  131,
+  "Сопоставь длительность до настоящего и отдельный завершённый период.",
+  [
+    {
+      prompt: "The studio ___ at this address since 2018.",
+      base: "operate",
+      answer: "has operated",
+    },
+    {
+      prompt: "The studio ___ at its former address until 2018.",
+      base: "operate",
+      answer: "operated",
+    },
+  ],
+  "Since 2018 связывает работу с настоящим; until 2018 обозначает законченный период.",
+);
+add(
+  "verbs-time",
+  132,
+  "gap",
+  2,
+  "Since the exhibition opened, attendance ___ steadily.",
+  "has grown",
+  "Since задаёт период до настоящего; attendance — singular, grow → has grown.",
+  {
+    cue: "С открытия выставки посещаемость постепенно растёт.",
+    base: "grow",
+    choices: ["has grown", "grew"],
+  },
+);
 
-repair('structure-question',118,'Do you know did the east gallery close at five?','Do you know if the east gallery closed at five?','После if в косвенном вопросе используется прямой порядок слов, без did.');
-transform('structure-question',119,'Where can I collect the visitor badge?','Встрой вопрос после Do you know.','Do you know where I can collect the visitor badge?','Внутри косвенного вопроса сохраняется порядок subject + can + verb.');
-translate('structure-question',120,'Я не уверен, открыт ли музей по понедельникам.','I / not sure / whether / the museum / be / open / on Mondays','I am not sure whether the museum is open on Mondays.','Whether вводит косвенный вопрос; после него порядок слов прямой: the museum is.');
-contrast('structure-question',121,'Сравни прямой вопрос и тот же вопрос внутри другой фразы.',[{prompt:'What time ___ the café close?',base:'do',answer:'does'},{prompt:'Do you know what time the café ___?',base:'close',answer:'closes'}],'В прямом вопросе вспомогательный does стоит перед подлежащим; в косвенной части — the café closes.');
-add('structure-question',122,'gap',2,'Could you check whether the file ___ attached?','is','Whether вводит косвенный вопрос, внутри которого сохраняется прямой порядок слов: the file is.',{cue:'Можете проверить, прикреплён ли файл?',base:'be',choices:['is','does']});
-repair('structure-question',123,'Who did design the emblem on the old ferry?','Who designed the emblem on the old ferry?','Who здесь подлежащее; вспомогательный did не нужен, используется Past Simple designed.');
-transform('structure-question',124,'Do you know where the shuttle stops?','Сделай из встроенного вопроса прямой вопрос.','Where does the shuttle stop?','В прямом вопросе Present Simple вспомогательный does ставится перед подлежащим.');
-translate('structure-question',125,'Спроси, нужна ли предварительная регистрация.','ask / whether / advance registration / be / required','Ask whether advance registration is required.','Whether вводит косвенный вопрос с прямым порядком слов: registration is required.');
-contrast('structure-question',126,'Сравни вопрос о человеке, который выполнил действие, и о человеке, которому позвонили.',[{prompt:'Who ___ the island guide at the pier?',base:'meet',answer:'met'},{prompt:'Who did the island guide ___ at the pier?',base:'meet',answer:'meet'}],'Если who — подлежащее, did не нужен: who met. Если who — дополнение, нужен did + meet.');
-add('structure-question',127,'gap',2,'Do you remember where the return desk ___?','is','Это косвенный вопрос после Do you remember; внутри — прямой порядок the return desk is.',{cue:'Ты помнишь, где находится стойка возврата?',base:'be',choices:['is','does']});
+repair(
+  "structure-question",
+  118,
+  "Do you know did the east gallery close at five?",
+  "Do you know if the east gallery closed at five?",
+  "После if в косвенном вопросе используется прямой порядок слов, без did.",
+);
+transform(
+  "structure-question",
+  119,
+  "Where can I collect the visitor badge?",
+  "Встрой вопрос после Do you know.",
+  "Do you know where I can collect the visitor badge?",
+  "Внутри косвенного вопроса сохраняется порядок subject + can + verb.",
+);
+translate(
+  "structure-question",
+  120,
+  "Я не уверен, открыт ли музей по понедельникам.",
+  "I / not sure / whether / the museum / be / open / on Mondays",
+  "I am not sure whether the museum is open on Mondays.",
+  "Whether вводит косвенный вопрос; после него порядок слов прямой: the museum is.",
+);
+contrast(
+  "structure-question",
+  121,
+  "Сравни прямой вопрос и тот же вопрос внутри другой фразы.",
+  [
+    { prompt: "What time ___ the café close?", base: "do", answer: "does" },
+    {
+      prompt: "Do you know what time the café ___?",
+      base: "close",
+      answer: "closes",
+    },
+  ],
+  "В прямом вопросе вспомогательный does стоит перед подлежащим; в косвенной части — the café closes.",
+);
+add(
+  "structure-question",
+  122,
+  "gap",
+  2,
+  "Could you check whether the file ___ attached?",
+  "is",
+  "Whether вводит косвенный вопрос, внутри которого сохраняется прямой порядок слов: the file is.",
+  {
+    cue: "Можете проверить, прикреплён ли файл?",
+    base: "be",
+    choices: ["is", "does"],
+  },
+);
+repair(
+  "structure-question",
+  123,
+  "Who did design the emblem on the old ferry?",
+  "Who designed the emblem on the old ferry?",
+  "Who здесь подлежащее; вспомогательный did не нужен, используется Past Simple designed.",
+);
+transform(
+  "structure-question",
+  124,
+  "Do you know where the shuttle stops?",
+  "Сделай из встроенного вопроса прямой вопрос.",
+  "Where does the shuttle stop?",
+  "В прямом вопросе Present Simple вспомогательный does ставится перед подлежащим.",
+);
+translate(
+  "structure-question",
+  125,
+  "Спроси, нужна ли предварительная регистрация.",
+  "ask / whether / advance registration / be / required",
+  "Ask whether advance registration is required.",
+  "Whether вводит косвенный вопрос с прямым порядком слов: registration is required.",
+);
+contrast(
+  "structure-question",
+  126,
+  "Сравни вопрос о человеке, который выполнил действие, и о человеке, которому позвонили.",
+  [
+    {
+      prompt: "Who ___ the island guide at the pier?",
+      base: "meet",
+      answer: "met",
+    },
+    {
+      prompt: "Who did the island guide ___ at the pier?",
+      base: "meet",
+      answer: "meet",
+    },
+  ],
+  "Если who — подлежащее, did не нужен: who met. Если who — дополнение, нужен did + meet.",
+);
+add(
+  "structure-question",
+  127,
+  "gap",
+  2,
+  "Do you remember where the return desk ___?",
+  "is",
+  "Это косвенный вопрос после Do you remember; внутри — прямой порядок the return desk is.",
+  {
+    cue: "Ты помнишь, где находится стойка возврата?",
+    base: "be",
+    choices: ["is", "does"],
+  },
+);
 
-repair('structure-links',119,'Because of the train was cancelled, we waited for the replacement bus.','Because the train was cancelled, we waited for the replacement bus.','Because of вводит существительную группу; перед целым придаточным с подлежащим и глаголом нужен because.');
-transform('structure-links',120,'Although we had limited time, we completed the inspection.','Перестрой начало с despite и именной группой the limited time.','Despite the limited time, we completed the inspection.','Although + clause; despite + noun phrase.');
-translate('structure-links',121,'Несмотря на сильный ветер, паром вышел по расписанию.','despite / the strong wind / the ferry / leave / on schedule','Despite the strong wind, the ferry left on schedule.','Despite стоит перед существительной группой; событие в прошлом: left.');
-contrast('structure-links',122,'Выбери связку перед придаточным или существительной группой.',[{prompt:'We delayed the departure ___ the road was flooded.',base:'because',answer:'because'},{prompt:'We delayed the departure ___ flooding on the main road.',base:'because of',answer:'because of'}],'Перед придаточным с подлежащим и глаголом — because; перед существительной группой — because of.');
-add('structure-links',123,'gap',2,'___ the heavy rain, the outdoor concert continued.','Despite','После пропуска стоит существительная группа the heavy rain, поэтому нужен despite.',{cue:'Несмотря на сильный дождь, концерт на открытом воздухе продолжился.',base:'союз перед существительной группой',choices:['Despite','Although']});
-repair('structure-links',124,'Despite of the storm, the ferry sailed on schedule.','Despite the storm, the ferry sailed on schedule.','После despite не ставится of.');
-transform('structure-links',125,'Because the pipes froze, the library closed early.','Используй because of + the frozen pipes.','Because of the frozen pipes, the library closed early.','Because вводит придаточное; because of — существительную группу.');
-translate('structure-links',126,'Школа закрылась из-за ремонта отопления.','the school / close / because of / heating repairs','The school closed because of heating repairs.','Because of ставится перед существительной группой heating repairs.');
-contrast('structure-links',127,'Сохрани смысл «несмотря на» с двумя разными грамматическими формами.',[{prompt:'___ the trail was steep, the hikers reached the lookout.',base:'although',answer:'Although'},{prompt:'___ the steep trail, the hikers reached the lookout.',base:'despite',answer:'Despite'}],'Although + clause; despite + noun phrase.');
-add('structure-links',128,'gap',2,'___ waiting in a long queue, visitors stayed for the entire performance.','Despite','Перед герундием waiting употребляется despite; although вводит придаточное с подлежащим и личной формой глагола.',{cue:'Несмотря на долгое ожидание в очереди, зрители остались до конца спектакля.',base:'несмотря на + -ing',choices:['Despite','Because']});
+repair(
+  "structure-links",
+  119,
+  "Because of the train was cancelled, we waited for the replacement bus.",
+  "Because the train was cancelled, we waited for the replacement bus.",
+  "Because of вводит существительную группу; перед целым придаточным с подлежащим и глаголом нужен because.",
+);
+transform(
+  "structure-links",
+  120,
+  "Although we had limited time, we completed the inspection.",
+  "Перестрой начало с despite и именной группой the limited time.",
+  "Despite the limited time, we completed the inspection.",
+  "Although + clause; despite + noun phrase.",
+);
+translate(
+  "structure-links",
+  121,
+  "Несмотря на сильный ветер, паром вышел по расписанию.",
+  "despite / the strong wind / the ferry / leave / on schedule",
+  "Despite the strong wind, the ferry left on schedule.",
+  "Despite стоит перед существительной группой; событие в прошлом: left.",
+);
+contrast(
+  "structure-links",
+  122,
+  "Выбери связку перед придаточным или существительной группой.",
+  [
+    {
+      prompt: "We delayed the departure ___ the road was flooded.",
+      base: "because",
+      answer: "because",
+    },
+    {
+      prompt: "We delayed the departure ___ flooding on the main road.",
+      base: "because of",
+      answer: "because of",
+    },
+  ],
+  "Перед придаточным с подлежащим и глаголом — because; перед существительной группой — because of.",
+);
+add(
+  "structure-links",
+  123,
+  "gap",
+  2,
+  "___ the heavy rain, the outdoor concert continued.",
+  "Despite",
+  "После пропуска стоит существительная группа the heavy rain, поэтому нужен despite.",
+  {
+    cue: "Несмотря на сильный дождь, концерт на открытом воздухе продолжился.",
+    base: "союз перед существительной группой",
+    choices: ["Despite", "Although"],
+  },
+);
+repair(
+  "structure-links",
+  124,
+  "Despite of the storm, the ferry sailed on schedule.",
+  "Despite the storm, the ferry sailed on schedule.",
+  "После despite не ставится of.",
+);
+transform(
+  "structure-links",
+  125,
+  "Because the pipes froze, the library closed early.",
+  "Используй because of + the frozen pipes.",
+  "Because of the frozen pipes, the library closed early.",
+  "Because вводит придаточное; because of — существительную группу.",
+);
+translate(
+  "structure-links",
+  126,
+  "Школа закрылась из-за ремонта отопления.",
+  "the school / close / because of / heating repairs",
+  "The school closed because of heating repairs.",
+  "Because of ставится перед существительной группой heating repairs.",
+);
+contrast(
+  "structure-links",
+  127,
+  "Сохрани смысл «несмотря на» с двумя разными грамматическими формами.",
+  [
+    {
+      prompt: "___ the trail was steep, the hikers reached the lookout.",
+      base: "although",
+      answer: "Although",
+    },
+    {
+      prompt: "___ the steep trail, the hikers reached the lookout.",
+      base: "despite",
+      answer: "Despite",
+    },
+  ],
+  "Although + clause; despite + noun phrase.",
+);
+add(
+  "structure-links",
+  128,
+  "gap",
+  2,
+  "___ waiting in a long queue, visitors stayed for the entire performance.",
+  "Despite",
+  "Перед герундием waiting употребляется despite; although вводит придаточное с подлежащим и личной формой глагола.",
+  {
+    cue: "Несмотря на долгое ожидание в очереди, зрители остались до конца спектакля.",
+    base: "несмотря на + -ing",
+    choices: ["Despite", "Because"],
+  },
+);
 
-repair('nouns-number',118,'Most of students in the evening class work nearby.','Most students in the evening class work nearby.','Для обобщения употребляется most + plural noun; most of требует конкретную группу с the/these/them.');
-transform('nouns-number',119,'Most of the local residents use the cycle path.','Сделай обобщённое утверждение без указания на конкретную группу.','Most residents use the cycle path.','При общем значении перед plural noun ставится most без of the.');
-translate('nouns-number',120,'До окончания выставки осталось ещё четыре дня.','another / four / days / remain / until the exhibition ends','Another four days remain until the exhibition ends.','Another перед числом может употребляться с plural noun: another four days.');
-contrast('nouns-number',121,'Различи оставшийся определённый предмет и другие неопределённые предметы.',[{prompt:'We have two printers: one is upstairs; ___ is in reception.',base:'the other',answer:'the other printer'},{prompt:'The technician is checking ___ printers before opening.',base:'other',answer:'other'}],'The other указывает на оставшийся предмет из определённой пары; other перед неопределённым plural noun.');
-add('nouns-number',122,'gap',2,'Each of the six lockers ___ a separate key.','has','Each of + plural noun сохраняет значение единственного числа: each ... has.',{cue:'У каждого из шести шкафчиков есть отдельный ключ.',base:'have',choices:['has','have']});
-repair('nouns-number',123,'My cousin works as engineer at the city hospital.','My cousin works as an engineer at the city hospital.','Перед исчисляемым существительным в единственном числе engineer нужен неопределённый артикль an.');
-transform('nouns-number',124,'The other chairs are stored behind the stage.','Скажи об одном дополнительном стуле, замени the other chairs.','Another chair is stored behind the stage.','Another употребляется перед countable singular noun.');
-translate('nouns-number',125,'Каждый из этих четырёх маршрутов занимает около часа.','each / these four routes / take / about an hour','Each of these four routes takes about an hour.','После each of используется plural noun, но глагол согласуется с each: takes.');
-contrast('nouns-number',126,'Сравни обобщение и конкретно определённую группу.',[{prompt:'___ residents in this district use the tram.',base:'most',answer:'Most'},{prompt:'___ the residents in this building use the lift.',base:'most of',answer:'Most of'}],'Обобщение: most residents. Конкретная группа с the: most of the residents.');
-add('nouns-number',127,'gap',2,'We saw ___ owl near the old stone wall.','an','Перед owl употребляется an, потому что слово начинается с гласного звука.',{cue:'Мы увидели сову возле старой каменной стены.',base:'owl',choices:['an','a']});
+repair(
+  "nouns-number",
+  118,
+  "Most of students in the evening class work nearby.",
+  "Most students in the evening class work nearby.",
+  "Для обобщения употребляется most + plural noun; most of требует конкретную группу с the/these/them.",
+);
+transform(
+  "nouns-number",
+  119,
+  "Most of the local residents use the cycle path.",
+  "Сделай обобщённое утверждение без указания на конкретную группу.",
+  "Most residents use the cycle path.",
+  "При общем значении перед plural noun ставится most без of the.",
+);
+translate(
+  "nouns-number",
+  120,
+  "До окончания выставки осталось ещё четыре дня.",
+  "another / four / days / remain / until the exhibition ends",
+  "Another four days remain until the exhibition ends.",
+  "Another перед числом может употребляться с plural noun: another four days.",
+);
+contrast(
+  "nouns-number",
+  121,
+  "Различи оставшийся определённый предмет и другие неопределённые предметы.",
+  [
+    {
+      prompt: "We have two printers: one is upstairs; ___ is in reception.",
+      base: "the other",
+      answer: "the other printer",
+    },
+    {
+      prompt: "The technician is checking ___ printers before opening.",
+      base: "other",
+      answer: "other",
+    },
+  ],
+  "The other указывает на оставшийся предмет из определённой пары; other перед неопределённым plural noun.",
+);
+add(
+  "nouns-number",
+  122,
+  "gap",
+  2,
+  "Each of the six lockers ___ a separate key.",
+  "has",
+  "Each of + plural noun сохраняет значение единственного числа: each ... has.",
+  {
+    cue: "У каждого из шести шкафчиков есть отдельный ключ.",
+    base: "have",
+    choices: ["has", "have"],
+  },
+);
+repair(
+  "nouns-number",
+  123,
+  "My cousin works as engineer at the city hospital.",
+  "My cousin works as an engineer at the city hospital.",
+  "Перед исчисляемым существительным в единственном числе engineer нужен неопределённый артикль an.",
+);
+transform(
+  "nouns-number",
+  124,
+  "The other chairs are stored behind the stage.",
+  "Скажи об одном дополнительном стуле, замени the other chairs.",
+  "Another chair is stored behind the stage.",
+  "Another употребляется перед countable singular noun.",
+);
+translate(
+  "nouns-number",
+  125,
+  "Каждый из этих четырёх маршрутов занимает около часа.",
+  "each / these four routes / take / about an hour",
+  "Each of these four routes takes about an hour.",
+  "После each of используется plural noun, но глагол согласуется с each: takes.",
+);
+contrast(
+  "nouns-number",
+  126,
+  "Сравни обобщение и конкретно определённую группу.",
+  [
+    {
+      prompt: "___ residents in this district use the tram.",
+      base: "most",
+      answer: "Most",
+    },
+    {
+      prompt: "___ the residents in this building use the lift.",
+      base: "most of",
+      answer: "Most of",
+    },
+  ],
+  "Обобщение: most residents. Конкретная группа с the: most of the residents.",
+);
+add(
+  "nouns-number",
+  127,
+  "gap",
+  2,
+  "We saw ___ owl near the old stone wall.",
+  "an",
+  "Перед owl употребляется an, потому что слово начинается с гласного звука.",
+  {
+    cue: "Мы увидели сову возле старой каменной стены.",
+    base: "owl",
+    choices: ["an", "a"],
+  },
+);
 
-repair('nouns-count',118,'The archive contains many useful informations about the bridge.','The archive contains a lot of useful information about the bridge.','Information неисчисляемое и не получает окончания -s.');
-transform('nouns-count',119,'We received a piece of advice from the curator.','Скажи о трёх отдельных рекомендациях.','We received three pieces of advice from the curator.','Advice неисчисляемое; отдельные рекомендации считаются через pieces of advice.');
-translate('nouns-count',120,'В полдень возле школы меньше движения.','there / be / less / traffic / near the school / at noon','There is less traffic near the school at noon.','Traffic неисчисляемое, поэтому используется less, а не fewer.');
-contrast('nouns-count',121,'Различи опыт в целом и отдельные события.',[{prompt:'Her ___ with the new software is limited.',base:'experience',answer:'experience'},{prompt:'She described two unusual ___ from the field trip.',base:'experience',answer:'experiences'}],'Experience неисчисляемо в значении навыка/опыта, но countable для отдельных событий.');
-add('nouns-count',122,'gap',2,'How ___ water did the hikers carry to the lookout?','much','Water неисчисляемое, поэтому в вопросе о количестве используется how much.',{cue:'Сколько воды туристы несли к смотровой площадке?',base:'water',choices:['much','many']});
-repair('nouns-count',123,'There were fewer luggage after the weekend.','There was less luggage after the weekend.','Luggage неисчисляемое; перед ним используется less, а глагол согласуется как singular.');
-transform('nouns-count',124,'The team completed a lot of research on coastal erosion.','Перефразируй с a great deal of.','The team completed a great deal of research on coastal erosion.','Research остаётся неисчисляемым после a great deal of.');
-translate('nouns-count',125,'Несколько сотрудников дали нам полезный отзыв.','several employees / give us / useful feedback','Several employees gave us useful feedback.','Feedback неисчисляемое и не принимает plural -s; give в прошлом — gave.');
-contrast('nouns-count',126,'Сравни количество багажа и количество чемоданов.',[{prompt:'The amount of luggage ___ limited on this bus.',base:'be',answer:'is'},{prompt:'The number of suitcases ___ limited on this bus.',base:'be',answer:'is'}],'Amount относится к неисчисляемому luggage; number — к countable suitcases. В обоих случаях subject head единственного числа.');
-add('nouns-count',127,'gap',2,'The shipment contains three ___ of equipment for the new lab.','pieces','Equipment неисчисляемое; для счёта используется конструкция pieces of equipment.',{cue:'Поставка включает три единицы оборудования для новой лаборатории.',base:'piece',choices:['pieces','equipments']});
+repair(
+  "nouns-count",
+  118,
+  "The archive contains many useful informations about the bridge.",
+  "The archive contains a lot of useful information about the bridge.",
+  "Information неисчисляемое и не получает окончания -s.",
+);
+transform(
+  "nouns-count",
+  119,
+  "We received a piece of advice from the curator.",
+  "Скажи о трёх отдельных рекомендациях.",
+  "We received three pieces of advice from the curator.",
+  "Advice неисчисляемое; отдельные рекомендации считаются через pieces of advice.",
+);
+translate(
+  "nouns-count",
+  120,
+  "В полдень возле школы меньше движения.",
+  "there / be / less / traffic / near the school / at noon",
+  "There is less traffic near the school at noon.",
+  "Traffic неисчисляемое, поэтому используется less, а не fewer.",
+);
+contrast(
+  "nouns-count",
+  121,
+  "Различи опыт в целом и отдельные события.",
+  [
+    {
+      prompt: "Her ___ with the new software is limited.",
+      base: "experience",
+      answer: "experience",
+    },
+    {
+      prompt: "She described two unusual ___ from the field trip.",
+      base: "experience",
+      answer: "experiences",
+    },
+  ],
+  "Experience неисчисляемо в значении навыка/опыта, но countable для отдельных событий.",
+);
+add(
+  "nouns-count",
+  122,
+  "gap",
+  2,
+  "How ___ water did the hikers carry to the lookout?",
+  "much",
+  "Water неисчисляемое, поэтому в вопросе о количестве используется how much.",
+  {
+    cue: "Сколько воды туристы несли к смотровой площадке?",
+    base: "water",
+    choices: ["much", "many"],
+  },
+);
+repair(
+  "nouns-count",
+  123,
+  "There were fewer luggage after the weekend.",
+  "There was less luggage after the weekend.",
+  "Luggage неисчисляемое; перед ним используется less, а глагол согласуется как singular.",
+);
+transform(
+  "nouns-count",
+  124,
+  "The team completed a lot of research on coastal erosion.",
+  "Перефразируй с a great deal of.",
+  "The team completed a great deal of research on coastal erosion.",
+  "Research остаётся неисчисляемым после a great deal of.",
+);
+translate(
+  "nouns-count",
+  125,
+  "Несколько сотрудников дали нам полезный отзыв.",
+  "several employees / give us / useful feedback",
+  "Several employees gave us useful feedback.",
+  "Feedback неисчисляемое и не принимает plural -s; give в прошлом — gave.",
+);
+contrast(
+  "nouns-count",
+  126,
+  "Сравни количество багажа и количество чемоданов.",
+  [
+    {
+      prompt: "The amount of luggage ___ limited on this bus.",
+      base: "be",
+      answer: "is",
+    },
+    {
+      prompt: "The number of suitcases ___ limited on this bus.",
+      base: "be",
+      answer: "is",
+    },
+  ],
+  "Amount относится к неисчисляемому luggage; number — к countable suitcases. В обоих случаях subject head единственного числа.",
+);
+add(
+  "nouns-count",
+  127,
+  "gap",
+  2,
+  "The shipment contains three ___ of equipment for the new lab.",
+  "pieces",
+  "Equipment неисчисляемое; для счёта используется конструкция pieces of equipment.",
+  {
+    cue: "Поставка включает три единицы оборудования для новой лаборатории.",
+    base: "piece",
+    choices: ["pieces", "equipments"],
+  },
+);
 
-repair('patterns-modal',117,'Does the venue can open an hour earlier on Sundays?','Can the venue open an hour earlier on Sundays?','В вопросе с can вспомогательный do не используется.');
-transform('patterns-modal',118,'The staff are required to keep the side gate closed.','Передай требование с must.','The staff must keep the side gate closed.','После must используется начальная форма keep без to.');
-translate('patterns-modal',119,'Тебе не нужно устанавливать отдельное приложение: сервис работает в браузере.','you / not have to / install / a separate app / the service / work / in the browser','You do not have to install a separate app; the service works in the browser.','Do not have to означает отсутствие необходимости; оно не равно must not.');
-contrast('patterns-modal',120,'Сравни запрет и отсутствие необходимости.',[{prompt:'You ___ touch the sealed archive boxes.',base:'must not',answer:'must not'},{prompt:'You ___ bring a printed ticket; the QR code is enough.',base:'not have to',answer:'do not have to'}],'Must not запрещает; do not have to сообщает, что действие необязательно.');
-add('patterns-modal',121,'gap',2,'You ___ submit a second copy; one signed form is enough.','do not have to','Контекст указывает на отсутствие необходимости, а не на запрет.',{cue:'Вам не нужно подавать второй экземпляр: одной формы достаточно.',base:'not be required to',choices:['do not have to','must not']});
-repair('patterns-modal',122,'We will can collect the badges after the briefing.','We will be able to collect the badges after the briefing.','В английском обычно не ставят два модальных глагола подряд: после will здесь используется be able to.');
-transform('patterns-modal',123,'The visitors are permitted to use the reading room.','Передай разрешение с may.','The visitors may use the reading room.','May выражает разрешение; после него используется начальная форма use.');
-translate('patterns-modal',124,'Возможно, рейс задержат из-за тумана.','the flight / may / delay / because of the fog','The flight may be delayed because of the fog.','После may используется начальная форма be; далее — причастие в пассивной конструкции.');
-contrast('patterns-modal',125,'Различи уверенный прогноз и возможность.',[{prompt:'The published timetable says the ferry ___ leave at six.',base:'will',answer:'will'},{prompt:'The fog is clearing, so the ferry ___ leave before six, but it is uncertain.',base:'may',answer:'may'}],'Will сообщает о расписании как уверенном факте; may оставляет возможность неопределённой.');
-add('patterns-modal',126,'gap',2,'The technician should ___ the power supply before opening the panel.','disconnect','После should используется начальная форма без to: disconnect.',{cue:'Технику следует отключить питание перед открытием панели.',base:'disconnect',choices:['disconnect','to disconnect']});
+repair(
+  "patterns-modal",
+  117,
+  "Does the venue can open an hour earlier on Sundays?",
+  "Can the venue open an hour earlier on Sundays?",
+  "В вопросе с can вспомогательный do не используется.",
+);
+transform(
+  "patterns-modal",
+  118,
+  "The staff are required to keep the side gate closed.",
+  "Передай требование с must.",
+  "The staff must keep the side gate closed.",
+  "После must используется начальная форма keep без to.",
+);
+translate(
+  "patterns-modal",
+  119,
+  "Тебе не нужно устанавливать отдельное приложение: сервис работает в браузере.",
+  "you / not have to / install / a separate app / the service / work / in the browser",
+  "You do not have to install a separate app; the service works in the browser.",
+  "Do not have to означает отсутствие необходимости; оно не равно must not.",
+);
+contrast(
+  "patterns-modal",
+  120,
+  "Сравни запрет и отсутствие необходимости.",
+  [
+    {
+      prompt: "You ___ touch the sealed archive boxes.",
+      base: "must not",
+      answer: "must not",
+    },
+    {
+      prompt: "You ___ bring a printed ticket; the QR code is enough.",
+      base: "not have to",
+      answer: "do not have to",
+    },
+  ],
+  "Must not запрещает; do not have to сообщает, что действие необязательно.",
+);
+add(
+  "patterns-modal",
+  121,
+  "gap",
+  2,
+  "You ___ submit a second copy; one signed form is enough.",
+  "do not have to",
+  "Контекст указывает на отсутствие необходимости, а не на запрет.",
+  {
+    cue: "Вам не нужно подавать второй экземпляр: одной формы достаточно.",
+    base: "not be required to",
+    choices: ["do not have to", "must not"],
+  },
+);
+repair(
+  "patterns-modal",
+  122,
+  "We will can collect the badges after the briefing.",
+  "We will be able to collect the badges after the briefing.",
+  "В английском обычно не ставят два модальных глагола подряд: после will здесь используется be able to.",
+);
+transform(
+  "patterns-modal",
+  123,
+  "The visitors are permitted to use the reading room.",
+  "Передай разрешение с may.",
+  "The visitors may use the reading room.",
+  "May выражает разрешение; после него используется начальная форма use.",
+);
+translate(
+  "patterns-modal",
+  124,
+  "Возможно, рейс задержат из-за тумана.",
+  "the flight / may / delay / because of the fog",
+  "The flight may be delayed because of the fog.",
+  "После may используется начальная форма be; далее — причастие в пассивной конструкции.",
+);
+contrast(
+  "patterns-modal",
+  125,
+  "Различи уверенный прогноз и возможность.",
+  [
+    {
+      prompt: "The published timetable says the ferry ___ leave at six.",
+      base: "will",
+      answer: "will",
+    },
+    {
+      prompt:
+        "The fog is clearing, so the ferry ___ leave before six, but it is uncertain.",
+      base: "may",
+      answer: "may",
+    },
+  ],
+  "Will сообщает о расписании как уверенном факте; may оставляет возможность неопределённой.",
+);
+add(
+  "patterns-modal",
+  126,
+  "gap",
+  2,
+  "The technician should ___ the power supply before opening the panel.",
+  "disconnect",
+  "После should используется начальная форма без to: disconnect.",
+  {
+    cue: "Технику следует отключить питание перед открытием панели.",
+    base: "disconnect",
+    choices: ["disconnect", "to disconnect"],
+  },
+);
 
-repair('patterns-inf',118,'The committee suggested to postpone the vote until Friday.','The committee suggested postponing the vote until Friday.','Suggest обычно принимает -ing form, если после него нет отдельного придаточного.');
-transform('patterns-inf',119,'I remembered to lock the back door.','Передай, что я помню сам факт, что запер дверь: используй remember + -ing.','I remember locking the back door.','Remember to do — не забыть выполнить; remember doing — помнить уже выполненное действие.');
-translate('patterns-inf',120,'Инструктор посоветовал участникам держаться размеченной тропы.','the instructor / advise / the participants / stay / on the marked trail','The instructor advised the participants to stay on the marked trail.','Advise + person + to-infinitive.');
-contrast('patterns-inf',121,'Различи напоминание о будущем действии и воспоминание о завершённом.',[{prompt:'Remember ___ the file before closing the laptop.',base:'save',answer:'to save'},{prompt:'I remember ___ the file before the laptop shut down.',base:'save',answer:'saving'}],'Remember to save — не забудь сделать; remember saving — помню, что уже сохранил.');
-add('patterns-inf',122,'gap',2,'The committee recommended ___ the start time to avoid the holiday.','changing','Recommend в этой модели сочетается с gerund: recommended changing.',{cue:'Комитет рекомендовал изменить время начала, чтобы избежать праздника.',base:'change',choices:['changing','to change']});
-repair('patterns-inf',123,'We considered to move the workshop online.','We considered moving the workshop online.','Consider обычно принимает -ing form: considered moving.');
-transform('patterns-inf',124,'I tested the release button, but the case stayed shut.','Скажи, что я попробовал нажать кнопку, используя try + -ing.','I tried pressing the release button, but the case stayed shut.','Try + -ing описывает способ, который проверили как эксперимент.');
-translate('patterns-inf',125,'Я не могу привыкнуть вставать так рано.','I / cannot / get used to / wake up / so early','I cannot get used to waking up so early.','В get used to слово to — предлог, после него нужен gerund waking.');
-contrast('patterns-inf',126,'Различи прошлую привычку и привычное для человека состояние.',[{prompt:'He ___ drive to the coast every summer.',base:'used to',answer:'used to'},{prompt:'He is ___ driving on narrow roads now.',base:'be used to',answer:'used to'}],'Used to drive — прошлая привычка; be used to driving — быть привычным к действию.');
-add('patterns-inf',127,'gap',2,'Mia is used to ___ long distances for work.','driving','В be used to слово to — предлог, поэтому дальше ставится driving.',{cue:'Миа привыкла ездить на большие расстояния по работе.',base:'drive',choices:['driving','drive']});
+repair(
+  "patterns-inf",
+  118,
+  "The committee suggested to postpone the vote until Friday.",
+  "The committee suggested postponing the vote until Friday.",
+  "Suggest обычно принимает -ing form, если после него нет отдельного придаточного.",
+);
+transform(
+  "patterns-inf",
+  119,
+  "I remembered to lock the back door.",
+  "Передай, что я помню сам факт, что запер дверь: используй remember + -ing.",
+  "I remember locking the back door.",
+  "Remember to do — не забыть выполнить; remember doing — помнить уже выполненное действие.",
+);
+translate(
+  "patterns-inf",
+  120,
+  "Инструктор посоветовал участникам держаться размеченной тропы.",
+  "the instructor / advise / the participants / stay / on the marked trail",
+  "The instructor advised the participants to stay on the marked trail.",
+  "Advise + person + to-infinitive.",
+);
+contrast(
+  "patterns-inf",
+  121,
+  "Различи напоминание о будущем действии и воспоминание о завершённом.",
+  [
+    {
+      prompt: "Remember ___ the file before closing the laptop.",
+      base: "save",
+      answer: "to save",
+    },
+    {
+      prompt: "I remember ___ the file before the laptop shut down.",
+      base: "save",
+      answer: "saving",
+    },
+  ],
+  "Remember to save — не забудь сделать; remember saving — помню, что уже сохранил.",
+);
+add(
+  "patterns-inf",
+  122,
+  "gap",
+  2,
+  "The committee recommended ___ the start time to avoid the holiday.",
+  "changing",
+  "Recommend в этой модели сочетается с gerund: recommended changing.",
+  {
+    cue: "Комитет рекомендовал изменить время начала, чтобы избежать праздника.",
+    base: "change",
+    choices: ["changing", "to change"],
+  },
+);
+repair(
+  "patterns-inf",
+  123,
+  "We considered to move the workshop online.",
+  "We considered moving the workshop online.",
+  "Consider обычно принимает -ing form: considered moving.",
+);
+transform(
+  "patterns-inf",
+  124,
+  "I tested the release button, but the case stayed shut.",
+  "Скажи, что я попробовал нажать кнопку, используя try + -ing.",
+  "I tried pressing the release button, but the case stayed shut.",
+  "Try + -ing описывает способ, который проверили как эксперимент.",
+);
+translate(
+  "patterns-inf",
+  125,
+  "Я не могу привыкнуть вставать так рано.",
+  "I / cannot / get used to / wake up / so early",
+  "I cannot get used to waking up so early.",
+  "В get used to слово to — предлог, после него нужен gerund waking.",
+);
+contrast(
+  "patterns-inf",
+  126,
+  "Различи прошлую привычку и привычное для человека состояние.",
+  [
+    {
+      prompt: "He ___ drive to the coast every summer.",
+      base: "used to",
+      answer: "used to",
+    },
+    {
+      prompt: "He is ___ driving on narrow roads now.",
+      base: "be used to",
+      answer: "used to",
+    },
+  ],
+  "Used to drive — прошлая привычка; be used to driving — быть привычным к действию.",
+);
+add(
+  "patterns-inf",
+  127,
+  "gap",
+  2,
+  "Mia is used to ___ long distances for work.",
+  "driving",
+  "В be used to слово to — предлог, поэтому дальше ставится driving.",
+  {
+    cue: "Миа привыкла ездить на большие расстояния по работе.",
+    base: "drive",
+    choices: ["driving", "drive"],
+  },
+);
 
-repair('chunks-object',117,'Visitors must enter to the glass pavilion through the east door.','Visitors must enter the glass pavilion through the east door.','Enter в значении «войти в помещение» принимает прямое дополнение без to.');
-transform('chunks-object',118,'The driver arrived at the hotel before dark.','Замени arrived at the hotel на глагол reach.','The driver reached the hotel before dark.','Reach принимает место напрямую, без предлога at.');
-translate('chunks-object',119,'Я объяснил правила новым участникам.','I / explain / the rules / to the new participants','I explained the rules to the new participants.','Explain + предмет объяснения; адресат вводится через to.');
-contrast('chunks-object',120,'Различи дать вещь другому и взять её у другого.',[{prompt:'Could you lend your notes ___ me?',base:'to',answer:'to'},{prompt:'May I borrow the notes ___ you?',base:'from',answer:'from'}],'Lend something to someone; borrow something from someone.');
-add('chunks-object',121,'gap',2,'The venue provides each guest ___ a reusable cup.','with','Provide someone with something: после человека используется with.',{cue:'Площадка предоставляет каждому гостю многоразовый стакан.',base:'provide',choices:['with','for']});
-repair('chunks-object',122,'The permit lets visitors to enter the greenhouse before opening.','The permit lets visitors enter the greenhouse before opening.','После let + object используется начальная форма без to.');
-transform('chunks-object',123,'The technician supplied the crew with protective masks.','Перестрой с the masks сразу после supplied.','The technician supplied protective masks to the crew.','Supply допускает обе модели: supply someone with something / supply something to someone.');
-translate('chunks-object',124,'Подождите автобус у южного входа.','wait / for / the bus / at the south entrance','Wait for the bus at the south entrance.','Wait требует for перед объектом ожидания.');
-contrast('chunks-object',125,'Сопоставь описание маршрута и сообщение о нём.',[{prompt:'The witness described the route ___ the officer.',base:'to',answer:'to'},{prompt:'The witness told the officer ___ the changed route.',base:'about',answer:'about'}],'Describe something to someone; tell someone about something.');
-add('chunks-object',126,'gap',2,'Could you remind me ___ the registration deadline?','about','Remind me about и remind me of вводят то, о чём нужно напомнить.',{cue:'Не мог бы ты напомнить мне о сроке регистрации?',base:'remind',choices:['about','to']});
+repair(
+  "chunks-object",
+  117,
+  "Visitors must enter to the glass pavilion through the east door.",
+  "Visitors must enter the glass pavilion through the east door.",
+  "Enter в значении «войти в помещение» принимает прямое дополнение без to.",
+);
+transform(
+  "chunks-object",
+  118,
+  "The driver arrived at the hotel before dark.",
+  "Замени arrived at the hotel на глагол reach.",
+  "The driver reached the hotel before dark.",
+  "Reach принимает место напрямую, без предлога at.",
+);
+translate(
+  "chunks-object",
+  119,
+  "Я объяснил правила новым участникам.",
+  "I / explain / the rules / to the new participants",
+  "I explained the rules to the new participants.",
+  "Explain + предмет объяснения; адресат вводится через to.",
+);
+contrast(
+  "chunks-object",
+  120,
+  "Различи дать вещь другому и взять её у другого.",
+  [
+    { prompt: "Could you lend your notes ___ me?", base: "to", answer: "to" },
+    { prompt: "May I borrow the notes ___ you?", base: "from", answer: "from" },
+  ],
+  "Lend something to someone; borrow something from someone.",
+);
+add(
+  "chunks-object",
+  121,
+  "gap",
+  2,
+  "The venue provides each guest ___ a reusable cup.",
+  "with",
+  "Provide someone with something: после человека используется with.",
+  {
+    cue: "Площадка предоставляет каждому гостю многоразовый стакан.",
+    base: "provide",
+    choices: ["with", "for"],
+  },
+);
+repair(
+  "chunks-object",
+  122,
+  "The permit lets visitors to enter the greenhouse before opening.",
+  "The permit lets visitors enter the greenhouse before opening.",
+  "После let + object используется начальная форма без to.",
+);
+transform(
+  "chunks-object",
+  123,
+  "The technician supplied the crew with protective masks.",
+  "Перестрой с the masks сразу после supplied.",
+  "The technician supplied protective masks to the crew.",
+  "Supply допускает обе модели: supply someone with something / supply something to someone.",
+);
+translate(
+  "chunks-object",
+  124,
+  "Подождите автобус у южного входа.",
+  "wait / for / the bus / at the south entrance",
+  "Wait for the bus at the south entrance.",
+  "Wait требует for перед объектом ожидания.",
+);
+contrast(
+  "chunks-object",
+  125,
+  "Сопоставь описание маршрута и сообщение о нём.",
+  [
+    {
+      prompt: "The witness described the route ___ the officer.",
+      base: "to",
+      answer: "to",
+    },
+    {
+      prompt: "The witness told the officer ___ the changed route.",
+      base: "about",
+      answer: "about",
+    },
+  ],
+  "Describe something to someone; tell someone about something.",
+);
+add(
+  "chunks-object",
+  126,
+  "gap",
+  2,
+  "Could you remind me ___ the registration deadline?",
+  "about",
+  "Remind me about и remind me of вводят то, о чём нужно напомнить.",
+  {
+    cue: "Не мог бы ты напомнить мне о сроке регистрации?",
+    base: "remind",
+    choices: ["about", "to"],
+  },
+);
 
-repair('chunks-fixed',118,'The caretaker is responsible of locking the side gate.','The caretaker is responsible for locking the side gate.','Устойчивое сочетание: responsible for.');
-transform('chunks-fixed',119,'The train arrives at the airport at 10:20.','Замени the airport на Lisbon и используй arrive in.','The train arrives in Lisbon at 10:20.','С городом обычно используется arrive in; с конкретной точкой вроде airport — arrive at.');
-translate('chunks-fixed',120,'Мы заинтересованы в аренде этого зала.','we / be interested in / rent / this hall','We are interested in renting this hall.','Interested in + gerund: renting.');
-contrast('chunks-fixed',121,'Выбери предлог времени для точного часа и для дня недели.',[{prompt:'The review starts ___ noon.',base:'at',answer:'at'},{prompt:'The review is scheduled ___ Thursday morning.',base:'on',answer:'on'}],'At + точное время; on + день или конкретный день недели.');
-add('chunks-fixed',122,'gap',2,'The parcel should arrive ___ Monday.','on','Перед днём недели используется on.',{cue:'Посылка должна прибыть в понедельник.',base:'day of the week',choices:['on','at']});
-repair('chunks-fixed',123,'The boat service is dependent of the weather.','The boat service is dependent on the weather.','Dependent сочетается с предлогом on.');
-transform('chunks-fixed',124,'It is Friday, and the clinic has been open since Monday.','Передай длительность через for four days.','It is Friday, and the clinic has been open for four days.','For обозначает длительность периода; since вводит точку его начала.');
-translate('chunks-fixed',125,'Книга лежит на полке между журналами.','the book / be / on the shelf / between / the magazines','The book is on the shelf between the magazines.','Between вводит два или более явно названных ориентира.');
-contrast('chunks-fixed',126,'Различи крайний срок и время, до которого место остаётся открытым.',[{prompt:'Please return the badge ___ 6 p.m.',base:'by',answer:'by'},{prompt:'The desk remains open ___ 6 p.m.',base:'until',answer:'until'}],'By — не позднее указанного срока; until — действие продолжается до этого времени.');
-add('chunks-fixed',127,'gap',2,'Please confirm the change ___ writing before the end of the day.','in','Confirm in writing — устойчивое сочетание.',{cue:'Подтвердите изменение письменно до конца дня.',base:'confirm in writing',choices:['in','on']});
+repair(
+  "chunks-fixed",
+  118,
+  "The caretaker is responsible of locking the side gate.",
+  "The caretaker is responsible for locking the side gate.",
+  "Устойчивое сочетание: responsible for.",
+);
+transform(
+  "chunks-fixed",
+  119,
+  "The train arrives at the airport at 10:20.",
+  "Замени the airport на Lisbon и используй arrive in.",
+  "The train arrives in Lisbon at 10:20.",
+  "С городом обычно используется arrive in; с конкретной точкой вроде airport — arrive at.",
+);
+translate(
+  "chunks-fixed",
+  120,
+  "Мы заинтересованы в аренде этого зала.",
+  "we / be interested in / rent / this hall",
+  "We are interested in renting this hall.",
+  "Interested in + gerund: renting.",
+);
+contrast(
+  "chunks-fixed",
+  121,
+  "Выбери предлог времени для точного часа и для дня недели.",
+  [
+    { prompt: "The review starts ___ noon.", base: "at", answer: "at" },
+    {
+      prompt: "The review is scheduled ___ Thursday morning.",
+      base: "on",
+      answer: "on",
+    },
+  ],
+  "At + точное время; on + день или конкретный день недели.",
+);
+add(
+  "chunks-fixed",
+  122,
+  "gap",
+  2,
+  "The parcel should arrive ___ Monday.",
+  "on",
+  "Перед днём недели используется on.",
+  {
+    cue: "Посылка должна прибыть в понедельник.",
+    base: "day of the week",
+    choices: ["on", "at"],
+  },
+);
+repair(
+  "chunks-fixed",
+  123,
+  "The boat service is dependent of the weather.",
+  "The boat service is dependent on the weather.",
+  "Dependent сочетается с предлогом on.",
+);
+transform(
+  "chunks-fixed",
+  124,
+  "It is Friday, and the clinic has been open since Monday.",
+  "Передай длительность через for four days.",
+  "It is Friday, and the clinic has been open for four days.",
+  "For обозначает длительность периода; since вводит точку его начала.",
+);
+translate(
+  "chunks-fixed",
+  125,
+  "Книга лежит на полке между журналами.",
+  "the book / be / on the shelf / between / the magazines",
+  "The book is on the shelf between the magazines.",
+  "Between вводит два или более явно названных ориентира.",
+);
+contrast(
+  "chunks-fixed",
+  126,
+  "Различи крайний срок и время, до которого место остаётся открытым.",
+  [
+    { prompt: "Please return the badge ___ 6 p.m.", base: "by", answer: "by" },
+    {
+      prompt: "The desk remains open ___ 6 p.m.",
+      base: "until",
+      answer: "until",
+    },
+  ],
+  "By — не позднее указанного срока; until — действие продолжается до этого времени.",
+);
+add(
+  "chunks-fixed",
+  127,
+  "gap",
+  2,
+  "Please confirm the change ___ writing before the end of the day.",
+  "in",
+  "Confirm in writing — устойчивое сочетание.",
+  {
+    cue: "Подтвердите изменение письменно до конца дня.",
+    base: "confirm in writing",
+    choices: ["in", "on"],
+  },
+);
 
-repair('lexicon-form',117,'The lecture was bored, so several listeners looked boring.','The lecture was boring, so several listeners looked bored.','Событие, вызывающее чувство, — boring; люди, испытывающие его, — bored.');
-transform('lexicon-form',118,'The technician repaired the pump in an efficient way.','Замени выделенную конструкцию наречием efficiently.','The technician repaired the pump efficiently.','Efficiently — наречие, описывающее действие repaired.');
-translate('lexicon-form',119,'Посетители были удивлены ранним закрытием.','the visitors / be / surprise / by the early closure','The visitors were surprised by the early closure.','Для переживающих чувство людей используется форма surprised.');
-contrast('lexicon-form',120,'Различи причину чувства и человека, который его испытывает.',[{prompt:'The final scene was ___.',base:'move',answer:'moving'},{prompt:'Several viewers were ___ by the final scene.',base:'move',answer:'moved'}],'Сцена вызывает чувство: moving; зрители испытывают его: moved.');
-add('lexicon-form',121,'gap',2,'The instructions were ___ enough for a first-time user.','clear','После be нужно прилагательное clear; enough следует за ним.',{cue:'Инструкции были достаточно понятными для новичка.',base:'clear',choices:['clear','clearly']});
-repair('lexicon-form',122,'The eastern path is more safer than the riverside path.','The eastern path is safer than the riverside path.','У короткого прилагательного safe используется форма safer; двойное more safer неверно.');
-transform('lexicon-form',123,'The courier handled the fragile parcels in a careful manner.','Перестрой с наречием carefully.','The courier handled the fragile parcels carefully.','Carefully заменяет конструкцию in a careful manner и описывает handled.');
-translate('lexicon-form',124,'Обновлённый насос работает удивительно тихо.','the updated pump / operate / surprising / quiet','The updated pump operates surprisingly quietly.','Quiet описывает operate через наречие quietly; surprising перед наречием меняется на surprisingly.');
-contrast('lexicon-form',125,'Выбери adjective или adverb по позиции.',[{prompt:'The installer did a ___ job on the new door.',base:'good',answer:'good'},{prompt:'The new door closes ___ without sticking.',base:'good',answer:'well'}],'Перед job нужен adjective good; действие closes описывается наречием well.');
-add('lexicon-form',126,'gap',2,'Of the three batteries, this one is the ___ reliable.','most','Сравниваются три предмета, поэтому перед длинным прилагательным нужен superlative most reliable.',{cue:'Из трёх аккумуляторов этот самый надёжный.',base:'reliable',choices:['most','more']});
+repair(
+  "lexicon-form",
+  117,
+  "The lecture was bored, so several listeners looked boring.",
+  "The lecture was boring, so several listeners looked bored.",
+  "Событие, вызывающее чувство, — boring; люди, испытывающие его, — bored.",
+);
+transform(
+  "lexicon-form",
+  118,
+  "The technician repaired the pump in an efficient way.",
+  "Замени выделенную конструкцию наречием efficiently.",
+  "The technician repaired the pump efficiently.",
+  "Efficiently — наречие, описывающее действие repaired.",
+);
+translate(
+  "lexicon-form",
+  119,
+  "Посетители были удивлены ранним закрытием.",
+  "the visitors / be / surprise / by the early closure",
+  "The visitors were surprised by the early closure.",
+  "Для переживающих чувство людей используется форма surprised.",
+);
+contrast(
+  "lexicon-form",
+  120,
+  "Различи причину чувства и человека, который его испытывает.",
+  [
+    { prompt: "The final scene was ___.", base: "move", answer: "moving" },
+    {
+      prompt: "Several viewers were ___ by the final scene.",
+      base: "move",
+      answer: "moved",
+    },
+  ],
+  "Сцена вызывает чувство: moving; зрители испытывают его: moved.",
+);
+add(
+  "lexicon-form",
+  121,
+  "gap",
+  2,
+  "The instructions were ___ enough for a first-time user.",
+  "clear",
+  "После be нужно прилагательное clear; enough следует за ним.",
+  {
+    cue: "Инструкции были достаточно понятными для новичка.",
+    base: "clear",
+    choices: ["clear", "clearly"],
+  },
+);
+repair(
+  "lexicon-form",
+  122,
+  "The eastern path is more safer than the riverside path.",
+  "The eastern path is safer than the riverside path.",
+  "У короткого прилагательного safe используется форма safer; двойное more safer неверно.",
+);
+transform(
+  "lexicon-form",
+  123,
+  "The courier handled the fragile parcels in a careful manner.",
+  "Перестрой с наречием carefully.",
+  "The courier handled the fragile parcels carefully.",
+  "Carefully заменяет конструкцию in a careful manner и описывает handled.",
+);
+translate(
+  "lexicon-form",
+  124,
+  "Обновлённый насос работает удивительно тихо.",
+  "the updated pump / operate / surprising / quiet",
+  "The updated pump operates surprisingly quietly.",
+  "Quiet описывает operate через наречие quietly; surprising перед наречием меняется на surprisingly.",
+);
+contrast(
+  "lexicon-form",
+  125,
+  "Выбери adjective или adverb по позиции.",
+  [
+    {
+      prompt: "The installer did a ___ job on the new door.",
+      base: "good",
+      answer: "good",
+    },
+    {
+      prompt: "The new door closes ___ without sticking.",
+      base: "good",
+      answer: "well",
+    },
+  ],
+  "Перед job нужен adjective good; действие closes описывается наречием well.",
+);
+add(
+  "lexicon-form",
+  126,
+  "gap",
+  2,
+  "Of the three batteries, this one is the ___ reliable.",
+  "most",
+  "Сравниваются три предмета, поэтому перед длинным прилагательным нужен superlative most reliable.",
+  {
+    cue: "Из трёх аккумуляторов этот самый надёжный.",
+    base: "reliable",
+    choices: ["most", "more"],
+  },
+);
 
-repair('lexicon-word',119,'Please advice the visitors to keep their receipts.','Please advise the visitors to keep their receipts.','Advise — глагол «советовать»; advice — существительное.');
-transform('lexicon-word',120,'Operating costs increased sharply last winter.','Замени increased на прошедшую форму rise.','Operating costs rose sharply last winter.','Затраты выросли сами: rise, Past Simple — rose; raise требует прямое дополнение.');
-translate('lexicon-word',121,'Она сказала мне, что автобус задерживается.','she / tell / me / that / the bus / be delayed','She told me that the bus was delayed.','Tell принимает адресата напрямую: told me.');
-contrast('lexicon-word',122,'Различи точный размер и сочетание по цвету.',[{prompt:'These shoes ___ me perfectly.',base:'fit',answer:'fit'},{prompt:'This scarf ___ the coat.',base:'match',answer:'matches'}],'Fit описывает подходящий размер; match — сочетание одного предмета с другим.');
-add('lexicon-word',123,'gap',2,'Could you ___ me where to return this form?','tell','В конструкции tell someone information адресат ставится сразу после tell.',{cue:'Не могли бы вы сказать мне, куда вернуть эту форму?',base:'tell',choices:['tell','say']});
-repair('lexicon-word',124,'I borrowed her my umbrella before the storm.','I lent her my umbrella before the storm.','Lend — дать взаймы; borrow — взять у другого.');
-transform('lexicon-word',125,'The village population increased from five thousand to six thousand.','Замени increased на grow в Past Simple.','The village population grew from five thousand to six thousand.','Population выросла: grow, Past Simple — grew.');
-translate('lexicon-word',126,'Этот план мне подходит, но он не совпадает с расписанием.','this plan / suit me / but / it / not match / the schedule','This plan suits me, but it does not match the schedule.','Suit описывает, что подходит человеку; match — что совпадает с другим предметом.');
-contrast('lexicon-word',127,'Выбери глагол для сообщения информации.',[{prompt:'The guide ___ us the safety rules.',base:'tell',answer:'told'},{prompt:'The guide ___ that the north exit was closed.',base:'say',answer:'said'}],'Tell + person; say + that-clause.');
-add('lexicon-word',128,'gap',2,'This lid does not ___ the jar; it is too small.','fit','Fit описывает подходящий размер и принимает прямое дополнение jar.',{cue:'Эта крышка не подходит к банке по размеру: она слишком мала.',base:'fit',choices:['fit','match']});
+repair(
+  "lexicon-word",
+  119,
+  "Please advice the visitors to keep their receipts.",
+  "Please advise the visitors to keep their receipts.",
+  "Advise — глагол «советовать»; advice — существительное.",
+);
+transform(
+  "lexicon-word",
+  120,
+  "Operating costs increased sharply last winter.",
+  "Замени increased на прошедшую форму rise.",
+  "Operating costs rose sharply last winter.",
+  "Затраты выросли сами: rise, Past Simple — rose; raise требует прямое дополнение.",
+);
+translate(
+  "lexicon-word",
+  121,
+  "Она сказала мне, что автобус задерживается.",
+  "she / tell / me / that / the bus / be delayed",
+  "She told me that the bus was delayed.",
+  "Tell принимает адресата напрямую: told me.",
+);
+contrast(
+  "lexicon-word",
+  122,
+  "Различи точный размер и сочетание по цвету.",
+  [
+    { prompt: "These shoes ___ me perfectly.", base: "fit", answer: "fit" },
+    { prompt: "This scarf ___ the coat.", base: "match", answer: "matches" },
+  ],
+  "Fit описывает подходящий размер; match — сочетание одного предмета с другим.",
+);
+add(
+  "lexicon-word",
+  123,
+  "gap",
+  2,
+  "Could you ___ me where to return this form?",
+  "tell",
+  "В конструкции tell someone information адресат ставится сразу после tell.",
+  {
+    cue: "Не могли бы вы сказать мне, куда вернуть эту форму?",
+    base: "tell",
+    choices: ["tell", "say"],
+  },
+);
+repair(
+  "lexicon-word",
+  124,
+  "I borrowed her my umbrella before the storm.",
+  "I lent her my umbrella before the storm.",
+  "Lend — дать взаймы; borrow — взять у другого.",
+);
+transform(
+  "lexicon-word",
+  125,
+  "The village population increased from five thousand to six thousand.",
+  "Замени increased на grow в Past Simple.",
+  "The village population grew from five thousand to six thousand.",
+  "Population выросла: grow, Past Simple — grew.",
+);
+translate(
+  "lexicon-word",
+  126,
+  "Этот план мне подходит, но он не совпадает с расписанием.",
+  "this plan / suit me / but / it / not match / the schedule",
+  "This plan suits me, but it does not match the schedule.",
+  "Suit описывает, что подходит человеку; match — что совпадает с другим предметом.",
+);
+contrast(
+  "lexicon-word",
+  127,
+  "Выбери глагол для сообщения информации.",
+  [
+    {
+      prompt: "The guide ___ us the safety rules.",
+      base: "tell",
+      answer: "told",
+    },
+    {
+      prompt: "The guide ___ that the north exit was closed.",
+      base: "say",
+      answer: "said",
+    },
+  ],
+  "Tell + person; say + that-clause.",
+);
+add(
+  "lexicon-word",
+  128,
+  "gap",
+  2,
+  "This lid does not ___ the jar; it is too small.",
+  "fit",
+  "Fit описывает подходящий размер и принимает прямое дополнение jar.",
+  {
+    cue: "Эта крышка не подходит к банке по размеру: она слишком мала.",
+    base: "fit",
+    choices: ["fit", "match"],
+  },
+);
 
-repair('reference-person',117,'The architect which designed the library also restored the theatre.','The architect who designed the library also restored the theatre.','Для человека в определительном придаточном используется who; that также допустимо.');
-transform('reference-person',118,'I met a musician. Her album won an award.','Объедини предложения с whose.','I met a musician whose album won an award.','Whose показывает принадлежность album человеку musician.');
-translate('reference-person',119,'Я пригласил их, и они принесли свои билеты.','I / invite / them / and / they / bring / their tickets','I invited them, and they brought their tickets.','Them — объект после invited; they — подлежащее brought; their — принадлежность.');
-contrast('reference-person',120,'Выбери местоименную форму для подлежащего и дополнения.',[{prompt:'The volunteers and ___ delivered the boxes.',base:'I',answer:'I'},{prompt:'The coordinator thanked the volunteers and ___.',base:'I',answer:'me'}],'I — подлежащая форма; after thanked нужен объектный падеж me.');
-add('reference-person',121,'gap',2,'Each participant should bring ___ own water bottle.','their','Для человека неизвестного пола в современном английском допустимо singular they/their.',{cue:'Каждый участник должен принести свою бутылку воды.',base:'they',choices:['their','them']});
-repair('reference-person',122,'My aunt arrived with a new portfolio. He left it at reception.','My aunt arrived with a new portfolio. She left it at reception.','Местоимение должно согласоваться с названным референтом aunt.');
-transform('reference-person',123,'A visitor left a lunch box. The visitor can collect it at reception.','Замени повтор человека на singular they.','A visitor left a lunch box. They can collect it at reception.','Singular they может относиться к одному человеку неизвестного пола.');
-translate('reference-person',124,'Все сотрудники должны принести свои пропуска.','all the employees / should / bring / their passes','All the employees should bring their passes.','Employees — plural antecedent; для них подходят they/their.');
-contrast('reference-person',125,'Выбери форму I/me по роли в предложении.',[{prompt:'Ravi and ___ will lead the morning tour.',base:'I',answer:'I'},{prompt:'Please send the schedule to Ravi and ___.',base:'I',answer:'me'}],'I используется как subject; после to нужен object pronoun me.');
-add('reference-person',126,'gap',2,'Please hand the marked copies to Priya and ___.','me','После предлога to нужен объектный падеж me.',{cue:'Передай отмеченные копии Прие и мне.',base:'I',choices:['me','I']});
+repair(
+  "reference-person",
+  117,
+  "The architect which designed the library also restored the theatre.",
+  "The architect who designed the library also restored the theatre.",
+  "Для человека в определительном придаточном используется who; that также допустимо.",
+);
+transform(
+  "reference-person",
+  118,
+  "I met a musician. Her album won an award.",
+  "Объедини предложения с whose.",
+  "I met a musician whose album won an award.",
+  "Whose показывает принадлежность album человеку musician.",
+);
+translate(
+  "reference-person",
+  119,
+  "Я пригласил их, и они принесли свои билеты.",
+  "I / invite / them / and / they / bring / their tickets",
+  "I invited them, and they brought their tickets.",
+  "Them — объект после invited; they — подлежащее brought; their — принадлежность.",
+);
+contrast(
+  "reference-person",
+  120,
+  "Выбери местоименную форму для подлежащего и дополнения.",
+  [
+    {
+      prompt: "The volunteers and ___ delivered the boxes.",
+      base: "I",
+      answer: "I",
+    },
+    {
+      prompt: "The coordinator thanked the volunteers and ___.",
+      base: "I",
+      answer: "me",
+    },
+  ],
+  "I — подлежащая форма; after thanked нужен объектный падеж me.",
+);
+add(
+  "reference-person",
+  121,
+  "gap",
+  2,
+  "Each participant should bring ___ own water bottle.",
+  "their",
+  "Для человека неизвестного пола в современном английском допустимо singular they/their.",
+  {
+    cue: "Каждый участник должен принести свою бутылку воды.",
+    base: "they",
+    choices: ["their", "them"],
+  },
+);
+repair(
+  "reference-person",
+  122,
+  "My aunt arrived with a new portfolio. He left it at reception.",
+  "My aunt arrived with a new portfolio. She left it at reception.",
+  "Местоимение должно согласоваться с названным референтом aunt.",
+);
+transform(
+  "reference-person",
+  123,
+  "A visitor left a lunch box. The visitor can collect it at reception.",
+  "Замени повтор человека на singular they.",
+  "A visitor left a lunch box. They can collect it at reception.",
+  "Singular they может относиться к одному человеку неизвестного пола.",
+);
+translate(
+  "reference-person",
+  124,
+  "Все сотрудники должны принести свои пропуска.",
+  "all the employees / should / bring / their passes",
+  "All the employees should bring their passes.",
+  "Employees — plural antecedent; для них подходят they/their.",
+);
+contrast(
+  "reference-person",
+  125,
+  "Выбери форму I/me по роли в предложении.",
+  [
+    {
+      prompt: "Ravi and ___ will lead the morning tour.",
+      base: "I",
+      answer: "I",
+    },
+    {
+      prompt: "Please send the schedule to Ravi and ___.",
+      base: "I",
+      answer: "me",
+    },
+  ],
+  "I используется как subject; после to нужен object pronoun me.",
+);
+add(
+  "reference-person",
+  126,
+  "gap",
+  2,
+  "Please hand the marked copies to Priya and ___.",
+  "me",
+  "После предлога to нужен объектный падеж me.",
+  {
+    cue: "Передай отмеченные копии Прие и мне.",
+    base: "I",
+    choices: ["me", "I"],
+  },
+);
 
-repair('reference-object',117,"The device lost it's protective cover during transit.",'The device lost its protective cover during transit.','Its показывает принадлежность; it’s означает it is или it has.');
-transform('reference-object',118,'This is the tablet. Its battery lasts all day.','Объедини с whose.','This is the tablet whose battery lasts all day.','Whose может показывать принадлежность предмету tablet.');
-translate('reference-object',119,'Это камера, которую мы купили для экспедиции.','this / be / the camera / that / we / buy / for the expedition','This is the camera that we bought for the expedition.','That относится к предмету camera; buy в завершённом прошлом — bought.');
-contrast('reference-object',120,'Различи притяжательное their и сокращение they are.',[{prompt:'The sensors send data to ___ control unit.',base:'their',answer:'their'},{prompt:'___ sending a warning to the control unit now.',base:'they are',answer:'They are'}],'Their показывает принадлежность; they are — местоимение + be.');
-add('reference-object',121,'gap',2,'The router turns ___ off when the room is empty.','itself','Itself — возвратное местоимение, относящееся к единственному router.',{cue:'Маршрутизатор выключается сам, когда комната пустует.',base:'it',choices:['itself','themselves']});
-repair('reference-object',122,'The report that we printed it yesterday is on your desk.','The report that we printed yesterday is on your desk.','That уже представляет report как дополнение в придаточном; it дублирует тот же объект.');
-transform('reference-object',123,'The control unit has three cables. The cables connect the unit to its power supply.','Объедини с which, не повторяя cables.','The control unit has three cables which connect it to its power supply.','Which заменяет cables как подлежащее придаточной части.');
-translate('reference-object',124,'Я убрал запасной ключ в его обычное место.','I / put / the spare key / in / its usual place','I put the spare key in its usual place.','Its показывает принадлежность/связь места с предметом; it’s означало бы it is/has.');
-contrast('reference-object',125,'Сравни место, где находятся предметы, и принадлежность.',[{prompt:'The spare keys are over ___, beside the tray.',base:'there',answer:'there'},{prompt:'The documents are back in ___ folder.',base:'their',answer:'their'}],'There указывает на место; their перед существительным показывает принадлежность.');
-add('reference-object',126,'gap',2,'Each package includes a label with ___ tracking number.','its','Each package — единственное число; принадлежность выражает its.',{cue:'В каждой посылке есть этикетка с её номером отслеживания.',base:'it',choices:['its','it’s']});
+repair(
+  "reference-object",
+  117,
+  "The device lost it's protective cover during transit.",
+  "The device lost its protective cover during transit.",
+  "Its показывает принадлежность; it’s означает it is или it has.",
+);
+transform(
+  "reference-object",
+  118,
+  "This is the tablet. Its battery lasts all day.",
+  "Объедини с whose.",
+  "This is the tablet whose battery lasts all day.",
+  "Whose может показывать принадлежность предмету tablet.",
+);
+translate(
+  "reference-object",
+  119,
+  "Это камера, которую мы купили для экспедиции.",
+  "this / be / the camera / that / we / buy / for the expedition",
+  "This is the camera that we bought for the expedition.",
+  "That относится к предмету camera; buy в завершённом прошлом — bought.",
+);
+contrast(
+  "reference-object",
+  120,
+  "Различи притяжательное their и сокращение they are.",
+  [
+    {
+      prompt: "The sensors send data to ___ control unit.",
+      base: "their",
+      answer: "their",
+    },
+    {
+      prompt: "___ sending a warning to the control unit now.",
+      base: "they are",
+      answer: "They are",
+    },
+  ],
+  "Their показывает принадлежность; they are — местоимение + be.",
+);
+add(
+  "reference-object",
+  121,
+  "gap",
+  2,
+  "The router turns ___ off when the room is empty.",
+  "itself",
+  "Itself — возвратное местоимение, относящееся к единственному router.",
+  {
+    cue: "Маршрутизатор выключается сам, когда комната пустует.",
+    base: "it",
+    choices: ["itself", "themselves"],
+  },
+);
+repair(
+  "reference-object",
+  122,
+  "The report that we printed it yesterday is on your desk.",
+  "The report that we printed yesterday is on your desk.",
+  "That уже представляет report как дополнение в придаточном; it дублирует тот же объект.",
+);
+transform(
+  "reference-object",
+  123,
+  "The control unit has three cables. The cables connect the unit to its power supply.",
+  "Объедини с which, не повторяя cables.",
+  "The control unit has three cables which connect it to its power supply.",
+  "Which заменяет cables как подлежащее придаточной части.",
+);
+translate(
+  "reference-object",
+  124,
+  "Я убрал запасной ключ в его обычное место.",
+  "I / put / the spare key / in / its usual place",
+  "I put the spare key in its usual place.",
+  "Its показывает принадлежность/связь места с предметом; it’s означало бы it is/has.",
+);
+contrast(
+  "reference-object",
+  125,
+  "Сравни место, где находятся предметы, и принадлежность.",
+  [
+    {
+      prompt: "The spare keys are over ___, beside the tray.",
+      base: "there",
+      answer: "there",
+    },
+    {
+      prompt: "The documents are back in ___ folder.",
+      base: "their",
+      answer: "their",
+    },
+  ],
+  "There указывает на место; their перед существительным показывает принадлежность.",
+);
+add(
+  "reference-object",
+  126,
+  "gap",
+  2,
+  "Each package includes a label with ___ tracking number.",
+  "its",
+  "Each package — единственное число; принадлежность выражает its.",
+  {
+    cue: "В каждой посылке есть этикетка с её номером отслеживания.",
+    base: "it",
+    choices: ["its", "it’s"],
+  },
+);
 
 // Batch 4: deeper retrieval on the highest-priority verb-frame and sentence-structure skills.
-repair('verbs-agreement',133,'The color of the warning lights are hard to see.','The color of the warning lights is hard to see.','Главное подлежащее — color; оборот of the warning lights не меняет единственное число.');
-transform('verbs-agreement',134,'The inspectors check the exits before opening.','Замени подлежащее на Each inspector.','Each inspector checks the exits before opening.','Each inspector — единственное число, поэтому нужен checks.');
-translate('verbs-agreement',135,'Одна из панелей не подключена правильно.','one / the panels / not / connect / correctly','One of the panels is not connected correctly.','В конструкции one of the panels грамматическое подлежащее — one.');
-contrast('verbs-agreement',136,'Выбери форму по главному слову подлежащего.',[{prompt:'The final set of keys ___ in the cabinet.',base:'be',answer:'is'},{prompt:'The keys ___ in the cabinet.',base:'be',answer:'are'}],'В первой части главное слово — set; во второй — keys.');
-add('verbs-agreement',137,'gap',2,'Every item in these boxes ___ a label.','has','Every item — единственное число, поэтому требуется has.',{cue:'У каждого предмета в этих коробках есть этикетка.',base:'have',choices:['has','have']});
-repair('verbs-agreement',138,'A number of customers has asked for a printed receipt.','A number of customers have asked for a printed receipt.','A number of означает несколько клиентов; глагол согласуется с plural noun customers.');
-transform('verbs-agreement',139,'Both delivery vans need a safety check.','Перестрой предложение, начав с Each delivery van.','Each delivery van needs a safety check.','Each delivery van — единственное число, поэтому need меняется на needs.');
-translate('verbs-agreement',140,'Большинство писем требует ответа до пятницы.','most / the letters / require / a reply / before Friday','Most of the letters require a reply before Friday.','Подлежащее letters стоит во множественном числе: require.');
-contrast('verbs-agreement',141,'Различи число как показатель количества и конструкцию со значением «несколько».',[{prompt:'The number of damaged boxes ___ increasing.',base:'be',answer:'is'},{prompt:'A number of damaged boxes ___ in the loading area.',base:'be',answer:'are'}],'The number — единственное число; a number of + plural noun — множественное.');
-add('verbs-agreement',142,'gap',2,'The total cost of all repairs ___ above our estimate.','is','Главное слово подлежащего — cost; предложная группа of all repairs не делает его множественным.',{cue:'Общая стоимость всех ремонтных работ превышает нашу оценку.',base:'be',choices:['is','are']});
-repair('verbs-agreement',143,'Each of the two switches control one lamp.','Each of the two switches controls one lamp.','Each требует глагол в единственном числе, несмотря на plural noun switches после of.');
-transform('verbs-agreement',144,'All the emergency exits are unlocked during the drill.','Перефразируй с Each emergency exit.','Each emergency exit is unlocked during the drill.','После Each emergency exit нужна форма is.');
-translate('verbs-agreement',145,'У каждого из десяти участников есть отдельный код.','each / the ten participants / have / a separate code','Each of the ten participants has a separate code.','В конструкции each of глагол согласуется с each: has.');
-contrast('verbs-agreement',146,'Сравни одного представителя группы и всю группу.',[{prompt:'One of the replacement parts ___ missing.',base:'be',answer:'is'},{prompt:'The replacement parts ___ missing.',base:'be',answer:'are'}],'В первом подлежащем главное слово one; во втором — parts.');
-add('verbs-agreement',147,'gap',2,'The only copy of the records ___ in the top drawer.','is','Главное слово подлежащего — copy; records находится в предложной группе of the records.',{cue:'Единственная копия записей находится в верхнем ящике.',base:'be',choices:['is','are']});
+repair(
+  "verbs-agreement",
+  133,
+  "The color of the warning lights are hard to see.",
+  "The color of the warning lights is hard to see.",
+  "Главное подлежащее — color; оборот of the warning lights не меняет единственное число.",
+);
+transform(
+  "verbs-agreement",
+  134,
+  "The inspectors check the exits before opening.",
+  "Замени подлежащее на Each inspector.",
+  "Each inspector checks the exits before opening.",
+  "Each inspector — единственное число, поэтому нужен checks.",
+);
+translate(
+  "verbs-agreement",
+  135,
+  "Одна из панелей не подключена правильно.",
+  "one / the panels / not / connect / correctly",
+  "One of the panels is not connected correctly.",
+  "В конструкции one of the panels грамматическое подлежащее — one.",
+);
+contrast(
+  "verbs-agreement",
+  136,
+  "Выбери форму по главному слову подлежащего.",
+  [
+    {
+      prompt: "The final set of keys ___ in the cabinet.",
+      base: "be",
+      answer: "is",
+    },
+    { prompt: "The keys ___ in the cabinet.", base: "be", answer: "are" },
+  ],
+  "В первой части главное слово — set; во второй — keys.",
+);
+add(
+  "verbs-agreement",
+  137,
+  "gap",
+  2,
+  "Every item in these boxes ___ a label.",
+  "has",
+  "Every item — единственное число, поэтому требуется has.",
+  {
+    cue: "У каждого предмета в этих коробках есть этикетка.",
+    base: "have",
+    choices: ["has", "have"],
+  },
+);
+repair(
+  "verbs-agreement",
+  138,
+  "A number of customers has asked for a printed receipt.",
+  "A number of customers have asked for a printed receipt.",
+  "A number of означает несколько клиентов; глагол согласуется с plural noun customers.",
+);
+transform(
+  "verbs-agreement",
+  139,
+  "Both delivery vans need a safety check.",
+  "Перестрой предложение, начав с Each delivery van.",
+  "Each delivery van needs a safety check.",
+  "Each delivery van — единственное число, поэтому need меняется на needs.",
+);
+translate(
+  "verbs-agreement",
+  140,
+  "Большинство писем требует ответа до пятницы.",
+  "most / the letters / require / a reply / before Friday",
+  "Most of the letters require a reply before Friday.",
+  "Подлежащее letters стоит во множественном числе: require.",
+);
+contrast(
+  "verbs-agreement",
+  141,
+  "Различи число как показатель количества и конструкцию со значением «несколько».",
+  [
+    {
+      prompt: "The number of damaged boxes ___ increasing.",
+      base: "be",
+      answer: "is",
+    },
+    {
+      prompt: "A number of damaged boxes ___ in the loading area.",
+      base: "be",
+      answer: "are",
+    },
+  ],
+  "The number — единственное число; a number of + plural noun — множественное.",
+);
+add(
+  "verbs-agreement",
+  142,
+  "gap",
+  2,
+  "The total cost of all repairs ___ above our estimate.",
+  "is",
+  "Главное слово подлежащего — cost; предложная группа of all repairs не делает его множественным.",
+  {
+    cue: "Общая стоимость всех ремонтных работ превышает нашу оценку.",
+    base: "be",
+    choices: ["is", "are"],
+  },
+);
+repair(
+  "verbs-agreement",
+  143,
+  "Each of the two switches control one lamp.",
+  "Each of the two switches controls one lamp.",
+  "Each требует глагол в единственном числе, несмотря на plural noun switches после of.",
+);
+transform(
+  "verbs-agreement",
+  144,
+  "All the emergency exits are unlocked during the drill.",
+  "Перефразируй с Each emergency exit.",
+  "Each emergency exit is unlocked during the drill.",
+  "После Each emergency exit нужна форма is.",
+);
+translate(
+  "verbs-agreement",
+  145,
+  "У каждого из десяти участников есть отдельный код.",
+  "each / the ten participants / have / a separate code",
+  "Each of the ten participants has a separate code.",
+  "В конструкции each of глагол согласуется с each: has.",
+);
+contrast(
+  "verbs-agreement",
+  146,
+  "Сравни одного представителя группы и всю группу.",
+  [
+    {
+      prompt: "One of the replacement parts ___ missing.",
+      base: "be",
+      answer: "is",
+    },
+    { prompt: "The replacement parts ___ missing.", base: "be", answer: "are" },
+  ],
+  "В первом подлежащем главное слово one; во втором — parts.",
+);
+add(
+  "verbs-agreement",
+  147,
+  "gap",
+  2,
+  "The only copy of the records ___ in the top drawer.",
+  "is",
+  "Главное слово подлежащего — copy; records находится в предложной группе of the records.",
+  {
+    cue: "Единственная копия записей находится в верхнем ящике.",
+    base: "be",
+    choices: ["is", "are"],
+  },
+);
 
-repair('verbs-past',133,'The driver did not noticed the low bridge sign.','The driver did not notice the low bridge sign.','После did not используется начальная форма notice, а не noticed.');
-transform('verbs-past',134,'The team found a crack during the inspection.','Сделай отрицание в Past Simple.','The team did not find a crack during the inspection.','В отрицании Past Simple используется did not + начальная форма find.');
-translate('verbs-past',135,'Кто принёс ключи к западному входу?','who / bring / the keys / to the west entrance','Who brought the keys to the west entrance?','Who спрашивает о подлежащем; did не нужен, используется Past Simple brought.');
-contrast('verbs-past',136,'Сравни утверждение и вопрос о доставке посылки.',[{prompt:'The courier ___ the parcel at noon.',base:'deliver',answer:'delivered'},{prompt:'Did the courier ___ the parcel at noon?',base:'deliver',answer:'deliver'}],'В утверждении ставится Past Simple delivered; после did — начальная форма deliver.');
-add('verbs-past',137,'gap',2,'The mechanic ___ a note beside the repaired pump yesterday.','left','Yesterday задаёт законченное прошлое; leave в Past Simple — left.',{cue:'Вчера механик оставил записку возле отремонтированного насоса.',base:'leave',choices:['left','leaves']});
-repair('verbs-past',138,'Why did the server restarted twice during the update?','Why did the server restart twice during the update?','После did в вопросе используется начальная форма restart.');
-transform('verbs-past',139,'The windows were open after the storm.','Сделай общий вопрос, сохранив Past Simple.','Were the windows open after the storm?','С be в Past Simple вопрос образуется перестановкой were; did не нужен.');
-translate('verbs-past',140,'Почему руководитель отменил проверку утром?','why / the supervisor / cancel / the inspection / in the morning','Why did the supervisor cancel the inspection in the morning?','Завершённое прошлое: did + subject + начальная форма cancel.');
-contrast('verbs-past',141,'Различи вопрос о том, кто сам выполнил действие, и вопрос об объекте.',[{prompt:'Who ___ the alarm before sunrise?',base:'silence',answer:'silenced'},{prompt:'Who did the night guard ___ after hearing it?',base:'call',answer:'call'}],'В первом who — подлежащее, поэтому silenced без did. Во втором who — дополнение: did + call.');
-add('verbs-past',142,'gap',2,'One of the visitors ___ the blue notebook on the bench yesterday.','left','Указание yesterday требует Past Simple: leave → left.',{cue:'Вчера один из посетителей оставил синюю записную книжку на скамье.',base:'leave',choices:['left','leaves']});
-repair('verbs-past',143,"The assistant didn't wrote the new access code on the envelope.","The assistant didn't write the new access code on the envelope.",'После did not нужен инфинитив write, а не форма wrote.');
-transform('verbs-past',144,'The librarian helped the guest.','Задай вопрос о человеке, которому библиотекарь помог.','Who did the librarian help?','Who здесь дополнение; в Past Simple используется did + help.');
-translate('verbs-past',145,'Когда техник заменил фильтр?','when / the technician / replace / the filter','When did the technician replace the filter?','Вопрос о завершённом прошлом: when + did + subject + начальная форма replace.');
-contrast('verbs-past',146,'Вставь форму глагола в утверждение и в вопрос.',[{prompt:'The board ___ the request yesterday.',base:'reject',answer:'rejected'},{prompt:'Did the board ___ the request yesterday?',base:'reject',answer:'reject'}],'В утверждении используется rejected; после did — reject.');
-add('verbs-past',147,'gap',2,'At the end of the shift, the guard ___ the side gate and left.','locked','Оба действия завершились в прошлом; lock получает окончание -ed.',{cue:'В конце смены охранник запер боковые ворота и ушёл.',base:'lock',choices:['locked','locks']});
+repair(
+  "verbs-past",
+  133,
+  "The driver did not noticed the low bridge sign.",
+  "The driver did not notice the low bridge sign.",
+  "После did not используется начальная форма notice, а не noticed.",
+);
+transform(
+  "verbs-past",
+  134,
+  "The team found a crack during the inspection.",
+  "Сделай отрицание в Past Simple.",
+  "The team did not find a crack during the inspection.",
+  "В отрицании Past Simple используется did not + начальная форма find.",
+);
+translate(
+  "verbs-past",
+  135,
+  "Кто принёс ключи к западному входу?",
+  "who / bring / the keys / to the west entrance",
+  "Who brought the keys to the west entrance?",
+  "Who спрашивает о подлежащем; did не нужен, используется Past Simple brought.",
+);
+contrast(
+  "verbs-past",
+  136,
+  "Сравни утверждение и вопрос о доставке посылки.",
+  [
+    {
+      prompt: "The courier ___ the parcel at noon.",
+      base: "deliver",
+      answer: "delivered",
+    },
+    {
+      prompt: "Did the courier ___ the parcel at noon?",
+      base: "deliver",
+      answer: "deliver",
+    },
+  ],
+  "В утверждении ставится Past Simple delivered; после did — начальная форма deliver.",
+);
+add(
+  "verbs-past",
+  137,
+  "gap",
+  2,
+  "The mechanic ___ a note beside the repaired pump yesterday.",
+  "left",
+  "Yesterday задаёт законченное прошлое; leave в Past Simple — left.",
+  {
+    cue: "Вчера механик оставил записку возле отремонтированного насоса.",
+    base: "leave",
+    choices: ["left", "leaves"],
+  },
+);
+repair(
+  "verbs-past",
+  138,
+  "Why did the server restarted twice during the update?",
+  "Why did the server restart twice during the update?",
+  "После did в вопросе используется начальная форма restart.",
+);
+transform(
+  "verbs-past",
+  139,
+  "The windows were open after the storm.",
+  "Сделай общий вопрос, сохранив Past Simple.",
+  "Were the windows open after the storm?",
+  "С be в Past Simple вопрос образуется перестановкой were; did не нужен.",
+);
+translate(
+  "verbs-past",
+  140,
+  "Почему руководитель отменил проверку утром?",
+  "why / the supervisor / cancel / the inspection / in the morning",
+  "Why did the supervisor cancel the inspection in the morning?",
+  "Завершённое прошлое: did + subject + начальная форма cancel.",
+);
+contrast(
+  "verbs-past",
+  141,
+  "Различи вопрос о том, кто сам выполнил действие, и вопрос об объекте.",
+  [
+    {
+      prompt: "Who ___ the alarm before sunrise?",
+      base: "silence",
+      answer: "silenced",
+    },
+    {
+      prompt: "Who did the night guard ___ after hearing it?",
+      base: "call",
+      answer: "call",
+    },
+  ],
+  "В первом who — подлежащее, поэтому silenced без did. Во втором who — дополнение: did + call.",
+);
+add(
+  "verbs-past",
+  142,
+  "gap",
+  2,
+  "One of the visitors ___ the blue notebook on the bench yesterday.",
+  "left",
+  "Указание yesterday требует Past Simple: leave → left.",
+  {
+    cue: "Вчера один из посетителей оставил синюю записную книжку на скамье.",
+    base: "leave",
+    choices: ["left", "leaves"],
+  },
+);
+repair(
+  "verbs-past",
+  143,
+  "The assistant didn't wrote the new access code on the envelope.",
+  "The assistant didn't write the new access code on the envelope.",
+  "После did not нужен инфинитив write, а не форма wrote.",
+);
+transform(
+  "verbs-past",
+  144,
+  "The librarian helped the guest.",
+  "Задай вопрос о человеке, которому библиотекарь помог.",
+  "Who did the librarian help?",
+  "Who здесь дополнение; в Past Simple используется did + help.",
+);
+translate(
+  "verbs-past",
+  145,
+  "Когда техник заменил фильтр?",
+  "when / the technician / replace / the filter",
+  "When did the technician replace the filter?",
+  "Вопрос о завершённом прошлом: when + did + subject + начальная форма replace.",
+);
+contrast(
+  "verbs-past",
+  146,
+  "Вставь форму глагола в утверждение и в вопрос.",
+  [
+    {
+      prompt: "The board ___ the request yesterday.",
+      base: "reject",
+      answer: "rejected",
+    },
+    {
+      prompt: "Did the board ___ the request yesterday?",
+      base: "reject",
+      answer: "reject",
+    },
+  ],
+  "В утверждении используется rejected; после did — reject.",
+);
+add(
+  "verbs-past",
+  147,
+  "gap",
+  2,
+  "At the end of the shift, the guard ___ the side gate and left.",
+  "locked",
+  "Оба действия завершились в прошлом; lock получает окончание -ed.",
+  {
+    cue: "В конце смены охранник запер боковые ворота и ушёл.",
+    base: "lock",
+    choices: ["locked", "locks"],
+  },
+);
 
-repair('verbs-aspect',133,'The interns are usually checking the inventory on Mondays.','The interns usually check the inventory on Mondays.','Usually и on Mondays описывают привычку, поэтому нужен Present Simple.');
-transform('verbs-aspect',134,'The accountant reviews the invoices every morning.','Опиши временный процесс, который идёт сейчас.','The accountant is reviewing the invoices right now.','Right now задаёт действие в процессе: is reviewing.');
-translate('verbs-aspect',135,'Она думает, что маршрут безопасен, но сейчас рассматривает другой вариант.','she / think / the route / be safe / but / now / consider / another option','She thinks the route is safe, but she is considering another option now.','Think со значением мнения стоит в Simple; обдумывание сейчас — в Continuous.');
-contrast('verbs-aspect',136,'Различи свойство хлеба и действие пекаря.',[{prompt:'This bread ___ fresh.',base:'smell',answer:'smells'},{prompt:'The baker ___ the bread now.',base:'smell',answer:'is smelling'}],'Smell описывает свойство хлеба в Simple; пекарь сейчас намеренно нюхает его: is smelling.');
-add('verbs-aspect',137,'gap',2,'The two technicians ___ the backup generator this week while the main one is repaired.','are testing','This week и while the main one is repaired задают временный процесс.',{cue:'На этой неделе два техника тестируют резервный генератор, пока основной ремонтируют.',base:'test',choices:['are testing','test']});
-repair('verbs-aspect',138,'This label is belonging to the spare-part set, not to the main equipment case.','This label belongs to the spare-part set, not to the main equipment case.','Belong описывает принадлежность и не употребляется здесь в Continuous.');
-transform('verbs-aspect',139,'We check every package before it leaves.','Уточни, что прямо сейчас мы временно проверяем каждую посылку перед отправкой.','Right now, we are checking every package before it leaves.','Right now задаёт процесс, происходящий в момент речи: are checking.');
-translate('verbs-aspect',140,'Сейчас я работаю из филиала, хотя обычно езжу в главный офис.','right now / I / work / from the branch / although / usually / commute / to the main office','Right now I am working from the branch, although I usually commute to the main office.','Right now задаёт временный процесс; usually указывает на привычку.');
-contrast('verbs-aspect',141,'Сравни постоянное знание и действие, которое происходит сейчас.',[{prompt:'The mechanic ___ how the new brake system works.',base:'know',answer:'knows'},{prompt:'The mechanic ___ to a sound from the rear wheel now.',base:'listen',answer:'is listening'}],'Know — состояние в Simple; слушать звук сейчас — процесс is listening.');
-add('verbs-aspect',142,'gap',2,'The children ___ near the fountain at the moment, so please use the other path.','are playing','At the moment показывает процесс, происходящий сейчас.',{cue:'Сейчас дети играют у фонтана, поэтому воспользуйтесь другой дорожкой.',base:'play',choices:['are playing','play']});
-repair('verbs-aspect',143,'This box is containing spare screws for the machine.','This box contains spare screws for the machine.','Contain описывает содержимое и в этом значении употребляется в Present Simple.');
-transform('verbs-aspect',144,'The company uses the east entrance.','Уточни, что из-за ремонта западного входа компания временно пользуется восточным прямо сейчас.','The company is using the east entrance right now while the west entrance is being repaired.','Right now и ремонт задают временный процесс: is using.');
-translate('verbs-aspect',145,'Этот материал кажется грубым на ощупь; портной сейчас проверяет его подкладку.','this material / feel / rough / the tailor / check / its lining / now','This material feels rough; the tailor is checking its lining now.','Feel описывает свойство материала; checking — действие портного сейчас.');
-contrast('verbs-aspect',146,'Сравни владение и действие во время обеда.',[{prompt:'She ___ a small apartment downtown.',base:'have',answer:'has'},{prompt:'She ___ lunch with the project team now.',base:'have',answer:'is having'}],'Have означает владение в первой части, поэтому has; have lunch — действие в процессе: is having.');
-add('verbs-aspect',147,'gap',2,'The two temporary clerks ___ at the branch right now, not at the main office.','are working','Right now обозначает действие, происходящее в момент речи: are working.',{cue:'Прямо сейчас два временных сотрудника работают в филиале, а не в главном офисе.',base:'work',choices:['are working','work']});
+repair(
+  "verbs-aspect",
+  133,
+  "The interns are usually checking the inventory on Mondays.",
+  "The interns usually check the inventory on Mondays.",
+  "Usually и on Mondays описывают привычку, поэтому нужен Present Simple.",
+);
+transform(
+  "verbs-aspect",
+  134,
+  "The accountant reviews the invoices every morning.",
+  "Опиши временный процесс, который идёт сейчас.",
+  "The accountant is reviewing the invoices right now.",
+  "Right now задаёт действие в процессе: is reviewing.",
+);
+translate(
+  "verbs-aspect",
+  135,
+  "Она думает, что маршрут безопасен, но сейчас рассматривает другой вариант.",
+  "she / think / the route / be safe / but / now / consider / another option",
+  "She thinks the route is safe, but she is considering another option now.",
+  "Think со значением мнения стоит в Simple; обдумывание сейчас — в Continuous.",
+);
+contrast(
+  "verbs-aspect",
+  136,
+  "Различи свойство хлеба и действие пекаря.",
+  [
+    { prompt: "This bread ___ fresh.", base: "smell", answer: "smells" },
+    {
+      prompt: "The baker ___ the bread now.",
+      base: "smell",
+      answer: "is smelling",
+    },
+  ],
+  "Smell описывает свойство хлеба в Simple; пекарь сейчас намеренно нюхает его: is smelling.",
+);
+add(
+  "verbs-aspect",
+  137,
+  "gap",
+  2,
+  "The two technicians ___ the backup generator this week while the main one is repaired.",
+  "are testing",
+  "This week и while the main one is repaired задают временный процесс.",
+  {
+    cue: "На этой неделе два техника тестируют резервный генератор, пока основной ремонтируют.",
+    base: "test",
+    choices: ["are testing", "test"],
+  },
+);
+repair(
+  "verbs-aspect",
+  138,
+  "This label is belonging to the spare-part set, not to the main equipment case.",
+  "This label belongs to the spare-part set, not to the main equipment case.",
+  "Belong описывает принадлежность и не употребляется здесь в Continuous.",
+);
+transform(
+  "verbs-aspect",
+  139,
+  "We check every package before it leaves.",
+  "Уточни, что прямо сейчас мы временно проверяем каждую посылку перед отправкой.",
+  "Right now, we are checking every package before it leaves.",
+  "Right now задаёт процесс, происходящий в момент речи: are checking.",
+);
+translate(
+  "verbs-aspect",
+  140,
+  "Сейчас я работаю из филиала, хотя обычно езжу в главный офис.",
+  "right now / I / work / from the branch / although / usually / commute / to the main office",
+  "Right now I am working from the branch, although I usually commute to the main office.",
+  "Right now задаёт временный процесс; usually указывает на привычку.",
+);
+contrast(
+  "verbs-aspect",
+  141,
+  "Сравни постоянное знание и действие, которое происходит сейчас.",
+  [
+    {
+      prompt: "The mechanic ___ how the new brake system works.",
+      base: "know",
+      answer: "knows",
+    },
+    {
+      prompt: "The mechanic ___ to a sound from the rear wheel now.",
+      base: "listen",
+      answer: "is listening",
+    },
+  ],
+  "Know — состояние в Simple; слушать звук сейчас — процесс is listening.",
+);
+add(
+  "verbs-aspect",
+  142,
+  "gap",
+  2,
+  "The children ___ near the fountain at the moment, so please use the other path.",
+  "are playing",
+  "At the moment показывает процесс, происходящий сейчас.",
+  {
+    cue: "Сейчас дети играют у фонтана, поэтому воспользуйтесь другой дорожкой.",
+    base: "play",
+    choices: ["are playing", "play"],
+  },
+);
+repair(
+  "verbs-aspect",
+  143,
+  "This box is containing spare screws for the machine.",
+  "This box contains spare screws for the machine.",
+  "Contain описывает содержимое и в этом значении употребляется в Present Simple.",
+);
+transform(
+  "verbs-aspect",
+  144,
+  "The company uses the east entrance.",
+  "Уточни, что из-за ремонта западного входа компания временно пользуется восточным прямо сейчас.",
+  "The company is using the east entrance right now while the west entrance is being repaired.",
+  "Right now и ремонт задают временный процесс: is using.",
+);
+translate(
+  "verbs-aspect",
+  145,
+  "Этот материал кажется грубым на ощупь; портной сейчас проверяет его подкладку.",
+  "this material / feel / rough / the tailor / check / its lining / now",
+  "This material feels rough; the tailor is checking its lining now.",
+  "Feel описывает свойство материала; checking — действие портного сейчас.",
+);
+contrast(
+  "verbs-aspect",
+  146,
+  "Сравни владение и действие во время обеда.",
+  [
+    {
+      prompt: "She ___ a small apartment downtown.",
+      base: "have",
+      answer: "has",
+    },
+    {
+      prompt: "She ___ lunch with the project team now.",
+      base: "have",
+      answer: "is having",
+    },
+  ],
+  "Have означает владение в первой части, поэтому has; have lunch — действие в процессе: is having.",
+);
+add(
+  "verbs-aspect",
+  147,
+  "gap",
+  2,
+  "The two temporary clerks ___ at the branch right now, not at the main office.",
+  "are working",
+  "Right now обозначает действие, происходящее в момент речи: are working.",
+  {
+    cue: "Прямо сейчас два временных сотрудника работают в филиале, а не в главном офисе.",
+    base: "work",
+    choices: ["are working", "work"],
+  },
+);
 
-repair('verbs-modal',133,'Every passenger must to show a ticket before boarding.','Every passenger must show a ticket before boarding.','После must используется начальная форма без to: show.');
-transform('verbs-modal',134,'The site requires staff to wear protective glasses.','Передай требование с помощью must.','Staff must wear protective glasses on the site.','Must выражает обязательность; после него используется wear без to.');
-translate('verbs-modal',135,'Вам запрещено фотографировать архивные документы.','you / must not / photograph / the archive documents','You must not photograph the archive documents.','Must not выражает запрет; после must используется начальная форма photograph.');
-contrast('verbs-modal',136,'Различи запрет и отсутствие необходимости.',[{prompt:'You ___ enter the marked area; the floor is still wet.',base:'must not',answer:'must not'},{prompt:'You ___ print your ticket; your phone screen is accepted.',base:'not have to',answer:'do not have to'}],'Must not запрещает вход; do not have to говорит, что печатать билет необязательно.');
-add('verbs-modal',137,'gap',2,'The crew ___ checking the emergency lights at 6 p.m. tomorrow.','will be','At 6 p.m. tomorrow указывает на будущий процесс: will be + -ing.',{cue:'Завтра в шесть вечера бригада будет проверять аварийное освещение.',base:'will',choices:['will be','will']});
-repair('verbs-modal',138,'The staff should to notify the supervisor before moving the equipment.','The staff should notify the supervisor before moving the equipment.','После should используется начальная форма notify без to.');
-transform('verbs-modal',139,'Perhaps the guide will explain the delay after the tour.','Перефразируй с may, сохранив значение возможности.','The guide may explain the delay after the tour.','May выражает возможность; после него используется начальная форма explain.');
-translate('verbs-modal',140,'Завтра в это время мы будем проводить инструктаж.','tomorrow at this time / we / conduct / the briefing','Tomorrow at this time, we will be conducting the briefing.','Задан момент будущего процесса: will be conducting.');
-contrast('verbs-modal',141,'Выбери требование и рекомендацию по контексту.',[{prompt:'Visitors ___ show identification at the security gate; it is required.',base:'must',answer:'must'},{prompt:'You ___ call ahead if you arrive after six; it is good advice.',base:'should',answer:'should'}],'Must выражает обязательное правило, should — совет.');
-add('verbs-modal',142,'gap',2,'Drivers ___ leave the engine running inside the tunnel; this is prohibited.','must not','This is prohibited явно задаёт запрет: must not.',{cue:'Водителям нельзя оставлять двигатель работающим внутри тоннеля: это запрещено.',base:'not be allowed to',choices:['must not','do not have to']});
-repair('verbs-modal',143,"The team won't can use the main entrance during repairs.",'The team will not be able to use the main entrance during repairs.','После will нельзя поставить can; для будущей возможности используется will be able to.');
-transform('verbs-modal',144,'A printed copy is optional; the digital version is enough.','Обратись к участникам и используй do not have to.','You do not have to bring a printed copy; the digital version is enough.','Do not have to передаёт отсутствие необходимости, не запрет.');
-translate('verbs-modal',145,'Техники обязаны отключить питание до того, как снимут крышку.','the technicians / must / disconnect / the power / before / they / remove / the cover','The technicians must disconnect the power before they remove the cover.','Must выражает обязательность; после before здесь следует полное придаточное с подлежащим и глаголом.');
-contrast('verbs-modal',146,'Различи обязательное правило и способность предмета.',[{prompt:'Staff ___ wear closed shoes in the workshop; it is a safety rule.',base:'must',answer:'must'},{prompt:'The auditorium ___ hold 500 people comfortably.',base:'can',answer:'can'}],'Must выражает обязательность; can здесь обозначает возможность или способность.');
-add('verbs-modal',147,'gap',2,'The shuttle ___ leave at 8:20 tomorrow according to the printed timetable.','will','Расписание задаёт будущее событие; will ставится перед начальной формой leave.',{cue:'Согласно расписанию, завтра шаттл отправится в 8:20.',base:'leave',choices:['will','would']});
+repair(
+  "verbs-modal",
+  133,
+  "Every passenger must to show a ticket before boarding.",
+  "Every passenger must show a ticket before boarding.",
+  "После must используется начальная форма без to: show.",
+);
+transform(
+  "verbs-modal",
+  134,
+  "The site requires staff to wear protective glasses.",
+  "Передай требование с помощью must.",
+  "Staff must wear protective glasses on the site.",
+  "Must выражает обязательность; после него используется wear без to.",
+);
+translate(
+  "verbs-modal",
+  135,
+  "Вам запрещено фотографировать архивные документы.",
+  "you / must not / photograph / the archive documents",
+  "You must not photograph the archive documents.",
+  "Must not выражает запрет; после must используется начальная форма photograph.",
+);
+contrast(
+  "verbs-modal",
+  136,
+  "Различи запрет и отсутствие необходимости.",
+  [
+    {
+      prompt: "You ___ enter the marked area; the floor is still wet.",
+      base: "must not",
+      answer: "must not",
+    },
+    {
+      prompt: "You ___ print your ticket; your phone screen is accepted.",
+      base: "not have to",
+      answer: "do not have to",
+    },
+  ],
+  "Must not запрещает вход; do not have to говорит, что печатать билет необязательно.",
+);
+add(
+  "verbs-modal",
+  137,
+  "gap",
+  2,
+  "The crew ___ checking the emergency lights at 6 p.m. tomorrow.",
+  "will be",
+  "At 6 p.m. tomorrow указывает на будущий процесс: will be + -ing.",
+  {
+    cue: "Завтра в шесть вечера бригада будет проверять аварийное освещение.",
+    base: "will",
+    choices: ["will be", "will"],
+  },
+);
+repair(
+  "verbs-modal",
+  138,
+  "The staff should to notify the supervisor before moving the equipment.",
+  "The staff should notify the supervisor before moving the equipment.",
+  "После should используется начальная форма notify без to.",
+);
+transform(
+  "verbs-modal",
+  139,
+  "Perhaps the guide will explain the delay after the tour.",
+  "Перефразируй с may, сохранив значение возможности.",
+  "The guide may explain the delay after the tour.",
+  "May выражает возможность; после него используется начальная форма explain.",
+);
+translate(
+  "verbs-modal",
+  140,
+  "Завтра в это время мы будем проводить инструктаж.",
+  "tomorrow at this time / we / conduct / the briefing",
+  "Tomorrow at this time, we will be conducting the briefing.",
+  "Задан момент будущего процесса: will be conducting.",
+);
+contrast(
+  "verbs-modal",
+  141,
+  "Выбери требование и рекомендацию по контексту.",
+  [
+    {
+      prompt:
+        "Visitors ___ show identification at the security gate; it is required.",
+      base: "must",
+      answer: "must",
+    },
+    {
+      prompt: "You ___ call ahead if you arrive after six; it is good advice.",
+      base: "should",
+      answer: "should",
+    },
+  ],
+  "Must выражает обязательное правило, should — совет.",
+);
+add(
+  "verbs-modal",
+  142,
+  "gap",
+  2,
+  "Drivers ___ leave the engine running inside the tunnel; this is prohibited.",
+  "must not",
+  "This is prohibited явно задаёт запрет: must not.",
+  {
+    cue: "Водителям нельзя оставлять двигатель работающим внутри тоннеля: это запрещено.",
+    base: "not be allowed to",
+    choices: ["must not", "do not have to"],
+  },
+);
+repair(
+  "verbs-modal",
+  143,
+  "The team won't can use the main entrance during repairs.",
+  "The team will not be able to use the main entrance during repairs.",
+  "После will нельзя поставить can; для будущей возможности используется will be able to.",
+);
+transform(
+  "verbs-modal",
+  144,
+  "A printed copy is optional; the digital version is enough.",
+  "Обратись к участникам и используй do not have to.",
+  "You do not have to bring a printed copy; the digital version is enough.",
+  "Do not have to передаёт отсутствие необходимости, не запрет.",
+);
+translate(
+  "verbs-modal",
+  145,
+  "Техники обязаны отключить питание до того, как снимут крышку.",
+  "the technicians / must / disconnect / the power / before / they / remove / the cover",
+  "The technicians must disconnect the power before they remove the cover.",
+  "Must выражает обязательность; после before здесь следует полное придаточное с подлежащим и глаголом.",
+);
+contrast(
+  "verbs-modal",
+  146,
+  "Различи обязательное правило и способность предмета.",
+  [
+    {
+      prompt:
+        "Staff ___ wear closed shoes in the workshop; it is a safety rule.",
+      base: "must",
+      answer: "must",
+    },
+    {
+      prompt: "The auditorium ___ hold 500 people comfortably.",
+      base: "can",
+      answer: "can",
+    },
+  ],
+  "Must выражает обязательность; can здесь обозначает возможность или способность.",
+);
+add(
+  "verbs-modal",
+  147,
+  "gap",
+  2,
+  "The shuttle ___ leave at 8:20 tomorrow according to the printed timetable.",
+  "will",
+  "Расписание задаёт будущее событие; will ставится перед начальной формой leave.",
+  {
+    cue: "Согласно расписанию, завтра шаттл отправится в 8:20.",
+    base: "leave",
+    choices: ["will", "would"],
+  },
+);
 
-repair('verbs-be',133,'There is three empty lockers near the loading bay.','There are three empty lockers near the loading bay.','Форма there be согласуется с plural noun lockers: are.');
-transform('verbs-be',134,'The lights were in the storage room.','Замени подлежащее на The light.','The light was in the storage room.','С единственным числом light используется was.');
-translate('verbs-be',135,'В конверте находятся два пропуска и одна карта доступа.','two passes / and / one access card / be / in the envelope','Two passes and one access card are in the envelope.','В составном подлежащем есть plural noun passes, поэтому используется are.');
-contrast('verbs-be',136,'Выбери форму по существительному после there.',[{prompt:'There ___ enough space for the boxes.',base:'be',answer:'is'},{prompt:'There ___ enough seats for every visitor.',base:'be',answer:'are'}],'Space неисчисляемое и требует is; seats во множественном числе требует are.');
-add('verbs-be',137,'gap',2,'The north entrance ___ closed during the inspection yesterday.','was','North entrance — единственное число, а yesterday задаёт прошлое: was.',{cue:'Во время вчерашней проверки северный вход был закрыт.',base:'be',choices:['was','were']});
-repair('verbs-be',138,'The information on the labels are out of date.','The information on the labels is out of date.','Information неисчисляемое и согласуется как единственное число: is.');
-transform('verbs-be',139,'Were the spare batteries in the drawer?','Сделай отрицательное утверждение.','The spare batteries were not in the drawer.','Множественное batteries согласуется с were; отрицание be образуется без did.');
-translate('verbs-be',140,'В шкафу нет запасных ключей.','there / be / no / spare keys / in the cabinet','There are no spare keys in the cabinet.','После there стоит plural noun keys, поэтому используется are.');
-contrast('verbs-be',141,'Сравни одного участника с группой участников.',[{prompt:'Each member ___ listed on the certificate.',base:'be',answer:'is'},{prompt:'All the members ___ listed on the certificate.',base:'be',answer:'are'}],'Each member — единственное число; all the members — множественное.');
-add('verbs-be',142,'gap',2,'The scissors ___ in the top drawer, beside the ruler.','are','Scissors обычно употребляется как plural noun и требует are.',{cue:'Ножницы находятся в верхнем ящике рядом с линейкой.',base:'be',choices:['are','is']});
-repair('verbs-be',143,'Why was the instructions removed from the noticeboard?','Why were the instructions removed from the noticeboard?','Подлежащее instructions во множественном числе, поэтому требуется were.');
-transform('verbs-be',144,'The pair of gloves was on the bench.','Замени подлежащее на The gloves.','The gloves were on the bench.','При подлежащем gloves во множественном числе используется were.');
-translate('verbs-be',145,'Почему оборудование было недоступно во время проверки?','why / the equipment / unavailable / during the inspection','Why was the equipment unavailable during the inspection?','Equipment неисчисляемое и согласуется с was.');
-contrast('verbs-be',146,'Сравни существительное на -s в единственном числе и обычное множественное число.',[{prompt:'The news ___ encouraging.',base:'be',answer:'is'},{prompt:'The updates ___ encouraging.',base:'be',answer:'are'}],'News имеет форму на -s, но обычно согласуется как единственное; updates — plural noun.');
-add('verbs-be',147,'gap',2,'One of the monitors ___ offline after the update.','was','Грамматическое подлежащее — one, поэтому нужна форма was.',{cue:'После обновления один из мониторов был отключён.',base:'be',choices:['was','were']});
+repair(
+  "verbs-be",
+  133,
+  "There is three empty lockers near the loading bay.",
+  "There are three empty lockers near the loading bay.",
+  "Форма there be согласуется с plural noun lockers: are.",
+);
+transform(
+  "verbs-be",
+  134,
+  "The lights were in the storage room.",
+  "Замени подлежащее на The light.",
+  "The light was in the storage room.",
+  "С единственным числом light используется was.",
+);
+translate(
+  "verbs-be",
+  135,
+  "В конверте находятся два пропуска и одна карта доступа.",
+  "two passes / and / one access card / be / in the envelope",
+  "Two passes and one access card are in the envelope.",
+  "В составном подлежащем есть plural noun passes, поэтому используется are.",
+);
+contrast(
+  "verbs-be",
+  136,
+  "Выбери форму по существительному после there.",
+  [
+    {
+      prompt: "There ___ enough space for the boxes.",
+      base: "be",
+      answer: "is",
+    },
+    {
+      prompt: "There ___ enough seats for every visitor.",
+      base: "be",
+      answer: "are",
+    },
+  ],
+  "Space неисчисляемое и требует is; seats во множественном числе требует are.",
+);
+add(
+  "verbs-be",
+  137,
+  "gap",
+  2,
+  "The north entrance ___ closed during the inspection yesterday.",
+  "was",
+  "North entrance — единственное число, а yesterday задаёт прошлое: was.",
+  {
+    cue: "Во время вчерашней проверки северный вход был закрыт.",
+    base: "be",
+    choices: ["was", "were"],
+  },
+);
+repair(
+  "verbs-be",
+  138,
+  "The information on the labels are out of date.",
+  "The information on the labels is out of date.",
+  "Information неисчисляемое и согласуется как единственное число: is.",
+);
+transform(
+  "verbs-be",
+  139,
+  "Were the spare batteries in the drawer?",
+  "Сделай отрицательное утверждение.",
+  "The spare batteries were not in the drawer.",
+  "Множественное batteries согласуется с were; отрицание be образуется без did.",
+);
+translate(
+  "verbs-be",
+  140,
+  "В шкафу нет запасных ключей.",
+  "there / be / no / spare keys / in the cabinet",
+  "There are no spare keys in the cabinet.",
+  "После there стоит plural noun keys, поэтому используется are.",
+);
+contrast(
+  "verbs-be",
+  141,
+  "Сравни одного участника с группой участников.",
+  [
+    {
+      prompt: "Each member ___ listed on the certificate.",
+      base: "be",
+      answer: "is",
+    },
+    {
+      prompt: "All the members ___ listed on the certificate.",
+      base: "be",
+      answer: "are",
+    },
+  ],
+  "Each member — единственное число; all the members — множественное.",
+);
+add(
+  "verbs-be",
+  142,
+  "gap",
+  2,
+  "The scissors ___ in the top drawer, beside the ruler.",
+  "are",
+  "Scissors обычно употребляется как plural noun и требует are.",
+  {
+    cue: "Ножницы находятся в верхнем ящике рядом с линейкой.",
+    base: "be",
+    choices: ["are", "is"],
+  },
+);
+repair(
+  "verbs-be",
+  143,
+  "Why was the instructions removed from the noticeboard?",
+  "Why were the instructions removed from the noticeboard?",
+  "Подлежащее instructions во множественном числе, поэтому требуется were.",
+);
+transform(
+  "verbs-be",
+  144,
+  "The pair of gloves was on the bench.",
+  "Замени подлежащее на The gloves.",
+  "The gloves were on the bench.",
+  "При подлежащем gloves во множественном числе используется were.",
+);
+translate(
+  "verbs-be",
+  145,
+  "Почему оборудование было недоступно во время проверки?",
+  "why / the equipment / unavailable / during the inspection",
+  "Why was the equipment unavailable during the inspection?",
+  "Equipment неисчисляемое и согласуется с was.",
+);
+contrast(
+  "verbs-be",
+  146,
+  "Сравни существительное на -s в единственном числе и обычное множественное число.",
+  [
+    { prompt: "The news ___ encouraging.", base: "be", answer: "is" },
+    { prompt: "The updates ___ encouraging.", base: "be", answer: "are" },
+  ],
+  "News имеет форму на -s, но обычно согласуется как единственное; updates — plural noun.",
+);
+add(
+  "verbs-be",
+  147,
+  "gap",
+  2,
+  "One of the monitors ___ offline after the update.",
+  "was",
+  "Грамматическое подлежащее — one, поэтому нужна форма was.",
+  {
+    cue: "После обновления один из мониторов был отключён.",
+    base: "be",
+    choices: ["was", "were"],
+  },
+);
 
-repair('verbs-time',133,'I have emailed the diagram last Wednesday.','I emailed the diagram last Wednesday.','Last Wednesday задаёт законченный момент прошлого; нужен Past Simple без have.');
-transform('verbs-time',134,'I started working at the clinic in 2020, and I still work there.','Объедини, используя Present Perfect Simple и since.','I have worked at the clinic since 2020.','Работа продолжается до настоящего; since задаёт начальную точку, а задание требует Simple.');
-translate('verbs-time',135,'Ты когда-нибудь видел северное сияние?','have / you / ever / see / the northern lights','Have you ever seen the northern lights?','Вопрос об опыте до настоящего: have + subject + past participle seen.');
-contrast('verbs-time',136,'Сравни период, продолжающийся до настоящего, и законченный период. В первом используй Present Perfect Simple, во втором Past Simple.',[{prompt:'The cafe ___ breakfast in the side room since the renovation began.',base:'serve',answer:'has served'},{prompt:'The cafe ___ breakfast there from 2020 to 2022.',base:'serve',answer:'served'}],'Since задаёт период до настоящего: has served; период from 2020 to 2022 завершён: served.');
-add('verbs-time',137,'gap',2,'The technicians have ___ three batches so far, and two are still pending.','inspected','После have требуется past participle inspected; so far описывает итог на текущий момент.',{cue:'Техники уже проверили три партии, а две ещё ожидают проверки.',base:'inspect',choices:['inspected','inspect']});
-repair('verbs-time',138,'Has he left the building yesterday?','Did he leave the building yesterday?','Yesterday задаёт законченное прошлое: did + leave, без has.');
-transform('verbs-time',139,'The library opened in 1998 and is still open.','Перефразируй с Present Perfect Simple и since.','The library has been open since 1998.','Состояние продолжается до настоящего; since указывает начало в прошлом.');
-add('verbs-time',140,'translate',3,'Я живу здесь пять лет и всё ещё работаю в том же офисе.','I have lived here for five years and I still work in the same office.','For five years задаёт длительность до настоящего; задание отдельно просит Present Simple для обычного факта о работе.',{base:'I / live / here / for five years / and / still / work / in the same office',task:'Переведи. Для длительности до настоящего используй Present Perfect Simple; для обычного факта — Present Simple.'});
-contrast('verbs-time',141,'Сопоставь период до настоящего и законченный срок. В первом используй Present Perfect Simple, во втором Past Simple.',[{prompt:'The studio ___ from this address since 2018.',base:'operate',answer:'has operated'},{prompt:'The studio ___ from its former address until 2018.',base:'operate',answer:'operated'}],'Since 2018 связывает работу с настоящим; until 2018 обозначает закончившийся период.');
-add('verbs-time',142,'gap',2,'Marta ___ the museum three times since the renovation began.','has visited','Since задаёт период до настоящего; Marta требует has + visited.',{cue:'С начала ремонта Марта уже трижды посетила музей.',base:'visit',choices:['has visited','visited']});
-repair('verbs-time',143,'We have known the curator since five years.','We have known the curator for five years.','For используется с длительностью; since — с начальной точкой.');
-transform('verbs-time',144,'The last time I used this printer was three months ago.','Передай, что с тех пор я им не пользовался; используй Present Perfect Simple и for.','I have not used this printer for three months.','Период без использования продолжается до настоящего: have not used for three months.');
-translate('verbs-time',145,'Когда вы впервые встретили нового директора?','when / you / first / meet / the new director','When did you first meet the new director?','When спрашивает о завершённой встрече; используется did + meet.');
-contrast('verbs-time',146,'Сравни постепенное изменение с начала периода и событие во вторник. В первом используй Present Perfect Simple, во втором Past Simple.',[{prompt:'The average temperature ___ steadily since June.',base:'rise',answer:'has risen'},{prompt:'It ___ sharply on Tuesday.',base:'rise',answer:'rose'}],'Since June связывает изменение с настоящим; Tuesday задаёт завершённый момент прошлого.');
-add('verbs-time',147,'gap',2,'The old ticket system ___ in service until 2021; the new system replaced it afterward.','remained','Until 2021 задаёт закончившийся период, поэтому нужен Past Simple remained.',{cue:'Старая система билетов работала до 2021 года; после этого её заменили.',base:'remain',choices:['remained','has remained']});
+repair(
+  "verbs-time",
+  133,
+  "I have emailed the diagram last Wednesday.",
+  "I emailed the diagram last Wednesday.",
+  "Last Wednesday — закончившийся момент «в прошлую среду». Для него нужна форма I emailed без have.",
+  {
+    cue: "Я отправил схему по электронной почте в прошлую среду.",
+    task: "Проверь форму глагола для события в закончившийся период прошлого.",
+  },
+);
+transform(
+  "verbs-time",
+  134,
+  "I started working at the clinic in 2020, and I still work there.",
+  "Объедини, используя Present Perfect Simple и since.",
+  "I have worked at the clinic since 2020.",
+  "Работа продолжается до настоящего; since задаёт начальную точку, а задание требует Simple.",
+);
+translate(
+  "verbs-time",
+  135,
+  "Ты когда-нибудь видел северное сияние?",
+  "have / you / ever / see / the northern lights",
+  "Have you ever seen the northern lights?",
+  "Вопрос об опыте до настоящего: have + subject + past participle seen.",
+);
+contrast(
+  "verbs-time",
+  136,
+  "Сравни период, продолжающийся до настоящего, и законченный период. В первом используй Present Perfect Simple, во втором Past Simple.",
+  [
+    {
+      prompt:
+        "The cafe ___ breakfast in the side room since the renovation began.",
+      base: "serve",
+      answer: "has served",
+    },
+    {
+      prompt: "The cafe ___ breakfast there from 2020 to 2022.",
+      base: "serve",
+      answer: "served",
+    },
+  ],
+  "Since задаёт период до настоящего: has served; период from 2020 to 2022 завершён: served.",
+);
+add(
+  "verbs-time",
+  137,
+  "gap",
+  2,
+  "The technicians have ___ three batches so far, and two are still pending.",
+  "inspected",
+  "После have требуется past participle inspected; so far описывает итог на текущий момент.",
+  {
+    cue: "Техники уже проверили три партии, а две ещё ожидают проверки.",
+    base: "inspect",
+    choices: ["inspected", "inspect"],
+  },
+);
+repair(
+  "verbs-time",
+  138,
+  "Has he left the building yesterday?",
+  "Did he leave the building yesterday?",
+  "Yesterday задаёт завершённое прошлое, поэтому вопрос начинается с did. После did используется начальная форма leave, не left.",
+  {
+    cue: "Он покинул здание вчера?",
+    task: "Проверь форму вопроса о завершённом вчера событии. После исправления сохрани время и смысл.",
+  },
+);
+transform(
+  "verbs-time",
+  139,
+  "The library opened in 1998 and is still open.",
+  "Перефразируй с Present Perfect Simple и since.",
+  "The library has been open since 1998.",
+  "Состояние продолжается до настоящего; since указывает начало в прошлом.",
+);
+add(
+  "verbs-time",
+  140,
+  "translate",
+  3,
+  "Я живу здесь пять лет и всё ещё работаю в том же офисе.",
+  "I have lived here for five years and I still work in the same office.",
+  "For five years задаёт длительность до настоящего; задание отдельно просит Present Simple для обычного факта о работе.",
+  {
+    base: "I / live / here / for five years / and / still / work / in the same office",
+    task: "Переведи. Для длительности до настоящего используй Present Perfect Simple; для обычного факта — Present Simple.",
+  },
+);
+contrast(
+  "verbs-time",
+  141,
+  "Сопоставь период до настоящего и законченный срок. В первом используй Present Perfect Simple, во втором Past Simple.",
+  [
+    {
+      prompt: "The studio ___ from this address since 2018.",
+      base: "operate",
+      answer: "has operated",
+    },
+    {
+      prompt: "The studio ___ from its former address until 2018.",
+      base: "operate",
+      answer: "operated",
+    },
+  ],
+  "Since 2018 связывает работу с настоящим; until 2018 обозначает закончившийся период.",
+);
+add(
+  "verbs-time",
+  142,
+  "gap",
+  2,
+  "Marta ___ the museum three times since the renovation began.",
+  "has visited",
+  "Since задаёт период до настоящего; Marta требует has + visited.",
+  {
+    cue: "С начала ремонта Марта уже трижды посетила музей.",
+    base: "visit",
+    choices: ["has visited", "visited"],
+  },
+);
+repair(
+  "verbs-time",
+  143,
+  "We have known the curator since five years.",
+  "We have known the curator for five years.",
+  "We have known the curator означает «мы знаем куратора и сейчас». Five years отвечает на вопрос «как долго?», это длительность, поэтому for five years. Since используют с началом периода: since 2021 — «с 2021 года».",
+  {
+    cue: "Мы знаем куратора уже пять лет и всё ещё знакомы.",
+    task: "Проверь, какое слово ставится перед длительностью «пять лет». Глагол have known уже подходит к смыслу; исправь только указание длительности.",
+  },
+);
+transform(
+  "verbs-time",
+  144,
+  "The last time I used this printer was three months ago.",
+  "Передай, что с тех пор я им не пользовался; используй Present Perfect Simple и for.",
+  "I have not used this printer for three months.",
+  "Период без использования продолжается до настоящего: have not used for three months.",
+);
+translate(
+  "verbs-time",
+  145,
+  "Когда вы впервые встретили нового директора?",
+  "when / you / first / meet / the new director",
+  "When did you first meet the new director?",
+  "When спрашивает о завершённой встрече; используется did + meet.",
+);
+contrast(
+  "verbs-time",
+  146,
+  "Сравни постепенное изменение с начала периода и событие во вторник. В первом используй Present Perfect Simple, во втором Past Simple.",
+  [
+    {
+      prompt: "The average temperature ___ steadily since June.",
+      base: "rise",
+      answer: "has risen",
+    },
+    { prompt: "It ___ sharply on Tuesday.", base: "rise", answer: "rose" },
+  ],
+  "Since June связывает изменение с настоящим; Tuesday задаёт завершённый момент прошлого.",
+);
+add(
+  "verbs-time",
+  147,
+  "gap",
+  2,
+  "The old ticket system ___ in service until 2021; the new system replaced it afterward.",
+  "remained",
+  "Until 2021 задаёт закончившийся период, поэтому нужен Past Simple remained.",
+  {
+    cue: "Старая система билетов работала до 2021 года; после этого её заменили.",
+    base: "remain",
+    choices: ["remained", "has remained"],
+  },
+);
 
-repair('structure-question',128,'Could you tell me when does the museum open?','Could you tell me when the museum opens?','После Could you tell me начинается косвенный вопрос с прямым порядком слов.');
-transform('structure-question',129,'Where did the driver leave the keys?','Начни с Do you know; встроенный вопрос оставь в косвенном порядке.','Do you know where the driver left the keys?','В косвенной части where the driver left используется прямой порядок, без did.');
-translate('structure-question',130,'Не могли бы вы узнать, когда отправляется следующий поезд?','could you / find out / when / the next train / leave','Could you find out when the next train leaves?','После when внутри косвенного вопроса сохраняется порядок the train leaves.');
-contrast('structure-question',131,'Сравни вопрос о том, кто закрыл ворота, и вопрос о том, кого проверил инспектор.',[{prompt:'Who ___ the south gate during the inspection?',base:'close',answer:'closed'},{prompt:'Which guard did the inspector ___ outside the south gate?',base:'question',answer:'question'}],'В первой части who — подлежащее, поэтому closed без did. Во второй guard — подлежащее, после did нужен question.');
-add('structure-question',132,'gap',2,'Do you know whether the side entrance ___ open on Sundays?','is','Whether вводит косвенный вопрос, внутри которого порядок слов прямой: entrance is.',{cue:'Ты знаешь, открыт ли боковой вход по воскресеньям?',base:'be',choices:['is','does']});
-repair('structure-question',133,'I wonder what does this signal mean.','I wonder what this signal means.','После I wonder используется прямой порядок слов: this signal means, без does.');
-transform('structure-question',134,'Where did the visitors leave their bags?','Встрой вопрос после Could you tell me.','Could you tell me where the visitors left their bags?','Встроенная часть использует порядок subject + verb: the visitors left.');
-translate('structure-question',135,'Я не уверен, получил ли офис мой запрос.','I / not sure / whether / the office / receive / my request','I am not sure whether the office received my request.','Whether вводит косвенный вопрос; внутри сохраняется прямой порядок the office received.');
-contrast('structure-question',136,'Сравни прямой вопрос о расписании и тот же вопрос внутри другой фразы.',[{prompt:'What time ___ the last ferry depart?',base:'do',answer:'does'},{prompt:'Do you know what time the last ferry ___?',base:'depart',answer:'departs'}],'В прямом вопросе используется does перед подлежащим; внутри косвенного — the ferry departs.');
-add('structure-question',137,'gap',2,'Do you remember who ___ the spare key?','found','Who — подлежащее придаточной части, поэтому используется found без did.',{cue:'Ты помнишь, кто нашёл запасной ключ?',base:'find',choices:['found','did find']});
-repair('structure-question',138,'Who did replace the damaged sign before the event?','Who replaced the damaged sign before the event?','Who спрашивает о подлежащем; вспомогательный did не нужен.');
-transform('structure-question',139,'The supervisor called the electrician at noon.','Задай вопрос о человеке, которому позвонил supervisor.','Who did the supervisor call at noon?','Who здесь дополнение; в Past Simple используется did + начальная форма call.');
-translate('structure-question',140,'Спроси, будет ли офис открыт завтра.','ask / whether / the office / be open / tomorrow','Ask whether the office will be open tomorrow.','Whether вводит косвенный вопрос с прямым порядком: the office will be.');
-contrast('structure-question',141,'Преобразуй прямой вопрос во встроенный, не меняя время.',[{prompt:'Where ___ yesterday?',base:'the ferry / dock',answer:'did the ferry dock'},{prompt:'Do you know where ___ yesterday?',base:'the ferry / dock',answer:'the ferry docked'}],'В прямом вопросе нужна инверсия did the ferry dock; во встроенном — the ferry docked.');
-add('structure-question',142,'gap',2,'Please tell me what the new label ___.','says','После tell me идёт косвенная часть с прямым порядком: the label says.',{cue:'Скажи, пожалуйста, что написано на новой этикетке.',base:'say',choices:['says','does say']});
+repair(
+  "structure-question",
+  128,
+  "Could you tell me when does the museum open?",
+  "Could you tell me when the museum opens?",
+  "После Could you tell me начинается косвенный вопрос с прямым порядком слов.",
+);
+transform(
+  "structure-question",
+  129,
+  "Where did the driver leave the keys?",
+  "Начни с Do you know; встроенный вопрос оставь в косвенном порядке.",
+  "Do you know where the driver left the keys?",
+  "В косвенной части where the driver left используется прямой порядок, без did.",
+);
+translate(
+  "structure-question",
+  130,
+  "Не могли бы вы узнать, когда отправляется следующий поезд?",
+  "could you / find out / when / the next train / leave",
+  "Could you find out when the next train leaves?",
+  "После when внутри косвенного вопроса сохраняется порядок the train leaves.",
+);
+contrast(
+  "structure-question",
+  131,
+  "Сравни вопрос о том, кто закрыл ворота, и вопрос о том, кого проверил инспектор.",
+  [
+    {
+      prompt: "Who ___ the south gate during the inspection?",
+      base: "close",
+      answer: "closed",
+    },
+    {
+      prompt: "Which guard did the inspector ___ outside the south gate?",
+      base: "question",
+      answer: "question",
+    },
+  ],
+  "В первой части who — подлежащее, поэтому closed без did. Во второй guard — подлежащее, после did нужен question.",
+);
+add(
+  "structure-question",
+  132,
+  "gap",
+  2,
+  "Do you know whether the side entrance ___ open on Sundays?",
+  "is",
+  "Whether вводит косвенный вопрос, внутри которого порядок слов прямой: entrance is.",
+  {
+    cue: "Ты знаешь, открыт ли боковой вход по воскресеньям?",
+    base: "be",
+    choices: ["is", "does"],
+  },
+);
+repair(
+  "structure-question",
+  133,
+  "I wonder what does this signal mean.",
+  "I wonder what this signal means.",
+  "После I wonder используется прямой порядок слов: this signal means, без does.",
+);
+transform(
+  "structure-question",
+  134,
+  "Where did the visitors leave their bags?",
+  "Встрой вопрос после Could you tell me.",
+  "Could you tell me where the visitors left their bags?",
+  "Встроенная часть использует порядок subject + verb: the visitors left.",
+);
+translate(
+  "structure-question",
+  135,
+  "Я не уверен, получил ли офис мой запрос.",
+  "I / not sure / whether / the office / receive / my request",
+  "I am not sure whether the office received my request.",
+  "Whether вводит косвенный вопрос; внутри сохраняется прямой порядок the office received.",
+);
+contrast(
+  "structure-question",
+  136,
+  "Сравни прямой вопрос о расписании и тот же вопрос внутри другой фразы.",
+  [
+    {
+      prompt: "What time ___ the last ferry depart?",
+      base: "do",
+      answer: "does",
+    },
+    {
+      prompt: "Do you know what time the last ferry ___?",
+      base: "depart",
+      answer: "departs",
+    },
+  ],
+  "В прямом вопросе используется does перед подлежащим; внутри косвенного — the ferry departs.",
+);
+add(
+  "structure-question",
+  137,
+  "gap",
+  2,
+  "Do you remember who ___ the spare key?",
+  "found",
+  "Who — подлежащее придаточной части, поэтому используется found без did.",
+  {
+    cue: "Ты помнишь, кто нашёл запасной ключ?",
+    base: "find",
+    choices: ["found", "did find"],
+  },
+);
+repair(
+  "structure-question",
+  138,
+  "Who did replace the damaged sign before the event?",
+  "Who replaced the damaged sign before the event?",
+  "Who спрашивает о подлежащем; вспомогательный did не нужен.",
+);
+transform(
+  "structure-question",
+  139,
+  "The supervisor called the electrician at noon.",
+  "Задай вопрос о человеке, которому позвонил supervisor.",
+  "Who did the supervisor call at noon?",
+  "Who здесь дополнение; в Past Simple используется did + начальная форма call.",
+);
+translate(
+  "structure-question",
+  140,
+  "Спроси, будет ли офис открыт завтра.",
+  "ask / whether / the office / be open / tomorrow",
+  "Ask whether the office will be open tomorrow.",
+  "Whether вводит косвенный вопрос с прямым порядком: the office will be.",
+);
+contrast(
+  "structure-question",
+  141,
+  "Преобразуй прямой вопрос во встроенный, не меняя время.",
+  [
+    {
+      prompt: "Where ___ yesterday?",
+      base: "the ferry / dock",
+      answer: "did the ferry dock",
+    },
+    {
+      prompt: "Do you know where ___ yesterday?",
+      base: "the ferry / dock",
+      answer: "the ferry docked",
+    },
+  ],
+  "В прямом вопросе нужна инверсия did the ferry dock; во встроенном — the ferry docked.",
+);
+add(
+  "structure-question",
+  142,
+  "gap",
+  2,
+  "Please tell me what the new label ___.",
+  "says",
+  "После tell me идёт косвенная часть с прямым порядком: the label says.",
+  {
+    cue: "Скажи, пожалуйста, что написано на новой этикетке.",
+    base: "say",
+    choices: ["says", "does say"],
+  },
+);
 
-repair('structure-links',129,'Because of the lift was out of service, visitors used the west stairs.','Because the lift was out of service, visitors used the west stairs.','Because of требует существительную группу; перед придаточным с подлежащим и глаголом нужен because.');
-transform('structure-links',130,'Although she was short on time, the analyst checked every entry.','Замени Although на despite и используй форму being.','Despite being short on time, the analyst checked every entry.','Despite может стоять перед -ing; although требует придаточную часть.');
-translate('structure-links',131,'Из-за сильного ветра паром отменили, поэтому пассажиры остались в терминале.','the ferry / be cancelled / because of / strong winds / so / the passengers / stay / in the terminal','The ferry was cancelled because of strong winds, so the passengers stayed in the terminal.','Because of вводит причину-существительную группу; so вводит следствие.');
-contrast('structure-links',132,'Выбери связку перед придаточным и перед существительной группой.',[{prompt:'The match was postponed ___ the pitch was flooded.',base:'because',answer:'because'},{prompt:'The match was postponed ___ heavy rain.',base:'because of',answer:'because of'}],'После because идёт придаточное с глаголом; after because of — существительная группа.');
-add('structure-links',133,'gap',2,'___ checking every drawer, the clerk could not find the missing key.','Despite','Перед checking используется despite; although требует придаточную часть с подлежащим и личной формой глагола.',{cue:'Несмотря на то что служащий проверил каждый ящик, он не смог найти пропавший ключ.',base:'несмотря на + -ing',choices:['Despite','Although']});
-repair('structure-links',134,'Despite of the roadworks, the shuttle arrived on schedule.','Despite the roadworks, the shuttle arrived on schedule.','После despite не ставится of.');
-transform('structure-links',135,'Because the sensors were offline, the team used a manual log.','Замени придаточную причину на because of + the sensor outage.','Because of the sensor outage, the team used a manual log.','Because of ставится перед существительной группой; because вводит придаточную часть.');
-translate('structure-links',136,'Хотя инструкции были короткими, новый сотрудник понял каждую часть.','although / the instructions / be brief / the new employee / understand / every section','Although the instructions were brief, the new employee understood every section.','Although вводит придаточную уступки с подлежащим и глаголом.');
-contrast('structure-links',137,'В первом предложении вырази результат, во втором — причину.',[{prompt:'The path was flooded, ___ buses used the tunnel.',base:'result',answer:'so'},{prompt:'Buses used the tunnel ___ the path was flooded.',base:'reason',answer:'because'}],'So вводит результат после причины; because вводит причину после результата.');
-add('structure-links',138,'gap',2,'The route was flooded, ___ the bus took a different road.','so','Вторая часть — следствие затопления маршрута, поэтому используется so.',{cue:'Дорогу затопило, поэтому автобус поехал другой дорогой.',base:'связка результата',choices:['so','although']});
-repair('structure-links',139,'Because the heating failed, so the venue closed early.','The heating failed, so the venue closed early.','Не ставь because и so в одну причинно-следственную конструкцию: оставь cause + so + result.');
-transform('structure-links',140,'The heating failed, so the venue closed early.','Поставь причину после результата и используй because.','The venue closed early because the heating failed.','Because вводит придаточную причину после главного результата.');
-translate('structure-links',141,'Несмотря на задержку, организаторы начали встречу вовремя.','despite / the delay / the organizers / start / the meeting / on time','Despite the delay, the organizers started the meeting on time.','Despite стоит перед существительной группой the delay; прошедшее время — started.');
-contrast('structure-links',142,'Сопоставь уступку с придаточной частью и уступку с существительной группой.',[{prompt:'___ the first attempt failed, the team tried a different setting.',base:'although',answer:'Although'},{prompt:'___ the failed first attempt, the team tried a different setting.',base:'despite',answer:'Despite'}],'Although стоит перед придаточной частью; despite — перед существительной группой.');
-add('structure-links',143,'gap',2,'___ the main road was closed, the delivery driver still reached the site on time.','Although','Перед придаточной частью с подлежащим и личной формой глагола используется although; despite требует существительную группу или -ing.',{cue:'Хотя главную дорогу закрыли, водитель всё же вовремя добрался до объекта.',base:'уступка + придаточная часть',choices:['Although','Despite']});
+repair(
+  "structure-links",
+  129,
+  "Because of the lift was out of service, visitors used the west stairs.",
+  "Because the lift was out of service, visitors used the west stairs.",
+  "Because of требует существительную группу; перед придаточным с подлежащим и глаголом нужен because.",
+);
+transform(
+  "structure-links",
+  130,
+  "Although she was short on time, the analyst checked every entry.",
+  "Замени Although на despite и используй форму being.",
+  "Despite being short on time, the analyst checked every entry.",
+  "Despite может стоять перед -ing; although требует придаточную часть.",
+);
+translate(
+  "structure-links",
+  131,
+  "Из-за сильного ветра паром отменили, поэтому пассажиры остались в терминале.",
+  "the ferry / be cancelled / because of / strong winds / so / the passengers / stay / in the terminal",
+  "The ferry was cancelled because of strong winds, so the passengers stayed in the terminal.",
+  "Because of вводит причину-существительную группу; so вводит следствие.",
+);
+contrast(
+  "structure-links",
+  132,
+  "Выбери связку перед придаточным и перед существительной группой.",
+  [
+    {
+      prompt: "The match was postponed ___ the pitch was flooded.",
+      base: "because",
+      answer: "because",
+    },
+    {
+      prompt: "The match was postponed ___ heavy rain.",
+      base: "because of",
+      answer: "because of",
+    },
+  ],
+  "После because идёт придаточное с глаголом; after because of — существительная группа.",
+);
+add(
+  "structure-links",
+  133,
+  "gap",
+  2,
+  "___ checking every drawer, the clerk could not find the missing key.",
+  "Despite",
+  "Перед checking используется despite; although требует придаточную часть с подлежащим и личной формой глагола.",
+  {
+    cue: "Несмотря на то что служащий проверил каждый ящик, он не смог найти пропавший ключ.",
+    base: "несмотря на + -ing",
+    choices: ["Despite", "Although"],
+  },
+);
+repair(
+  "structure-links",
+  134,
+  "Despite of the roadworks, the shuttle arrived on schedule.",
+  "Despite the roadworks, the shuttle arrived on schedule.",
+  "После despite не ставится of.",
+);
+transform(
+  "structure-links",
+  135,
+  "Because the sensors were offline, the team used a manual log.",
+  "Замени придаточную причину на because of + the sensor outage.",
+  "Because of the sensor outage, the team used a manual log.",
+  "Because of ставится перед существительной группой; because вводит придаточную часть.",
+);
+translate(
+  "structure-links",
+  136,
+  "Хотя инструкции были короткими, новый сотрудник понял каждую часть.",
+  "although / the instructions / be brief / the new employee / understand / every section",
+  "Although the instructions were brief, the new employee understood every section.",
+  "Although вводит придаточную уступки с подлежащим и глаголом.",
+);
+contrast(
+  "structure-links",
+  137,
+  "В первом предложении вырази результат, во втором — причину.",
+  [
+    {
+      prompt: "The path was flooded, ___ buses used the tunnel.",
+      base: "result",
+      answer: "so",
+    },
+    {
+      prompt: "Buses used the tunnel ___ the path was flooded.",
+      base: "reason",
+      answer: "because",
+    },
+  ],
+  "So вводит результат после причины; because вводит причину после результата.",
+);
+add(
+  "structure-links",
+  138,
+  "gap",
+  2,
+  "The route was flooded, ___ the bus took a different road.",
+  "so",
+  "Вторая часть — следствие затопления маршрута, поэтому используется so.",
+  {
+    cue: "Дорогу затопило, поэтому автобус поехал другой дорогой.",
+    base: "связка результата",
+    choices: ["so", "although"],
+  },
+);
+repair(
+  "structure-links",
+  139,
+  "Because the heating failed, so the venue closed early.",
+  "The heating failed, so the venue closed early.",
+  "Не ставь because и so в одну причинно-следственную конструкцию: оставь cause + so + result.",
+);
+transform(
+  "structure-links",
+  140,
+  "The heating failed, so the venue closed early.",
+  "Поставь причину после результата и используй because.",
+  "The venue closed early because the heating failed.",
+  "Because вводит придаточную причину после главного результата.",
+);
+translate(
+  "structure-links",
+  141,
+  "Несмотря на задержку, организаторы начали встречу вовремя.",
+  "despite / the delay / the organizers / start / the meeting / on time",
+  "Despite the delay, the organizers started the meeting on time.",
+  "Despite стоит перед существительной группой the delay; прошедшее время — started.",
+);
+contrast(
+  "structure-links",
+  142,
+  "Сопоставь уступку с придаточной частью и уступку с существительной группой.",
+  [
+    {
+      prompt:
+        "___ the first attempt failed, the team tried a different setting.",
+      base: "although",
+      answer: "Although",
+    },
+    {
+      prompt:
+        "___ the failed first attempt, the team tried a different setting.",
+      base: "despite",
+      answer: "Despite",
+    },
+  ],
+  "Although стоит перед придаточной частью; despite — перед существительной группой.",
+);
+add(
+  "structure-links",
+  143,
+  "gap",
+  2,
+  "___ the main road was closed, the delivery driver still reached the site on time.",
+  "Although",
+  "Перед придаточной частью с подлежащим и личной формой глагола используется although; despite требует существительную группу или -ing.",
+  {
+    cue: "Хотя главную дорогу закрыли, водитель всё же вовремя добрался до объекта.",
+    base: "уступка + придаточная часть",
+    choices: ["Although", "Despite"],
+  },
+);
 
 // Both who and that are valid here; accept both in the free-response contrast.
-tasks.find(task=>task.id==='reference-person-104-contrast').answers.push('that | they');
+tasks
+  .find((task) => task.id === "reference-person-104-contrast")
+  .answers.push("that | they");
 // Either conjunction can correctly connect the reason and result; keep both minimal repairs.
-tasks.find(task=>task.id==='structure-links-103-repair').answers.push('The northern route was closed, so the delivery arrived late.');
+tasks
+  .find((task) => task.id === "structure-links-103-repair")
+  .answers.push("The northern route was closed, so the delivery arrived late.");
 // In the sense of one investigation, a research study is also a standard form.
-tasks.find(task=>task.id==='nouns-count-103-repair').answers.push('We need to conduct a research study before choosing the material.');
-tasks.find(task=>task.id==='verbs-time-120-translate').answers.push('Has anyone already confirmed the booking?');
-tasks.find(task=>task.id==='structure-question-110-translate').answers.push('I do not know whether the bank has received the transfer.');
-tasks.find(task=>task.id==='structure-links-116-translate').answers.push('The bridge is closed because of repairs, so cars take a detour.');
-tasks.find(task=>task.id==='reference-person-110-contrast').answers.push('that | them');
-tasks.find(task=>task.id==='reference-person-111-gap').answers.push('that');
-tasks.find(task=>task.id==='reference-person-115-contrast').answers.push('that | she');
-tasks.find(task=>task.id==='structure-question-125-translate').answers.push('Ask if advance registration is required.');
-tasks.find(task=>task.id==='chunks-object-126-gap').answers.push('of');
-tasks.find(task=>task.id==='reference-person-121-gap').answers.push('his or her');
-tasks.find(task=>task.id==='reference-object-119-translate').answers.push('This is the camera which we bought for the expedition.');
-tasks.find(task=>task.id==='reference-object-122-repair').answers.push('The report we printed yesterday is on your desk.');
-tasks.find(task=>task.id==='lexicon-word-121-translate').answers.push('She told me that the bus is delayed.');
-tasks.find(task=>task.id==='structure-links-131-translate').answers.push('The ferry was canceled because of strong winds, so the passengers stayed in the terminal.');
+tasks
+  .find((task) => task.id === "nouns-count-103-repair")
+  .answers.push(
+    "We need to conduct a research study before choosing the material.",
+  );
+tasks
+  .find((task) => task.id === "verbs-time-120-translate")
+  .answers.push("Has anyone already confirmed the booking?");
+tasks
+  .find((task) => task.id === "structure-question-110-translate")
+  .answers.push("I do not know whether the bank has received the transfer.");
+tasks
+  .find((task) => task.id === "structure-links-116-translate")
+  .answers.push(
+    "The bridge is closed because of repairs, so cars take a detour.",
+  );
+tasks
+  .find((task) => task.id === "reference-person-110-contrast")
+  .answers.push("that | them");
+tasks
+  .find((task) => task.id === "reference-person-111-gap")
+  .answers.push("that");
+tasks
+  .find((task) => task.id === "reference-person-115-contrast")
+  .answers.push("that | she");
+tasks
+  .find((task) => task.id === "structure-question-125-translate")
+  .answers.push("Ask if advance registration is required.");
+tasks.find((task) => task.id === "chunks-object-126-gap").answers.push("of");
+tasks
+  .find((task) => task.id === "reference-person-121-gap")
+  .answers.push("his or her");
+tasks
+  .find((task) => task.id === "reference-object-119-translate")
+  .answers.push("This is the camera which we bought for the expedition.");
+tasks
+  .find((task) => task.id === "reference-object-122-repair")
+  .answers.push("The report we printed yesterday is on your desk.");
+tasks
+  .find((task) => task.id === "lexicon-word-121-translate")
+  .answers.push("She told me that the bus is delayed.");
+tasks
+  .find((task) => task.id === "structure-links-131-translate")
+  .answers.push(
+    "The ferry was canceled because of strong winds, so the passengers stayed in the terminal.",
+  );
 
-export function advancedExercises(){
- const result=[];
- for(const original of tasks){
-  const task={...original,answers:[...original.answers]};
-  if(task.id==='verbs-be-104-translate')task.answers.push('Why were these documents not ready yesterday?');
-  if(task.id==='verbs-past-104-translate')task.answers.push('Why did she not send the invitations yesterday?');
-  if(task.skill==='reference-person'&&task.mode==='repair')task.answers.push(task.model.replace('who','that'));
-  if(task.skill==='reference-object'&&task.mode==='translate')task.answers.push(task.model.replace('which','that'));
-  result.push(task);
-  // Oral transfer is optional and assessed separately from checked production.
-  if(task.mode==='translate')result.push({...task,id:task.id.replace(/-translate$/,'-speak'),mode:'speak',answers:[task.model]});
- }
- return result;
+export function advancedExercises() {
+  const result = [];
+  for (const original of tasks) {
+    const task = { ...original, answers: [...original.answers] };
+    if (task.id === "verbs-be-104-translate")
+      task.answers.push("Why were these documents not ready yesterday?");
+    if (task.id === "verbs-past-104-translate")
+      task.answers.push("Why did she not send the invitations yesterday?");
+    if (task.skill === "reference-person" && task.mode === "repair")
+      task.answers.push(task.model.replace("who", "that"));
+    if (task.skill === "reference-object" && task.mode === "translate")
+      task.answers.push(task.model.replace("which", "that"));
+    result.push(task);
+    // Oral transfer is optional and assessed separately from checked production.
+    if (task.mode === "translate")
+      result.push({
+        ...task,
+        id: task.id.replace(/-translate$/, "-speak"),
+        mode: "speak",
+        answers: [task.model],
+      });
+  }
+  return result;
 }
