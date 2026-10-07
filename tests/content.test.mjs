@@ -34,6 +34,6 @@ test("new time repairs state the intended meaning and tell the learner where to 
     const e = bank.exercises.find((e) => e.id === `verbs-time-${n}-repair`);
     assert.ok(e.cue && !e.cue.includes("___"), e.id);
     assert.ok(e.task, e.id);
-    assert.ok(e.explanation.includes("«") || e.explanation.includes("—"), e.id);
+    assert.notEqual(e.cue, e.prompt, e.id);
   }
 });

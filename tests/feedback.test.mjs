@@ -13,7 +13,7 @@ test("correctness stays explicit with assistance and old assistance flags", () =
   );
   assert.equal(
     feedbackStatus({ ok: false, assisted: true }),
-    "Пока неверно — попробуй исправить",
+    "Пока неверно",
   );
   assert.equal(feedbackStatus({ ok: true, assisted: true }), "Верно");
   assert.equal(

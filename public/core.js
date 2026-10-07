@@ -469,8 +469,8 @@ export function feedbackStatus(result) {
     return result.help
       ? "Ошибка исправлена после подсказки"
       : "Ошибка исправлена самостоятельно";
-  if (!result.ok) return "Пока неверно — попробуй исправить";
-  return result.typo ? "Верно — опечатка принята" : "Верно";
+  if (!result.ok) return "Пока неверно";
+  return result.typo ? "Верно. Опечатка принята" : "Верно";
 }
 export function shouldAutoAdvance(preferences, result, exercise) {
   return (

@@ -34,7 +34,12 @@ export async function audit() {
     .split("\0")
     .filter(Boolean);
   const blocked = blockedPaths(tracked);
-  const publicFiles = ["README.md", "AGENTS.md", "materials/ВВОДНЫЕ.md"];
+  const publicFiles = [
+    "README.md",
+    "AGENTS.md",
+    "materials/ВВОДНЫЕ.md",
+    "materials/Журнал-пополнения-банка.md",
+  ];
   for (const root of [
     "public",
     "materials/errors",

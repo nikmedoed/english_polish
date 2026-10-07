@@ -416,7 +416,7 @@ export const ruleLessons = [
     id: "articles",
     topic: "nouns",
     title: "Артикли и исчисляемость",
-    note: "Новое неопределённое исчисляемое единственное требует a/an; известный конкретный предмет — the. Advice/information/equipment обычно неисчисляемы. A/an выбирается по звуку.",
+    note: "Новое неопределённое исчисляемое единственное требует a/an; известный конкретный предмет: the. Advice/information/equipment обычно неисчисляемы. A/an выбирается по звуку.",
     questions: [
       {
         id: "rule-articles-1",
@@ -424,7 +424,7 @@ export const ruleLessons = [
         answer: "a",
         choices: ["a", "an", "Никакого"],
         explanation:
-          "Новое неопределённое исчисляемое единственное требует a/an; известный конкретный предмет — the. Advice/information/equipment обычно неисчисляемы. A/an выбирается по звуку.",
+          "Новое неопределённое исчисляемое единственное требует a/an; известный конкретный предмет: the. Advice/information/equipment обычно неисчисляемы. A/an выбирается по звуку.",
       },
       {
         id: "rule-articles-2",
@@ -436,7 +436,7 @@ export const ruleLessons = [
           "Исчисляемое множественное",
         ],
         explanation:
-          "Новое неопределённое исчисляемое единственное требует a/an; известный конкретный предмет — the. Advice/information/equipment обычно неисчисляемы. A/an выбирается по звуку.",
+          "Новое неопределённое исчисляемое единственное требует a/an; известный конкретный предмет: the. Advice/information/equipment обычно неисчисляемы. A/an выбирается по звуку.",
       },
       {
         id: "rule-articles-3",
@@ -448,7 +448,7 @@ export const ruleLessons = [
           "I need some advices.",
         ],
         explanation:
-          "Новое неопределённое исчисляемое единственное требует a/an; известный конкретный предмет — the. Advice/information/equipment обычно неисчисляемы. A/an выбирается по звуку.",
+          "Новое неопределённое исчисляемое единственное требует a/an; известный конкретный предмет: the. Advice/information/equipment обычно неисчисляемы. A/an выбирается по звуку.",
       },
     ],
   },
@@ -456,7 +456,7 @@ export const ruleLessons = [
     id: "modals",
     topic: "patterns",
     title: "После модального",
-    note: "Can/should/might/must + V без to. Must not — запрет; do not have to — отсутствие необходимости.",
+    note: "Can/should/might/must + V без to. Must not: запрет; do not have to: отсутствие необходимости.",
     questions: [
       {
         id: "rule-modals-1",
@@ -464,7 +464,7 @@ export const ruleLessons = [
         answer: "V без to",
         choices: ["V без to", "to + V", "V-ing"],
         explanation:
-          "Can/should/might/must + V без to. Must not — запрет; do not have to — отсутствие необходимости.",
+          "Can/should/might/must + V без to. Must not: запрет; do not have to: отсутствие необходимости.",
       },
       {
         id: "rule-modals-2",
@@ -476,7 +476,7 @@ export const ruleLessons = [
           "Нужно прийти",
         ],
         explanation:
-          "Can/should/might/must + V без to. Must not — запрет; do not have to — отсутствие необходимости.",
+          "Can/should/might/must + V без to. Must not: запрет; do not have to: отсутствие необходимости.",
       },
       {
         id: "rule-modals-3",
@@ -488,7 +488,7 @@ export const ruleLessons = [
           "You should resting.",
         ],
         explanation:
-          "Can/should/might/must + V без to. Must not — запрет; do not have to — отсутствие необходимости.",
+          "Can/should/might/must + V без to. Must not: запрет; do not have to: отсутствие необходимости.",
       },
     ],
   },
@@ -496,7 +496,7 @@ export const ruleLessons = [
     id: "infinitive",
     topic: "patterns",
     title: "To или -ing",
-    note: "Want/decide/need + to V. Enjoy/avoid + V-ing. После предлога — V-ing: interested in learning. Для других глаголов модель нужно проверять отдельно.",
+    note: "Want/decide/need + to V. Enjoy/avoid + V-ing. После предлога: V-ing: interested in learning. Для других глаголов модель нужно проверять отдельно.",
     questions: [
       {
         id: "rule-infinitive-1",
@@ -504,7 +504,7 @@ export const ruleLessons = [
         answer: "to + V",
         choices: ["to + V", "V-ing без to", "V без to"],
         explanation:
-          "Want/decide/need + to V. Enjoy/avoid + V-ing. После предлога — V-ing: interested in learning. Для других глаголов модель нужно проверять отдельно.",
+          "Want/decide/need + to V. Enjoy/avoid + V-ing. После предлога: V-ing: interested in learning. Для других глаголов модель нужно проверять отдельно.",
       },
       {
         id: "rule-infinitive-2",
@@ -516,7 +516,7 @@ export const ruleLessons = [
           "Потому что прошедшее время",
         ],
         explanation:
-          "Want/decide/need + to V. Enjoy/avoid + V-ing. После предлога — V-ing: interested in learning. Для других глаголов модель нужно проверять отдельно.",
+          "Want/decide/need + to V. Enjoy/avoid + V-ing. После предлога: V-ing: interested in learning. Для других глаголов модель нужно проверять отдельно.",
       },
       {
         id: "rule-infinitive-3",
@@ -528,7 +528,7 @@ export const ruleLessons = [
           "She enjoys read.",
         ],
         explanation:
-          "Want/decide/need + to V. Enjoy/avoid + V-ing. После предлога — V-ing: interested in learning. Для других глаголов модель нужно проверять отдельно.",
+          "Want/decide/need + to V. Enjoy/avoid + V-ing. После предлога: V-ing: interested in learning. Для других глаголов модель нужно проверять отдельно.",
       },
     ],
   },
@@ -536,7 +536,7 @@ export const ruleLessons = [
     id: "objects",
     topic: "chunks",
     title: "Дополнение без лишнего предлога",
-    note: "Discuss/enter/reach + объект без предлога. Explain something to someone. Borrow from — брать взаймы; lend to — давать взаймы.",
+    note: "Discuss/enter/reach + объект без предлога. Explain something to someone. Borrow from: брать взаймы; lend to: давать взаймы.",
     questions: [
       {
         id: "rule-objects-1",
@@ -548,7 +548,7 @@ export const ruleLessons = [
           "discuss to + объект",
         ],
         explanation:
-          "Discuss/enter/reach + объект без предлога. Explain something to someone. Borrow from — брать взаймы; lend to — давать взаймы.",
+          "Discuss/enter/reach + объект без предлога. Explain something to someone. Borrow from: брать взаймы; lend to: давать взаймы.",
       },
       {
         id: "rule-objects-2",
@@ -560,7 +560,7 @@ export const ruleLessons = [
           "Купить у кого-то",
         ],
         explanation:
-          "Discuss/enter/reach + объект без предлога. Explain something to someone. Borrow from — брать взаймы; lend to — давать взаймы.",
+          "Discuss/enter/reach + объект без предлога. Explain something to someone. Borrow from: брать взаймы; lend to: давать взаймы.",
       },
       {
         id: "rule-objects-3",
@@ -572,7 +572,7 @@ export const ruleLessons = [
           "Please explain to the rule me.",
         ],
         explanation:
-          "Discuss/enter/reach + объект без предлога. Explain something to someone. Borrow from — брать взаймы; lend to — давать взаймы.",
+          "Discuss/enter/reach + объект без предлога. Explain something to someone. Borrow from: брать взаймы; lend to: давать взаймы.",
       },
     ],
   },
@@ -580,7 +580,7 @@ export const ruleLessons = [
     id: "prepositions",
     topic: "chunks",
     title: "Устойчивые предлоги",
-    note: "Depend on; interested in; responsible for. By задаёт крайний срок; until — продолжение действия до момента. Учи сочетание целиком.",
+    note: "Depend on; interested in; responsible for. By задаёт крайний срок; until: продолжение действия до момента. Учи сочетание целиком.",
     questions: [
       {
         id: "rule-prepositions-1",
@@ -588,7 +588,7 @@ export const ruleLessons = [
         answer: "on",
         choices: ["on", "of", "from"],
         explanation:
-          "Depend on; interested in; responsible for. By задаёт крайний срок; until — продолжение действия до момента. Учи сочетание целиком.",
+          "Depend on; interested in; responsible for. By задаёт крайний срок; until: продолжение действия до момента. Учи сочетание целиком.",
       },
       {
         id: "rule-prepositions-2",
@@ -600,7 +600,7 @@ export const ruleLessons = [
           "Оставаться после пяти",
         ],
         explanation:
-          "Depend on; interested in; responsible for. By задаёт крайний срок; until — продолжение действия до момента. Учи сочетание целиком.",
+          "Depend on; interested in; responsible for. By задаёт крайний срок; until: продолжение действия до момента. Учи сочетание целиком.",
       },
       {
         id: "rule-prepositions-3",
@@ -612,7 +612,7 @@ export const ruleLessons = [
           "She is interested for music.",
         ],
         explanation:
-          "Depend on; interested in; responsible for. By задаёт крайний срок; until — продолжение действия до момента. Учи сочетание целиком.",
+          "Depend on; interested in; responsible for. By задаёт крайний срок; until: продолжение действия до момента. Учи сочетание целиком.",
       },
     ],
   },
@@ -620,7 +620,7 @@ export const ruleLessons = [
     id: "word-form",
     topic: "lexicon",
     title: "Часть речи и -ed/-ing",
-    note: "Success — существительное; successful — прилагательное; succeed — глагол. Bored описывает чувство, boring — то, что вызывает скуку.",
+    note: "Success: существительное; successful: прилагательное; succeed: глагол. Bored описывает чувство, boring: то, что вызывает скуку.",
     questions: [
       {
         id: "rule-word-form-1",
@@ -628,7 +628,7 @@ export const ruleLessons = [
         answer: "Прилагательное",
         choices: ["Прилагательное", "Существительное", "Глагол"],
         explanation:
-          "Success — существительное; successful — прилагательное; succeed — глагол. Bored описывает чувство, boring — то, что вызывает скуку.",
+          "Success: существительное; successful: прилагательное; succeed: глагол. Bored описывает чувство, boring: то, что вызывает скуку.",
       },
       {
         id: "rule-word-form-2",
@@ -640,7 +640,7 @@ export const ruleLessons = [
           "Прошедшее время bore в этой роли",
         ],
         explanation:
-          "Success — существительное; successful — прилагательное; succeed — глагол. Bored описывает чувство, boring — то, что вызывает скуку.",
+          "Success: существительное; successful: прилагательное; succeed: глагол. Bored описывает чувство, boring: то, что вызывает скуку.",
       },
       {
         id: "rule-word-form-3",
@@ -648,7 +648,7 @@ export const ruleLessons = [
         answer: "I am bored.",
         choices: ["I am bored.", "I am boring.", "I am boredom."],
         explanation:
-          "Success — существительное; successful — прилагательное; succeed — глагол. Bored описывает чувство, boring — то, что вызывает скуку.",
+          "Success: существительное; successful: прилагательное; succeed: глагол. Bored описывает чувство, boring: то, что вызывает скуку.",
       },
     ],
   },
@@ -696,7 +696,7 @@ export const ruleLessons = [
     id: "people",
     topic: "reference",
     title: "Местоимения: люди",
-    note: "I — подлежащее, me — дополнение. Whose — принадлежность. Who/that допустимы для людей в определительных придаточных; singular they тоже допустимо.",
+    note: "I: подлежащее, me: дополнение. Whose: принадлежность. Who/that допустимы для людей в определительных придаточных; singular they тоже допустимо.",
     questions: [
       {
         id: "rule-people-1",
@@ -704,7 +704,7 @@ export const ruleLessons = [
         answer: "me",
         choices: ["me", "I", "my"],
         explanation:
-          "I — подлежащее, me — дополнение. Whose — принадлежность. Who/that допустимы для людей в определительных придаточных; singular they тоже допустимо.",
+          "I: подлежащее, me: дополнение. Whose: принадлежность. Who/that допустимы для людей в определительных придаточных; singular they тоже допустимо.",
       },
       {
         id: "rule-people-2",
@@ -712,7 +712,7 @@ export const ruleLessons = [
         answer: "Кому принадлежит",
         choices: ["Кому принадлежит", "Кто сделал", "Кого увидели"],
         explanation:
-          "I — подлежащее, me — дополнение. Whose — принадлежность. Who/that допустимы для людей в определительных придаточных; singular they тоже допустимо.",
+          "I: подлежащее, me: дополнение. Whose: принадлежность. Who/that допустимы для людей в определительных придаточных; singular they тоже допустимо.",
       },
       {
         id: "rule-people-3",
@@ -720,7 +720,7 @@ export const ruleLessons = [
         answer: "She spoke to me.",
         choices: ["She spoke to me.", "She spoke to I.", "She spoke to my."],
         explanation:
-          "I — подлежащее, me — дополнение. Whose — принадлежность. Who/that допустимы для людей в определительных придаточных; singular they тоже допустимо.",
+          "I: подлежащее, me: дополнение. Whose: принадлежность. Who/that допустимы для людей в определительных придаточных; singular they тоже допустимо.",
       },
     ],
   },
@@ -728,7 +728,7 @@ export const ruleLessons = [
     id: "possession",
     topic: "reference",
     title: "Its, it’s, their",
-    note: "Its — принадлежность; it’s — it is или it has. Their — их; they’re — they are; there — там или вводное there is/are.",
+    note: "Its: принадлежность; it’s: it is или it has. Their: их; they’re: they are; there: там или вводное there is/are.",
     questions: [
       {
         id: "rule-possession-1",
@@ -736,7 +736,7 @@ export const ruleLessons = [
         answer: "Принадлежность",
         choices: ["Принадлежность", "It is", "It has"],
         explanation:
-          "Its — принадлежность; it’s — it is или it has. Their — их; they’re — they are; there — там или вводное there is/are.",
+          "Its: принадлежность; it’s: it is или it has. Their: их; they’re: they are; there: там или вводное there is/are.",
       },
       {
         id: "rule-possession-2",
@@ -744,7 +744,7 @@ export const ruleLessons = [
         answer: "They are",
         choices: ["They are", "Their", "There"],
         explanation:
-          "Its — принадлежность; it’s — it is или it has. Their — их; they’re — they are; there — там или вводное there is/are.",
+          "Its: принадлежность; it’s: it is или it has. Their: их; they’re: they are; there: там или вводное there is/are.",
       },
       {
         id: "rule-possession-3",
@@ -756,7 +756,7 @@ export const ruleLessons = [
           "The cat is eating it food.",
         ],
         explanation:
-          "Its — принадлежность; it’s — it is или it has. Their — их; they’re — they are; there — там или вводное there is/are.",
+          "Its: принадлежность; it’s: it is или it has. Their: их; they’re: they are; there: там или вводное there is/are.",
       },
     ],
   },

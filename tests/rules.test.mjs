@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { ruleLessons } from "../content/rules.mjs";
 import { validateRules } from "../scripts/check-rules.mjs";
-import { skills } from "../content/curriculum.mjs";
+import { skills } from "../content/skills.mjs";
 test("rule drills cover all topic groups and validate authored options", () => {
   assert.equal(validateRules(ruleLessons), 20);
   for (const s of skills)

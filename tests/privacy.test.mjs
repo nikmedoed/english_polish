@@ -6,7 +6,7 @@ test("privacy allows analytics but excludes sources, environment and personal pr
     blockedPaths([
       "materials/errors/97-verb-forms.md",
       "materials/monitoring/2026-10-02.md",
-      "materials/docs/ВВОДНЫЕ.md",
+      "materials/ВВОДНЫЕ.md",
       "content/bank-source.mjs",
     ]),
     [],

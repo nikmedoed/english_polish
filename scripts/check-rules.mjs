@@ -1,9 +1,10 @@
 import { ruleLessons } from "../content/rules.mjs";
-import { skills } from "../content/curriculum.mjs";
+import { skills } from "../content/skills.mjs";
 import { rawContent } from "./check-privacy.mjs";
 export function validateRules(lessons) {
   const ids = new Set();
   for (const l of lessons) {
+    if (/[\u2013\u2014]/.test(JSON.stringify(l)))throw Error("Long dashes in rule lesson: "+l.id);
     if (
       !l.id ||
       ids.has(l.id) ||

@@ -22,6 +22,9 @@ const KEY = sandbox ? 'english-focus-sandbox-v1' : 'english-focus-v1';
 const SESSION_KEY = sandbox ? 'english-focus-sandbox-session-v2' : 'english-focus-session-v2';
 const app = document.querySelector('#app');
 const escape = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+function explanationText(ex) {
+ return escape(ex.explanation).split(/\n\n+/).map(part=>`<p>${part}</p>`).join('');
+}
 function markedWord(value,other){
  let prefix=0,suffix=0;
  while(prefix<Math.min(value.length,other.length)&&value[prefix]===other[prefix])prefix++;
@@ -115,6 +118,7 @@ document.addEventListener('visibilitychange', () => {
 const topic = () => bank.topics.find(t => t.id === state.focus);
 const exercise = () => bank.exercises.find(e => e.id === session?.current);
 document.addEventListener('keydown',event=>{
+  if(event.defaultPrevented)return;
   if(event.key!=='Enter'||event.repeat||event.isComposing||event.ctrlKey||event.altKey||event.metaKey)return;
   if((location.hash.slice(1)||'practice')!=='practice'||!session?.answered||session.complete)return;
   if(session.result?.ok===false&&!session.result.self&&!session.result.recovered)return;
@@ -133,7 +137,9 @@ function previousReview(){
  const previous=session?.previous,ex=bank.exercises.find(e=>e.id===previous?.exercise);
  if(!ex)return '';
  const r=previous.result,status=feedbackStatus(r);
- return `<article class="card previous-review" aria-label="Разбор предыдущего задания"><div class="meta"><span>Предыдущее задание</span><strong>${status}</strong></div><p class="previous-question">${escape(ex.prompt||ex.cue)}</p>${r.typo?typoDetails(r.typo):''}${r.answer&&!r.ok?`<p class="small">Твой ответ: ${escape(r.answer)}</p>`:''}${r.skipped?'':`<p class="previous-model">${contextModel(ex)}</p>${helpNote(r)}<p class="previous-explanation">${escape(ex.explanation)}</p>`}</article>`;
+ const details = '<details class="previous-details"><summary>Мой ответ и результат</summary><p>'+escape(status)+'</p><p>'+escape(ex.prompt||ex.cue)+'</p>'+(r.answer?'<p>Мой ответ: '+escape(r.answer)+'</p>':'')+helpNote(r)+'</details>';
+ return `<article class="card previous-review" aria-label="Разбор предыдущего задания"><div class="meta">Предыдущее задание${r.skipped?' · Пропущено':''}</div>${r.skipped?'':`<div class="review-answer"><span class="small">Правильный ответ</span><div class="previous-model">${contextModel(ex)}</div></div><div class="review-rule"><strong>Почему так</strong><div class="previous-explanation">${explanationText(ex)}</div></div>${r.typo?typoDetails(r.typo):''}`}${details}</article>`;
+
 }
 const plural = (n, one, few, many) => n+' '+(n%100>=11&&n%100<=14?many:n%10===1?one:n%10>=2&&n%10<=4?few:many);
 const percentage = n => n===null ? '·' : `${n}%`;
@@ -156,9 +162,9 @@ function renderPractice() {
   if (session.complete) { renderComplete(); return; }
   const ex=exercise(), t=topic(), s=summary(state,state.focus);
   app.innerHTML = `<div class="page-head practice-head"><h1>${t.title}</h1><div class="practice-controls"><div class="mode-switch" role="group" aria-label="Режим практики"><button data-mode="mix" aria-pressed="${session.input!=='tap'}">Полная практика</button><button data-mode="tap" aria-pressed="${session.input==='tap'}">Без клавиатуры</button></div><a class="topic-link" href="#rules">Повторить правила</a><a class="topic-link" href="#topics">Сменить тему</a></div></div>
-    <div class="layout"><section class="practice-flow"><div class="card" id="exercise">
+    <div class="layout"><section class="practice-flow"><div class="card" id="exercise" aria-labelledby="exercise-instruction">
       <div class="meta"><span>${modeNames[ex.mode]} · ${['','С опорой','Самостоятельно','В контексте'][ex.level||2]}</span><span>Задание ${session.count+1}</span></div>
-      <p class="practice-note">${escape(ex.task||instructions(ex.mode))}</p>
+      <h2 class="practice-note" id="exercise-instruction">${escape(ex.task||instructions(ex.mode))}</h2>
       ${ex.mode==='repair'&&ex.task&&ex.cue!==ex.prompt?'<p class="exercise-cue"><strong>Смысл фразы</strong><br>'+escape(ex.cue)+'</p>':''}<div class="prompt">${escape(ex.mode==='order'?'':ex.mode==='speak'?ex.cue:ex.prompt)}</div>
       <div id="input-area"></div><div id="feedback" aria-live="polite"></div>
       <div class="actions" id="exercise-actions"></div><div class="actions" id="support-actions"></div>
@@ -208,6 +214,9 @@ function renderPractice() {
     bindAnswerForm(ex,'answer',value=>grade(value),value=>{session.draft=value;rememberSession();});
     if(focusNext){document.querySelector('#answer-form input')?.focus({preventScroll:true});focusNext=false;}
   }
+  bindChoiceKeyboard(input);
+  input.querySelector('input,select,button:not(:disabled)')?.focus({preventScroll:true});
+  focusNext=false;
   supportButtons();
 }
 function renderMatch(container,ex,prefix,draft='',submit,onchange){
@@ -226,6 +235,7 @@ function renderMatch(container,ex,prefix,draft='',submit,onchange){
  const answer=()=>{const result=[];form.querySelectorAll('select').forEach(field=>result[Number(field.dataset.part)]=field.value);return result.join(' | ');};
  form.onchange=()=>onchange?.(answer());
  form.onsubmit=event=>{event.preventDefault();submit(answer());};
+ bindSequentialKeyboard(form);
  rememberSession();
 }
 function answerForm(ex,prefix,draft=''){
@@ -239,6 +249,45 @@ function bindAnswerForm(ex,prefix,submit,draft){
  const value=()=>fields.map(f=>f.value.trim()).join(' | ');
  for(const field of fields)field.oninput=()=>draft?.(value());
  form.onsubmit=e=>{e.preventDefault();submit(value());};
+ bindSequentialKeyboard(form);
+}
+// Use visual DOM order, including shuffled match contexts, for keyboard navigation.
+function bindSequentialKeyboard(form){
+ const fields=[...form.querySelectorAll('input,select')];
+ form.addEventListener('keydown',event=>{
+  if(event.isComposing||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;
+  const index=fields.indexOf(event.target);
+  if(index<0)return;
+  const field=fields[index];
+  if(field.tagName==='SELECT'&&['ArrowDown','ArrowUp','ArrowLeft','ArrowRight'].includes(event.key)){
+   event.preventDefault();
+   const delta=['ArrowDown','ArrowRight'].includes(event.key)?1:-1;
+   field.selectedIndex=Math.max(1,Math.min(field.options.length-1,field.selectedIndex+delta));
+   field.dispatchEvent(new Event('change',{bubbles:true}));
+   return;
+  }
+  if(event.key!=='Enter')return;
+  event.preventDefault();
+  if(event.repeat)return;
+  if(!field.value.trim()){field.focus();return;}
+  const next=fields[index+1]||fields.find(item=>!item.value.trim());
+  if(next){next.focus();return;}
+  form.requestSubmit();
+ });
+}
+function bindChoiceKeyboard(container){
+ const buttons=[...container.querySelectorAll('.choices > button')];
+ // The container itself can be the choices group.
+ if(container.classList.contains('choices'))buttons.push(...container.querySelectorAll(':scope > button'));
+ container.addEventListener('keydown',event=>{
+  if(event.isComposing||event.ctrlKey||event.altKey||event.metaKey)return;
+  const index=buttons.indexOf(event.target);
+  if(index<0)return;
+  if(event.key==='Enter'&&event.repeat){event.preventDefault();return;}
+  const delta={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[event.key];
+  if(!delta)return;
+  event.preventDefault();buttons[(index+delta+buttons.length)%buttons.length].focus();
+ });
 }
 function shuffle(items) { const result=[...items];for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}return result; }
 function updateWords() {
@@ -253,7 +302,7 @@ function supportButtons() {
   container.innerHTML='<button class="quiet" id="hint">Подсказка</button><button class="quiet" id="skip">Пропустить</button><button class="quiet" id="pause">Закончить</button>';
   document.querySelector('#hint').onclick=()=>{
     session.hint=true;session.hintExercise=exercise().id;rememberSession();
-    document.querySelector('#feedback').innerHTML=`<div class="feedback">${escape(bank.skills?.find(x=>x.id===exercise().skill)?.rule||topic().rule)}<br><span class="small">Ответ будет учтён как выполненный с подсказкой.</span></div>`;
+    document.querySelector('#feedback').innerHTML=`<div class="hint-panel"><strong>Правило</strong><p>${escape(exercise().hint||bank.skills?.find(x=>x.id===exercise().skill)?.rule||topic().rule)}</p><p class="help-note">Ответ будет учтён с подсказкой.</p></div>`;
   };
   document.querySelector('#skip').onclick=()=>{
     if(!session.oral){session.skipped++;session.count++;session.seen.push(exercise().family);}session.answered=true;session.result={skipped:true};rememberSession();continuePractice();
@@ -279,7 +328,9 @@ function showFeedback(scroll=false) {
   document.querySelector('#support-actions').innerHTML='';
   const result=session.result, ex=exercise();
   if(result?.ok===false&&!result.self&&!result.recovered)document.querySelector('#input-area').innerHTML='';
-  document.querySelector('#feedback').innerHTML=`<div class="feedback ${result?.ok===false&&!result.recovered?'wrong':''}"><strong>${feedbackStatus(result)}</strong>${result?.skipped||(result?.ok===false&&!result.revealed&&!result.recovered)?'':`${result?.typo?typoDetails(result.typo):''}${revealedDifference(ex,result)}<br><span class="answer-model">${contextModel(ex)}</span>${helpNote(result)}<p class="result-explanation">${escape(ex.explanation)}</p>`}</div>`;
+  const reveal=!(result?.skipped||(result?.ok===false&&!result.revealed&&!result.recovered));
+  document.querySelector('#feedback').innerHTML=`<div class="feedback ${result?.ok===false&&!result.recovered?'wrong':''}"><p class="result-status">${feedbackStatus(result)}</p>${reveal?`<div class="feedback-body">${result?.typo?typoDetails(result.typo):''}${revealedDifference(ex,result)}<div class="review-answer"><span class="small">Правильный ответ</span><div class="answer-model">${contextModel(ex)}</div></div>${helpNote(result)}<div class="review-rule"><strong>Почему так</strong><div class="result-explanation">${explanationText(ex)}</div></div></div>`:''}</div>`;
+
   if(scroll){const feedback=document.querySelector('#feedback');feedback.tabIndex=-1;feedback.focus({preventScroll:true});feedback.scrollIntoView({block:'nearest',behavior:'instant'});}
   const facts=document.querySelector('.practice-summary .facts');
   if(facts)facts.innerHTML=`<dt>Выполнено</dt><dd>${session.count}</dd><dt>Верно без подсказки</dt><dd>${session.correct} / ${session.checked}</dd><dt>С подсказкой</dt><dd>${session.guided}</dd><dt>Пропущено</dt><dd>${session.skipped}</dd>`;
@@ -308,9 +359,9 @@ function showCorrection(){
   if(r.help==='hint')r.retryHint=true;
   const assisted=!!(r.retryHint||r.revealed||r.assisted);
   const note=r.revealed?'Посмотри разбор и попробуй ещё раз.':r.retryHint?'Примени подсказку и исправь ответ.':'Попробуй исправить сам. Ответ пока скрыт.';
-  const rule=bank.skills?.find(x=>x.id===ex.skill)?.rule||topic().rule;
+  const rule=ex.hint||bank.skills?.find(x=>x.id===ex.skill)?.rule||topic().rule;
   const area=document.querySelector('#exercise-actions');
-  area.innerHTML='<div class="correction"><p class="small">'+note+'</p>'+(r.retryHint&&!r.revealed?'<div class="feedback small">'+escape(rule)+'</div>':'')+'<div id="retry-input"></div><div id="correction-status" role="status"></div><div class="actions">'+(!r.retryHint&&!r.revealed?'<button class="quiet" id="retry-hint">Намёк</button>':'')+(!r.revealed&&r.retryHint?'<button class="quiet" id="retry-reveal">Показать ответ и разбор</button>':'')+'<button class="quiet" id="skip-correction">Пропустить</button><button class="quiet" id="pause">Закончить</button></div></div>';
+  area.innerHTML='<div class="correction">'+(r.revealed?'<p class="correction-note">Сравни свой ответ с образцом выше.</p>':'')+(r.retryHint&&!r.revealed?'<div class="hint-panel"><strong>Подсказка</strong><p>'+escape(rule)+'</p></div>':'')+'<div id="retry-input"></div><div id="correction-status" role="status"></div><div class="actions">'+(!r.retryHint&&!r.revealed?'<button class="quiet" id="retry-hint">Намёк</button>':'')+(!r.revealed&&r.retryHint?'<button class="quiet" id="retry-reveal">Показать ответ и разбор</button>':'')+'<button class="quiet" id="skip-correction">Пропустить</button><button class="quiet" id="pause">Закончить</button></div></div>';
   const retry=value=>{
     const assessment=assess(ex,value);
     if(!assessment.ok){
@@ -337,8 +388,10 @@ function showCorrection(){
     bindAnswerForm(ex,'correction',retry,value=>{session.repairDraft=value;rememberSession();});
     input.querySelector('input')?.focus({preventScroll:true});
   }
+  bindChoiceKeyboard(input);
+  input.querySelector('input,select,button:not(:disabled)')?.focus({preventScroll:true});
   document.querySelector('#retry-hint')?.addEventListener('click',()=>{r.retryHint=true;r.help='hint';rememberSession();showCorrection();});
-  document.querySelector('#retry-reveal')?.addEventListener('click',()=>{r.revealed=true;rememberSession();showFeedback();showCorrection();});
+  document.querySelector('#retry-reveal')?.addEventListener('click',()=>{r.revealed=true;r.help='answer';rememberSession();showFeedback();showCorrection();});
   document.querySelector('#skip-correction').onclick=continuePractice;
   document.querySelector('#pause').onclick=()=>{session.complete=true;rememberSession();renderComplete();};
 }
