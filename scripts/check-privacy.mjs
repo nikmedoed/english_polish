@@ -42,6 +42,7 @@ export async function audit() {
   ];
   for (const root of [
     "public",
+    "src",
     "materials/errors",
     "materials/monitoring",
     "content",
@@ -49,7 +50,7 @@ export async function audit() {
     publicFiles.push(...(await walk(root)));
   for (const p of publicFiles) {
     if (
-      /\.(md|txt|json|html|mjs|js)$/i.test(p) &&
+      /\.(md|txt|json|html|mjs|js|jsx)$/i.test(p) &&
       rawContent(await readFile(p, "utf8"))
     )
       blocked.push(p);

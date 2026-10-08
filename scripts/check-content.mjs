@@ -3,7 +3,7 @@ import { validateRules } from "./check-rules.mjs";
 import { makeBank } from "../content/bank-source.mjs";
 import { exerciseSources } from "../content/exercises/index.mjs";
 import { skills } from "../content/skills.mjs";
-import { MODES, check, normalize, familyOf } from "../public/core.js";
+import { MODES, check, normalize, familyOf } from "../src/domain/core.js";
 import { rawContent } from "./check-privacy.mjs";
 
 export function validateExerciseSources() {

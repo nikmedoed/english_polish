@@ -1,16 +1,6 @@
-const CACHE = "english-focus-v7";
-const FILES = [
-  "./",
-  "./index.html",
-  "./style.css",
-  "./app.js",
-  "./core.js",
-  "./rules.js",
-  "./data/rules.json",
-  "./data/bank.json",
-  "./manifest.webmanifest",
-  "./build-id.json",
-];
+// Vite supplies the content hash and the exact list of compiled public assets.
+const CACHE = "english-focus-development";
+const FILES = [];
 self.addEventListener("install", (e) =>
   e.waitUntil(
     caches

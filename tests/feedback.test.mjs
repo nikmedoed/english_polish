@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { hintUsed, feedbackStatus, shouldAutoAdvance } from "../public/core.js";
+import { hintUsed, feedbackStatus, shouldAutoAdvance } from "../src/domain/core.js";
 test("a hint is counted only for the exercise where it was opened", () => {
   assert.equal(hintUsed({ hint: true, hintExercise: "a" }, "b"), false);
   assert.equal(hintUsed({ hint: true }, "a"), false);

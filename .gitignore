@@ -16,6 +16,8 @@
 
 # Local tooling and generated reports
 /coverage/
+/test-results/
+/playwright-report/
 /.DS_Store
 /Thumbs.db
 npm-debug.log*

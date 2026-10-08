@@ -13,7 +13,7 @@ import {
   dueFamilies,
   skillLevel,
   assess,
-} from "../public/core.js";
+} from "../src/domain/core.js";
 import { makeBank } from "../content/bank-source.mjs";
 const bank = makeBank();
 const event = (id, overrides = {}) => ({
@@ -384,7 +384,7 @@ test("receive spelling typo is accepted in translation, tense errors are rejecte
   ])
     assert.equal(assess(ex, wrong).ok, false);
 });
-import { pickContinuous } from "../public/core.js";
+import { pickContinuous } from "../src/domain/core.js";
 test("continuous practice passes 30 answers, exhausts each pool before recycling", () => {
   const exercises = bank.exercises
     .filter((e) => e.topic === "verbs" && e.mode === "choice")
